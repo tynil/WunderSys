@@ -459,7 +459,7 @@ cecho(&quot;&lt;grey&gt; &quot; .. balanceTime .. &quot;s&quot;)
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Addiction -</name>
                         <script>wsys.affcured(&quot;addiction&quot;)</script>
                         <triggerType>0</triggerType>
@@ -499,7 +499,7 @@ cecho(&quot;&lt;grey&gt; &quot; .. balanceTime .. &quot;s&quot;)
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Anorexia -</name>
                         <script>wsys.affcured(&quot;anorexia&quot;)</script>
                         <triggerType>0</triggerType>
@@ -567,7 +567,7 @@ cecho(&quot;&lt;grey&gt; &quot; .. balanceTime .. &quot;s&quot;)
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Bleeding -</name>
                         <script>wsys.clotcure()</script>
                         <triggerType>0</triggerType>
@@ -607,7 +607,7 @@ cecho(&quot;&lt;grey&gt; &quot; .. balanceTime .. &quot;s&quot;)
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Clumsiness -</name>
                         <script>wsys.affcured(&quot;clumsiness&quot;)</script>
                         <triggerType>0</triggerType>
@@ -647,7 +647,7 @@ cecho(&quot;&lt;grey&gt; &quot; .. balanceTime .. &quot;s&quot;)
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Darkshade -</name>
                         <script>wsys.affcured(&quot;darkshade&quot;)</script>
                         <triggerType>0</triggerType>
@@ -667,7 +667,7 @@ cecho(&quot;&lt;grey&gt; &quot; .. balanceTime .. &quot;s&quot;)
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Dementia -</name>
                         <script>wsys.affcured(&quot;dementia&quot;)</script>
                         <triggerType>0</triggerType>
@@ -828,7 +828,7 @@ if wsys.aff.inquisition then wsys.affcured(&quot;inquisition&quot;) end</script>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Healthleech -</name>
                         <script>wsys.affcured(&quot;healthleech&quot;)</script>
                         <triggerType>0</triggerType>
@@ -848,7 +848,7 @@ if wsys.aff.inquisition then wsys.affcured(&quot;inquisition&quot;) end</script>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Haemophilia -</name>
                         <script>wsys.affcured(&quot;haemophilia&quot;)</script>
                         <triggerType>0</triggerType>
@@ -868,7 +868,7 @@ if wsys.aff.inquisition then wsys.affcured(&quot;inquisition&quot;) end</script>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Hallucinations -</name>
                         <script>wsys.affcured(&quot;hallucinations&quot;)</script>
                         <triggerType>0</triggerType>
@@ -955,7 +955,7 @@ if wsys.aff.inquisition then wsys.affcured(&quot;inquisition&quot;) end</script>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Impatience -</name>
                         <script>wsys.affcured(&quot;impatience&quot;)</script>
                         <triggerType>0</triggerType>
@@ -1015,7 +1015,7 @@ if wsys.aff.inquisition then wsys.affcured(&quot;inquisition&quot;) end</script>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Lethargy -</name>
                         <script>wsys.affcured(&quot;lethargy&quot;)</script>
                         <triggerType>0</triggerType>
@@ -1075,7 +1075,7 @@ if wsys.aff.inquisition then wsys.affcured(&quot;inquisition&quot;) end</script>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Whisperingmadness -</name>
                         <script>wsys.affcured(&quot;whisperingmadness&quot;)</script>
                         <triggerType>0</triggerType>
@@ -1325,7 +1325,7 @@ wsys.canaction()</script>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Slickness -</name>
                         <script>wsys.affcured(&quot;slickness&quot;)
 </script>
@@ -1346,7 +1346,7 @@ wsys.canaction()</script>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Stupidity -</name>
                         <script>wsys.affcured(&quot;stupidity&quot;)</script>
                         <triggerType>0</triggerType>
@@ -1538,7 +1538,7 @@ enableTrigger(&quot;Prompt Checks&quot;)</script>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Blackout -</name>
                         <script>if wsys.aff.blackout then
   wsys.aff.blackout = nil
@@ -1812,27 +1812,6 @@ wsys.affadd(&quot;slashedthroat&quot;)</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Humour -</name>
-                        <script>wsys.affcured(&quot;tempered&quot;..matches[2])
-wsys.humourReset(matches[2])</script>
-                        <triggerType>0</triggerType>
-                        <conditonLineDelta>0</conditonLineDelta>
-                        <mStayOpen>0</mStayOpen>
-                        <mCommand></mCommand>
-                        <packageName></packageName>
-                        <mFgColor>#ff0000</mFgColor>
-                        <mBgColor>#ffff00</mBgColor>
-                        <mSoundFile></mSoundFile>
-                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
-                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
-                        <regexCodeList>
-                            <string>^Your (\w+) humour drains back to normal levels\.$</string>
-                        </regexCodeList>
-                        <regexCodePropertyList>
-                            <integer>1</integer>
-                        </regexCodePropertyList>
-                    </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Temperedcholeric -</name>
                         <script>wsys.affcured(&quot;temperedcholeric&quot;)
 wsys.humourReset(&quot;temperedcholeric&quot;)</script>
@@ -3747,7 +3726,7 @@ wsys.affadd(&quot;selarnia&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^\w+ viciously jabs .+ into you.$</string>
+                            <string>^[A-Z][a-z]+ viciously jabs .+ into you.$</string>
                             <string>return isPrompt()</string>
                         </regexCodeList>
                         <regexCodePropertyList>
@@ -3769,7 +3748,7 @@ wsys.affadd(&quot;selarnia&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^Lightning-quick\, \w+ jabs you with .+\.$</string>
+                            <string>^Lightning-quick\, [A-Z][a-z]+ jabs you with .+\.$</string>
                             <string>return isPrompt()</string>
                         </regexCodeList>
                         <regexCodePropertyList>
@@ -4079,28 +4058,6 @@ end -- if</script>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Impatience possible</name>
-                        <script>--impatiencecheck()
-
--- keep this off just to copy to other sources</script>
-                        <triggerType>0</triggerType>
-                        <conditonLineDelta>39</conditonLineDelta>
-                        <mStayOpen>0</mStayOpen>
-                        <mCommand></mCommand>
-                        <packageName></packageName>
-                        <mFgColor>#ffaa7f</mFgColor>
-                        <mBgColor>#000000</mBgColor>
-                        <mSoundFile></mSoundFile>
-                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
-                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
-                        <regexCodeList>
-                            <string>You shuffle your feet noisily, suddenly bored.</string>
-                        </regexCodeList>
-                        <regexCodePropertyList>
-                            <integer>3</integer>
-                        </regexCodePropertyList>
-                    </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Manaleech</name>
                         <script>wsys.affadd(&quot;manaleech&quot;)</script>
@@ -4313,7 +4270,7 @@ end -- if</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Stupidity</name>
+                        <name>Stupidity +</name>
                         <script>wsys.affadd(&quot;stupidity&quot;)</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
@@ -4355,7 +4312,7 @@ end -- if</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Loki</name>
+                        <name>Loki +</name>
                         <script>wsys.recklessnesscheck()
 raiseEvent(&quot;loki checks&quot;)</script>
                         <triggerType>0</triggerType>
@@ -4376,7 +4333,7 @@ raiseEvent(&quot;loki checks&quot;)</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Weariness</name>
+                        <name>Weariness +</name>
                         <script>wsys.affadd(&quot;weariness&quot;)</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
@@ -4396,7 +4353,7 @@ raiseEvent(&quot;loki checks&quot;)</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Vertigo</name>
+                        <name>Vertigo +</name>
                         <script>wsys.affadd(&quot;vertigo&quot;)</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
@@ -4416,7 +4373,7 @@ raiseEvent(&quot;loki checks&quot;)</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Nechamandra (Venom)</name>
+                        <name>Nechamandra (Venom) +</name>
                         <script>wsys.affadd(&quot;frozen&quot;, &quot;serpent&quot;)</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
@@ -4515,7 +4472,7 @@ raiseEvent(&quot;loki checks&quot;)</script>
                         <name>Addiction Symptom</name>
                         <script>--addictionSymptom()</script>
                         <triggerType>0</triggerType>
-                        <conditonLineDelta>2</conditonLineDelta>
+                        <conditonLineDelta>1</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
                         <mCommand></mCommand>
                         <packageName></packageName>
@@ -4527,12 +4484,10 @@ raiseEvent(&quot;loki checks&quot;)</script>
                         <regexCodeList>
                             <string>You eat </string>
                             <string>Your addiction can never be sated.</string>
-                            <string>return not isPrompt()</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>2</integer>
                             <integer>3</integer>
-                            <integer>4</integer>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -4614,10 +4569,30 @@ raiseEvent(&quot;loki checks&quot;)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You lash out clumsily.</string>
-                            <string>^You lash out at \w+ with .* but miss\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Clumsiness symtom 2</name>
+                        <script>wsys.affadd(&quot;clumsiness&quot;)</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>You lash out at </string>
+                            <string>^You lash out at [A-Z][a-z]+ with .* but miss\.$</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -4920,11 +4895,11 @@ end -- if</script>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Lovers</name>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Lovers Symptom 1</name>
                         <script>wsys.affadd(&quot;lovers&quot;)</script>
                         <triggerType>0</triggerType>
-                        <conditonLineDelta>99</conditonLineDelta>
+                        <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
                         <mCommand></mCommand>
                         <packageName></packageName>
@@ -4934,13 +4909,53 @@ end -- if</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^You love \w+ far too much to even THINK of hurting (?:him|her)\.$</string>
-                            <string>^\w+ throws a sultry glance at you, and bursts into song with her angelic voice\. In an instant, your heart is hers\.$</string>
-                            <string>^Your deep passionate love for \w+ stops you from attempting any harm\.$</string>
+                            <string>You love </string>
+                            <string>^You love [A-Z][a-z]+ far too much to even THINK of hurting (?:him|her)\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Lovers Symptom 2</name>
+                        <script>wsys.affadd(&quot;lovers&quot;)</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your deep passionate love for </string>
+                            <string>^Your deep passionate love for [A-Z][a-z]+ stops you from attempting any harm\.$</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Lovers (siren seduce)</name>
+                        <script>wsys.affadd(&quot;lovers&quot;)</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>^[A-Z][a-z]+ throws a sultry glance at you, and bursts into song with her angelic voice\. In an instant, your heart is hers\.$</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5081,9 +5096,9 @@ wsys.affadd(&quot;nausea&quot;)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You are too slick for the berry juice to take hold, and it is wasted.</string>
+                            <string>You are too slick for the quicksilver to take hold, and it is wasted.</string>
                             <string>The salve slides off your oily skin.</string>
                             <string>The salve just slides off your oily skin.</string>
-                            <string>The balm slides off your oily skin.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>3</integer>
@@ -5253,7 +5268,9 @@ wsys.affadd(&quot;nausea&quot;)</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Impaled Symptom</name>
-                        <script>wsys.affadd(&quot;impaled&quot;)</script>
+                        <script>if not wsys.aff.daeggerimpale then
+  wsys.affadd(&quot;impaled&quot;)
+end</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -5388,7 +5405,7 @@ wsys.affadd(&quot;nausea&quot;)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You frantically attempt to parry the attack of</string>
-                            <string>^You frantically attempt to parry the attack of \w+, but succeed only in redirecting it\.$</string>
+                            <string>^You frantically attempt to parry the attack of [A-Z][a-z]+, but succeed only in redirecting it\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>2</integer>
@@ -5409,7 +5426,7 @@ wsys.affadd(&quot;nausea&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^\w+ bats your weak attempt to defend against (?:his|her) attack aside\.$</string>
+                            <string>^[A-Z][a-z]+ bats your weak attempt to defend against (?:his|her) attack aside\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
@@ -5688,7 +5705,7 @@ wsys.newClassTimer(&quot;apostate&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^Your (.+) defence has been stripped by \w+'s Baalzadeen\.$</string>
+                            <string>^Your (.+) defence has been stripped by [A-Z][a-z]+'s Baalzadeen\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
@@ -5709,13 +5726,13 @@ onSap()</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^(\w+)'s Baalzadeen casts a piercing glance at you\.$</string>
+                            <string>^([A-Z][a-z]+)'s Baalzadeen casts a piercing glance at you\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Stain +</name>
                         <script>wsys.affadd(&quot;stain&quot;, &quot;apostate&quot;)
 wsys.aff.stain = true
@@ -5733,9 +5750,11 @@ wsys.timer.stain = tempTimer(120, [[wsys.aff.stain = nil;wsys.timer.stain = nil]
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^With a snarl, (\w+)'s Baalzadeen opens its mouth and spews a foul black liquid all over you\.$</string>
+                            <string>With a snarl, </string>
+                            <string>^With a snarl, ([A-Z][a-z]+)'s Baalzadeen opens its mouth and spews a foul black liquid all over you\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5755,9 +5774,9 @@ wsys.timer.stain = tempTimer(120, [[wsys.aff.stain = nil;wsys.timer.stain = nil]
                     <colorTriggerBgColor>#000000</colorTriggerBgColor>
                     <regexCodeList/>
                     <regexCodePropertyList/>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Smash</name>
-                        <script>wsys.affadd(&quot;broken&quot; .. matches[2] .. matches[3], &quot;magi&quot;)</script>
+                        <script>wsys.affadd(&quot;broken&quot; .. multimatches[2][2] .. multimatches[2][3], &quot;magi&quot;)</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -5769,9 +5788,11 @@ wsys.timer.stain = tempTimer(120, [[wsys.aff.stain = nil;wsys.timer.stain = nil]
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
+                            <string>With efficient, precise motions a crystalline golem latches onto your </string>
                             <string>^With efficient, precise motions a crystalline golem latches onto your (left|right) (arm|leg), before giving a vicious twist\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -5909,7 +5930,7 @@ wsys.timer.stain = tempTimer(120, [[wsys.aff.stain = nil;wsys.timer.stain = nil]
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^(\w+) turns to a crystalline golem, a silent exchange taking place\.$</string>
+                            <string>^([A-Z][a-z]+) turns to a crystalline golem, a silent exchange taking place\.$</string>
                             <string>Turning to a crystalline golem you direct him to project a disruptive tone at a retardation vibration.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
@@ -6198,13 +6219,13 @@ wsys.bleedingfor(50, &quot;health&quot;)
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^\w+ draws (:?his|her) blade back and plunges it deep into your helpless body impaling it to the hilt\.$</string>
+                            <string>^[A-Z][a-z]+ draws (?:his|her) blade back and plunges it deep into your helpless body impaling it to the hilt\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Battlecry</name>
                         <script>wsys.affadd(&quot;prone&quot;, &quot;chivalry&quot;)</script>
                         <triggerType>0</triggerType>
@@ -6218,15 +6239,13 @@ wsys.bleedingfor(50, &quot;health&quot;)
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^\w+ gathers (?:his|her) breath and hurls a piercing battlecry towards you\.$</string>
                             <string>You fall to your knees and clutch your ears as the terrifying shaft of sound shatters your will.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
-                            <integer>1</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Lunge</name>
                         <script>wsys.affadd(&quot;prone&quot;)</script>
                         <triggerType>0</triggerType>
@@ -6240,9 +6259,11 @@ wsys.bleedingfor(50, &quot;health&quot;)
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
+                            <string>You writhe and scream as </string>
                             <string>^You writhe and scream as s?he drives the cruel blade deep into your side\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -6260,9 +6281,11 @@ wsys.bleedingfor(50, &quot;health&quot;)
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^With a vicious snarl (\w+) carves a merciless swathe through your steaming guts\. You gurgle and choke as s?he withdraws (?:his|her) dripping blade, glistening with gore\.$</string>
+                            <string>With a vicious snarl </string>
+                            <string>^With a vicious snarl ([A-Z][a-z]+) carves a merciless swathe through your steaming guts\. You gurgle and choke as s?he withdraws (?:his|her) dripping blade, glistening with gore\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -6286,7 +6309,7 @@ wsys.bleedingfor(50, &quot;health&quot;)
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Tumbled off impale</name>
                         <script>wsys.bleedingfor(400, &quot;health&quot;)
 --wsys.osend(&quot;show bleeding&quot;)</script>
@@ -6301,9 +6324,11 @@ wsys.bleedingfor(50, &quot;health&quot;)
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^Searing pain tears through your midsection as you wrench away from \w+, (?:her|his) weapon ripping unceremoniously through your innards\.$</string>
+                            <string>Searing pain tears through your midsection as you wrench away from </string>
+                            <string>^Searing pain tears through your midsection as you wrench away from [A-Z][a-z]+, (?:her|his) weapon ripping unceremoniously through your innards\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -6583,7 +6608,7 @@ undef(&quot;levitating&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^(\w+) points an imperious finger at you\.$</string>
+                            <string>^([A-Z][a-z]+) points an imperious finger at you\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
@@ -6637,7 +6662,10 @@ raiseEvent(&quot;loki checks&quot;)</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Tzantza</name>
-                        <script></script>
+                        <script>cecho(&quot;\n&lt;red&gt;&quot;.. string.format(&quot;%s started Tzantza!&quot;, matches[2]))
+
+
+setPrefixWarning(matches[2]..&quot; started Tzantza&quot;, 2)</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -6649,7 +6677,7 @@ raiseEvent(&quot;loki checks&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^(\w+)'s eyes flutter and close as s?he begins to rock back and forth, chanting ominously under (?:his|her) breath\.$</string>
+                            <string>^([A-Z][a-z]+)'s eyes flutter and close as s?he begins to rock back and forth, chanting ominously under (?:his|her) breath\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
@@ -6767,7 +6795,7 @@ wsys.affadd(&quot;dizziness&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^\w+ draws you into (?:his|her) gaze, lowering (?:his|her) brow and glaring at you with righteous fury\. Pointing at you with a single raised finger, \w+ recites a list of your transgressions, condemning your actions and words\. A blaze of holy fire surges about \w+ as s?he dictates your sentence\.$</string>
+                            <string>^[A-Z][a-z]+ draws you into (?:his|her) gaze, lowering (?:his|her) brow and glaring at you with righteous fury\. Pointing at you with a single raised finger, [A-Z][a-z]+ recites a list of your transgressions, condemning your actions and words\. A blaze of holy fire surges about [A-Z][a-z]+ as s?he dictates your sentence\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
@@ -7469,10 +7497,10 @@ raiseEvent(&quot;loki checks&quot;)</script>
                             <integer>2</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>dragoncurse hit</name>
-                        <script>--dragoncurseAff(matches[2])
-wsys.affadd(matches[2], &quot;dragon&quot;)</script>
+                        <script>-- dragoncurseAff(matches[2])
+wsys.affadd(multimatches[2][2], &quot;dragon&quot;)</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -7484,13 +7512,15 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
+                            <string>A sudden sense of panic overtakes you as the draconic curse manifests, afflicting you with </string>
                             <string>^A sudden sense of panic overtakes you as the draconic curse manifests, afflicting you with (impatience|paralysis|sensitivity|asthma)\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>dragoncurse start</name>
                         <script>wsys.incomingDragoncurse()</script>
                         <triggerType>0</triggerType>
@@ -7504,9 +7534,11 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^An ominous feeling descends upon you as \w+ turns (?:his|her) gaze upon you\.$</string>
+                            <string>An ominous feeling descends upon you as </string>
+                            <string>^An ominous feeling descends upon you as [A-Z][a-z]+ turns (?:his|her) gaze upon you\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -7525,7 +7557,7 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList/>
                         <regexCodePropertyList/>
-                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Blue blast</name>
                             <script>wsys.affadd(&quot;frozen&quot;, &quot;dragon&quot;)</script>
                             <triggerType>0</triggerType>
@@ -7539,9 +7571,11 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^Opening (?:his|her) massive maw, (\w+) throws (?:his|her) head forward and blasts wave after wave of deadly, all-consuming cold at you\.$</string>
+                                <string>Opening </string>
+                                <string>^Opening (?:his|her) massive maw, ([A-Z][a-z]+) throws (?:his|her) head forward and blasts wave after wave of deadly, all-consuming cold at you\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>2</integer>
                                 <integer>1</integer>
                             </regexCodePropertyList>
                         </Trigger>
@@ -7566,7 +7600,7 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                                 <integer>3</integer>
                             </regexCodePropertyList>
                         </Trigger>
-                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Blue breathstream</name>
                             <script>wsys.affadd(&quot;frozen&quot;, &quot;dragon&quot;)
 </script>
@@ -7581,13 +7615,15 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^A snaking stream of ice from (\w+)'s maw forks into the room, blasting into you mercilessly\.$</string>
+                                <string>A snaking stream of ice from </string>
+                                <string>^A snaking stream of ice from ([A-Z][a-z]+)'s maw forks into the room, blasting into you mercilessly\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>2</integer>
                                 <integer>1</integer>
                             </regexCodePropertyList>
                         </Trigger>
-                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Blue breathrain</name>
                             <script>wsys.affadd(&quot;frozen&quot;, &quot;dragon&quot;)
 </script>
@@ -7602,13 +7638,15 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^High above, (\w+) opens (?:his|her) glistening, tooth-lined maw wide and rains a great tempest of ice down upon you, from which there is no escape or reprieve\.$</string>
+                                <string>High above, </string>
+                                <string>^High above, ([A-Z][a-z]+) opens (?:his|her) glistening, tooth-lined maw wide and rains a great tempest of ice down upon you, from which there is no escape or reprieve\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>2</integer>
                                 <integer>1</integer>
                             </regexCodePropertyList>
                         </Trigger>
-                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Lightning breathstream</name>
                             <script>wsys.affadd(&quot;epilepsy&quot;, &quot;dragon&quot;)</script>
                             <triggerType>0</triggerType>
@@ -7622,13 +7660,15 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^A snaking stream of lightning from (\w+)'s maw forks into the room, blasting into you mercilessly\.$</string>
+                                <string>A snaking stream of lightning from </string>
+                                <string>^A snaking stream of lightning from ([A-Z][a-z]+)'s maw forks into the room, blasting into you mercilessly\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>2</integer>
                                 <integer>1</integer>
                             </regexCodePropertyList>
                         </Trigger>
-                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Lightning breathrain</name>
                             <script>wsys.affadd(&quot;epilepsy&quot;, &quot;dragon&quot;)</script>
                             <triggerType>0</triggerType>
@@ -7642,14 +7682,16 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^High above, (\w+) opens (?:his|her) glistening, tooth-lined maw wide and rains a great tempest of lightning down upon you, from which there is no escape or reprieve\.$</string>
+                                <string>High above, </string>
+                                <string>^High above, ([A-Z][a-z]+) opens (?:his|her) glistening, tooth-lined maw wide and rains a great tempest of lightning down upon you, from which there is no escape or reprieve\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>2</integer>
                                 <integer>1</integer>
                             </regexCodePropertyList>
                         </Trigger>
                     </TriggerGroup>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Tailsweep</name>
                         <script>wsys.affadd(&quot;prone&quot;, &quot;dragon&quot;)</script>
                         <triggerType>0</triggerType>
@@ -7663,9 +7705,11 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^You are knocked forcefully off your feet by the impact of (\w+)'s huge tail\.$</string>
+                            <string>You are knocked forcefully off your feet by the impact of</string>
+                            <string>^You are knocked forcefully off your feet by the impact of ([A-Z][a-z]+)'s huge tail\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -7683,13 +7727,13 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^(\w+) snaps (?:his|her) massive jaws close around you, flinging you effortlessly into the air before catching you with a second powerful bite\.$</string>
+                            <string>^([A-Z][a-z]+) snaps (?:his|her) massive jaws close around you, flinging you effortlessly into the air before catching you with a second powerful bite\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Breathgust</name>
                         <script>wsys.affadd(&quot;prone&quot;, &quot;dragon&quot;)</script>
                         <triggerType>0</triggerType>
@@ -7703,9 +7747,11 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^Drawing an enormous breath, (\w+) exhales, expelling a gale of wind with such force that you are knocked over\.$</string>
+                            <string>Drawing an enormous breath, </string>
+                            <string>^Drawing an enormous breath, ([A-Z][a-z]+) exhales, expelling a gale of wind with such force that you are knocked over\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
@@ -7723,7 +7769,7 @@ wsys.affadd(matches[2], &quot;dragon&quot;)</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^(\w+)'s eyes narrow as (?:his|her) massive jaws yawn open and s?he expels a sluggish cloud of \w+\. The nebulous haze clings to you for a moment, and you feel your (.+) defence vanish\.$</string>
+                            <string>^([A-Z][a-z]+)'s eyes narrow as (?:his|her) massive jaws yawn open and s?he expels a sluggish cloud of \w+\. The nebulous haze clings to you for a moment, and you feel your (.+) defence vanish\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
@@ -7744,7 +7790,7 @@ wsys.defstrip(matches[4])</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^(\w+)'s eyes narrow as (?:his|her) massive jaws yawn open and s?he expels a sluggish cloud of \w+\. The nebulous haze clings to you for a moment, and you feel your (.+) and (.+) defences vanish\.$</string>
+                            <string>^([A-Z][a-z]+)'s eyes narrow as (?:his|her) massive jaws yawn open and s?he expels a sluggish cloud of \w+\. The nebulous haze clings to you for a moment, and you feel your (.+) and (.+) defences vanish\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
@@ -7764,7 +7810,7 @@ wsys.defstrip(matches[4])</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^(\w+) rises back on (?:his|her) hind legs, more than doubling in height as s?he towers above you\. The ground shakes violently as s?he slams (?:his|her) feet back down, recklessly crushing everyone in (?:his|her) path\.$</string>
+                            <string>^([A-Z][a-z]+) rises back on (?:his|her) hind legs, more than doubling in height as s?he towers above you\. The ground shakes violently as s?he slams (?:his|her) feet back down, recklessly crushing everyone in (?:his|her) path\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
@@ -17825,11 +17871,11 @@ wsys.cure = string.lower(matches[2])</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>Stat    Pipe        Contents               Remaining      Decay</string>
-                            <string>--------------------------------------------------------------</string>
+                            <string>Status  Pipe         Contents                       Puffs Months</string>
+                            <string>-------------------------------------------------------------------------------</string>
                         </regexCodeList>
                         <regexCodePropertyList>
-                            <integer>3</integer>
+                            <integer>2</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -17856,7 +17902,7 @@ wsys.plist(matches[3], matches[4], matches[5])
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^\s*(artfct|lit|out)\s+pipe(\d+)\s+([a-z ]+)\s+(?:\(\s+(\d+) puffs\)\s+)?.*$</string>
+                                <string>^\s*(artf|lit|out)\s+pipe(\d+)\s+([a-z ]+)\s+(\d+).*$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
                                 <integer>1</integer>
@@ -31354,29 +31400,6 @@ setPrefixWarning(lastradiancer .. &quot; radiancing you&quot;, 2)</script>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Tzantza</name>
-                        <script>cecho(&quot;\n&lt;red&gt;&quot;.. string.format(&quot;%s started Tzantza!&quot;, matches[2]))
-
-
-setPrefixWarning(matches[2]..&quot; started Tzantza&quot;, 2)</script>
-                        <triggerType>0</triggerType>
-                        <conditonLineDelta>0</conditonLineDelta>
-                        <mStayOpen>0</mStayOpen>
-                        <mCommand></mCommand>
-                        <packageName></packageName>
-                        <mFgColor>#ff0000</mFgColor>
-                        <mBgColor>#ffff00</mBgColor>
-                        <mSoundFile></mSoundFile>
-                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
-                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
-                        <regexCodeList>
-                            <string>^(\w+)'s eyes flutter and close as s?he begins to rock back and forth, chanting ominously under (?:his|her) breath\.$</string>
-                        </regexCodeList>
-                        <regexCodePropertyList>
-                            <integer>1</integer>
-                        </regexCodePropertyList>
-                    </Trigger>
                 </TriggerGroup>
                 <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>Prompt trigger prompt</name>
@@ -35488,7 +35511,6 @@ function wsys.emptysalve()
  end -- for
  wsys.pairscheck(wsys.cure)
  wsys.applying = nil
- wsys.rapply = nil
  wsys.cure = nil
  disableTrigger(&quot;Empty Salves&quot;)
 end -- func
@@ -35564,7 +35586,6 @@ function wsys.restoreset()
   end -- if
  end -- if
  wsys.applying = false
- wsys.rapply = nil
  wsys.cure = nil
  disableTrigger(&quot;Empty Salves&quot;)
 end -- func
@@ -38487,8 +38508,8 @@ end</script>
                 <Script isActive="yes" isFolder="no">
                     <name>Check for Updates</name>
                     <packageName></packageName>
-                    <script>wsys.myVersion = &quot;rc1&quot;
-wsys.currentVersion = &quot;rc1&quot;
+                    <script>wsys.myVersion = &quot;rc1.1&quot;
+wsys.currentVersion = &quot;rc1.1&quot;
 wsys.updateAvailable = false
 
 -- download latest version number file
@@ -38710,7 +38731,7 @@ function wsys.displayEchosAndGags()
   wsys.report(&quot;Display Settings:&quot;)
   cecho(&quot;\n\n&lt;white&gt;prompt: &quot;)
   fg(&quot;grey&quot;)
-  echoLink(tostring(wsys.settings.prompt), [[clearCmdLine();appendCmdLine(&quot;wconfig prompt &quot; .. settings.prompt)]], &quot;Click to paste in input line&quot;, true)
+  echoLink(tostring(wsys.settings.prompt), [[clearCmdLine();appendCmdLine(&quot;wconfig prompt &quot; .. wsys.settings.prompt)]], &quot;Click to paste in input line&quot;, true)
   resetFormat()
   cecho(&quot;\n\n&lt;white&gt;affgainedechos: &quot;..tostring(wsys.settings.affgainedechos))
   cecho(&quot;\n&lt;white&gt;affcuredechos: &quot;..tostring(wsys.settings.affcuredechos))
@@ -38787,7 +38808,7 @@ end
 
 function wsys.retardationDownCheck()
   if wsys.timer.retardDropDetectionTimer then killTimer(wsys.timer.retardDropDetectionTimer) end
-  wsys.timer.retardDropDetectionTimer = tempTimer(5, [[wsys.timer.retardDropDetectionTimer = nil;if sys.retard then wsys.retardationOff() end]])
+  wsys.timer.retardDropDetectionTimer = tempTimer(5, [[wsys.timer.retardDropDetectionTimer = nil;if wsys.retard then wsys.retardationOff() end]])
 end
 
 function wsys.serversideRetardationDetection(cure)
@@ -39160,10 +39181,39 @@ function wsys.precachedisplay()
       local commandtwo = [[expandAlias(&quot;]]..aliastwo..[[&quot;)]]
       echoLink(&quot;(-)&quot;, commandtwo, &quot;Remove one &quot; .. v, true)
       cecho(&quot;&lt;white&gt;&quot;..nWithSpace)
-      
-      
     end
   else
+    local x = 0
+    for k,v in ipairs(herbs) do
+      x = x + 1
+      local num = 0
+      if wsys.settings[&quot;precache&quot;][wsys.profile][v] then
+        num = wsys.settings[&quot;precache&quot;][wsys.profile][v]
+      end
+      local d = &quot;&lt;dark_slate_gray&gt;[&lt;white&gt;&quot; .. num .. &quot;&lt;dark_slate_gray&gt;] &lt;white&gt;&quot;
+      if (x-1)%3 == 0 then
+        echo(&quot;\n&quot;)
+      end
+      cecho(d)
+      local nWithSpace = v
+      local length = nWithSpace:len() + math.floor(math.log10(math.max(1,num)))
+      if length &lt; 25 and (x-1)%3~=2 then
+        local pad = 25 - length
+        nWithSpace = string.rep(&quot; &quot;, pad)
+      else
+        nWithSpace = &quot;&quot;
+      end
+      cecho(&quot;&lt;white&gt;&quot;..v)
+      local aliasone = &quot;wconfig precache &quot; .. v .. &quot; &quot; .. num + 1
+      local commandone = [[expandAlias(&quot;]]..aliasone..[[&quot;)]]
+      echo(&quot; &quot;)
+      echoLink(&quot;(+)&quot;, commandone, &quot;Add one more &quot; .. v, true)
+      echo(&quot; &quot;)
+      local aliastwo = &quot;wconfig precache &quot; .. v .. &quot; &quot; .. num - 1
+      local commandtwo = [[expandAlias(&quot;]]..aliastwo..[[&quot;)]]
+      echoLink(&quot;(-)&quot;, commandtwo, &quot;Remove one &quot; .. v, true)
+      cecho(&quot;&lt;white&gt;&quot;..nWithSpace)
+    end
   end
 end</script>
                     <eventHandlerList/>
@@ -39658,7 +39708,7 @@ function wsys.dosend()
       wsys.timer.dowait = tempTimer(wsys.myPing()*1.5, [[wsys.timer.dowait = nil]])
       send(&quot;queue add eqbal dor&quot;)
       if wsys.timer.dorfailsafe then killTimer(wsys.timer.dorfailsafe) end
-      wsys.timer.dorfailsafe = tempTimer(3.5, [[wsys.timer.dorfailsafe = nil;if sys.bals.b and sys.bals.e then wsys.dosend() end]])
+      wsys.timer.dorfailsafe = tempTimer(3.5, [[wsys.timer.dorfailsafe = nil;if wsys.bals.b and wsys.bals.e then wsys.dosend() end]])
     end
   end
 end
@@ -40922,7 +40972,21 @@ wsys.bals = {
   shrugging = true,
   fitness = true,
 
-}</script>
+}
+
+-- reset all balances
+function wsys.resetBals()
+  for k in pairs(wsys.bals) do
+    wsys.gotBal(wsys.bals[k])
+  end
+end
+
+-- balances are all true on starburst or death
+registerAnonymousEventHandler(&quot;You Died&quot;, &quot;wsys.resetBals&quot;)
+registerAnonymousEventHandler(&quot;You Starbursted&quot;, &quot;wsys.resetBals&quot;)
+
+
+</script>
                     <eventHandlerList/>
                 </Script>
                 <Script isActive="yes" isFolder="no">

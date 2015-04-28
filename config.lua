@@ -1,1 +1,1 @@
-mpackage = "WunderSys-rc1.1"
+mpackage = "WunderSys-rc3"

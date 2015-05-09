@@ -34023,7 +34023,7 @@ wsys.report(&quot;Settings restored to default&quot;)</script>
                 </Alias>
                 <Alias isActive="yes" isFolder="no">
                     <name>Report a bug</name>
-                    <script>send(&quot;msg nemutaur //WunderSys Bug: &quot; .. matches[2])</script>
+                    <script>send(&quot;msg tynil //WunderSys(&quot;..wsys.myVersion..&quot;) Bug: &quot; .. matches[2])</script>
                     <command></command>
                     <packageName></packageName>
                     <regex>^wbug (.*)$</regex>
@@ -38872,6 +38872,7 @@ end</script>
                     <script>wsys.myVersion = &quot;rc3&quot;
 wsys.currentVersion = &quot;rc3&quot;
 wsys.updateAvailable = false
+wsys.ignoreVersion = &quot;rc3&quot;
 
 -- download latest version number file
 function wsys.checkForUpdates()
@@ -38892,6 +38893,12 @@ function wsys.downloadedVersionFile(_, filename)
   -- parse downloaded file for current version
   local ver = io.open(filename):read(&quot;*all&quot;)
   wsys.currentVersion = string.trim(ver)
+
+  -- Check if the version found is one we know we should ignore
+  if wsys.currentVersion == wsys.ignoreVersion then
+    wsys.currentVersion = wsys.myVersion
+  end
+
   if wsys.currentVersion == wsys.myVersion then
     wsys.report(&quot;Running the latest WunderSys version: &quot;..wsys.myVersion)
     wsys.updateAvailable = false

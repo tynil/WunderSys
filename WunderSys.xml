@@ -38591,7 +38591,7 @@ function wsys.myClass()
   if wsys.isDragon() then
     return &quot;dragon&quot;
   else
-    return string.lower(wsys.settings.class)
+    return string.lower(wsys.settings.class or &quot;none&quot;)
   end
 end
 
@@ -39585,6 +39585,8 @@ local herbs = {&quot;ash&quot;, &quot;bayberry&quot;, &quot;bellwort&quot;, &quo
 wsys.keepout = wsys.keepout or {}
 
 function wsys.setkeepouttable()
+  wsys.settings.precache = wsys.settings.precache or {}
+  wsys.settings.precache[wsys.profile] = wsys.settings.precache[wsys.profile] or {}
   for k,v in pairs(wsys.settings[&quot;precache&quot;][wsys.profile]) do
     wsys[&quot;keepout&quot;][k] = v
   end

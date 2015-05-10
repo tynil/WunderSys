@@ -306,6 +306,15 @@ if next(wsys.tb.restorationlist) and ((wsys.aff.recklessness or wsys.absorbed) o
   wsys.boxDisplay(v[1] .. &quot; BROKE!&quot;, &quot;white:orange&quot;)
   wsys.affadd(v[1])
  end -- for
+else
+ --Announce breaks regardless of checks if we know we have the affliction already
+ for k,v in ipairs(wsys.tb.restorationlist) do
+  if wsys.aff[v[1]] then
+    enableTrigger(string.title(v[1]) .. &quot; -&quot;)
+    wsys.boxDisplay(v[1] .. &quot; BROKE!&quot;, &quot;white:orange&quot;)
+    wsys.affadd(v[1])
+  end
+ end -- for
 end
 
 wsys.puppetmangle = false
@@ -15387,25 +15396,33 @@ end
   wsys.fracturereset(&quot;wristfractures&quot;)
   if wsys.aff.damagedrightarm then
     wsys.affadd(&quot;mangledrightarm&quot;)
+    wsys.restobreakcheck(&quot;mangledrightarm&quot;)
   else
     wsys.affadd(&quot;damagedrightarm&quot;)
+    wsys.restobreakcheck(&quot;damagedrightarm&quot;)
   end
   if wsys.aff.damagedleftarm then
     wsys.affadd(&quot;mangledleftarm&quot;)
+    wsys.restobreakcheck(&quot;mangledleftarm&quot;)
   else
     wsys.affadd(&quot;damagedleftarm&quot;)
+    wsys.restobreakcheck(&quot;damagedleftarm&quot;)
   end
 elseif matches[2] == &quot;legs&quot; then
   wsys.fracturereset(&quot;torntendons&quot;)
   if wsys.aff.damagedrightleg then
     wsys.affadd(&quot;mangledrightleg&quot;)
+    wsys.restobreakcheck(&quot;mangledrightleg&quot;)
   else
     wsys.affadd(&quot;damagedrightleg&quot;)
+    wsys.restobreakcheck(&quot;damagedrightleg&quot;)
   end
   if wsys.aff.damagedleftleg then
     wsys.affadd(&quot;mangledleftleg&quot;)
+    wsys.restobreakcheck(&quot;mangledleftleg&quot;)
   else
     wsys.affadd(&quot;damagedleftleg&quot;)
+    wsys.restobreakcheck(&quot;damagedleftleg&quot;)
   end
 end
 </script>
@@ -15422,8 +15439,10 @@ end
                             <regexCodeList>
                                 <string>^[A-Z][a-z]+ aims a devastating blow with .+ at your already injured (legs|arms)\.$</string>
                                 <string>^[A-Z][a-z]+ whips .+ in a savage arc, cleaving at your (arms|legs)\.$</string>
+                                <string>^[A-Z][a-z]+ brings .+ whirling about to cleave deeply into your already damaged (arms|legs)\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>1</integer>
                                 <integer>1</integer>
                                 <integer>1</integer>
                             </regexCodePropertyList>
@@ -15434,10 +15453,14 @@ end
   wsys.fracturereset(&quot;wristfractures&quot;)
   wsys.affadd(&quot;mangledrightarm&quot;)
   wsys.affadd(&quot;mangledleftarm&quot;)
+  wsys.restobreakcheck(&quot;mangledrightarm&quot;)
+  wsys.restobreakcheck(&quot;mangledleftarm&quot;)
 elseif matches[2] == &quot;legs&quot; then
   wsys.fracturereset(&quot;torntendons&quot;)
   wsys.affadd(&quot;mangledrightleg&quot;)
   wsys.affadd(&quot;mangledleftleg&quot;)
+  wsys.restobreakcheck(&quot;mangledrightleg&quot;)
+  wsys.restobreakcheck(&quot;mangledleftleg&quot;)
 end
 </script>
                             <triggerType>0</triggerType>

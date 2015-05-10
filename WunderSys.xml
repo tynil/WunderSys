@@ -41832,6 +41832,14 @@ end</script>
  vertigo = &quot;vert&quot;,
  voyria = &quot;voy&quot;,
  heartseed = &quot;hseed&quot;,
+ temperedsanguine = function() return &quot;sang(&quot; .. wsys.aff.temperedsanguine .. &quot;)&quot; end,
+ temperedcholeric = function() return &quot;chol(&quot; .. wsys.aff.temperedcholeric .. &quot;)&quot; end,
+ temperedphlegmatic = function() return &quot;phleg(&quot; .. wsys.aff.temperedphlegmatic .. &quot;)&quot; end,
+ temperedmelancholic = function() return &quot;melan(&quot; .. wsys.aff.temperedmelancholic .. &quot;)&quot; end,
+ torntendons = function() return &quot;tendons(&quot; .. wsys.aff.torntendons .. &quot;)&quot; end,
+ wristfractures = function() return &quot;wrist(&quot; .. wsys.aff.wristfractures .. &quot;)&quot; end,
+ crackedribs = function() return &quot;ribs(&quot; .. wsys.aff.crackedribs .. &quot;)&quot; end,
+ skullfractures = function() return &quot;skull(&quot; .. wsys.aff.skullfractures .. &quot;)&quot; end,
 }
 
 
@@ -41854,10 +41862,14 @@ function wsys.affTags()
         elseif k==&quot;damagedhead&quot; or k==&quot;damagedleftarm&quot; or k==&quot;damagedleftleg&quot; or k==&quot;damagedrightarm&quot; or k==&quot;damagedrightleg&quot; or k==&quot;mildtrauma&quot; or k==&quot;carm&quot; or k==&quot;brokenleftarm&quot; or k==&quot;brokenleftleg&quot; or k==&quot;clef&quot; or k==&quot;climb&quot; or k==&quot;brokenrightarm&quot; or k==&quot;brokenrightleg&quot; or k==&quot;mangledhead&quot; or k==&quot;mangledleftarm&quot; or k==&quot;mangledleftleg&quot; or k==&quot;mangledrightarm&quot; or k==&quot;mangledrightleg&quot; or k==&quot;serioustrauma&quot; then
           s[#s+1] = &quot;&lt;brown&gt;&quot;..wsys.tb.aff_short[k]
         --all other affs get default coloring
-		 elseif k == &quot;bleeding&quot; then
-		  if wsys.bleeding &gt; 50 then
-			s[#s+1] = &quot;&lt;maroon&gt;&quot;..wsys.tb.aff_short[k]()
-		  end
+        elseif k:find(&quot;tempered&quot;) then
+          s[#s+1] = &quot;&lt;MediumPurple&gt;&quot;..wsys.tb.aff_short[k]()
+        elseif k==&quot;torntendons&quot; or k==&quot;wristfractures&quot; or k==&quot;crackedribs&quot; or k==&quot;skullfractures&quot; then
+          s[#s+1] = &quot;&lt;medium_violet_red&gt;&quot;..wsys.tb.aff_short[k]()
+        elseif k == &quot;bleeding&quot; then
+          if wsys.bleeding &gt; 50 then
+            s[#s+1] = &quot;&lt;maroon&gt;&quot;..wsys.tb.aff_short[k]()
+          end
         elseif not wsys.tb.aff_short[k] then
          s[#s+1] = &quot;&lt;IndianRed&gt;&quot;..k
         else

@@ -364,9 +364,7 @@ forced = nil
                 </Trigger>
                 <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>Equilibrium</name>
-                    <script>wsys.gainede()
-local eqTime = wsys.timeDifference(wsys.times.bals.got.e, wsys.times.bals.lost.e) / 1000
-cecho(&quot;&lt;grey&gt; &quot; .. eqTime .. &quot;s&quot;)</script>
+                    <script>wsys.gainede(true)</script>
                     <triggerType>0</triggerType>
                     <conditonLineDelta>0</conditonLineDelta>
                     <mStayOpen>0</mStayOpen>
@@ -386,10 +384,7 @@ cecho(&quot;&lt;grey&gt; &quot; .. eqTime .. &quot;s&quot;)</script>
                 </Trigger>
                 <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>Balance</name>
-                    <script>wsys.gainedb()
-local balanceTime = wsys.timeDifference(wsys.times.bals.got.b, wsys.times.bals.lost.b) / 1000
-cecho(&quot;&lt;grey&gt; &quot; .. balanceTime .. &quot;s&quot;)
-
+                    <script>wsys.gainedb(true)
 </script>
                     <triggerType>0</triggerType>
                     <conditonLineDelta>0</conditonLineDelta>
@@ -40284,11 +40279,13 @@ end</script>
                     <Script isActive="yes" isFolder="no">
                         <name>gained and lost equilibrium</name>
                         <packageName></packageName>
-                        <script>function wsys.gainedb()
+                        <script>function wsys.gainedb( display_diff )
 wsys.times.bals.got.b = getTime(true, &quot;HH:mm:ss:zzz&quot; )
 raiseEvent(&quot;got balance&quot;)
 --cecho(&quot;&lt;green&gt;got balance&quot;)
+local lost_time = wsys.times.bals.lost.b
 wsys.bals.b = true
+wsys.gotBalanceValue(gmcp.Char.Vitals.bal)
 wsys.lockqueue()
 if wsys.bals.e then
  wsys.refillqueue()
@@ -40296,13 +40293,19 @@ if wsys.bals.e then
 end -- if
 wsys.lyrequeue()
 
+if display_diff then
+  local balanceTime = wsys.timeDifference(wsys.times.bals.got.b, lost_time) / 1000
+  cecho(&quot;&lt;grey&gt; &quot; .. balanceTime .. &quot;s&quot;)
+end
 end -- func
 
-function wsys.gainede()
+function wsys.gainede( display_diff )
  wsys.times.bals.got.e = getTime(true, &quot;HH:mm:ss:zzz&quot; )
  raiseEvent(&quot;got equilibrium&quot;)
  wsys.bals.e = true
- if wsys.vmode then wsys.unignoreRestoBreaks() end
+ local lost_time = wsys.times.bals.lost.e
+ wsys.gotEquilibriumValue( gmcp.Char.Vitals.eq )
+ if wsys.bals.e and wsys.vmode then wsys.unignoreRestoBreaks() end
  if wsys.bals.b then
   wsys.lockqueue()
   wsys.refillqueue()
@@ -40310,6 +40313,12 @@ function wsys.gainede()
  end -- if
  if wsys.aff.disrupted then wsys.aff.disrupted = nil end
  wsys.lyrequeue()
+
+ if display_diff then
+   local eqTime = wsys.timeDifference(wsys.times.bals.got.e, lost_time) / 1000
+   cecho(&quot;&lt;grey&gt; &quot; .. eqTime .. &quot;s&quot;)
+ end
+
 end -- func
 
 
@@ -40351,8 +40360,10 @@ function wsys.gotEquilibriumValue(v)
 end
 
 function wsys.vitalsUpdate()
-  wsys.gotEquilibriumValue(gmcp.Char.Vitals.eq)
-  wsys.gotBalanceValue(gmcp.Char.Vitals.bal)
+  if gmcp.Char.Vitals then
+    wsys.gotEquilibriumValue(gmcp.Char.Vitals.eq)
+    wsys.gotBalanceValue(gmcp.Char.Vitals.bal)
+  end
 end
 
 registerAnonymousEventHandler(&quot;gmcp.Char&quot;, &quot;wsys.vitalsUpdate&quot;)

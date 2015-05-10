@@ -32718,7 +32718,7 @@ end
                             <string>^[A-Z][a-z]+ viciously jabs .+ into your (.+)\.$</string>
                             <string>^[A-Z][a-z]+ slashes into your (.+) with</string>
                             <string>^[A-Z][a-z]+ swings .+ at your (.+) with all (?:his|her) might\.$</string>
-                            <string>^Lightning\-quick, [A-Z][a-z]+ jabs your (.+) with .+\.$</string>
+                            <string>^Lightning\-quick, [A-Z][a-z]+ (?:jabs|stabs) your (.+) with .+\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>1</integer>
@@ -32751,7 +32751,7 @@ end
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>DSL hit</name>
-                        <script>wsys.my_limb_hit(multimatches[2][2], &quot;weapon&quot;)</script>
+                        <script>--wsys.my_limb_hit(multimatches[2][2], &quot;weapon&quot;)</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -32907,7 +32907,7 @@ wsys.my_limb_hit(matches[3], &quot;monk&quot;)</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>throwing axe out of room</name>
-                        <script>my_limb_hit(multimatches[2][2], &quot;throwingaxe&quot;)</script>
+                        <script>wsys.my_limb_hit(multimatches[2][2], &quot;throwingaxe&quot;)</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>

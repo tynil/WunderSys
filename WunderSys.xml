@@ -14908,7 +14908,7 @@ setTriggerStayOpen(&quot;Overhand&quot;, 0)</script>
                         </Trigger>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Skullfractures lowered</name>
-                            <script>if wsys.cure == &quot;healtharms&quot; or wsys.cure == &quot;tree&quot; or wsys.cure == &quot;passive&quot; then
+                            <script>if wsys.cure == &quot;healthhead&quot; or wsys.cure == &quot;tree&quot; or wsys.cure == &quot;passive&quot; or wsys.cure == &quot;restore&quot; then
   if wsys.aff.skullfractures &gt; 5 then
     wsys.fracturedown(&quot;skullfractures&quot;, 2)
   else
@@ -15053,7 +15053,7 @@ setTriggerStayOpen(&quot;Underhand&quot;, 0)</script>
                         </Trigger>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Crackedribs lowered</name>
-                            <script>if wsys.cure == &quot;healtharms&quot; or wsys.cure == &quot;tree&quot; or wsys.cure == &quot;passive&quot; then
+                            <script>if wsys.cure == &quot;healthtorso&quot; or wsys.cure == &quot;tree&quot; or wsys.cure == &quot;passive&quot; or wsys.cure == &quot;restore&quot; then
   if wsys.aff.crackedribs &gt; 5 then
     wsys.fracturedown(&quot;crackedribs&quot;, 2)
   else
@@ -15263,7 +15263,7 @@ setTriggerStayOpen(&quot;Pulverise&quot;, 0)</script>
                         </Trigger>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Torntendons lowered</name>
-                            <script>if wsys.cure == &quot;healtharms&quot; or wsys.cure == &quot;tree&quot; or wsys.cure == &quot;passive&quot; then
+                            <script>if wsys.cure == &quot;healthlegs&quot; or wsys.cure == &quot;tree&quot; or wsys.cure == &quot;passive&quot; or wsys.cure == &quot;restore&quot; then
   if wsys.aff.torntendons &gt; 5 then
     wsys.fracturedown(&quot;torntendons&quot;, 2)
   else
@@ -15289,7 +15289,7 @@ end</script>
                         </Trigger>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Wristfractures lowered</name>
-                            <script>if wsys.cure == &quot;healtharms&quot; or wsys.cure == &quot;tree&quot; or wsys.cure == &quot;passive&quot; then
+                            <script>if wsys.cure == &quot;healtharms&quot; or wsys.cure == &quot;tree&quot; or wsys.cure == &quot;passive&quot; or wsys.cure == &quot;restore&quot; then
   if wsys.aff.wristfractures &gt; 5 then
     wsys.fracturedown(&quot;wristfractures&quot;, 2)
   else

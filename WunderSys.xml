@@ -36604,6 +36604,7 @@ end
 function wsys.fracturedown(li, n)
   if wsys.aff[li] then
     wsys.aff[li] = math.max(wsys.aff[li] - n, 1)
+    raiseEvent( &quot;got aff&quot;, li )
   end
 end
 

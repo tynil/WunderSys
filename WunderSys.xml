@@ -3686,7 +3686,7 @@ wsys.aff[&quot;skullfractures&quot;] = tonumber(matches[2])
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^Suffering from (\d+) skull fractures\.$</string>
+                                <string>^suffering from (\d+) skull fractures\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
                                 <integer>1</integer>
@@ -3708,7 +3708,7 @@ wsys.aff[&quot;crackedribs&quot;] = tonumber(matches[2])
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^Suffering from (\d+) cracked ribs\.$</string>
+                                <string>^suffering from (\d+) cracked ribs\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
                                 <integer>1</integer>
@@ -3730,7 +3730,7 @@ wsys.aff[&quot;wristfractures&quot;] = tonumber(matches[2])
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^Suffering from (\d+) wrist fractures\.$</string>
+                                <string>^suffering from (\d+) wrist fractures\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
                                 <integer>1</integer>
@@ -3752,7 +3752,7 @@ wsys.aff[&quot;torntendons&quot;] = tonumber(matches[2])
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>^Suffering from (\d+) torn tendons\.$</string>
+                                <string>^suffering from (\d+) torn tendons\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
                                 <integer>1</integer>

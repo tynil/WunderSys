@@ -34786,9 +34786,9 @@ function wsys.loadSettings()
   end -- if
 end
 
-
-
-wsys.settings = wsys.settings or {}
+if not wsys.settings then
+  wsys.return_defaultsettings()
+end
 wsys.loadSettings()</script>
                     <eventHandlerList/>
                 </Script>

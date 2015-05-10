@@ -35429,7 +35429,7 @@ end</script>
 
 function wsys.ate(herb)
  --ginger level handling
- if (herb == &quot;ginger&quot; or herb == &quot;antimony&quot;) and (wsys.lastherb == &quot;ginger&quot; or wsys.lastherb == &quot;antimony&quot;) then
+ --[[if (herb == &quot;ginger&quot; or herb == &quot;antimony&quot;) and (wsys.lastherb == &quot;ginger&quot; or wsys.lastherb == &quot;antimony&quot;) then
   --check if ginger was eaten quick enough
   if wsys.timeElapsed(wsys.times.bals.lost.herb) &lt; 2300 then
    cecho(&quot; &lt;deep_pink&gt;GINGER LEVEL +1!&quot;)
@@ -35438,9 +35438,11 @@ function wsys.ate(herb)
    cecho(&quot; &lt;deep_pink&gt;GINGER LEVEL RESET!&quot;)
    wsys.gingerlevel = 1
   end
- else
+ else]]
+  --TODO: Per announce 4313, ginger additional curing is blocked by the alchemist being in the room
+  --      For now, just assume it always only cures one level.
   wsys.gingerlevel = 1
- end
+ --end
  wsys.lastherb = herb
  wsys.atesub(herb) 
  wsys.cure = herb

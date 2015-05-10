@@ -32500,14 +32500,14 @@ wsys.dofreeSub[tonumber(multimatches[2][2])] = multimatches[2][3]</script>
                                 <integer>1</integer>
                             </regexCodePropertyList>
                         </Trigger>
-                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Dofree replacement</name>
-                            <script>selectString(&quot;DOFREE&quot;..multimatches[2][2], 1)
+                            <script>selectString(matches[2]..matches[3], 1)
 bg(&quot;black&quot;) fg(&quot;SkyBlue&quot;)
-replace(wsys.dofreeSub[tonumber(multimatches[2][2])])
+replace(wsys.dofreeSub[tonumber(matches[3])])
 resetFormat()
 deselect()
-wsys.dofreeSub[tonumber(multimatches[2][2])] = multimatches[2][3]</script>
+wsys.dofreeSub[tonumber(matches[3])] = matches[4]</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -32519,11 +32519,9 @@ wsys.dofreeSub[tonumber(multimatches[2][2])] = multimatches[2][3]</script>
                             <colorTriggerFgColor>#000000</colorTriggerFgColor>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
-                                <string>[System]: Added </string>
-                                <string>^\[System\]\: Added DOFREE(\d+) to your (?:balance|equilibrium) queue\.$</string>
+                                <string>^\[System\]\: (?:Added|Prepended) (DOFREE|dofree)(\d+) to your (?:balance|equilibrium) queue\.$</string>
                             </regexCodeList>
                             <regexCodePropertyList>
-                                <integer>2</integer>
                                 <integer>1</integer>
                             </regexCodePropertyList>
                         </Trigger>

@@ -8627,7 +8627,7 @@ wsys.undef(&quot;insulation&quot;)
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Viridian thornrend</name>
-                        <script>my_limb_hit(multimatches[2][2], &quot;thornrend&quot;)
+                        <script>wsys.my_limb_hit(multimatches[2][2], &quot;thornrend&quot;)
 wsys.newClassTimer(&quot;sylvan&quot;)
 </script>
                         <triggerType>0</triggerType>

@@ -34666,7 +34666,7 @@ function wsys.stringToBoolean(s)
   end
 end
 
-function wsys.return_defaultsettings()
+function wsys.return_defaultsettings( no_save )
   wsys.settings = 
     {
   elmpipe = &quot;123456&quot;,
@@ -34747,7 +34747,9 @@ function wsys.return_defaultsettings()
   profileonburst = &quot;basic&quot;,
   autotree = false,
 }
-  wsys.saveSettings()
+  if not no_save then
+    wsys.saveSettings()
+  end
 end
 
 --save table in external file
@@ -34787,7 +34789,7 @@ function wsys.loadSettings()
 end
 
 if not wsys.settings then
-  wsys.return_defaultsettings()
+  wsys.return_defaultsettings(true)
 end
 wsys.loadSettings()</script>
                     <eventHandlerList/>

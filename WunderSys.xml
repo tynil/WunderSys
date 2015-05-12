@@ -38890,8 +38890,8 @@ end</script>
                 <Script isActive="yes" isFolder="no">
                     <name>Check for Updates</name>
                     <packageName></packageName>
-                    <script>wsys.myVersion = &quot;v1.0.1&quot;
-wsys.currentVersion = &quot;v1.0.1&quot;
+                    <script>wsys.myVersion = &quot;v1.0.2&quot;
+wsys.currentVersion = &quot;v1.0.2&quot;
 wsys.updateAvailable = false
 wsys.ignoreVersion = &quot;rc3&quot;
 

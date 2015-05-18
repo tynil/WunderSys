@@ -10648,7 +10648,7 @@ send(&quot;curing queue add speed&quot;)</script>
                             </regexCodePropertyList>
                         </Trigger>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Humour drains</name>
                         <script>wsys.humourDown(matches[2])
 wsys.humourLevelLost()</script>
@@ -10663,11 +10663,9 @@ wsys.humourLevelLost()</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>Your </string>
                             <string>^Your (\w+) humour drains some\.$</string>
                         </regexCodeList>
                         <regexCodePropertyList>
-                            <integer>2</integer>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>

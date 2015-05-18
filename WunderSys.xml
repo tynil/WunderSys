@@ -14876,6 +14876,7 @@ setTriggerStayOpen(&quot;Overhand&quot;, 0)</script>
                                     <string>The attack rebounds back onto</string>
                                     <string>One of your reflections has been destroyed!</string>
                                     <string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
+                                    <string>You frantically attempt to parry the attack of </string>
                                 </regexCodeList>
                                 <regexCodePropertyList>
                                     <integer>3</integer>
@@ -14885,12 +14886,13 @@ setTriggerStayOpen(&quot;Overhand&quot;, 0)</script>
                                     <integer>2</integer>
                                     <integer>2</integer>
                                     <integer>1</integer>
+                                    <integer>2</integer>
                                 </regexCodePropertyList>
                             </Trigger>
                             <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                                 <name>Prompt</name>
                                 <script>--adds skull fracture (+ sip bal)
-wsys.my_limb_hit(&quot;head&quot;, &quot;overhand&quot;)
+wsys.my_limb_hit_add(&quot;head&quot;, &quot;overhand&quot;)
 wsys.affadd(&quot;skullfractures&quot;, &quot;twohander&quot;)
 setTriggerStayOpen(&quot;Overhand&quot;, 0)</script>
                                 <triggerType>0</triggerType>
@@ -15021,6 +15023,7 @@ setTriggerStayOpen(&quot;Underhand&quot;, 0)</script>
                                     <string>The attack rebounds back onto </string>
                                     <string>One of your reflections has been destroyed</string>
                                     <string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
+                                    <string>You frantically attempt to parry the attack of </string>
                                 </regexCodeList>
                                 <regexCodePropertyList>
                                     <integer>3</integer>
@@ -15030,12 +15033,13 @@ setTriggerStayOpen(&quot;Underhand&quot;, 0)</script>
                                     <integer>2</integer>
                                     <integer>2</integer>
                                     <integer>1</integer>
+                                    <integer>2</integer>
                                 </regexCodePropertyList>
                             </Trigger>
                             <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                                 <name>Prompt</name>
                                 <script>--at torso (- effectiveness of health sip)
-wsys.my_limb_hit(&quot;torso&quot;, &quot;underhand&quot;)
+wsys.my_limb_hit_add(&quot;torso&quot;, &quot;underhand&quot;)
 wsys.affadd(&quot;crackedribs&quot;, &quot;twohander&quot;)
 setTriggerStayOpen(&quot;Underhand&quot;, 0)</script>
                                 <triggerType>0</triggerType>
@@ -15145,6 +15149,7 @@ setTriggerStayOpen(&quot;Hew&quot;, 0)</script>
                                     <string>The attack rebounds back onto</string>
                                     <string>One of your reflections has been destroyed</string>
                                     <string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
+                                    <string>You frantically attempt to parry the attack of </string>
                                 </regexCodeList>
                                 <regexCodePropertyList>
                                     <integer>3</integer>
@@ -15154,12 +15159,13 @@ setTriggerStayOpen(&quot;Hew&quot;, 0)</script>
                                     <integer>2</integer>
                                     <integer>2</integer>
                                     <integer>1</integer>
+                                    <integer>2</integer>
                                 </regexCodePropertyList>
                             </Trigger>
                             <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                                 <name>Prompt</name>
                                 <script>--targets arms/legs
-wsys.my_limb_hit(wsys.lastlimbhit, &quot;hew&quot;)
+wsys.my_limb_hit_add(wsys.lastlimbhit, &quot;hew&quot;)
 if wsys.lastlimbhit == &quot;right arm&quot; or wsys.lastlimbhit == &quot;left arm&quot; then
  wsys.affadd(&quot;wristfractures&quot;, &quot;twohander&quot;)
 elseif wsys.lastlimbhit == &quot;left leg&quot; or wsys.lastlimbhit == &quot;right leg&quot; then
@@ -15227,7 +15233,8 @@ setTriggerStayOpen(&quot;Pulverise&quot;, 0)</script>
                                     <string>The attack rebounds back onto </string>
                                     <string>One of your reflections has been destroyed</string>
                                     <string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
-                                </regexCodeList>
+                                    <string>You frantically attempt to parry the attack of </string>
+				</regexCodeList>
                                 <regexCodePropertyList>
                                     <integer>3</integer>
                                     <integer>3</integer>
@@ -15236,12 +15243,13 @@ setTriggerStayOpen(&quot;Pulverise&quot;, 0)</script>
                                     <integer>2</integer>
                                     <integer>2</integer>
                                     <integer>1</integer>
+				    <integer>2</integer>
                                 </regexCodePropertyList>
                             </Trigger>
                             <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                                 <name>Prompt</name>
                                 <script>--targets arms/legs
-wsys.my_limb_hit(wsys.lastlimbhit, &quot;pulverise&quot;)
+wsys.my_limb_hit_add(wsys.lastlimbhit, &quot;pulverise&quot;)
 if wsys.lastlimbhit == &quot;right arm&quot; or wsys.lastlimbhit == &quot;left arm&quot; then
  wsys.affadd(&quot;wristfractures&quot;, &quot;twohander&quot;)
 elseif wsys.lastlimbhit == &quot;left leg&quot; or wsys.lastlimbhit == &quot;right leg&quot; then
@@ -40715,6 +40723,25 @@ wsys.tb.selflimbdamage = {
 wsys.lastlimbhit = &quot;left leg&quot;
 
 function wsys.my_limb_hit(limb, attack)
+  tempLineTrigger( 1, 1, [[wsys.my_limb_hit_next_line(&quot;]]..limb..[[&quot;,&quot;]]..attack..[[&quot;)]])
+end
+
+function wsys.my_limb_hit_next_line(limb, attack)
+  if line:match(&quot;You parry the attack with a deft manoeuvre.&quot;)
+     or line:match( &quot;The attack rebounds back onto %w+!&quot; )
+     or line:match( &quot;%w+ misses you with &quot; )
+     or line:match( &quot;You dodge nimbly out of the way.&quot; )
+     or line:match( &quot;One of your reflections has been destroyed&quot; )
+     or line:match( &quot;You twist your body out of harm's way.&quot; )
+     or line:match( &quot;You quickly jump back, avoiding the attack.&quot; )
+     or line:match( &quot;You frantically attempt to parry the attack of %w+, but succeed only in redirecting it.&quot; )
+	  or line:match(&quot;You move inside %w+'s guard, deflecting %w+ attack to one side with your forearm before countering with a swift blow to %w+ temple.&quot;) then
+  else
+    wsys.my_limb_hit_add( limb, attack )
+  end
+end
+
+function wsys.my_limb_hit_add(limb, attack)
   wsys.lastlimbhit = limb
   wsys.addSelfDamage(limb, 1)
   selectString(limb, 1)

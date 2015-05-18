@@ -4273,13 +4273,11 @@ end -- if</script>
                             <string>You stand in such dishonour that not even your loyal friends will help you.</string>
                             <string>You feel ugliness radiating from you.</string>
                             <string>Your spirit writhes in torment as it achieves new depths of dishonour.</string>
-                            <string>A heavy burden descends upon your soul as</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>3</integer>
                             <integer>3</integer>
                             <integer>3</integer>
-                            <integer>2</integer>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">

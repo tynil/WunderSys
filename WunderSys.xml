@@ -40711,7 +40711,7 @@ end</script>
                     <name>my limb hit</name>
                     <packageName></packageName>
                     <script>-- self limb damage table
-wsys.tb.selflimbdamage = {
+wsys.tb.selflimbdamage = wsys.tb.selflimbdamage or {
 	[&quot;head&quot;] = {damage = 0,},
 	[&quot;torso&quot;] = {damage = 0,},
 	[&quot;left arm&quot;] = {damage = 0,},
@@ -40720,7 +40720,8 @@ wsys.tb.selflimbdamage = {
 	[&quot;right leg&quot;] = {damage = 0,},
 }
 
-wsys.lastlimbhit = &quot;left leg&quot;
+local timers = timers or {}
+wsys.lastlimbhit = wsys.lastlimbhit or &quot;left leg&quot;
 
 function wsys.my_limb_hit(limb, attack)
   tempLineTrigger( 1, 1, [[wsys.my_limb_hit_next_line(&quot;]]..limb..[[&quot;,&quot;]]..attack..[[&quot;)]])
@@ -40751,12 +40752,22 @@ function wsys.my_limb_hit_add(limb, attack)
 end
 
 
+function wsys.resetSelfDamage(limb)
+  wsys.clearSelfDamage(limb)
+  cecho(&quot;&lt;seashell&gt;Self &quot;..limb..&quot; timed out!&quot;)
+end
+
 function wsys.addSelfDamage(limb, n)
-	wsys.tb.selflimbdamage[limb][&quot;damage&quot;] = wsys.tb.selflimbdamage[limb][&quot;damage&quot;] + n
+  wsys.tb.selflimbdamage[limb][&quot;damage&quot;] = wsys.tb.selflimbdamage[limb][&quot;damage&quot;] + n
+  timers[limb] = timers[limb] or {}
+  if timers[limb].timer then killTimer( timers[limb].timer ) end
+  timers[limb].timer = tempTimer( 180, [[wsys.resetSelfDamage(&quot;]]..limb..[[&quot;)]] )
 end
 
 function wsys.clearSelfDamage(limb)
-	wsys.tb.selflimbdamage[limb][&quot;damage&quot;] = 0
+  wsys.tb.selflimbdamage[limb][&quot;damage&quot;] = 0
+  if timers[limb] and timers[limb].timer then killTimer( timers[limb].timer ) end
+  timers[limb] = nil
 end
 
 function wsys.brokenLimbListener(event, affliction)

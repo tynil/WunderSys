@@ -34830,9 +34830,12 @@ wsys.saveSettings()</script>
                     <Script isActive="yes" isFolder="no">
                         <name>Affliction Functions</name>
                         <packageName></packageName>
-                        <script>function wsys.affadd(affliction, class, time)
+                        <script>local aff_debug = false
+
+function wsys.affadd(affliction, class, time, from_gmcp)
   if not wsys.lifevision then
-    if wsys.affline ~= getLineNumber() then
+    local gained = wsys.affs_gained[affliction]
+    if not from_gmcp and wsys.affline ~= getLineNumber() then
       wsys.affprint(affliction)
     end -- if
     --set aff to true or level number (tempered humours)
@@ -34890,11 +34893,18 @@ wsys.saveSettings()</script>
       return
     end -- if
 
-    raiseEvent(&quot;got aff&quot;, affliction, class)
-    enableTrigger(string.title(affliction) .. &quot; -&quot;)
-    wsys.ragequeue()
-    wsys.lockqueue()
-    wsys.affline = getLineNumber()
+    if not gained then
+      wsys.affs_gained[affliction] = true
+      if aff_debug then echo(&quot;got aff &quot;..affliction) end
+      raiseEvent(&quot;got aff&quot;, affliction, class)
+      enableTrigger(string.title(affliction) .. &quot; -&quot;)
+      wsys.ragequeue()
+      wsys.lockqueue()
+    end
+
+    if not from_gmcp then
+      wsys.affline = getLineNumber()
+    end
 
     -- handling for self decaying affs
     if time then
@@ -34926,14 +34936,21 @@ function wsys.affcured(affliction)
 end -- func
 
 
-function wsys.affcuredconfirm(affliction)
-  wsys.aff[affliction] = nil
-  raiseEvent(&quot;lost aff&quot;, affliction)
+function wsys.affcuredconfirm(affliction, from_gmcp)
+  if wsys.aff[affliction] then
+    if aff_debug then echo(&quot;lost aff &quot;..affliction) end
+    wsys.aff[affliction] = nil
+    raiseEvent(&quot;lost aff&quot;, affliction)
+  end
+
   if affliction == &quot;aeon&quot; then
     wsys.def.speed = false
   end -- if
-  disableTrigger(string.title(affliction) .. &quot; -&quot;)
-  wsys.affcureprint(affliction)
+
+  if not from_gmcp then
+    disableTrigger(string.title(affliction) .. &quot; -&quot;)
+    wsys.affcureprint(affliction)
+  end
 
   for k,v in ipairs(wsys.tb.affspaired) do
     for a,b in ipairs(wsys.tb.affspaired[k]) do
@@ -35266,7 +35283,47 @@ function wsys.return_defaultaffprios()
   [&quot;fear&quot;] = 20, --low for retardation/aeon curing
 
   }
-end</script>
+end
+
+--gmcp.Char.Afflictions
+
+local exclude = {
+   insomnia = true,
+   blindness = true,
+   deafness = true,
+
+   numbedrightarm  = true,
+   numbedleftarm = true,
+
+   --Tempers and fractures don't give counts in GMCP. Ignore them for now
+   temperedcholeric = true,
+   temperedmelancholic = true,
+   temperedphlegmatic = true,
+   temperedsanguine = true,
+
+   torntendons = true,
+   skullfractures = true,
+   crackedribs = true,
+   wristfractures = true,
+   }
+
+function wsys.gmcpAffAdded()
+   if not exclude[gmcp.Char.Afflictions.Add.name] then
+      wsys.affadd( gmcp.Char.Afflictions.Add.name, nil, nil, true )
+   end
+end
+
+function wsys.gmcpAffRemoved()
+   for _,aff in ipairs( gmcp.Char.Afflictions.Remove ) do
+      if aff_debug then echo(&quot;wsys.gmcpAffRemoved:'&quot;..aff..&quot;'&quot;) end
+      if not exclude[aff] then
+         wsys.affcuredconfirm(aff, true)
+      end
+   end
+end
+
+registerAnonymousEventHandler(&quot;gmcp.Char.Afflictions.Add&quot;, &quot;wsys.gmcpAffAdded&quot;)
+registerAnonymousEventHandler(&quot;gmcp.Char.Afflictions.Remove&quot;, &quot;wsys.gmcpAffRemoved&quot;)</script>
                         <eventHandlerList/>
                     </Script>
                     <Script isActive="yes" isFolder="no">
@@ -35492,6 +35549,7 @@ end -- func
                         <packageName></packageName>
                         <script>function wsys.prompt()
  deleteLine()
+ wsys.affs_gained = {}
 
  if next(wsys.tb.affstogether) then
   wsys.firequeues()
@@ -38385,7 +38443,7 @@ function wsys.affcureprint(affliction)
  end
 end -- func
 
-
+wsys.affs_gained = wsys.affs_gained or {}
 -- AFF PRINT
 function wsys.affprint(affliction, affline)
   if wsys.settings.affgainedechos then
@@ -38393,9 +38451,10 @@ function wsys.affprint(affliction, affline)
      deleteLine()
      cinsertText(&quot;\n[&lt;firebrick&gt;AFF&lt;grey&gt;]&lt;red&gt; &quot; .. affliction:upper() .. &quot; &lt;grey&gt;| &lt;firebrick&gt;&quot; .. affline .. &quot;\nYour &lt;yellow&gt;&quot; .. affliction:upper() .. &quot;&lt;firebrick&gt; broke, &lt;yellow&gt;&quot; .. affliction:upper() .. &quot;&lt;firebrick&gt; broke!\n&quot;)
     else
-     if not wsys.aff[affliction] then
+     if not wsys.aff[affliction] or wsys.affs_gained[affliction] then
       deleteLine()
       cinsertText(&quot;\n[&lt;firebrick&gt;AFF&lt;grey&gt;]&lt;red&gt; &quot; .. affliction:upper() .. &quot; &lt;grey&gt;| &lt;firebrick&gt;&quot; .. line)
+      wsys.affs_gained[affliction] = nil
      else
       selectCurrentLine()
       fg(&quot;firebrick&quot;)

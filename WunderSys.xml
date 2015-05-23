@@ -41541,6 +41541,12 @@ wsys.stats = {
  oxp = 0, --old xp
  kai = 0,
  shin = 0,
+ rage = 0,
+}
+
+local charstats = {
+  [&quot;Bleed&quot;] = function( val ) wsys.bleeding = tonumber( val ) end,
+  [&quot;Rage&quot;] = function( val ) wsys.stats.rage = tonumber( val ) end,
 }
 
 function wsys.statupdate()
@@ -41558,6 +41564,15 @@ function wsys.statupdate()
   wsys.stats.maxm = tonumber(gmcp.Char.Vitals.maxmp)
   wsys.stats.maxe = tonumber(gmcp.Char.Vitals.maxep)
   wsys.stats.maxw = tonumber(gmcp.Char.Vitals.maxwp)
+
+  for _,str in ipairs( gmcp.Char.Vitals.charstats ) do
+    local sep = str:find( &quot;: &quot; )
+    if sep then
+      local key = str:sub( 1, sep - 1 )
+      local val = str:sub( sep + 2 )
+      if charstats[key] then charstats[key]( val ) end
+    end
+  end
 
   if wsys.stats.oh ~= wsys.stats.h then
     raiseEvent(&quot;health changed&quot;)
@@ -41653,6 +41668,7 @@ wsys.prompttags[&quot;breathing&quot;] = function() if wsys.def.breathing then r
 wsys.prompttags[&quot;xp&quot;] = function() return gmcp.Char.Vitals.nl end
 wsys.prompttags[&quot;affs&quot;] = function() return wsys.affTags() end
 wsys.prompttags[&quot;timestamp&quot;] = function() return getTimestamp(getLineCount()):gsub(&quot;^%s*(.-)%s*$&quot;, &quot;%1&quot;) end
+wsys.prompttags[&quot;rage&quot;] = function() if wsys.stats.rage &gt; 0 then return wsys.stats.rage..&quot; &quot; else return &quot;&quot; end end
 
 wsys.prompttags[&quot;diffhealth&quot;] = function()
   if wsys.stats.h &lt; wsys.stats.oh then 

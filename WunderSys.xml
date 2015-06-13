@@ -20612,7 +20612,8 @@ end -- if</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Dragonbreath +</name>
-                        <script>wsys.deffed(&quot;dragonbreath&quot;)</script>
+                        <script>wsys.deffed(&quot;dragonbreath&quot;)
+wsys.dragonBreath( matches[2] )</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -20624,7 +20625,7 @@ end -- if</script>
                         <colorTriggerFgColor>#000000</colorTriggerFgColor>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
-                            <string>^Your \w+ summoning is complete\.$</string>
+                            <string>^Your (\w+) summoning is complete\.$</string>
                             <string>You already have your breath summoned, Wyrm.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
@@ -40081,6 +40082,13 @@ function wsys.dragonformedDefs()
     if not (table.contains(sk, &quot;dragoncraft&quot;) or table.contains(sk, &quot;tattoos&quot;) or table.contains(sk, &quot;survival&quot;) or table.contains(sk, &quot;vision&quot;) or table.contains(sk, &quot;curative&quot;) or table.contains(sk, &quot;enchantment&quot;)) then
       wsys.def[k] = false
     end
+  end
+end
+
+function wsys.dragonBreath( breath )
+  local weapons = { acid = &quot;black&quot;, ice = &quot;blue&quot;, psi = &quot;gold&quot;, venom = &quot;green&quot;,	 dragonfire = &quot;red&quot;, lightning = &quot;silver&quot; }
+  if breath and weapons[breath] then
+    wsys.settings.dcolor = weapons[breath]
   end
 end</script>
                     <eventHandlerList/>

@@ -3594,8 +3594,8 @@ end -- if</script>
                             </regexCodePropertyList>
                         </Trigger>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                            <name>Stain (diag)</name>
-                            <script>wsys.affadd(&quot;stain&quot;, &quot;apostate&quot;)</script>
+                            <name>Demonstain (diag)</name>
+                            <script>wsys.affadd(&quot;demonstain&quot;, &quot;apostate&quot;)</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -6044,8 +6044,8 @@ onSap()</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>Stain +</name>
-                        <script>wsys.affadd(&quot;stain&quot;, &quot;apostate&quot;, 120)
+                        <name>Demonstain +</name>
+                        <script>wsys.affadd(&quot;demonstain&quot;, &quot;apostate&quot;, 120)
 </script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
@@ -41878,6 +41878,7 @@ end</script>
  damagedhead = &quot;h1&quot;,
  blackout = &quot;&quot;,
  bleeding = function() return &quot;bld(&quot; .. wsys.bleeding .. &quot;)&quot; end,
+ demonstain = &quot;stain&quot;,
  damagedleftarm = &quot;la2&quot;,
  damagedleftleg = &quot;ll2&quot;,
  bleg = &quot;uleg1&quot;,
@@ -42156,7 +42157,7 @@ registerAnonymousEventHandler(&quot;lost aff&quot;, &quot;wsys.impatienceLost&qu
                     <packageName></packageName>
                     <script>function wsys.slicknessKelpStackedGained(event, affliction, class)
   if event == &quot;got aff&quot; then
-      if (wsys.aff.sensitivity or wsys.aff.clumsiness or wsys.aff.weariness or wsys.aff.hypochondria) and wsys.aff.asthma and (wsys.aff.slickness and not wsys.aff.stain) and not wsys.aff.anorexia then 
+      if (wsys.aff.sensitivity or wsys.aff.clumsiness or wsys.aff.weariness or wsys.aff.hypochondria) and wsys.aff.asthma and (wsys.aff.slickness and not wsys.aff.demonstain) and not wsys.aff.anorexia then 
 		 --1 scenario
         wsys.switchPrios( &quot;slickness&quot;, 1 )
       end

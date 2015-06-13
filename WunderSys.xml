@@ -36321,7 +36321,6 @@ function wsys.focusAffCount()
   if wsys.aff.vertigo then fCount = fCount + 1 end
   if wsys.aff.weariness then fCount = fCount + 1 end
   if wsys.aff.confusion then fCount = fCount + 1 end
-  if wsys.aff.hallucinations then fCount = fCount + 1 end
   if wsys.aff.anorexia then fCount = fCount + 1 end
 
   

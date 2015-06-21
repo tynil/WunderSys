@@ -32366,7 +32366,7 @@ deleteFull()</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Do ran</name>
-                        <script>wsys.dosent()
+                        <script>wsys.dosent(&quot;do&quot;)
 deleteFull()</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
@@ -32387,7 +32387,7 @@ deleteFull()</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Dor ran</name>
-                        <script>wsys.dosent()
+                        <script>wsys.dosent(&quot;dor&quot;)
 deleteFull()</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
@@ -40266,7 +40266,12 @@ function wsys.dosend()
   end
 end
 
-function wsys.dosent()
+function wsys.dosent(type)
+  if type == &quot;do&quot; then
+    raiseEvent(&quot;do action ran&quot;, wsys.doSub)
+  elseif type == &quot;dor&quot; then
+    raiseEvent(&quot;dor action ran&quot;, wsys.dorSub)
+  end
   wsys.doqueued = false
   wsys.doqueue_pending = nil
   if wsys.timer.dowait then
@@ -40312,7 +40317,7 @@ function wsys.undo( lifo, low, high, all )
                                 wsys.doqueue_pending = nil
                                 if not all then
                                         --Make sure the next command gets queued
-                                        wsys.dosent()
+                                        wsys.dosent(&quot;do&quot;)
                                         return true
                                 end
                         else

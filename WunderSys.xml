@@ -21045,8 +21045,10 @@ wsys.dragonBreath( matches[2] )</script>
                         <regexCodeList>
                             <string>Your curseward is complete.</string>
                             <string>You already have curseward up.</string>
+                            <string>You bring a curseward into being to protect you from harm.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>

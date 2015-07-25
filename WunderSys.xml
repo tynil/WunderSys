@@ -40741,12 +40741,16 @@ local timers = timers or {}
 wsys.lastlimbhit = wsys.lastlimbhit or &quot;left leg&quot;
 
 function wsys.my_limb_hit(limb, attack)
+  selectString(limb, 1)
+  setItalics(true) fg(&quot;white&quot;) bg(&quot;blue&quot;)
+  resetFormat() deselect()
   tempLineTrigger( 1, 1, [[wsys.my_limb_hit_next_line(&quot;]]..limb..[[&quot;,&quot;]]..attack..[[&quot;)]])
 end
 
 function wsys.my_limb_hit_next_line(limb, attack)
   if line:match(&quot;You parry the attack with a deft manoeuvre.&quot;)
      or line:match( &quot;The attack rebounds back onto %w+!&quot; )
+     or line:match( &quot;The attack rebounds onto %w+!&quot; )
      or line:match( &quot;%w+ misses you with &quot; )
      or line:match( &quot;You dodge nimbly out of the way.&quot; )
      or line:match( &quot;One of your reflections has been destroyed&quot; )

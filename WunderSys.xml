@@ -4754,8 +4754,10 @@ raiseEvent(&quot;loki checks&quot;)</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You are feeling far too passive to do that.</string>
+                            <string>You are feeling far too tranquil to attempt such a violent act.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
+                            <integer>3</integer>
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>

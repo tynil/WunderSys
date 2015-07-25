@@ -34903,6 +34903,8 @@ function wsys.affadd(affliction, class, time, from_gmcp)
       return
     end -- if
 
+    if class then wsys.newClassTimer( class ) end
+
     if not gained then
       wsys.affs_gained[affliction] = true
       if aff_debug then echo(&quot;got aff &quot;..affliction) end

@@ -39132,9 +39132,9 @@ end</script>
                     <name>Check for Updates</name>
                     <packageName></packageName>
                     <script>wsys.myVersion = &quot;v1.1.0&quot;
-wsys.currentVersion = &quot;v1.1.0&quot;
+wsys.currentVersion = wsys.currentVersion or &quot;v1.1.0&quot;
 wsys.updateAvailable = false
-wsys.ignoreVersion = &quot;rc3&quot;
+local downloadsURL = &quot;https://github.com/tynil/WunderSys/releases&quot;
 
 -- download latest version number file
 function wsys.checkForUpdates()
@@ -39144,7 +39144,7 @@ function wsys.checkForUpdates()
     _sep = &quot;\\&quot; 
   end -- if
   local current_version = getMudletHomeDir().._sep..&quot;WunderSysVersion&quot;
-  downloadFile(current_version, &quot;http://84.38.65.21/wundersys/version/WunderSysVersion&quot;)
+  downloadFile(current_version, &quot;https://raw.githubusercontent.com/tynil/WunderSys/master/WunderSysVersion&quot;)
 end
 
 registerAnonymousEventHandler(&quot;sysLoadEvent&quot;, &quot;wsys.checkForUpdates&quot;)
@@ -39155,11 +39155,6 @@ function wsys.downloadedVersionFile(_, filename)
   -- parse downloaded file for current version
   local ver = io.open(filename):read(&quot;*all&quot;)
   wsys.currentVersion = string.trim(ver)
-
-  -- Check if the version found is one we know we should ignore
-  if wsys.currentVersion == wsys.ignoreVersion then
-    wsys.currentVersion = wsys.myVersion
-  end
 
   if wsys.currentVersion == wsys.myVersion then
     wsys.report(&quot;Running the latest WunderSys version: &quot;..wsys.myVersion)
@@ -39178,6 +39173,8 @@ registerAnonymousEventHandler(&quot;sysDownloadDone&quot;, &quot;wsys.downloaded
 
 function wsys.downloadedFileError(_, reason)
   display(reason)
+  wsys.report(&quot;Could not check for updates. Please check &quot;)
+  cechoLink( &quot;&lt;white&gt;&quot;..downloadsURL, [[wsys.downloadNow()]], downloadsURL, true )
 end
 
 registerAnonymousEventHandler(&quot;sysDownloadError&quot;, &quot;wsys.downloadedFileError&quot;)
@@ -39229,7 +39226,7 @@ wundersysDownloadLaterButton:setClickCallback(&quot;wsys.downloadLater&quot;)
 end
 
 function wsys.downloadNow()
-  openUrl(&quot;https://dl.dropboxusercontent.com/u/6980966/ServersideSystem/downloads.html&quot;)
+  openUrl(downloadsURL)
   wundersysDownloadContainer:hide()
 end
 

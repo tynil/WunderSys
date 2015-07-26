@@ -4007,6 +4007,66 @@ end</script>
                                 <integer>4</integer>
                             </regexCodePropertyList>
                         </Trigger>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Burning 2 (diag)</name>
+                            <script>wsys.burningStacks( 2 )</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>you are severely burned.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Burning 3 (diag)</name>
+                            <script>wsys.burningStacks( 3 )</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>you are extremely burned.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Burning 4 (diag)</name>
+                            <script>wsys.burningStacks( 4 )</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>your flesh is blackened and charred.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
                     </TriggerGroup>
                 </TriggerGroup>
                 <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -6492,6 +6552,66 @@ end</script>
                         <colorTriggerBgColor>#000000</colorTriggerBgColor>
                         <regexCodeList>
                             <string>You feel less sluggish all of a sudden.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Burning Stack 2</name>
+                        <script>wsys.burningStacks( 2 )</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>The fires consuming your flesh begin to crackle with greater intensity.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Burning Stack 3</name>
+                        <script>wsys.burningStacks( 3 )</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your vision begins to fade with the all-consuming agony of the fires that are consuming you.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Burning Stack 4</name>
+                        <script>wsys.burningStacks( 4 )</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>Your skin begins to char from the bones as the fires feast upon you.</string>
                         </regexCodeList>
                         <regexCodePropertyList>
                             <integer>3</integer>
@@ -16483,6 +16603,26 @@ wsys.newClassTimer(&quot;sentinel&quot;)</script>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
                                 <string>The raging fire about your skin goes out.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Burning Down</name>
+                            <script>wsys.burningDown()</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>The fires consuming you diminish somewhat.</string>
                             </regexCodeList>
                             <regexCodePropertyList>
                                 <integer>3</integer>
@@ -34883,6 +35023,8 @@ function wsys.affadd(affliction, class, time, from_gmcp)
       else
         wsys.fractureup(&quot;torntendons&quot;,1)
       end
+    elseif affliction == &quot;burning&quot; and wsys.aff.burning then
+      --Do nothing? We're already burning
     else
       wsys.aff[affliction] = true
     end
@@ -35322,13 +35464,17 @@ local exclude = {
    }
 
 function wsys.gmcpAffAdded()
-   if not exclude[gmcp.Char.Afflictions.Add.name] then
-      wsys.affadd( gmcp.Char.Afflictions.Add.name, nil, nil, true )
+   local aff,count = string.match( gmcp.Char.Afflictions.Add.name, &quot;(%w+) %((%d+)%)&quot; )
+   aff = aff or gmcp.Char.Afflictions.Add.name
+   if not exclude[aff] then
+      wsys.affadd( aff, nil, nil, true )
    end
 end
 
 function wsys.gmcpAffRemoved()
    for _,aff in ipairs( gmcp.Char.Afflictions.Remove ) do
+      local aff2,count = string.match( aff, &quot;(%w+) %((%d+)%)&quot; )
+      aff = aff2 or aff
       if aff_debug then echo(&quot;wsys.gmcpAffRemoved:'&quot;..aff..&quot;'&quot;) end
       if not exclude[aff] then
          wsys.affcuredconfirm(aff, true)
@@ -36739,6 +36885,29 @@ function wsys.restobreakcheck(l)
   wsys.tb.restorationlist[#wsys.tb.restorationlist+1] = {l, getLineNumber(), line}
   enableTrigger(&quot;Prompt Checks&quot;)
 end</script>
+                        <eventHandlerList/>
+                    </Script>
+                    <Script isActive="yes" isFolder="no">
+                        <name>Burning Stacks</name>
+                        <packageName></packageName>
+                        <script>function wsys.burningStacks( num )
+	if wsys.aff.burning ~= num then
+		wsys.aff.burning = num
+		raiseEvent( &quot;got aff&quot;, &quot;burning&quot; )
+	end
+end
+
+function wsys.burningDown()
+	local count = wsys.aff.burning and tonumber(wsys.aff.burning) or 0
+	if count and count &gt; 1 then
+		count = count - 1
+	else
+		count = 1
+	end	
+	wsys.aff.burning = count
+	raiseEvent( &quot;got aff&quot;, &quot;burning&quot; )
+end
+</script>
                         <eventHandlerList/>
                     </Script>
                 </ScriptGroup>
@@ -39376,7 +39545,7 @@ function wsys.classTimerExists(class)
   if table.contains(wsys.classtimers, wsys.classtimers[class]) then return true else return false end
 end
 
-registerAnonymousEventHandler(&quot;got aff&quot;, &quot;wsys.classTimers&quot;)
+--registerAnonymousEventHandler(&quot;got aff&quot;, &quot;wsys.classTimers&quot;)
 </script>
                     <eventHandlerList/>
                 </Script>
@@ -41883,7 +42052,6 @@ end</script>
                     <packageName></packageName>
                     <script>wsys.tb.aff_short = {
 
- burning = &quot;burn&quot;,
  addiction = &quot;add&quot;,
  aeon = &quot;ae&quot;,
  agoraphobia = &quot;agor&quot;,
@@ -41977,6 +42145,15 @@ end</script>
  wristfractures = function() return &quot;wrist(&quot; .. wsys.aff.wristfractures .. &quot;)&quot; end,
  crackedribs = function() return &quot;ribs(&quot; .. wsys.aff.crackedribs .. &quot;)&quot; end,
  skullfractures = function() return &quot;skull(&quot; .. wsys.aff.skullfractures .. &quot;)&quot; end,
+ burning = function()
+    local count = tonumber( wsys.aff.burning ) or 1
+    if count &gt; 1 then
+      local color = count == 2 and &quot;brown&quot; or &quot;red&quot;
+      return &quot;&lt;&quot;..color..&quot;&gt;burn(&quot; ..wsys.aff.burning ..&quot;)&quot;
+    else
+      return &quot;&lt;SlateGrey&gt;burn&quot;
+    end
+  end,
 }
 
 
@@ -42007,6 +42184,8 @@ function wsys.affTags()
           if wsys.bleeding &gt; 50 then
             s[#s+1] = &quot;&lt;maroon&gt;&quot;..wsys.tb.aff_short[k]()
           end
+        elseif k == &quot;burning&quot; then
+          s[#s+1] = wsys.tb.aff_short[k]()
         elseif not wsys.tb.aff_short[k] then
          s[#s+1] = &quot;&lt;IndianRed&gt;&quot;..k
         else

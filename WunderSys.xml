@@ -15859,7 +15859,8 @@ end</script>
                         <regexCodePropertyList/>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Whirl</name>
-                            <script>wsys.my_limb_hit(matches[2], &quot;whirl&quot;)</script>
+                            <script>wsys.my_limb_hit(matches[2], &quot;whirl&quot;)
+            wsys.newClassTimer(&quot;dualblunt&quot;)</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -15882,7 +15883,7 @@ end</script>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Fracture Shield</name>
                             <script>--raze shield
-wsys.undef(&quot;shield&quot;)</script>
+            wsys.undef(&quot;shield&quot;)</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -15923,7 +15924,7 @@ wsys.undef(&quot;shield&quot;)</script>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Expend Head</name>
                             <script>--stun ~0.5s
-wsys.affadd(&quot;confusion&quot;)</script>
+            wsys.affadd(&quot;confusion&quot;, &quot;dualblunt&quot;)</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -15964,8 +15965,8 @@ wsys.affadd(&quot;confusion&quot;)</script>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Numbedleftarm +</name>
                             <script>--parry bypass
-wsys.affadd(&quot;clumsiness&quot;)
-wsys.affadd(&quot;numbedleftarm&quot;, nil, 10)</script>
+            wsys.affadd(&quot;clumsiness&quot;, &quot;dualblunt&quot;)
+            wsys.affadd(&quot;numbedleftarm&quot;, &quot;dualblunt&quot;, 10)</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -15988,8 +15989,8 @@ wsys.affadd(&quot;numbedleftarm&quot;, nil, 10)</script>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Numbedrightarm +</name>
                             <script>--tattoo block, no clue how long yet. Like icefist.
-wsys.affadd(&quot;clumsiness&quot;)
-wsys.affadd(&quot;numbedrightarm&quot;, nil, 10)</script>
+            wsys.affadd(&quot;clumsiness&quot;, &quot;dualblunt&quot;)
+            wsys.affadd(&quot;numbedrightarm&quot;, &quot;dualblunt&quot;, 10)</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -16011,8 +16012,8 @@ wsys.affadd(&quot;numbedrightarm&quot;, nil, 10)</script>
                         </Trigger>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Expend Legs</name>
-                            <script>wsys.affadd(&quot;prone&quot;)
-wsys.affadd(&quot;lethargy&quot;)</script>
+                            <script>wsys.affadd(&quot;prone&quot;, &quot;dualblunt&quot;)
+            wsys.affadd(&quot;lethargy&quot;, &quot;dualblunt&quot;)</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -16033,11 +16034,11 @@ wsys.affadd(&quot;lethargy&quot;)</script>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Assault Head</name>
                             <script>--stuttering affliction
-wsys.affadd(&quot;stuttering&quot;)
---if 0 headbreak go to level 1
-  --break line looks the same as normal
---if level 1 head break go to level 2
-</script>
+            wsys.affadd(&quot;stuttering&quot;)
+            --if 0 headbreak go to level 1
+              --break line looks the same as normal
+            --if level 1 head break go to level 2
+            </script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>10</mStayOpen>
@@ -16056,9 +16057,9 @@ wsys.affadd(&quot;stuttering&quot;)
                             </regexCodePropertyList>
                             <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                                 <name>serious concussion</name>
-                                <script>wsys.affadd(&quot;mangledhead&quot;)
-setTriggerStayOpen(&quot;Assault Head&quot;, 0)
-</script>
+                                <script>wsys.affadd(&quot;mangledhead&quot;, &quot;dualblunt&quot;)
+            setTriggerStayOpen(&quot;Assault Head&quot;, 0)
+            </script>
                                 <triggerType>0</triggerType>
                                 <conditonLineDelta>0</conditonLineDelta>
                                 <mStayOpen>0</mStayOpen>
@@ -16100,8 +16101,8 @@ setTriggerStayOpen(&quot;Assault Head&quot;, 0)
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Assault Torso</name>
                             <script>if wsys.aff.prone then
-  --torso = +1 complete torso level
-end</script>
+              --torso = +1 complete torso level
+            end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>

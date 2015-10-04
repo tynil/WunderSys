@@ -33658,6 +33658,7 @@ end</script>
 local newPrio = tonumber(multimatches[2][3])
 if wsys.settings.defup[wsys.profile][wsys.myClass()][theDef] or wsys.settings.keepup[wsys.profile][wsys.myClass()][theDef] or wsys.settings.gagdefshift then
   deleteFull()
+  setTriggerStayOpen( &quot;Def Priority Shift Gag&quot;, 1 ) 
 end</script>
                     <triggerType>0</triggerType>
                     <conditonLineDelta>0</conditonLineDelta>
@@ -33677,6 +33678,26 @@ end</script>
                         <integer>2</integer>
                         <integer>1</integer>
                     </regexCodePropertyList>
+                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Def Priority Preempt</name>
+                        <script>deleteLine()</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>This defence will preempt the queue system.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
                 </Trigger>
                 <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>Focus aff priority shift gags</name>
@@ -34770,6 +34791,21 @@ end</script>
                     <command></command>
                     <packageName></packageName>
                     <regex>^swp (\w+)$</regex>
+                </Alias>
+                <Alias isActive="yes" isFolder="no">
+                    <name>Defup Profile</name>
+                    <script>wsys.defup( matches[2] )</script>
+                    <command></command>
+                    <packageName></packageName>
+                    <regex>^defup(?: (\w+))?$</regex>
+                </Alias>
+                <Alias isActive="yes" isFolder="no">
+                    <name>Copy a class profile</name>
+                    <script>-- Copy the given class profile into your current class
+wsys.copyProfileClass( matches[2] )</script>
+                    <command></command>
+                    <packageName></packageName>
+                    <regex>^wconfig profile copyclass (\w+)$</regex>
                 </Alias>
                 <Alias isActive="yes" isFolder="no">
                     <name>Automounting toggle</name>
@@ -37839,14 +37875,27 @@ function wsys.defstrip(defe)
   wsys.def[wsys.tb.defstripTable[defe]] = false
 end -- func
 
+-- enable serverSide defence
+function wsys.enableSSDef( defence, priority, silent )
+  priority = priority or 25
+  local preempt = priority &lt;= 10 and &quot; preempt&quot; or &quot;&quot;
+  send(&quot;curing priority defence &quot; ..defence..&quot; &quot;.. priority .. preempt, not silent )
+end
+
 --defup a certain profile
 function wsys.defup(profile)
-  if profile then
-    if table.contains(wsys.settings.defup, profile) then
-      wsys.profile = profile
-    else
-      wsys.report(&quot;Not a valid profile&quot;)
-    end
+  profile = profile or wsys.profile
+  if table.contains(wsys.settings.defup, profile) then
+     wsys.report(&quot;Defup - &quot;..wsys.profile)
+    wsys.switchProfile( profile )
+  else
+    wsys.report(&quot;Not a valid profile&quot;)
+    return
+  end
+
+  --Ensure we have class tables
+  if wsys.settings.affprio[wsys.profile][wsys.myClass()] == nil then
+    wsys.newclasstables(wsys.myClass())
   end
 
   --Channels for Magi, Sylvans and Priests
@@ -37948,13 +37997,8 @@ end
 --add def to keepup
 function wsys.keepup(def, gagecho)
   wsys.settings.keepup[wsys.profile][wsys.myClass()][def] = true
-  local dprio = wsys.settings.defprio[wsys.profile][wsys.myClass()][def] or false
-  if dprio then
-    send(&quot;curing priority defence &quot; .. def .. &quot; &quot; .. dprio, false)
-  else
-    send(&quot;curing priority defence &quot; .. def .. &quot; 25&quot;, false)
-    wsys.settings.defprio[wsys.profile][wsys.myClass()][def] = 25
-  end
+  wsys.settings.defprio[wsys.profile][wsys.myClass()][def] = wsys.settings.defprio[wsys.profile][wsys.myClass()][def] or 25
+  wsys.enableSSDef( def, wsys.settings.defprio[wsys.profile][wsys.myClass()][def], true )
   if not gagecho then
     wsys.report(&quot;Added &quot; .. def .. &quot; to defence keepup in the &quot; ..wsys.profile.. &quot; profile.&quot;)
   end
@@ -38678,12 +38722,8 @@ function wsys.defToggle(style, profile, class, defname)
     wsys.showDefMenu(style, profile, class)
     --add stuff to serverside keepup if this is displaying a keepup list.
       if style == &quot;keepup&quot; and class == wsys.myClass() then
-        if wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] then
-          send(&quot;curing priority defence &quot; .. defname .. &quot; &quot; .. wsys.settings.defprio[wsys.profile][wsys.myClass()][defname], false)
-        else
-          send(&quot;curing priority defence &quot; .. defname .. &quot; 25&quot;, false)
-          wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] = 25
-        end
+        wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] = wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] or 25
+        wsys.enableSSDef( defname, wsys.settings.defprio[wsys.profile][wsys.myClass()][defname], true )
       elseif style == &quot;defup&quot; and class == wsys.myClass() then
         if not wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] then
            wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] = 25
@@ -38749,7 +38789,7 @@ function wsys.defprioset(def, prio)
   if (tonumber(prio) &gt; 0) and (tonumber(prio) &lt; 26) then
     wsys.settings.defprio[wsys.profile][wsys.myClass()][def] = prio
     if wsys.settings.keepup[wsys.profile][wsys.myClass()][def] then
-      send(&quot;curing priority defence &quot;.. def .. &quot; &quot; .. prio, false)
+      wsys.enableSSDef( def, prio, true )
     end
     wsys.report(&quot;Set &quot; .. def .. &quot; to &quot; .. prio .. &quot; priority.&quot;)
   else
@@ -39155,10 +39195,17 @@ end
 function wsys.changedClass()
  if (gmcp.Char.Status.class ~= wsys.settings.class) or (gmcp.Char.Status.race ~= wsys.race) then
   --cecho(&quot;&lt;red&gt;CHANGED CLASS&quot;)
+  local old_class = wsys.myClass()
   wsys.settings.class = gmcp.Char.Status.class
-  if wsys.settings.affprio[wsys.profile][wsys.myClass()] == nil then
-    wsys.newclasstables(wsys.myClass())
+  wsys.dragonformDetection() --This will ensure the profile tables exist
+
+  -- Reset all defences that were in keepup of the previous class
+  for k in pairs( table.union( wsys.settings.keepup[wsys.profile][old_class], wsys.settings.defup[wsys.profile][old_class] ) ) do
+    if not wsys.settings.keepup[wsys.profile][wsys.myClass()][k] then
+      send(&quot;curing priority defence &quot; .. k .. &quot; reset&quot;, true)
+    end
   end
+  wsys.switchProfile( wsys.profile )
  end
 end
 
@@ -40031,21 +40078,52 @@ function wsys.copyProfile( pOrig, pCopy )
   end
 end
 
+function wsys.copyProfileClass( copied_class )
+  if wsys.settings.affprio[wsys.profile][copied_class] == nil then
+    wsys.report(copied_class .. &quot; class profile does not exist, please create it first.&quot;)
+  else
+    if wsys.settings.affprio[wsys.profile][wsys.myClass()] == nil then
+      wsys.newclasstables(wsys.myClass())
+    end
+    wsys.settings.affprio[wsys.profile][wsys.myClass()] = wsys.deepcopy(wsys.settings.affprio[wsys.profile][copied_class])
+    wsys.settings.defup[wsys.profile][wsys.myClass()] = wsys.deepcopy(wsys.settings.defup[wsys.profile][copied_class])
+    wsys.settings.defprio[wsys.profile][wsys.myClass()] = wsys.deepcopy(wsys.settings.defprio[wsys.profile][copied_class])
+    wsys.settings.keepup[wsys.profile][wsys.myClass()] = wsys.deepcopy(wsys.settings.keepup[wsys.profile][copied_class])
+    wsys.settings.precache[wsys.profile][wsys.myClass()] = wsys.deepcopy(wsys.settings.precache[wsys.profile][copied_class])
+    wsys.settings.focusshifts[wsys.profile][wsys.myClass()] = wsys.deepcopy(wsys.settings.focusshifts[wsys.profile][copied_class])
+
+    --Loop through defup, defprio, keepup and remove any class specific defences
+    for k in pairs( wsys.tb.defenceTable ) do
+      if not ( wsys.classDefCheck(k, &quot;free&quot;) or wsys.classDefCheck(k, wsys.myClass()) ) then
+         wsys.settings.defup[wsys.profile][wsys.myClass()][k] = nil
+         wsys.settings.defprio[wsys.profile][wsys.myClass()][k] = nil
+         wsys.settings.keepup[wsys.profile][wsys.myClass()][k] = nil
+      end
+    end
+    
+    wsys.report(&quot;Copied &quot; .. copied_class .. &quot; &quot; ..wsys.profile .. &quot; settings into the &quot; .. wsys.myClass() .. &quot; &quot;..wsys.profile .. &quot; profile.&quot;)
+  end
+end
+
 function wsys.switchProfile( name )
   local oldProfile = wsys.profile
   if table.contains(wsys.settings.profilenames, name) then
     wsys.profile = name
     wsys.report(&quot;Switched to &quot; .. name .. &quot; profile.&quot;)
+    -- make sure we have all the right tables already
+    if wsys.settings.affprio[wsys.profile][wsys.myClass()] == nil then
+      wsys.newclasstables(wsys.myClass())
+    end
     -- reset the aff prios
     wsys.resetAllAffPrios()
     -- keep up defs, need to take off the ones I don't want and add those I do want now.
     for k in pairs(wsys.settings.keepup[oldProfile][wsys.myClass()]) do
-      if not table.contains(wsys.settings.keepup[name][wsys.myClass()]) then
+      if not table.contains(wsys.settings.keepup[name][wsys.myClass()], k) then
         send(&quot;curing priority defence &quot; .. k .. &quot; reset&quot;, false)
       end
     end
     for k in pairs(wsys.settings.keepup[name][wsys.myClass()]) do
-      send(&quot;curing priority defence &quot; .. k .. &quot; &quot; .. (wsys.settings.defprio[name][wsys.myClass()][k] or &quot;25&quot;))
+      wsys.enableSSDef( k, wsys.settings.defprio[name][wsys.myClass()][k] )
     end
     -- make sure all the herbs that are needed are precached
     wsys.outrqueue()
@@ -40156,6 +40234,8 @@ wsys.keepout = wsys.keepout or {}
 function wsys.setkeepouttable()
   wsys.settings.precache = wsys.settings.precache or {}
   wsys.settings.precache[wsys.profile] = wsys.settings.precache[wsys.profile] or {}
+  --Clear the entire table
+  wsys[&quot;keepout&quot;] = {}
   for k,v in pairs(wsys.settings[&quot;precache&quot;][wsys.profile]) do
     wsys[&quot;keepout&quot;][k] = v
   end
@@ -40554,8 +40634,6 @@ function wsys.dragonformDetection()
   end
 end
 
-registerAnonymousEventHandler(&quot;gmcp.Char.Status&quot;, &quot;wsys.dragonformDetection&quot;)
-
 function wsys.dragonformed()
   --cecho(&quot;&lt;green&gt;dformed&quot;)
   wsys.settings.dform = true
@@ -40579,9 +40657,13 @@ end
 function wsys.dragonformedDefs()
   for k,v in pairs(wsys.def) do
     local sk = false
-    if wsys.tb.defenceTable[k][&quot;skillset&quot;] then sk = wsys.tb.defenceTable[k][&quot;skillset&quot;] end
-    if not (table.contains(sk, &quot;dragoncraft&quot;) or table.contains(sk, &quot;tattoos&quot;) or table.contains(sk, &quot;survival&quot;) or table.contains(sk, &quot;vision&quot;) or table.contains(sk, &quot;curative&quot;) or table.contains(sk, &quot;enchantment&quot;)) then
-      wsys.def[k] = false
+    if not wsys.tb.defenceTable[k] then --cecho(&quot;&lt;red&gt;Unknown defense for '&quot;..k..&quot;'\n&quot;)
+      wsys.def[k] = nil
+    else
+      if wsys.tb.defenceTable[k][&quot;skillset&quot;] then sk = wsys.tb.defenceTable[k][&quot;skillset&quot;] end
+      if not (table.contains(sk, &quot;dragoncraft&quot;) or table.contains(sk, &quot;tattoos&quot;) or table.contains(sk, &quot;survival&quot;) or table.contains(sk, &quot;vision&quot;) or table.contains(sk, &quot;curative&quot;) or table.contains(sk, &quot;enchantment&quot;)) then
+        wsys.def[k] = false
+      end
     end
   end
 end

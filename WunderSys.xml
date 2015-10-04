@@ -38977,6 +38977,7 @@ end</script>
                     <name>Check for Abilities</name>
                     <packageName></packageName>
                     <script>function wsys.abilityCheck()
+  wsys.abilitycheck = true
   sendGMCP([[Char.Skills.Get { &quot;group&quot;: &quot;survival&quot;, &quot;name&quot;: &quot;focusing&quot; }]])
   sendGMCP([[Char.Skills.Get { &quot;group&quot;: &quot;survival&quot;, &quot;name&quot;: &quot;efficiency&quot; }]])
   sendGMCP([[Char.Skills.Get { &quot;group&quot;: &quot;survival&quot;, &quot;name&quot;: &quot;insomnia&quot; }]])
@@ -39085,8 +39086,9 @@ function wsys.abilityCheckAnalyse()
     end
 
   end
-  if not wsys.curingstatuscheck then
+  if wsys.abilitycheck and not wsys.curingstatuscheck then
     wsys.curingstatuscheck = true
+    wsys.abilitycheck = false
     enableTrigger(&quot;Curing Status Check&quot;)
     send(&quot;curing status&quot;, false)
   end

@@ -38893,8 +38893,10 @@ end
 -- DELETE FULL
 -- overwrites default function, does NOT belong in wsys namespace
 function deleteFull()
- tempLineTrigger(1,1,[[if not isPrompt() then 
+ if wsys.deletefull_id then killTrigger( wsys.deletefull_id ) end
+ wsys.deletefull_id = tempLineTrigger(1,1,[[if not isPrompt() then 
   wsys.deletefull = false
+  wsys.deletefull_id = nil
  end]])
  deleteLine()
  wsys.deletefull = true

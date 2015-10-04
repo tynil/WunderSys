@@ -3989,25 +3989,25 @@ wsys.aff[&quot;torntendons&quot;] = tonumber(matches[2])
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Prompt</name>
                             <script>
-                               disableTrigger("Diag Lines")
+disableTrigger(&quot;Diag Lines&quot;)
 wsys.checkaffs()
 
 
-   --if we used to think we had the aff, and don't now
-   --send the lost aff event
-   for k, v in pairs(wsys.oldAff) do
-   	if not wsys.aff[k] then
-   		raiseEvent("lost aff", k)
-   	end
-   end
+  --if we used to think we had the aff, and don't now
+  --send the lost aff event
+  for k, v in pairs(wsys.oldAff) do
+    if not wsys.aff[k] then
+      raiseEvent(&quot;lost aff&quot;, k)
+    end
+  end
 
-   --if we thought we didn't have it, but do now
-   --send the got aff event
-for k,v in pairs(wsys.aff) do
-   	if not wsys.oldAff[k] then
-   		raiseEvent("got aff", k)
-   	end
-   end
+  --if we thought we didn't have it, but do now
+  --send the got aff event
+  for k,v in pairs(wsys.aff) do
+    if not wsys.oldAff[k] then
+      raiseEvent(&quot;got aff&quot;, k)
+    end
+  end
 
    --Clean up
    wsys.oldAff = nil
@@ -7822,7 +7822,7 @@ wsys.aff.paranoia = true</script>
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Slimeobscure -</name>
                         <script>wsys.affcuredconfirm(&quot;slimeobscure&quot;)</script>
                         <triggerType>0</triggerType>
@@ -7923,7 +7923,9 @@ raiseEvent(&quot;loki checks&quot;)</script>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>dragoncurse hit</name>
                         <script>-- dragoncurseAff(matches[2])
-wsys.affadd(multimatches[2][2], &quot;dragon&quot;)</script>
+if multimatches[2][2] ~= &quot;sensitivity&quot; or not wsys.def.deafness then
+  wsys.affadd(multimatches[2][2], &quot;dragon&quot;)
+end</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>
@@ -9940,7 +9942,7 @@ wsys.affadd(&quot;prone&quot;, &quot;metamorphosis&quot;)</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Hydra web +</name>
-                        <script>wsys.affadd(&quot;webbed&quot;, &quot;metamorphosis&quot;)
+                        <script>wsys.affadd(&quot;entangled&quot;, &quot;metamorphosis&quot;)
 
 
 --It throws strands of sticky webbing over you.</script>
@@ -17263,7 +17265,7 @@ wsys.affadd(&quot;damagedleftleg&quot;)</script>
                                 <integer>3</integer>
                             </regexCodePropertyList>
                         </Trigger>
-                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Mangledrightleg -</name>
                             <script>wsys.affcured(&quot;mangledrightleg&quot;)
 wsys.affadd(&quot;damagedrightleg&quot;)</script>
@@ -31897,10 +31899,10 @@ wsys.loggedIn()</script>
                     <colorTriggerFgColor>#000000</colorTriggerFgColor>
                     <colorTriggerBgColor>#000000</colorTriggerBgColor>
                     <regexCodeList>
-                        <string>Password correct\. Welcome to Achaea\.$</string>
+                        <string>Password correct. Welcome to Achaea.</string>
                     </regexCodeList>
                     <regexCodePropertyList>
-                        <integer>1</integer>
+                        <integer>0</integer>
                     </regexCodePropertyList>
                 </Trigger>
                 <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -38382,8 +38384,8 @@ function wsys.showDefMenu(style, profile ,class)
 end
 
 function wsys.defToggle(style, profile, class, defname)
-  if wsys.settings.defup[wsys.profile][wsys.myClass()] == nil then
-    wsys.settings.defup[wsys.profile][wsys.myClass()] = {}
+  if wsys.settings.defup[profile][class] == nil then
+    wsys.settings.defup[profile][class] = {}
   end
   if wsys.settings[style][profile][class][defname] ~= nil then
     wsys.settings[style][profile][class][defname] = nil
@@ -39155,7 +39157,7 @@ end</script>
                     <name>Check for Updates</name>
                     <packageName></packageName>
                     <script>wsys.myVersion = &quot;v1.1.1&quot;
-wsys.currentVersion = wsys.currentVersion or &quot;v1.1.1&quot;
+wsys.currentVersion = wsys.currentVersion or wsys.myVersion
 wsys.updateAvailable = false
 local downloadsURL = &quot;https://github.com/tynil/WunderSys/releases&quot;
 
@@ -40397,26 +40399,26 @@ end
 --queue[i] = { element = &quot;action&quot;, priority = [1-N] } --1 is highest priority
 local default_queue_priority = 25 --arbitrary low priority. Picked this because curing/defences use 1-25
 function wsys.priority_queue_insert( queue, element, priority, lifo )
-        local inserted = false
-        for index,item in ipairs(queue) do
-                if priority &lt; item.priority then
-                        -- New priority is lower than existing. Insert
-                        table.insert( queue, index, { element = element, priority = priority } )
-                        inserted = true
-                        break
-                elseif priority == item.priority then
-                        --Same priority. If lifo, insert, else go until lower
-                        if lifo then
-                                table.insert( queue, index, { element = element, priority = priority } )
-                                inserted = true
-                                break
-                        end
-                end
-        end
-        if not inserted then
-                -- Add to the end
-                table.insert( queue, { element = element, priority = priority } )
-        end
+  local inserted = false
+  for index,item in ipairs(queue) do
+    if priority &lt; item.priority then
+      -- New priority is lower than existing. Insert
+      table.insert( queue, index, { element = element, priority = priority } )
+      inserted = true
+      break
+    elseif priority == item.priority then
+      --Same priority. If lifo, insert, else go until lower
+      if lifo then
+        table.insert( queue, index, { element = element, priority = priority } )
+        inserted = true
+        break
+      end
+    end
+  end
+  if not inserted then
+    -- Add to the end
+    table.insert( queue, { element = element, priority = priority } )
+  end
 end
 
 function wsys.doadd(ac, priority, silent)
@@ -40444,14 +40446,14 @@ function wsys.dosend()
       --end
       wsys.doqueued = true
       send(&quot;queue add eqbal do1&quot;, not wsys.doqueue[1].element.silent )
-                local temp = wsys.doqueue[1]
-                if wsys.doqueue_pending then
-                        --We interrupted a pending command. Add back to the list
-                        wsys.doqueue[1] = wsys.doqueue_pending
-                else
-              table.remove(wsys.doqueue, 1)
-                end
-                wsys.doqueue_pending = temp
+      local temp = wsys.doqueue[1]
+      if wsys.doqueue_pending then
+        --We interrupted a pending command. Add back to the list
+        wsys.doqueue[1] = wsys.doqueue_pending
+      else
+        table.remove(wsys.doqueue, 1)
+      end
+      wsys.doqueue_pending = temp
     elseif wsys.doraction and not wsys.uselyre then
       wsys.timer.dowait = tempTimer(wsys.myPing()*1.5, [[wsys.timer.dowait = nil]])
       send(&quot;queue add eqbal dor&quot;)

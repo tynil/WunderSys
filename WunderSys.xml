@@ -39735,12 +39735,12 @@ end
 
 function wsys.copyProfile( pOrig, pCopy )
   if table.contains(wsys.settings.profilenames, pOrig) and table.contains(wsys.settings.profilenames, pCopy) then
-    wsys.settings.affprio[pCopy] = table.union(wsys.settings.affprio[pOrig], {})
-    wsys.settings.defup[pCopy] = table.union(wsys.settings.defup[pOrig], {})
-    wsys.settings.defprio[pCopy] = table.union(wsys.settings.defprio[pOrig], {})
-    wsys.settings.keepup[pCopy] = table.union(wsys.settings.keepup[pOrig], {})
-    wsys.settings.precache[pCopy] = table.union(wsys.settings.precache[pOrig], {})
-    wsys.settings.focusshifts[pCopy] = table.union(wsys.settings.focusshifts[pOrig], {})
+    wsys.settings.affprio[pCopy] = wsys.deepcopy(wsys.settings.affprio[pOrig])
+    wsys.settings.defup[pCopy] = wsys.deepcopy(wsys.settings.defup[pOrig])
+    wsys.settings.defprio[pCopy] = wsys.deepcopy(wsys.settings.defprio[pOrig])
+    wsys.settings.keepup[pCopy] = wsys.deepcopy(wsys.settings.keepup[pOrig])
+    wsys.settings.precache[pCopy] = wsys.deepcopy(wsys.settings.precache[pOrig])
+    wsys.settings.focusshifts[pCopy] = wsys.deepcopy(wsys.settings.focusshifts[pOrig])
     wsys.report(&quot;Copied &quot; .. pOrig .. &quot; settings into the &quot; .. pCopy .. &quot; profile.&quot;)
   elseif not table.contains(wsys.settings.profilenames, pOrig) then
     wsys.report(pOrig .. &quot; profile does not exist, please create it first.&quot;)
@@ -39833,6 +39833,28 @@ function wsys.autoTreeOff()
   send(&quot;curing tree off&quot;, false)
   wsys.report(&quot;Auto tree usage off&quot;)
 end</script>
+                    <eventHandlerList/>
+                </Script>
+                <Script isActive="yes" isFolder="no">
+                    <name>Third-party functions</name>
+                    <packageName></packageName>
+                    <script>-- from: http://lua-users.org/wiki/CopyTable
+local function deepcopy(orig)
+    local orig_type = type(orig)
+    local copy
+    if orig_type == 'table' then
+        copy = {}
+        for orig_key, orig_value in next, orig, nil do
+            copy[deepcopy(orig_key)] = deepcopy(orig_value)
+        end
+        setmetatable(copy, deepcopy(getmetatable(orig)))
+    else -- number, string, boolean, etc
+        copy = orig
+    end
+    return copy
+end
+
+wsys.deepcopy = deepcopy</script>
                     <eventHandlerList/>
                 </Script>
             </ScriptGroup>

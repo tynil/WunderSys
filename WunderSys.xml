@@ -15381,7 +15381,7 @@ setTriggerStayOpen(&quot;Pulverise&quot;, 0)</script>
                                     <string>One of your reflections has been destroyed</string>
                                     <string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
                                     <string>You frantically attempt to parry the attack of </string>
-				</regexCodeList>
+                                </regexCodeList>
                                 <regexCodePropertyList>
                                     <integer>3</integer>
                                     <integer>3</integer>
@@ -15390,7 +15390,7 @@ setTriggerStayOpen(&quot;Pulverise&quot;, 0)</script>
                                     <integer>2</integer>
                                     <integer>2</integer>
                                     <integer>1</integer>
-				    <integer>2</integer>
+                                    <integer>2</integer>
                                 </regexCodePropertyList>
                             </Trigger>
                             <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -25808,7 +25808,8 @@ wsys.undef(&quot;regeneration&quot;)
                         </Trigger>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Kaiboost error</name>
-                            <script>wsys.cannotdef(&quot;kaiboost&quot;)</script>
+                            <script>wsys.cannotdef(&quot;kaiboost&quot;)
+wsys.kaiboostcancel()</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -25821,8 +25822,10 @@ wsys.undef(&quot;regeneration&quot;)
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
                                 <string>You do not have enough Kai energy stored to do that.</string>
+                                <string>You must be in a trance to manipulate your Kai energy.</string>
                             </regexCodeList>
                             <regexCodePropertyList>
+                                <integer>3</integer>
                                 <integer>3</integer>
                             </regexCodePropertyList>
                         </Trigger>
@@ -35995,8 +35998,6 @@ end -- func
  if next(wsys.tb.affstogether) then
   wsys.firequeues()
  end -- if
-
- wsys.checkAutoMount()
  
  --if health is 0 you died, pause, clear affs, defs and timers
  if wsys.stats.h == 0 and wsys.stats.oh &gt; 0 then
@@ -36028,6 +36029,9 @@ if not wsys.deletefull then
 else
  wsys.deletefull = false
 end -- if
+
+wsys.checkAutoMount()
+wsys.kaiboostcheck()
 
 if next(wsys.queuestable) then
  wsys.doqueues()
@@ -43336,29 +43340,18 @@ wsys.def.mindnet = false</script>
                         <Script isActive="yes" isFolder="no">
                             <name>Kai Boost</name>
                             <packageName></packageName>
-                            <script>function wsys.kaiboostqueue()
- if wsys.cancure() and wsys.isClass(&quot;monk&quot;) and wsys.settings.keepup[wsys.profile][&quot;monk&quot;][&quot;kaiboost&quot;] and not wsys.def.kaiboost and wsys.stats.kai &gt;= 11 and not wsys.timer.kaiboostwait then
-  wsys.kaiboost()
+                            <script>wsys.kaiboost_flags = wsys.kaiboost_flags or {}
+function wsys.kaiboostcancel()
+  wsys.kaiboost_flags.disabled = true
+  send(&quot;curing priority defence kaiboost reset&quot;, false)
+end
+
+function wsys.kaiboostcheck()
+ if wsys.kaiboost_flags.disabled and wsys.cancure() and wsys.isClass(&quot;monk&quot;) and wsys.settings.keepup[wsys.profile][&quot;monk&quot;][&quot;kaiboost&quot;] and 
+    not wsys.def.kaiboost and wsys.stats.kai &gt;= 11 then
+  wsys.kaiboost_flags.disabled = false
+  wsys.enableSSDef( &quot;kaiboost&quot;, wsys.settings.defprio[wsys.profile][wsys.myClass()].kaiboost, true )
  end -- if
-end -- func
-
-function wsys.kaiboost()
- enableTrigger(&quot;Kai Boost +&quot;)
- if wsys.timer.kaiboostwait then
-  killTimer(tostring(wsys.timer.kaiboostwait))
- end
- wsys.timer.kaiboostwait = tempTimer(wsys.waittime, [[wsys.timer.kaiboostwait = nil;disableTrigger(&quot;Kai Boost +&quot;)]])
- wsys.salviaSend(&quot;kai boost&quot;)
-end -- func
-
-
-function wsys.kaiboostd(state)
- disableTrigger(&quot;Kai Boost +&quot;)
- if wsys.timer.kaiboostwait then
-   killTimer(tostring(wsys.timer.kaiboostwait))
- end
- wsys.timer.kaiboostwait = nil
- wsys.def.kaiboost = state
 end -- func</script>
                             <eventHandlerList/>
                         </Script>

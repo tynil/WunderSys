@@ -39489,7 +39489,7 @@ end</script>
                 <Script isActive="yes" isFolder="no">
                     <name>Check for Updates</name>
                     <packageName></packageName>
-                    <script>wsys.myVersion = &quot;v1.1.1&quot;
+                    <script>wsys.myVersion = &quot;v1.1.2&quot;
 wsys.currentVersion = wsys.currentVersion or wsys.myVersion
 wsys.updateAvailable = false
 local downloadsURL = &quot;https://github.com/tynil/WunderSys/releases&quot;

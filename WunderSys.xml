@@ -34591,6 +34591,7 @@ end -- if</script>
                 <Alias isActive="yes" isFolder="no">
                     <name>Set mount</name>
                     <script>wsys.settings.mount = matches[2]
+wsys.settings.havevault = true
 send(&quot;vault &quot; .. wsys.settings.mount)</script>
                     <command></command>
                     <packageName></packageName>
@@ -34769,6 +34770,17 @@ end</script>
                     <command></command>
                     <packageName></packageName>
                     <regex>^swp (\w+)$</regex>
+                </Alias>
+                <Alias isActive="yes" isFolder="no">
+                    <name>Automounting toggle</name>
+                    <script>if matches[2] then
+	wsys.mountUp( matches[2] )
+else
+	wsys.mountToggle()
+end</script>
+                    <command></command>
+                    <packageName></packageName>
+                    <regex>^va( \w+)?$</regex>
                 </Alias>
             </AliasGroup>
             <AliasGroup isActive="yes" isFolder="yes">
@@ -35128,6 +35140,8 @@ function wsys.return_defaultsettings( no_save )
   profileondeath = &quot;basic&quot;,
   profileonburst = &quot;basic&quot;,
   autotree = false,
+  automount = false,
+  havevault = true,
 }
   if not no_save then
     wsys.saveSettings()
@@ -35170,9 +35184,10 @@ function wsys.loadSettings()
   end -- if
 end
 
-if not wsys.settings then
-  wsys.return_defaultsettings(true)
+if wsys.settings then
+  wsys.saveSettings()
 end
+wsys.return_defaultsettings(true)
 wsys.loadSettings()</script>
                     <eventHandlerList/>
                 </Script>
@@ -35944,6 +35959,8 @@ end -- func
  if next(wsys.tb.affstogether) then
   wsys.firequeues()
  end -- if
+
+ wsys.checkAutoMount()
  
  --if health is 0 you died, pause, clear affs, defs and timers
  if wsys.stats.h == 0 and wsys.stats.oh &gt; 0 then
@@ -37610,6 +37627,9 @@ function wsys.stood()
  end
 end -- func
 
+function wsys.mountCommand()
+  return wsys.settings.havevault and &quot;vault&quot; or &quot;mount&quot;
+end
 
 function wsys.mount()
  enableTrigger(&quot;Mount&quot;)
@@ -37618,7 +37638,7 @@ function wsys.mount()
  end
  wsys.timer.standwait = tempTimer(wsys.waittime, [[wsys.timer.standwait = nil]])
  wsys.osend(&quot;drop &quot; .. wsys.settings.mount)
- wsys.osend(&quot;vault &quot; .. wsys.settings.mount)
+ wsys.osend(wsys.mountCommand()..&quot; &quot; .. wsys.settings.mount)
 end -- func
 
 
@@ -38388,6 +38408,61 @@ function wsys.manualdeathsight()
     end
   end
 end</script>
+                        <eventHandlerList/>
+                    </Script>
+                    <Script isActive="yes" isFolder="no">
+                        <name>Mounting</name>
+                        <packageName></packageName>
+                        <script>wsys.mount_flags = wsys.mount_flags or {}
+
+function wsys.autoMount( enable )
+  if wsys.settings.automount == nil then wsys.settings.automount = false end
+  if enable then
+    wsys.setSettings( &quot;automount&quot;, &quot;true&quot; )
+  else
+    wsys.setSettings( &quot;automount&quot;, &quot;false&quot; )
+  end
+  wsys.checkAutoMount()
+end
+
+function wsys.mountToggle()
+  wsys.autoMount( not wsys.settings.automount )
+end
+
+function wsys.mountUp( mount )
+  if not mount then
+    wsys.setSettings( &quot;mount&quot;, string.trim( mount ) )
+  end
+  wsys.autoMount( true )
+end
+
+function wsys.checkAutoMount()
+  local break_early = ( gmcp == nil or gmcp.Char == nil ) or wsys.isDragon()
+  if break_early then
+    return
+  end
+
+  if ( wsys.settings.automount and wsys.def.mounted ) or
+     ( not wsys.settings.automount and not wsys.def.mounted ) then
+    wsys.mount_flags.trying = false
+	
+  elseif wsys.cancure() and not wsys.isHindered() and not wsys.mount_flags.trying and wsys.bals.b and wsys.bals.e and not wsys.aff.hamstrung then
+    if wsys.settings.automount and not wsys.def.mounted then
+      enableTrigger(&quot;Mount&quot;)
+      wsys.osend(wsys.mountCommand()..&quot; &quot;.. wsys.settings.mount )
+      wsys.mount_flags.trying = true
+      if wsys.mount_flags.remountTimer then killTimer(wsys.mount_flags.remountTimer) end
+      wsys.mount_flags.remountTimer=tempTimer(1,[[wsys.mount_flags.trying = false; wsys.checkAutoMount()]])
+    elseif not wsys.settings.automount and wsys.def.mounted then
+      wsys.dismount()
+      wsys.mount_flags.trying = true
+      if wsys.mount_flags.remountTimer then killTimer(wsys.mount_flags.remountTimer) end
+      wsys.mount_flags.remountTimer=tempTimer(1,[[wsys.mount_flags.trying = false; wsys.checkAutoMount()]])
+    end
+  end
+end
+
+</script>
                         <eventHandlerList/>
                     </Script>
                 </ScriptGroup>

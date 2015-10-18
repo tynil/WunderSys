@@ -13944,7 +13944,7 @@ wsys.manaprio()</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Puppet mangle +</name>
-                        <script>wsys.restobreakcheck(&quot;mangled&quot; .. multimatches[2][2] .. multimatches[2][3])
+                        <script>wsys.restobreakcheck(&quot;damaged&quot; .. multimatches[2][2] .. multimatches[2][3])
 wsys.puppetmangle = true
  --if not wsys.isRaid() then send(&quot;fly&quot;) end
 </script>

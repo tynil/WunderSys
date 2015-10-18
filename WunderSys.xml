@@ -35088,9 +35088,16 @@ wsys = wsys or {}</script>
                 <Script isActive="yes" isFolder="no">
                     <name>Load Settings</name>
                     <packageName></packageName>
-                    <script>--change setting
+                    <script>local settings_allow_false = {
+ elmtwopipe = true,
+ valeriantwopipe = true,
+ skullcaptwopipe = true,
+ promptline2 = true,
+}
+
+--change setting
 function wsys.setSettings(setting, value)
-  if setting == &quot;elmtwopipe&quot; or setting == &quot;valeriantwopipe&quot; or setting == &quot;skullcaptwopipe&quot; then
+  if settings_allow_false[setting] then
     if value == &quot;false&quot; then
       wsys.settings[setting] = wsys.stringToBoolean(value)
       wsys.report(setting .. &quot; set to &quot; .. tostring(wsys.stringToBoolean(value)))
@@ -35149,6 +35156,8 @@ function wsys.return_defaultsettings( no_save )
   manapercent = 10,
   usemoss = false,
   prompt = &quot;@warning#red@paused@softpaused#DodgerBlue@retardation#yellow@phase#hcolour@healthh #mcolour@manam #ecolour@percentendurance%e #wcolour@percentwillpower%w @kai@shin#white@bal@bal#MidnightBlue|#white@eq@eq @invdef#DarkOrchid@mw@affs@diffhealth@diffmana&quot;,
+  promptline2 = false,
+  blackoutprompt = &quot;@warning#red@paused@softpaused#DodgerBlue@retardation&lt;black:grey&gt;BLACKOUT-&quot;,
   monktransmuteto = 80,
   aeonsipmana = 40,
   parrystrategy = &quot;manual&quot;,
@@ -36017,7 +36026,6 @@ end -- func
                         <name>Prompt Functions</name>
                         <packageName></packageName>
                         <script>function wsys.prompt()
- deleteLine()
  wsys.affs_gained = {}
 
  if next(wsys.tb.affstogether) then
@@ -36052,6 +36060,7 @@ end -- func
 if not wsys.deletefull then
  wsys.promptsub()
 else
+ deleteLine()
  wsys.deletefull = false
 end -- if
 
@@ -39744,6 +39753,17 @@ function wsys.displayEchosAndGags()
   fg(&quot;grey&quot;)
   echoLink(tostring(wsys.settings.prompt), [[clearCmdLine();appendCmdLine(&quot;wconfig prompt &quot; .. wsys.settings.prompt)]], &quot;Click to paste in input line&quot;, true)
   resetFormat()
+
+  cecho(&quot;\n\n&lt;white&gt;promptline2 (false to disable): &quot;)
+  fg(&quot;grey&quot;)
+  echoLink(tostring(wsys.settings.promptline2), [[clearCmdLine();appendCmdLine(&quot;wconfig promptline2 &quot; .. tostring(wsys.settings.promptline2))]], &quot;Click to paste in input line&quot;, true)
+  resetFormat()
+
+  cecho(&quot;\n\n&lt;white&gt;blackoutprompt: &quot;)
+  fg(&quot;grey&quot;)
+  echoLink(tostring(wsys.settings.blackoutprompt), [[clearCmdLine();appendCmdLine(&quot;wconfig blackoutprompt &quot; .. wsys.settings.blackoutprompt)]], &quot;Click to paste in input line&quot;, true)
+  resetFormat()
+  
   cecho(&quot;\n\n&lt;white&gt;affgainedechos: &quot;..tostring(wsys.settings.affgainedechos))
   cecho(&quot;\n&lt;white&gt;affcuredechos: &quot;..tostring(wsys.settings.affcuredechos))
 
@@ -39948,59 +39968,89 @@ registerAnonymousEventHandler(&quot;You Died&quot;, &quot;wsys.resetOnDeath&quot
                 <Script isActive="yes" isFolder="no">
                     <name>Prompt Sub</name>
                     <packageName></packageName>
-                    <script>function wsys.promptsub()
-  --if blackout then just echo that and don't bother with the rest
-  if wsys.aff.blackout then
-    if wsys.paused then cecho(&quot;&lt;red&gt;(PP) &quot;) end
-    if wsys.softpaused then cecho(&quot;&lt;red&gt;(sP) &quot;) end
-    if wsys.retard then cecho(&quot;&lt;white&gt;[&lt;DodgerBlue&gt;RET&lt;white&gt;]&quot;) end
-    
-    cecho(&quot;\n&lt;black:grey&gt;BLACKOUT-&quot;)
-    do return end 
-  end -- if
+                    <script>function wsys.promptColorSub(tag)
+  for k,v in pairs(wsys.prompttagcolors) do
+    if table.contains(wsys.prompttagcolors, tag) then
+      if type(wsys.prompttagcolors[tag]) == &quot;function&quot; then
+        return &quot;&lt;&quot;..wsys.prompttagcolors[tag]()..&quot;&gt;&quot;
+      elseif type(wsys.prompttagcolors[tag]) == &quot;string&quot; then
+        return &quot;&lt;&quot;..wsys.prompttagcolors[tag]..&quot;&gt;&quot;
+      end --if
+    else
+      --color not in table, hope you used a valid mudlet color
+      return &quot;&lt;&quot;..tag..&quot;&gt;&quot;
+    end --if
+  end --for
+end
+  
+function wsys.promptTagSub(tag)
+  local theTag = false
+  local tailEnd = false
+    for k,v in pairs(wsys.prompttags) do
+      if string.starts(tag, k) then
+        theTag = k
+        --save the bit after the prompt tag
+        tailEnd = string.gsub(tag, theTag, &quot;&quot;)
+      end
+    end
+  local th = wsys.prompttags[theTag]
+  if type(th) == &quot;function&quot; then
+    return _G[&quot;wsys&quot;][&quot;prompttags&quot;][theTag]() .. tailEnd
+  elseif type(th) == &quot;string&quot; then
+    return _G[&quot;wsys&quot;][&quot;prompttags&quot;][theTag] .. tailEnd
+  end
+end
+
+function wsys.displayPromptString(str)
+  --Split based on color tags, so we don't change the background for everything
+  local last_color = nil
+  local display_text = &quot;&quot;
+  for color,text in string.gmatch( &quot;&lt;white&gt;&quot;..str, &quot;&lt;([A-Za-z_:]+)&gt;([^&lt;]*)&quot; ) do
+    if not string.match( color, &quot;[A-Za-z_]+:[A-Za-z_]+&quot; ) and not color_table[color] then
+      -- Not a valid color, add it to the text and continue
+      display_text = display_text .. &quot;&lt;&quot;..color..&quot;&gt;&quot;..text
+    else
+      if not last_color then last_color = color end
+
+      if not string.find( color, &quot;:&quot; ) and not string.find( last_color, &quot;:&quot; ) then
+        display_text = &quot;&lt;&quot;..last_color..&quot;&gt;&quot;..display_text
+      end
+      display_text = display_text..&quot;&lt;&quot;..color..&quot;&gt;&quot;..text
+      cecho(display_text)
+      display_text = &quot;&quot;
+      last_color = color
+    end
+  end
+end
+
+function wsys.displayLen( str )
+	return str:gsub(&quot;&lt;[a-zA-Z_:]+&gt;&quot;, &quot;&quot;):len()
+end
+
+function wsys.promptsub()
+  selectCurrentLine(); replace(&quot;&quot;);
+
+  local promptstring = wsys.aff.blackout and wsys.settings.blackoutprompt or wsys.settings.prompt
   --sub out the # color tags
-  local promptstring = string.gsub(wsys.settings.prompt, &quot;#([A-Za-z_]+)&quot;, function (n)
-                  local colorTag = &quot;&lt;white&gt;&quot;
-                  for k,v in pairs(wsys.prompttagcolors) do
-                    if table.contains(wsys.prompttagcolors, n) then
-                      if type(wsys.prompttagcolors[n]) == &quot;function&quot; then
-                        return &quot;&lt;&quot;..wsys.prompttagcolors[n]()..&quot;&gt;&quot;
-                      elseif type(wsys.prompttagcolors[n]) == &quot;string&quot; then
-                        return &quot;&lt;&quot;..wsys.prompttagcolors[n]..&quot;&gt;&quot;
-                      end --if
-                    else
-                      --color not in table, hope you used a valid mudlet color
-                      return &quot;&lt;&quot;..n..&quot;&gt;&quot;
-                    end --if
-                  end --for
-                end) --fn
-
-
+  promptstring = string.gsub(promptstring, &quot;#([A-Za-z_:]+)&quot;, wsys.promptColorSub )
   --sub out the @ prompt tags
-  promptstring = string.gsub(promptstring, &quot;@(%w+)&quot;, function (n)
-              local theTag = false
-              local tailEnd = false
-              for k,v in pairs(wsys.prompttags) do
-                if string.starts(n, k) then
-                  theTag = k
-                  --save the bit after the prompt tag
-                  tailEnd = string.gsub(n, theTag, &quot;&quot;)
-                end
-              end
-              local th = wsys.prompttags[theTag]
-                        if type(th) == &quot;function&quot; then
-                          return _G[&quot;wsys&quot;][&quot;prompttags&quot;][theTag]() .. tailEnd
-                        elseif type(th) == &quot;string&quot; then
-                          return _G[&quot;wsys&quot;][&quot;prompttags&quot;][theTag] .. tailEnd
-                        end
-                      end) --fn
-
+  promptstring = string.gsub(promptstring, &quot;@(%w+)&quot;, wsys.promptTagSub )
 
   if wsys.def.lyre then promptstring = promptstring .. &quot;&lt;gold&gt; L&quot; end
   if wsys.vmode then promptstring = promptstring ..  &quot;&lt;MediumVioletRed&gt; vivi&quot; end
   if wsys.heartseedmode then promptstring = promptstring ..  &quot;&lt;firebrick&gt; H&lt;LimeGreen&gt;Seed&quot; end
   if wsys.bardmode then promptstring = promptstring .. &quot;&lt;firebrick&gt; BARD&quot; end
-  cecho(&quot;\n&quot;..promptstring)
+
+  wsys.displayPromptString( promptstring )
+
+  local promptline2 = wsys.settings.promptline2
+  if promptline2 and type(promptline2) == &quot;string&quot; then
+    promptline2 = string.gsub(promptline2, &quot;#([A-Za-z_:]+)&quot;, wsys.promptColorSub )
+    promptline2 = string.gsub(promptline2, &quot;@(%w+)&quot;, wsys.promptTagSub )
+    if wsys.displayLen( promptline2 ) &gt; 0 then
+      wsys.displayPromptString(&quot;\n&quot;..promptline2)
+    end
+  end
 
   previousPromptLineNumber = currentPromptLineNumber
   previousPromptLineNumberLength = currentPromptLineNumberLength

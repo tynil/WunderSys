@@ -39216,6 +39216,12 @@ function wsys.isDragon()
   return wsys.settings.dform
 end
 
+function wsys.parseDragon( str )
+  local color = str:match(&quot;(%w+) Dragon&quot;)
+  if color then wsys.settings.dcolor = color:lower() end
+  return color and &quot;dragon&quot; or str 
+end
+
 --returns your class as a string
 function wsys.myClass()
   if wsys.isDragon() then
@@ -39235,19 +39241,26 @@ function wsys.isFitnessClass()
 end
 
 function wsys.changedClass()
- if (gmcp.Char.Status.class ~= wsys.settings.class) or (gmcp.Char.Status.race ~= wsys.race) then
+ if (wsys.parseDragon(gmcp.Char.Status.class) ~= wsys.settings.class) or (wsys.parseDragon(gmcp.Char.Status.race):lower() ~= wsys.race:lower()) then
+  if wsys.parseDragon(gmcp.Char.Status.class) == &quot;dragon&quot; and wsys.parseDragon(gmcp.Char.Status.race) ~= &quot;dragon&quot; then
+    --Dragon class but not race. We lesserformed, but class didn't update. Check score
+    send(&quot;score&quot;, false )
+    return
+  end
   --cecho(&quot;&lt;red&gt;CHANGED CLASS&quot;)
   local old_class = wsys.myClass()
-  wsys.settings.class = gmcp.Char.Status.class
+  wsys.settings.class = wsys.parseDragon(gmcp.Char.Status.class)
   wsys.dragonformDetection() --This will ensure the profile tables exist
 
-  -- Reset all defences that were in keepup of the previous class
-  for k in pairs( table.union( wsys.settings.keepup[wsys.profile][old_class], wsys.settings.defup[wsys.profile][old_class] ) ) do
-    if not wsys.settings.keepup[wsys.profile][wsys.myClass()][k] then
-      send(&quot;curing priority defence &quot; .. k .. &quot; reset&quot;, true)
+  if old_class ~= wsys.myClass() then
+    -- Reset all defences that were in keepup of the previous class
+    for k in pairs( table.union( wsys.settings.keepup[wsys.profile][old_class], wsys.settings.defup[wsys.profile][old_class] ) ) do
+      if not wsys.settings.keepup[wsys.profile][wsys.myClass()][k] then
+        send(&quot;curing priority defence &quot; .. k .. &quot; reset&quot;, true)
+      end
     end
+    wsys.switchProfile( wsys.profile )
   end
-  wsys.switchProfile( wsys.profile )
  end
 end
 
@@ -40704,7 +40717,7 @@ end</script>
                     <script>wsys.race = &quot;unformed mass&quot;
 
 function wsys.dragonformDetection()
-  if gmcp.Char.Status.race == &quot;Dragon&quot; then
+  if wsys.parseDragon(gmcp.Char.Status.race):lower() == &quot;dragon&quot; then
     wsys.dragonformed()
     if wsys.race ~= &quot;Dragon&quot; then
       wsys.race = &quot;Dragon&quot;

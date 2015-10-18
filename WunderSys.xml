@@ -40685,7 +40685,6 @@ end
 end
 
 function wsys.startedqq()
-  local roomnum = gmcp.Room.Info.num
   if not wsys.innewsroom then
     wsys.saveSettings(true)
     send(&quot;inrift all&quot;)

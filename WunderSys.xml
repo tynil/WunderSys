@@ -634,6 +634,26 @@ forced = nil
                             <integer>3</integer>
                         </regexCodePropertyList>
                     </Trigger>
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Cadmuscurse -</name>
+                        <script>wsys.affcuredconfirm(&quot;cadmuscurse&quot;)</script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList>
+                            <string>The vile curse of Cadmus leaves you.</string>
+                        </regexCodeList>
+                        <regexCodePropertyList>
+                            <integer>3</integer>
+                        </regexCodePropertyList>
+                    </Trigger>
                     <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="yes" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Claustrophobia -</name>
                         <script>wsys.affcured(&quot;claustrophobia&quot;)</script>
@@ -3518,7 +3538,7 @@ end -- if</script>
                         </Trigger>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>bubonis cadmus (diag)</name>
-                            <script>wsys.affadd(&quot;bubonis&quot;)</script>
+                            <script>wsys.affadd(&quot;cadmuscurse&quot;)</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -7506,7 +7526,7 @@ wsys.newClassTimer(&quot;occultist&quot;)</script>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>bubonis cadmus +</name>
-                        <script>wsys.affadd(&quot;bubonis&quot;, &quot;occultist&quot;)
+                        <script>wsys.affadd(&quot;cadmuscurse&quot;, &quot;occultist&quot;)
 --wsys.aff.bubonis = true</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
@@ -7526,28 +7546,8 @@ wsys.newClassTimer(&quot;occultist&quot;)</script>
                         </regexCodePropertyList>
                     </Trigger>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                        <name>bubonis cadmus -</name>
-                        <script>wsys.aff.bubonis = nil</script>
-                        <triggerType>0</triggerType>
-                        <conditonLineDelta>0</conditonLineDelta>
-                        <mStayOpen>0</mStayOpen>
-                        <mCommand></mCommand>
-                        <packageName></packageName>
-                        <mFgColor>#ff0000</mFgColor>
-                        <mBgColor>#ffff00</mBgColor>
-                        <mSoundFile></mSoundFile>
-                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
-                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
-                        <regexCodeList>
-                            <string>The vile curse of Cadmus leaves you.</string>
-                        </regexCodeList>
-                        <regexCodePropertyList>
-                            <integer>3</integer>
-                        </regexCodePropertyList>
-                    </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>bubonis cadmus symptom</name>
-                        <script>wsys.affadd(&quot;bubonis&quot;, &quot;occultist&quot;)
+                        <script>wsys.affadd(&quot;cadmuscurse&quot;, &quot;occultist&quot;)
 --wsys.aff.bubonis = true</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
@@ -42511,7 +42511,7 @@ end</script>
  impaled = &quot;Impale&quot;,
  impatience = &quot;IMP&quot;,
  inquisition = &quot;&quot;,
- bubonis = &quot;cadmus&quot;,
+ cadmuscurse = &quot;cadmus&quot;,
  weakenedmind = &quot;rixil&quot;,
  hecatecurse = &quot;HECATE&quot;,
  itching = &quot;&quot;,

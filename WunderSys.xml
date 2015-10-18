@@ -34835,9 +34835,12 @@ wsys.copyProfileClass( matches[2] )</script>
                 <Alias isActive="yes" isFolder="no">
                     <name>Automounting toggle</name>
                     <script>if matches[2] then
-	wsys.mountUp( matches[2] )
+  local mount = matches[2]
+  if matches[2] == &quot; on&quot; then mount = true end
+  if matches[2] == &quot; off&quot; then mount = false end
+  wsys.mountUp(  mount )
 else
-	wsys.mountToggle()
+  wsys.mountToggle()
 end</script>
                     <command></command>
                     <packageName></packageName>
@@ -38500,10 +38503,12 @@ function wsys.mountToggle()
 end
 
 function wsys.mountUp( mount )
-  if not mount then
-    wsys.setSettings( &quot;mount&quot;, string.trim( mount ) )
+  if type(mount) == &quot;string&quot; then
+    wsys.setSettings( &quot;mount&quot;, string.trim(mount) )
+    wsys.autoMount( true )
+  else
+    wsys.autoMount(mount)
   end
-  wsys.autoMount( true )
 end
 
 function wsys.checkAutoMount()

@@ -33677,11 +33677,13 @@ end</script>
                 </Trigger>
                 <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>Def Priority Shift Gag</name>
-                    <script>local theDef = multimatches[2][2]
+                    <script>if multimatches[2] then
+local theDef = multimatches[2][2]
 local newPrio = tonumber(multimatches[2][3])
 if wsys.settings.defup[wsys.profile][wsys.myClass()][theDef] or wsys.settings.keepup[wsys.profile][wsys.myClass()][theDef] or wsys.settings.gagdefshift then
   deleteFull()
   setTriggerStayOpen( &quot;Def Priority Shift Gag&quot;, 1 ) 
+end
 end</script>
                     <triggerType>0</triggerType>
                     <conditonLineDelta>0</conditonLineDelta>
@@ -33703,7 +33705,7 @@ end</script>
                     </regexCodePropertyList>
                     <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Def Priority Preempt</name>
-                        <script>deleteLine()</script>
+                        <script>deleteFull()</script>
                         <triggerType>0</triggerType>
                         <conditonLineDelta>0</conditonLineDelta>
                         <mStayOpen>0</mStayOpen>

@@ -38314,7 +38314,7 @@ wsys.tb.defenceTable = {
   [&quot;resistance&quot;] = {[&quot;name&quot;] = &quot;Resistance&quot;, [&quot;skillset&quot;] = {&quot;kaido&quot;, &quot;chivalry&quot;, &quot;metamorphosis&quot;},},
   [&quot;retaliation&quot;] = {[&quot;name&quot;] = &quot;Retaliation&quot;, [&quot;skillset&quot;] = {&quot;twoarts&quot;},},
   [&quot;scales&quot;] = {[&quot;name&quot;] = &quot;Scales&quot;, [&quot;skillset&quot;] = {&quot;subterfuge&quot;},},
-  [&quot;scholasticism&quot;] = {[&quot;name&quot;] = &quot;Myrrh&quot;, [&quot;skillset&quot;] = {&quot;curative&quot;}, [&quot;manualcommand&quot;] = wsys.manualmyrrh(),},
+ -- [&quot;scholasticism&quot;] = {[&quot;name&quot;] = &quot;Myrrh&quot;, [&quot;skillset&quot;] = {&quot;curative&quot;}, [&quot;manualcommand&quot;] = wsys.manualmyrrh(),},
   [&quot;secondsight&quot;] = {[&quot;name&quot;] = &quot;Secondsight&quot;, [&quot;skillset&quot;] = {&quot;subterfuge&quot;},},
   [&quot;selfishness&quot;] = {[&quot;name&quot;] = &quot;Selfishness&quot;, [&quot;skillset&quot;] = {&quot;survival&quot;},},
   --[&quot;setweapon&quot;] = {[&quot;name&quot;] = &quot;Impale&quot;, [&quot;skillset&quot;] = {&quot;woodlore&quot;},},
@@ -38476,7 +38476,7 @@ wsys.tb.defstripTable = {
   [&quot;venom&quot;] = &quot;poisonresist&quot;,
   [&quot;clinging&quot;] = &quot;clinging&quot;,
   [&quot;shield&quot;] = &quot;shield&quot;,
-  [&quot;scholasticism&quot;] = &quot; scholasticism&quot;,
+  --[&quot;scholasticism&quot;] = &quot; scholasticism&quot;,
   [&quot;firefly&quot;] = &quot;firefly&quot;,
   [&quot;held breath&quot;] = &quot;heldbreath&quot;,
 }

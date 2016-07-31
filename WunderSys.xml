@@ -35282,6 +35282,8 @@ function wsys.return_defaultsettings( no_save )
   },
   autoshrugat = 3,
   sipmana = 80,
+  mosshealth = 80,
+  mossmana = 80,
   usetransmutation = true,
   monktransmute = false,
   havedeathsight = false,
@@ -37706,17 +37708,17 @@ function wsys.mossbal()
 end
 
 function wsys.mossThreshholdDown()
-  local mh = wsys.settings.siphealth - 10
-  local mm = wsys.settings.siphealth - 10
+  local mh = wsys.settings.mosshealth - 10
+  local mm = wsys.settings.mossmana - 10
   if mh &lt; 0 then mh = 0 end
-  if mm &lt; 0 then mh = 0 end
+  if mm &lt; 0 then mm = 0 end
   send(&quot;curing mosshealth &quot; .. mh, false)
   send(&quot;curing mossmana &quot; .. mm,false)
 end
 
 function wsys.mossThreshholdUp()
-  send(&quot;curing mosshealth 90&quot;, false)
-  send(&quot;curing mossmana 85&quot;, false)
+  send(&quot;curing mosshealth &quot;..wsys.settings.mosshealth, false)
+  send(&quot;curing mossmana &quot;..wsys.settings.mossmana, false)
 end
 
 function wsys.mossThreshholdDownFailsafe(event, bal)
@@ -42893,8 +42895,8 @@ function wsys.aeonedLost(event, affliction)
       send(&quot;curing batch on&quot;, false)
       send(&quot;curing siphealth &quot; .. wsys.settings.siphealth, false)
       send(&quot;curing sipmana &quot; .. wsys.settings.sipmana, false)
-      if wsys.settings.usemoss then send(&quot;curing mosshealth &quot; .. wsys.settings.siphealth - 10, false) end
-      if wsys.settings.usemoss then send(&quot;curing mossmana &quot; .. wsys.settings.sipmana - 10, false) end
+      if wsys.settings.usemoss then send(&quot;curing mosshealth &quot; .. wsys.settings.mosshealth - 10, false) end
+      if wsys.settings.usemoss then send(&quot;curing mossmana &quot; .. wsys.settings.mossmana - 10, false) end
       wsys.affPrioRestore( &quot;asthma&quot; )
       wsys.affPrioRestore( &quot;weariness&quot; )
       wsys.affPrioRestore( &quot;anorexia&quot; )
@@ -42914,8 +42916,8 @@ function wsys.unaeonDiagnose()
       send(&quot;curing batch on&quot;, false)
       send(&quot;curing siphealth &quot; .. wsys.settings.siphealth, false)
       send(&quot;curing sipmana &quot; .. wsys.settings.sipmana, false)
-      if wsys.settings.usemoss then send(&quot;curing mosshealth &quot; .. wsys.settings.siphealth - 10, false) end
-      if wsys.settings.usemoss then send(&quot;curing mossmana &quot; .. wsys.settings.sipmana - 10, false) end
+      if wsys.settings.usemoss then send(&quot;curing mosshealth &quot; .. wsys.settings.mosshealth - 10, false) end
+      if wsys.settings.usemoss then send(&quot;curing mossmana &quot; .. wsys.settings.mossmana - 10, false) end
       wsys.waittime = wsys.myPing()*2
       if wsys.retard then wsys.retardationOff() end
     end

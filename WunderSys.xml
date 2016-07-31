@@ -39834,9 +39834,13 @@ function wsys.displaySettings()
   cecho(&quot;\n&lt;white&gt;unsoftpausehealth: &quot;..tostring(wsys.settings.unsoftpausehealth))
 
   cecho(&quot;\n\n&lt;white&gt;usemoss: &quot;..tostring(wsys.settings.usemoss))
-  cecho(&quot;\n&lt;white&gt;useinsomnia: &quot;..tostring(wsys.settings.useinsomnia))
+  cecho(&quot;\n&lt;white&gt;mosshealth: &quot;..tostring(wsys.settings.mosshealth))
+  cecho(&quot;\n&lt;white&gt;mossmana: &quot;..tostring(wsys.settings.mossmana))
+
+  cecho(&quot;\n\n&lt;white&gt;useinsomnia: &quot;..tostring(wsys.settings.useinsomnia))
   cecho(&quot;\n&lt;white&gt;usefocus: &quot;..tostring(wsys.settings.usefocus))
   cecho(&quot;\n&lt;white&gt;useclot: &quot;..tostring(wsys.settings.useclot))
+  cecho(&quot;\n&lt;white&gt;autotree: &quot;..tostring(wsys.settings.autotree))
   if wsys.isKnight() then
     cecho(&quot;\n&lt;white&gt;userage: &quot;..tostring(wsys.settings.userage))
   end

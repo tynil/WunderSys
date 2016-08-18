@@ -1,72 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MudletPackage>
 <MudletPackage version="1.0">
-    <HostPackage>
-        <Host autoClearCommandLineAfterSend="no" disableAutoCompletion="no" printCommand="yes" USE_IRE_DRIVER_BUGFIX="yes" mUSE_FORCE_LF_AFTER_PROMPT="no" mUSE_UNIX_EOL="no" mNoAntiAlias="no" mRawStreamDump="no" mAlertOnNewData="yes" mFORCE_NO_COMPRESSION="no" mFORCE_GA_OFF="no" mFORCE_SAVE_ON_EXIT="no" mEnableGMCP="yes" mMapStrongHighlight="no" mLogStatus="no" mEnableSpellCheck="yes" mShowInfo="no" mAcceptServerGUI="yes" mMapperUseAntiAlias="yes" mFORCE_MXP_NEGOTIATION_OFF="no" mRoomSize="0.5" mLineSize="5" mBubbleMode="no" mShowRoomIDs="no" mShowPanel="yes" mHaveMapperScript="no">
-            <name>WunderSysClean</name>
-            <mInstalledPackages>
-                <string>WunderSys</string>
-            </mInstalledPackages>
-            <url>achaea.com</url>
-            <serverPackageName>nothing</serverPackageName>
-            <serverPackageVersion>-1</serverPackageVersion>
-            <port>23</port>
-            <borderTopHeight>0</borderTopHeight>
-            <borderBottomHeight>0</borderBottomHeight>
-            <borderLeftWidth>0</borderLeftWidth>
-            <borderRightWidth>0</borderRightWidth>
-            <wrapAt>100</wrapAt>
-            <wrapIndentCount>0</wrapIndentCount>
-            <commandSeperator>;</commandSeperator>
-            <mFgColor>#c0c0c0</mFgColor>
-            <mBgColor>#000000</mBgColor>
-            <mCommandFgColor>#717100</mCommandFgColor>
-            <mCommandBgColor>#000000</mCommandBgColor>
-            <mCommandLineFgColor>#808080</mCommandLineFgColor>
-            <mCommandLineBgColor>#000000</mCommandLineBgColor>
-            <mBlack>#000000</mBlack>
-            <mLightBlack>#808080</mLightBlack>
-            <mRed>#800000</mRed>
-            <mLightRed>#ff0000</mLightRed>
-            <mBlue>#000080</mBlue>
-            <mLightBlue>#0000ff</mLightBlue>
-            <mGreen>#00b300</mGreen>
-            <mLightGreen>#00ff00</mLightGreen>
-            <mYellow>#808000</mYellow>
-            <mLightYellow>#ffff00</mLightYellow>
-            <mCyan>#008080</mCyan>
-            <mLightCyan>#00ffff</mLightCyan>
-            <mMagenta>#800080</mMagenta>
-            <mLightMagenta>#ff00ff</mLightMagenta>
-            <mWhite>#c0c0c0</mWhite>
-            <mLightWhite>#ffffff</mLightWhite>
-            <mDisplayFont>Bitstream Vera Sans Mono,10,-1,5,2,0,0,0,1,0</mDisplayFont>
-            <mCommandLineFont>Bitstream Vera Sans Mono,10,-1,5,2,0,0,0,0,0</mCommandLineFont>
-            <mCommandSeparator>;</mCommandSeparator>
-            <commandLineMinimumHeight>30</commandLineMinimumHeight>
-            <mFgColor2>#c0c0c0</mFgColor2>
-            <mBgColor2>#000000</mBgColor2>
-            <mBlack2>#242424</mBlack2>
-            <mLightBlack2>#808080</mLightBlack2>
-            <mRed2>#800000</mRed2>
-            <mLightRed2>#ff0000</mLightRed2>
-            <mBlue2>#000080</mBlue2>
-            <mLightBlue2>#0000ff</mLightBlue2>
-            <mGreen2>#00b300</mGreen2>
-            <mLightGreen2>#00ff00</mLightGreen2>
-            <mYellow2>#808000</mYellow2>
-            <mLightYellow2>#ffff00</mLightYellow2>
-            <mCyan2>#008080</mCyan2>
-            <mLightCyan2>#00ffff</mLightCyan2>
-            <mMagenta2>#800080</mMagenta2>
-            <mLightMagenta2>#ff00ff</mLightMagenta2>
-            <mWhite2>#c0c0c0</mWhite2>
-            <mLightWhite2>#ffffff</mLightWhite2>
-            <mSpellDic>en_US</mSpellDic>
-            <mLineSize>5</mLineSize>
-            <mRoomSize>0.5</mRoomSize>
-        </Host>
-    </HostPackage>
     <TriggerPackage>
         <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
             <name>WunderSys</name>
@@ -32192,7 +32126,7 @@ setPrefixWarning(lastradiancer .. &quot; radiancing you&quot;, 2)</script>
                             <integer>4</integer>
                         </regexCodePropertyList>
                     </Trigger>
-                    <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                    <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Logged in</name>
                         <script>-- yes this is now disabled after login, so you can't get illusioned or whatever.
 disableTrigger(&quot;Logged in&quot;)
@@ -34555,7 +34489,7 @@ wsys.report(&quot;Settings restored to default&quot;)</script>
                     </Alias>
                     <Alias isActive="yes" isFolder="no">
                         <name>Report a bug</name>
-                        <script>send(&quot;msg tynil //WunderSys(&quot;..wsys.myVersion..&quot;) Bug: &quot; .. matches[2])</script>
+                        <script>send(&quot;msg anze //WunderSys(&quot;..wsys.myVersion..&quot;) Bug: &quot; .. matches[2])</script>
                         <command></command>
                         <packageName></packageName>
                         <regex>^wbug (.*)$</regex>
@@ -36889,12 +36823,8 @@ function wsys.focusAffCount()
   if wsys.aff.claustrophobia then fCount = fCount + 1 end
   if wsys.aff.agoraphobia then fCount = fCount + 1 end
   if wsys.aff.vertigo then fCount = fCount + 1 end
-  -- Weariness no longer focusable - Announce #4494 
-  --if wsys.aff.weariness then fCount = fCount + 1 end
   if wsys.aff.confusion then fCount = fCount + 1 end
   if wsys.aff.anorexia then fCount = fCount + 1 end
-
-  -- Dementia, Paranoia, and Hallucination - Added as Focusable Announce #4539 
   if wsys.aff.dementia then fCount = fCount + 1 end
   if wsys.aff.paranoia then fCount = fCount + 1 end
   if wsys.aff.hallucinations then fCount = fCount + 1 end
@@ -36969,11 +36899,13 @@ end
 function wsys.return_defaultfocusshifts()
   return {
     recklessness = 12,
-    weariness = 8,
     confusion = 8,
     stupidity = 9,
     dizziness = 14,
-    shyness = 14
+    shyness = 14,
+	 paranoia = 14,
+    dementia = 14,
+    hallucinations = 14
   }
 end</script>
                             <eventHandlerList/>
@@ -39641,10 +39573,10 @@ end</script>
                     <Script isActive="yes" isFolder="no">
                         <name>Check for Updates</name>
                         <packageName></packageName>
-                        <script>wsys.myVersion = &quot;v1.1.3&quot;
+                        <script>wsys.myVersion = &quot;v1.2-beta&quot;
 wsys.currentVersion = wsys.currentVersion or wsys.myVersion
 wsys.updateAvailable = false
-local downloadsURL = &quot;https://github.com/tynil/WunderSys/releases&quot;
+local downloadsURL = &quot;https://github.com/anze/WunderSys/releases&quot;
 
 -- download latest version number file
 function wsys.checkForUpdates()
@@ -39654,7 +39586,7 @@ function wsys.checkForUpdates()
     _sep = &quot;\\&quot; 
   end -- if
   local current_version = getMudletHomeDir().._sep..&quot;WunderSysVersion&quot;
-  downloadFile(current_version, &quot;https://raw.githubusercontent.com/tynil/WunderSys/master/WunderSysVersion&quot;)
+  downloadFile(current_version, &quot;https://raw.githubusercontent.com/anze/WunderSys/master/WunderSysVersion&quot;)
 end
 
 registerAnonymousEventHandler(&quot;sysLoadEvent&quot;, &quot;wsys.checkForUpdates&quot;)
@@ -43792,4 +43724,7 @@ end
         </ScriptGroup>
     </ScriptPackage>
     <KeyPackage/>
+    <HelpPackage>
+        <helpURL></helpURL>
+    </HelpPackage>
 </MudletPackage>

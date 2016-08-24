@@ -1532,7 +1532,7 @@ wsys.canaction()</script>
                                 <integer>3</integer>
                             </regexCodePropertyList>
                         </Trigger>
-                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Stupidity -</name>
                             <script>wsys.affcured(&quot;stupidity&quot;)</script>
                             <triggerType>0</triggerType>
@@ -17578,7 +17578,11 @@ wsys.undef(&quot;insulation&quot;)
                         <regexCodePropertyList/>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>eating herb</name>
-                            <script>wsys.cure = string.lower(multimatches[2][2])</script>
+                            <script>wsys.cure = string.lower(multimatches[2][2])
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>1</mStayOpen>
@@ -17946,7 +17950,9 @@ end -- if</script>
                         <regexCodePropertyList/>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>concentrating</name>
-                            <script></script>
+                            <script>if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>1</mStayOpen>
@@ -18006,7 +18012,9 @@ end -- if</script>
                         <regexCodePropertyList/>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>composing</name>
-                            <script></script>
+                            <script>if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>1</mStayOpen>
@@ -18178,7 +18186,11 @@ wsys.affadd(&quot;recklessness&quot;)</script>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>smoking pipe</name>
                             <script>wsys.pipes.smoking = string.lower(multimatches[2][2])
-wsys.cure = string.lower(multimatches[2][2])</script>
+wsys.cure = string.lower(multimatches[2][2])
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>1</mStayOpen>
@@ -18860,6 +18872,8 @@ if applied ~= &quot;quicksilver&quot; and applied ~= &quot;sileris&quot; then
 end
 if applied == &quot;density&quot; then
   deleteFull()
+elseif wsys.settings.gagcuring then
+  deleteLine()
 end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
@@ -18888,6 +18902,10 @@ if twolower == &quot;health&quot; then
   wsys.lostBal(&quot;hm&quot;, 6)
 else
   wsys.applying = twolower .. string.lower(multimatches[2][3])
+end
+
+if wsys.settings.gagcuring then
+  deleteLine()
 end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
@@ -18968,7 +18986,11 @@ end</script>
                         </Trigger>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>touching tree</name>
-                            <script>wsys.timer.treewait = true</script>
+                            <script>wsys.timer.treewait = true
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>1</mStayOpen>
@@ -19170,7 +19192,9 @@ end</script>
                         <regexCodePropertyList/>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>writhe</name>
-                            <script></script>
+                            <script>if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>1</mStayOpen>
@@ -19570,7 +19594,10 @@ end</script>
                             <name>standing</name>
                             <script>wsys.cure = &quot;stand&quot;
 if wsys.aff.blackout then wsys.affcured(&quot;prone&quot;) end
---deleteLine()</script>
+--deleteLine()
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>1</mStayOpen>
@@ -19627,7 +19654,9 @@ wsys.focusbal()</script>
                         </Trigger>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>focussing</name>
-                            <script></script>
+                            <script>if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>1</mStayOpen>
@@ -19725,7 +19754,11 @@ end</script>
                         <regexCodePropertyList/>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>sipping</name>
-                            <script>wsys.sipping = string.lower(multimatches[2][2])</script>
+                            <script>wsys.sipping = string.lower(multimatches[2][2])
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>1</mStayOpen>
@@ -20138,7 +20171,11 @@ end</script>
                         <regexCodePropertyList/>
                         <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>waking up</name>
-                            <script>wsys.cure = &quot;wake&quot;</script>
+                            <script>wsys.cure = &quot;wake&quot;
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -23214,22 +23251,6 @@ end
                                 <integer>3</integer>
                                 <integer>3</integer>
                             </regexCodePropertyList>
-                        </Trigger>
-                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-                            <name>Flying (def)</name>
-                            <script></script>
-                            <triggerType>0</triggerType>
-                            <conditonLineDelta>0</conditonLineDelta>
-                            <mStayOpen>0</mStayOpen>
-                            <mCommand></mCommand>
-                            <packageName></packageName>
-                            <mFgColor>#ff0000</mFgColor>
-                            <mBgColor>#ffff00</mBgColor>
-                            <mSoundFile></mSoundFile>
-                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
-                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
-                            <regexCodeList/>
-                            <regexCodePropertyList/>
                         </Trigger>
                     </TriggerGroup>
                     <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -27185,7 +27206,11 @@ wsys.cannotdef(&quot;flailingstaff&quot;)</script>
                             </Trigger>
                             <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                                 <name>embrace serverside error</name>
-                                <script>send(&quot;embrace spirit&quot;)</script>
+                                <script>send(&quot;embrace spirit&quot;)
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                                 <triggerType>0</triggerType>
                                 <conditonLineDelta>1</conditonLineDelta>
                                 <mStayOpen>0</mStayOpen>
@@ -29895,6 +29920,26 @@ wsys.deffed(&quot;basilisk&quot;)</script>
                                 <colorTriggerBgColor>#000000</colorTriggerBgColor>
                                 <regexCodeList>
                                     <string>You must be in the air before you can begin evasive flying.</string>
+                                </regexCodeList>
+                                <regexCodePropertyList>
+                                    <integer>3</integer>
+                                </regexCodePropertyList>
+                            </Trigger>
+                            <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                                <name>hiding (failed)</name>
+                                <script>wsys.defmissingdep(&quot;hiding&quot;)</script>
+                                <triggerType>0</triggerType>
+                                <conditonLineDelta>0</conditonLineDelta>
+                                <mStayOpen>0</mStayOpen>
+                                <mCommand></mCommand>
+                                <packageName></packageName>
+                                <mFgColor>#ff0000</mFgColor>
+                                <mBgColor>#ffff00</mBgColor>
+                                <mSoundFile></mSoundFile>
+                                <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                                <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                                <regexCodeList>
+                                    <string>Too many prying eyes prevent you from finding a suitable hiding place.</string>
                                 </regexCodeList>
                                 <regexCodePropertyList>
                                     <integer>3</integer>
@@ -33275,7 +33320,10 @@ end
                             <name>serverside outrift</name>
                             <script>--this means it wasn't in your inventory before so well yeah check shit
 wsys.serversideOutrift(multimatches[2][2])
-</script>
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
                             <mStayOpen>0</mStayOpen>
@@ -36262,6 +36310,7 @@ function wsys.return_defaultsettings( no_save )
   valeriantwopipe = false,
   haverage = false,
   gagclot = true,
+  gagcuring = false,
   class = &quot;jobless&quot;,
   gagaffshift = true,
   useinsomnia = false,
@@ -39535,7 +39584,9 @@ wsys.tb.defstripTable = {
   [&quot;held breath&quot;] = &quot;heldbreath&quot;,
 }
 </script>
-                            <eventHandlerList/>
+                            <eventHandlerList>
+                                <string>logged in</string>
+                            </eventHandlerList>
                         </Script>
                         <Script isActive="yes" isFolder="no">
                             <name>Lyre Functions</name>
@@ -40961,6 +41012,7 @@ function wsys.displayEchosAndGags()
   cecho(&quot;\n\n&lt;white&gt;affgainedechos: &quot;..tostring(wsys.settings.affgainedechos))
   cecho(&quot;\n&lt;white&gt;affcuredechos: &quot;..tostring(wsys.settings.affcuredechos))
 
+  cecho(&quot;\n\n&lt;white&gt;gagcuring: &quot;..tostring(wsys.settings.gagcuring))
   cecho(&quot;\n\n&lt;white&gt;gagclot: &quot;..tostring(wsys.settings.gagclot))
   cecho(&quot;\n\n&lt;white&gt;gagaffshift: &quot;..tostring(wsys.settings.gagaffshift))
   cecho(&quot;\n&lt;white&gt;gagdefshift: &quot;..tostring(wsys.settings.gagdefshift))

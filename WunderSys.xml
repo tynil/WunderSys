@@ -39576,7 +39576,7 @@ end</script>
                         <script>wsys.myVersion = &quot;v1.2-beta&quot;
 wsys.currentVersion = wsys.currentVersion or wsys.myVersion
 wsys.updateAvailable = false
-local downloadsURL = &quot;https://github.com/anze/WunderSys/releases&quot;
+local downloadsURL = &quot;https://github.com/sailgoat/WunderSys/releases&quot;
 
 -- download latest version number file
 function wsys.checkForUpdates()
@@ -39586,7 +39586,7 @@ function wsys.checkForUpdates()
     _sep = &quot;\\&quot; 
   end -- if
   local current_version = getMudletHomeDir().._sep..&quot;WunderSysVersion&quot;
-  downloadFile(current_version, &quot;https://raw.githubusercontent.com/anze/WunderSys/master/WunderSysVersion&quot;)
+  downloadFile(current_version, &quot;https://raw.githubusercontent.com/sailgoat/WunderSys/master/WunderSysVersion&quot;)
 end
 
 registerAnonymousEventHandler(&quot;sysLoadEvent&quot;, &quot;wsys.checkForUpdates&quot;)

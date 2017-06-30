@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MudletPackage>
-<MudletPackage version="1.0">
+<MudletPackage version="1.000">
     <TriggerPackage>
         <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
             <name>WunderSys</name>
@@ -1532,7 +1532,7 @@ wsys.canaction()</script>
                                 <integer>3</integer>
                             </regexCodePropertyList>
                         </Trigger>
-                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Stupidity -</name>
                             <script>wsys.affcured(&quot;stupidity&quot;)</script>
                             <triggerType>0</triggerType>
@@ -2158,6 +2158,106 @@ wsys.humourReset(&quot;temperedsanguine&quot;)</script>
                             <colorTriggerBgColor>#000000</colorTriggerBgColor>
                             <regexCodeList>
                                 <string>Feeling returns to your right arm.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Parasite -</name>
+                            <script>wsys.affcured(&quot;parasite&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>The leeching of your strength comes to an end.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Depression -</name>
+                            <script>wsys.affcured(&quot;depression&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>Maybe things aren't so bad after all.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Shadowmadness -</name>
+                            <script>wsys.affcured(&quot;shadowmadness&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>Your sanity reestablishes itself.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Retribution -</name>
+                            <script>wsys.affcured(&quot;retribution&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>The terrible sense of foreboding lifts.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Timeloop -</name>
+                            <script>wsys.affcured(&quot;timeloop&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>You break out of the feedback loop.</string>
                             </regexCodeList>
                             <regexCodePropertyList>
                                 <integer>3</integer>
@@ -17545,6 +17645,122 @@ wsys.undef(&quot;insulation&quot;)
                             <integer>1</integer>
                         </regexCodePropertyList>
                     </Trigger>
+                    <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Shadowmancy</name>
+                        <script></script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList/>
+                        <regexCodePropertyList/>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Parasite</name>
+                            <script>wsys.affadd(&quot;parasite&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>As the weapon strikes you, you feel your strength being leeched away.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Depression</name>
+                            <script>wsys.affadd(&quot;depression&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>Everything seems so pointless.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Shadowmadness</name>
+                            <script>wsys.affadd(&quot;shadowmadness&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>Your sanity begins to escape you.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Retribution</name>
+                            <script>wsys.affadd(&quot;retribution&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>A terrible sense of foreboding descends upon you.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Timeloop</name>
+                            <script>wsys.affadd(&quot;timeloop&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>The world seems to grow distorted around you, as if through a thick fog.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                    </TriggerGroup>
                 </TriggerGroup>
                 <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>Curing</name>
@@ -36800,11 +37016,15 @@ function wsys.return_defaultaffprios()
   ---------------------------------
   --HERBS (+ a few focusables obv)
   ---------------------------------
-
   [&quot;paralysis&quot;] = 4,
-  [&quot;impatience&quot;] = 5,
+  [&quot;timeloop&quot;] = 5,
+  [&quot;shadowmadness&quot;] = 5,
+  [&quot;hypochondria&quot;] = 5,
+  [&quot;depression&quot;] = 6,
+  [&quot;retribution&quot;] = 6,
+  [&quot;parasite&quot;] = 6,
   [&quot;scytherus&quot;] = 6,
-  [&quot;hypochondria&quot;] = 6,
+  [&quot;impatience&quot;] = 6,
   [&quot;asthma&quot;] = 7,
   [&quot;sensitivity&quot;] = 7,
   [&quot;spiritdisrupt&quot;] = 8,
@@ -40306,7 +40526,6 @@ function wsys.affprint(affliction, affline)
   end
 end -- func
 
-
 -- AEON ACTION PRINT
 function wsys.aeoncolour()
   selectCurrentLine()
@@ -43072,6 +43291,7 @@ wsys.tb.affc = {
  dazed = {&quot;elm&quot;, &quot;cinnabar&quot;},
  deadening = {&quot;elm&quot;, &quot;cinnabar&quot;},
  dementia = {&quot;ash&quot;, &quot;stannum&quot;, &quot;focus&quot;},
+ depression = {&quot;goldenseal&quot;, &quot;plumbum&quot;},
  disloyalty = {&quot;valerian&quot;, &quot;realgar&quot;},
  disrupted = {&quot;concentrate&quot;},
  dissonance = {&quot;goldenseal&quot;, &quot;plumbum&quot;},
@@ -43113,13 +43333,16 @@ wsys.tb.affc = {
  pacified = {&quot;bellwort&quot;, &quot;cuprum&quot;, &quot;focus&quot;, &quot;rage&quot;},
  paralysis = {&quot;bloodroot&quot;, &quot;magnesium&quot;},
  paranoia = {&quot;ash&quot;, &quot;stannum&quot;, &quot;focus&quot;},
+ parasite = {&quot;kelp&quot;, &quot;aurum&quot;},
  peace = {&quot;bellwort&quot;, &quot;cuprum&quot;, &quot;rage&quot;},
  prone = {&quot;stand&quot;},
  recklessness = {&quot;lobelia&quot;, &quot;argentum&quot;, &quot;focus&quot;},
+ retribution = {&quot;bellwort&quot;, &quot;cuprum&quot;},
  scytherus = {&quot;ginseng&quot;, &quot;ferrum&quot;},
  sensitivity = {&quot;kelp&quot;, &quot;aurum&quot;},
  selarnia = {&quot;mendingtorso&quot;},
  daeggerimpale = {&quot;writhe&quot;},
+ shadowmadness = {&quot;goldenseal&quot;, &quot;plumbum&quot;},
  shivering = {&quot;caloric&quot;},
  shyness = {&quot;goldenseal&quot;, &quot;plumbum&quot;, &quot;focus&quot;},
  slashedthroat = {&quot;epidermalhead&quot;},
@@ -43129,6 +43352,7 @@ wsys.tb.affc = {
  stuttering = {&quot;epidermalhead&quot;, &quot;focus&quot;},
  entangled = {&quot;writhe&quot;, &quot;flex&quot;},
  bound = {&quot;writhe&quot;},
+ timeloop = {&quot;bellwort&quot;, &quot;cuprum&quot;},
  transfixation = {&quot;writhe&quot;},
  weariness = {&quot;kelp&quot;, &quot;aurum&quot;},
  webbed = {&quot;writhe&quot;, &quot;flex&quot;},
@@ -43187,6 +43411,7 @@ wsys.tb.affctype = {
  dazed = &quot;smoke&quot;,
  deadening = &quot;smoke&quot;,
  dementia = &quot;herb&quot;,
+ depression = &quot;herb&quot;,
  disloyalty = &quot;smoke&quot;,
  disrupted = &quot;concentrate&quot;,
  dissonance = &quot;herb&quot;,
@@ -43224,13 +43449,16 @@ wsys.tb.affctype = {
  pacified = &quot;herb&quot;,
  paralysis = &quot;herb&quot;,
  paranoia = &quot;herb&quot;,
+ parasite = &quot;herb&quot;,
  peace = &quot;herb&quot;,
  prone = &quot;stand&quot;,
  recklessness = &quot;herb&quot;,
+ retribution = &quot;herb&quot;,
  scytherus = &quot;herb&quot;,
  sensitivity = &quot;herb&quot;,
  selarnia = &quot;salve&quot;,
  daeggerimpale = &quot;writhe&quot;,
+ shadowmadness = &quot;herb&quot;,
  shivering = &quot;salve&quot;,
  shyness = &quot;herb&quot;,
  slickness = &quot;smoke&quot;,
@@ -43239,6 +43467,7 @@ wsys.tb.affctype = {
  stuttering = &quot;salve&quot;,
  entangled = &quot;writhe&quot;,
  bound = &quot;writhe&quot;,
+ timeloop = &quot;herb&quot;,
  transfixation = &quot;writhe&quot;,
  weariness = &quot;herb&quot;,
  webbed = &quot;writhe&quot;,
@@ -43287,16 +43516,16 @@ wsys.tb.cures = {
  magnesium = {&quot;paralysis&quot;, &quot;slickness&quot;},
  lobelia = {&quot;agoraphobia&quot;, &quot;claustrophobia&quot;, &quot;loneliness&quot;, &quot;masochism&quot;, &quot;vertigo&quot;, &quot;recklessness&quot;,&quot;spritidisrupt&quot;},
  argentum = {&quot;agoraphobia&quot;, &quot;claustrophobia&quot;, &quot;loneliness&quot;, &quot;masochism&quot;, &quot;vertigo&quot;, &quot;recklessness&quot;,&quot;spiritdisrupt&quot;},
- kelp = {&quot;asthma&quot;, &quot;clumsiness&quot;, &quot;sensitivity&quot;, &quot;weariness&quot;, &quot;hypochondria&quot;, &quot;healthleech&quot;, &quot;manaleech&quot;},
- aurum = {&quot;asthma&quot;, &quot;clumsiness&quot;, &quot;sensitivity&quot;, &quot;weariness&quot;, &quot;hypochondria&quot;, &quot;healthleech&quot;},
+ kelp = {&quot;asthma&quot;, &quot;clumsiness&quot;, &quot;sensitivity&quot;, &quot;weariness&quot;, &quot;hypochondria&quot;, &quot;healthleech&quot;, &quot;manaleech&quot;, &quot;parasite&quot;},
+ aurum = {&quot;asthma&quot;, &quot;clumsiness&quot;, &quot;sensitivity&quot;, &quot;weariness&quot;, &quot;hypochondria&quot;, &quot;healthleech&quot;, &quot;manaleech&quot;, &quot;parasite&quot;},
  ginseng = {&quot;darkshade&quot;, &quot;scytherus&quot;, &quot;addiction&quot;, &quot;lethargy&quot;, &quot;haemophilia&quot;, &quot;nausea&quot;},
  ferrum = {&quot;darkshade&quot;, &quot;scytherus&quot;, &quot;addiction&quot;, &quot;lethargy&quot;, &quot;haemophilia&quot;, &quot;nausea&quot;},
- bellwort = {&quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;},
- cuprum = {&quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;},
+ bellwort = {&quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
+ cuprum = {&quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
  ash = {&quot;confusion&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;hypersomnia&quot;, &quot;paranoia&quot;},
  stannum = {&quot;confusion&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;hypersomnia&quot;, &quot;paranoia&quot;},
- goldenseal = {&quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;},
- plumbum = {&quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;},
+ goldenseal = {&quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
+ plumbum = {&quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
  focus = {&quot;stupidity&quot;, &quot;dizziness&quot;, &quot;confusion&quot;, &quot;claustrophobia&quot;, &quot;agoraphobia&quot;, &quot;masochism&quot;, &quot;lovers&quot;, &quot;recklessness&quot;, 
           &quot;epilepsy&quot;, &quot;loneliness&quot;, &quot;shyness&quot;, &quot;pacified&quot;, &quot;anorexia&quot;, &quot;vertigo&quot;, &quot;weakenedmind&quot;,
 			&quot;waterdisrupt&quot;, &quot;earthdisrupt&quot;, &quot;firedisrupt&quot;,&quot;airdisrupt&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;paranoia&quot;},
@@ -43323,20 +43552,23 @@ wsys.tb.cures = {
           &quot;hypochondria&quot;, &quot;healthleech&quot;, &quot;darkshade&quot;, &quot;scytherus&quot;, &quot;addiction&quot;, &quot;lethargy&quot;, &quot;haemophilia&quot;, &quot;nausea&quot;, 
           &quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;, &quot;confusion&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;hypersomnia&quot;, 
           &quot;paranoia&quot;, &quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;, &quot;slickness&quot;, &quot;disloyalty&quot;,
-          &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;},
+          &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;, 
+			 &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
  shrugging = {&quot;brokenleftarm&quot;, &quot;brokenrightarm&quot;, &quot;brokenleftleg&quot;, &quot;brokenrightleg&quot;, &quot;paralysis&quot;, &quot;slickness&quot;, &quot;agoraphobia&quot;, &quot;claustrophobia&quot;, 
           &quot;loneliness&quot;, &quot;masochism&quot;, &quot;vertigo&quot;, &quot;recklessness&quot;, &quot;asthma&quot;, &quot;clumsiness&quot;, &quot;sensitivity&quot;, &quot;paralysis&quot;, 
           &quot;hypochondria&quot;, &quot;healthleech&quot;, &quot;darkshade&quot;, &quot;scytherus&quot;, &quot;addiction&quot;, &quot;lethargy&quot;, &quot;haemophilia&quot;, &quot;nausea&quot;, 
           &quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;, &quot;confusion&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;hypersomnia&quot;, 
           &quot;paranoia&quot;, &quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;, &quot;slickness&quot;, &quot;disloyalty&quot;,
-          &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;},
+          &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;,
+          &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
  restore = {&quot;brokenleftarm&quot;, &quot;brokenrightarm&quot;, &quot;brokenleftleg&quot;, &quot;brokenrightleg&quot;, &quot;carm&quot;, &quot;cleg&quot;},
  dheal = {&quot;brokenleftarm&quot;, &quot;brokenrightarm&quot;, &quot;brokenleftleg&quot;, &quot;brokenrightleg&quot;, &quot;paralysis&quot;, &quot;slickness&quot;, &quot;agoraphobia&quot;, &quot;claustrophobia&quot;, 
           &quot;loneliness&quot;, &quot;masochism&quot;, &quot;vertigo&quot;, &quot;recklessness&quot;, &quot;asthma&quot;, &quot;clumsiness&quot;, &quot;sensitivity&quot;, &quot;weariness&quot;, 
           &quot;hypochondria&quot;, &quot;healthleech&quot;, &quot;darkshade&quot;, &quot;scytherus&quot;, &quot;addiction&quot;, &quot;lethargy&quot;, &quot;haemophilia&quot;, &quot;nausea&quot;, 
           &quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;, &quot;confusion&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;hypersomnia&quot;, 
           &quot;paranoia&quot;, &quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;, &quot;slickness&quot;, &quot;disloyalty&quot;,
-          &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;},
+          &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;,
+          &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
  flex = {&quot;webbed&quot;, &quot;entangled&quot;},
  writhe = {&quot;webbed&quot;, &quot;entangled&quot;, &quot;bound&quot;, &quot;impaled&quot;, &quot;transfixation&quot;, &quot;speared&quot;, &quot;daeggerimpale&quot;},
  fool = {&quot;brokenleftarm&quot;, &quot;brokenrightarm&quot;, &quot;brokenleftleg&quot;, &quot;brokenrightleg&quot;, &quot;paralysis&quot;, &quot;slickness&quot;, &quot;agoraphobia&quot;, &quot;claustrophobia&quot;, 
@@ -43344,7 +43576,8 @@ wsys.tb.cures = {
           &quot;hypochondria&quot;, &quot;healthleech&quot;, &quot;darkshade&quot;, &quot;scytherus&quot;, &quot;addiction&quot;, &quot;lethargy&quot;, &quot;haemophilia&quot;, &quot;nausea&quot;, 
           &quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;, &quot;confusion&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;hypersomnia&quot;, 
           &quot;paranoia&quot;, &quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;, &quot;slickness&quot;, &quot;disloyalty&quot;,
-          &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;},
+          &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;,
+          &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
  concentrate = {&quot;disrupted&quot;},
  compose = {&quot;fear&quot;},
  clot = {&quot;bleeding&quot;},
@@ -43862,6 +44095,7 @@ end</script>
  darkshade = &quot;dark&quot;,
  deadening = &quot;dea&quot;,
  dementia = &quot;dem&quot;,
+ depression = &quot;dep&quot;,
  disloyalty = &quot;disl&quot;,
  disrupted = &quot;dis&quot;,
  dissonance = &quot;diss&quot;,
@@ -43899,12 +44133,15 @@ end</script>
  pacified = &quot;pac&quot;,
  paralysis = &quot;PAR&quot;,
  paranoia = &quot;para&quot;,
+ parasite = &quot;paras&quot;,
  peace = &quot;pea&quot;,
  prone = &quot;PR&quot;,
  recklessness = &quot;reck&quot;,
+ retribution = &quot;ret&quot;,
  scytherus = &quot;SCY&quot;,
  sensitivity = &quot;sen&quot;,
  daeggerimpale = &quot;Impale&quot;,
+ shadowmadness = &quot;sham&quot;,
  shivering = &quot;shiv&quot;,
  shyness = &quot;shy&quot;,
  slickness = &quot;SLI&quot;,

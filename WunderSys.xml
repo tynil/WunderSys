@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE MudletPackage>
-<MudletPackage version="1.000">
+<MudletPackage version="1.001">
     <TriggerPackage>
         <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
             <name>WunderSys</name>
@@ -1768,7 +1768,7 @@ enableTrigger(&quot;Prompt Checks&quot;)</script>
                                 <integer>3</integer>
                             </regexCodePropertyList>
                         </Trigger>
-                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                             <name>Blackout -</name>
                             <script>if wsys.aff.blackout then
   wsys.aff.blackout = nil
@@ -20410,6 +20410,147 @@ end</script>
                             </regexCodePropertyList>
                         </Trigger>
                     </TriggerGroup>
+                    <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Curingsets</name>
+                        <script></script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList/>
+                        <regexCodePropertyList/>
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Curingset Begin</name>
+                            <script>deleteFull()
+wsys.curingSets = {}
+disableTrigger(&quot;Curingset Begin&quot;)
+enableTrigger(&quot;Curingset Parse&quot;)
+enableTrigger(&quot;Curingset End&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>Your current curing sets</string>
+                                <string>--------------------------------------------------------------------------------</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Curingset Parse</name>
+                            <script>deleteFull()
+wsys.curingSets[matches[2]] = true</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>^(\w+)$</string>
+                                <string>^(\w+) \(current\)$</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>1</integer>
+                                <integer>1</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Curingset None</name>
+                            <script>deleteFull()
+wsys.addCuringSets()</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>You have no sets defined - you are currently using default priorities.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Curingset End</name>
+                            <script>deleteFull()
+disableTrigger(&quot;Curingset Parse&quot;)
+disableTrigger(&quot;Curingset End&quot;)
+disableTrigger(&quot;Curingset None&quot;)
+
+if not (wsys.curingSets.wundersys ~= nil and wsys.curingSets.wundersys_default ~= nil) then
+  if tonumber(matches[3]) &gt;= (tonumber(matches[2]) + 2) then
+    wsys.addCuringSets()
+  else
+    wsys.report(&quot;You need two curing sets free to set up WunderSys! Please ensure you have two free and reconnect to the game.&quot;) 
+  end
+end</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>^You are using a total of (\w+) of your allowed (\w+) curing sets.$</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>1</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Gag Switches</name>
+                            <script>deleteFull()</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>You will now cure using the wundersys set.</string>
+                                <string>Cloned the contents of the wundersys_default curing set into your currently active one.</string>
+                                <string>You already have a set with that name. Either pick a new name or rename the old set.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                                <integer>3</integer>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                    </TriggerGroup>
                 </TriggerGroup>
                 <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>Defences</name>
@@ -38793,19 +38934,27 @@ end</script>
                         <name>Affliction Priority Functions</name>
                         <packageName></packageName>
                         <script>function wsys.resetAffPrios()
-  for k,v in pairs(wsys.settings.affprio[wsys.profile][wsys.myClass()]) do
-    -- reset affs that aren't at their setting position
-    if wsys.affPosition(k) ~= wsys.defaultAffPosition(k) then
-      send(&quot;curing priority &quot; .. k .. &quot; &quot; .. tostring(v), false)
+  if (wsys.curingSets.wundersys ~= nil and wsys.curingSets.wundersys_default ~= nil) then
+		wsys.cloneDefaultCuringSet()
+	else
+    for k,v in pairs(wsys.settings.affprio[wsys.profile][wsys.myClass()]) do
+      -- reset affs that aren't at their setting position
+      if wsys.affPosition(k) ~= wsys.defaultAffPosition(k) then
+        send(&quot;curing priority &quot; .. k .. &quot; &quot; .. tostring(v), false)
+      end
     end
-  end
+	end
   raiseEvent(&quot;reset aff prios&quot;)
 end
 
 function wsys.resetAllAffPrios()
-  for k,v in pairs(wsys.settings.affprio[wsys.profile][wsys.myClass()]) do
-    send(&quot;curing priority &quot; .. k .. &quot; &quot; .. tostring(v), false)
-  end
+	if (wsys.curingSets.wundersys ~= nil and wsys.curingSets.wundersys_default ~= nil) then
+		wsys.cloneDefaultCuringSet()
+	else
+    for k,v in pairs(wsys.settings.affprio[wsys.profile][wsys.myClass()]) do
+      send(&quot;curing priority &quot; .. k .. &quot; &quot; .. tostring(v), false)
+    end
+	end
   raiseEvent(&quot;reset aff prios&quot;)
 end
 
@@ -41031,7 +41180,7 @@ end</script>
                     <Script isActive="yes" isFolder="no">
                         <name>Check for Updates</name>
                         <packageName></packageName>
-                        <script>wsys.myVersion = &quot;v1.2-beta&quot;
+                        <script>wsys.myVersion = &quot;1.2-beta&quot;
 wsys.currentVersion = wsys.currentVersion or wsys.myVersion
 wsys.updateAvailable = false
 local downloadsURL = &quot;https://github.com/sailgoat/WunderSys/releases&quot;
@@ -41467,7 +41616,7 @@ end
                         <packageName></packageName>
                         <script>function wsys.resetOnDeath()
   wsys.normalsipping()
-  wsys.resetAffPrios()
+	wsys.resetAffPrios()
   wsys.lostallchannels()
 end
 
@@ -41613,6 +41762,7 @@ wsys.inittimesbals()</script>
   wsys.abilityCheck()
   wsys.setkeepouttable()
   wsys.outrqueue()
+	wsys.checkCuringSets()
   wsys.resetAffPrios()
   wsys.checkForUpdates()
   wsys.def = {}
@@ -41807,6 +41957,31 @@ local function deepcopy(orig)
 end
 
 wsys.deepcopy = deepcopy</script>
+                        <eventHandlerList/>
+                    </Script>
+                    <Script isActive="yes" isFolder="no">
+                        <name>Curingset Management</name>
+                        <packageName></packageName>
+                        <script>function wsys.checkCuringSets()
+  wsys.curingsets = {}
+	send(&quot;CURINGSET LIST&quot;)
+  enableTrigger(&quot;Curingset Begin&quot;)
+end
+
+function wsys.addCuringSets()
+  send(&quot;CURINGSET NEW wundersys&quot;)
+	send(&quot;CURINGSET NEW wundersys_default&quot;)
+	send(&quot;CURINGSET SWITCH wundersys_default&quot;)
+	wsys.resetAffPrios()
+	tempTimer(1.5, function()
+		send(&quot;CURINGSET SWITCH WUNDERSYS&quot;)
+		wsys.cloneDefaultCuringSet()
+		end)
+end
+
+function wsys.cloneDefaultCuringSet()
+	send(&quot;CURINGSET CLONE wundersys_default&quot;)
+end</script>
                         <eventHandlerList/>
                     </Script>
                 </ScriptGroup>

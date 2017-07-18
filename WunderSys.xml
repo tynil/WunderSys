@@ -2263,6 +2263,26 @@ wsys.humourReset(&quot;temperedsanguine&quot;)</script>
                                 <integer>3</integer>
                             </regexCodePropertyList>
                         </Trigger>
+                        <Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Crushedthroat -</name>
+                            <script>wsys.affcured(&quot;crushedthroat&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>Your crushed throat mends and you can draw breath easily once again.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
                     </TriggerGroup>
                     <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                         <name>Diag</name>
@@ -17761,6 +17781,42 @@ wsys.undef(&quot;insulation&quot;)
                             </regexCodePropertyList>
                         </Trigger>
                     </TriggerGroup>
+                    <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                        <name>Shikudo</name>
+                        <script></script>
+                        <triggerType>0</triggerType>
+                        <conditonLineDelta>0</conditonLineDelta>
+                        <mStayOpen>0</mStayOpen>
+                        <mCommand></mCommand>
+                        <packageName></packageName>
+                        <mFgColor>#ff0000</mFgColor>
+                        <mBgColor>#ffff00</mBgColor>
+                        <mSoundFile></mSoundFile>
+                        <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                        <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                        <regexCodeList/>
+                        <regexCodePropertyList/>
+                        <Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+                            <name>Crushedthroat</name>
+                            <script>wsys.affadd(&quot;crushedthroat&quot;)</script>
+                            <triggerType>0</triggerType>
+                            <conditonLineDelta>0</conditonLineDelta>
+                            <mStayOpen>0</mStayOpen>
+                            <mCommand></mCommand>
+                            <packageName></packageName>
+                            <mFgColor>#ff0000</mFgColor>
+                            <mBgColor>#ffff00</mBgColor>
+                            <mSoundFile></mSoundFile>
+                            <colorTriggerFgColor>#000000</colorTriggerFgColor>
+                            <colorTriggerBgColor>#000000</colorTriggerBgColor>
+                            <regexCodeList>
+                                <string>Blinding pain radiates from your throat and you suddenly find yourself unable to draw breath.</string>
+                            </regexCodeList>
+                            <regexCodePropertyList>
+                                <integer>3</integer>
+                            </regexCodePropertyList>
+                        </Trigger>
+                    </TriggerGroup>
                 </TriggerGroup>
                 <TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
                     <name>Curing</name>
@@ -20508,6 +20564,8 @@ if not (wsys.curingSets.wundersys ~= nil and wsys.curingSets.wundersys_default ~
   else
     wsys.report(&quot;You need two curing sets free to set up WunderSys! Please ensure you have two free and reconnect to the game.&quot;) 
   end
+else
+	wsys.setSettings(&quot;curingsets&quot;, &quot;true&quot;)
 end</script>
                             <triggerType>0</triggerType>
                             <conditonLineDelta>0</conditonLineDelta>
@@ -36765,6 +36823,7 @@ function wsys.return_defaultsettings( no_save )
   autotree = false,
   automount = false,
   havevault = true,
+	curingsets = false
 }
   if not no_save then
     wsys.saveSettings()
@@ -37220,6 +37279,7 @@ function wsys.return_defaultaffprios()
   [&quot;heartseed&quot;] = 3,
   [&quot;hypothermia&quot;] = 3,
   [&quot;anorexia&quot;] = 4,
+	[&quot;crushedthroat&quot;] = 5,
   [&quot;itching&quot;] = 5,
   
   --6 GAP: For resto leg breaks and prone
@@ -38934,7 +38994,7 @@ end</script>
                         <name>Affliction Priority Functions</name>
                         <packageName></packageName>
                         <script>function wsys.resetAffPrios()
-  if (wsys.curingSets.wundersys ~= nil and wsys.curingSets.wundersys_default ~= nil) then
+  if wsys.settings.curingsets == &quot;true&quot; then
 		wsys.cloneDefaultCuringSet()
 	else
     for k,v in pairs(wsys.settings.affprio[wsys.profile][wsys.myClass()]) do
@@ -38948,7 +39008,7 @@ end</script>
 end
 
 function wsys.resetAllAffPrios()
-	if (wsys.curingSets.wundersys ~= nil and wsys.curingSets.wundersys_default ~= nil) then
+	if wsys.settings.curingsets == &quot;true&quot; then
 		wsys.cloneDefaultCuringSet()
 	else
     for k,v in pairs(wsys.settings.affprio[wsys.profile][wsys.myClass()]) do
@@ -41966,12 +42026,16 @@ wsys.deepcopy = deepcopy</script>
   wsys.curingsets = {}
 	send(&quot;CURINGSET LIST&quot;)
   enableTrigger(&quot;Curingset Begin&quot;)
+	enableTrigger(&quot;Curingset None&quot;)
 end
 
 function wsys.addCuringSets()
   send(&quot;CURINGSET NEW wundersys&quot;)
 	send(&quot;CURINGSET NEW wundersys_default&quot;)
 	send(&quot;CURINGSET SWITCH wundersys_default&quot;)
+	if wsys.settings.curingsets ~= &quot;true&quot; then
+	  wsys.setSettings(&quot;curingsets&quot;, &quot;true&quot; )
+	end
 	wsys.resetAffPrios()
 	tempTimer(1.5, function()
 		send(&quot;CURINGSET SWITCH WUNDERSYS&quot;)
@@ -43460,6 +43524,7 @@ wsys.tb.affc = {
  clumsiness = {&quot;kelp&quot;, &quot;aurum&quot;},
  confusion = {&quot;ash&quot;, &quot;stannum&quot;,&quot;focus&quot;},
  concussion = {&quot;restorationhead&quot;},
+ crushedthroat = {&quot;mendinghead&quot;},
  brokenrightarm = {&quot;mendingarms&quot;, &quot;restore&quot;},
  brokenrightleg = {&quot;mendinglegs&quot;, &quot;restore&quot;},
  darkshade = {&quot;ginseng&quot;, &quot;ferrum&quot;},
@@ -43580,6 +43645,7 @@ wsys.tb.affctype = {
  clumsiness = &quot;herb&quot;,
  confusion = &quot;herb&quot;,
  concussion = &quot;salve&quot;,
+ crushedthroat = &quot;salve&quot;,
  brokenrightarm = &quot;salve&quot;,
  brokenrightleg = &quot;salve&quot;,
  darkshade = &quot;herb&quot;,
@@ -43714,6 +43780,7 @@ wsys.tb.cures = {
  epidermalbody = {&quot;anorexia&quot;, &quot;itching&quot;},
  epidermalhead = {&quot;scalded&quot;},
  mendingbody = {&quot;burning&quot;, &quot;selarnia&quot;},
+ mendinghead = {&quot;crushedthroat&quot;},
  mendingtorso = {&quot;selarnia&quot;},
  epidermalhead = {&quot;stuttering&quot;, &quot;slashedthroat&quot;},
  caloric = {&quot;shivering&quot;, &quot;frozen&quot;},
@@ -43728,14 +43795,14 @@ wsys.tb.cures = {
           &quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;, &quot;confusion&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;hypersomnia&quot;, 
           &quot;paranoia&quot;, &quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;, &quot;slickness&quot;, &quot;disloyalty&quot;,
           &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;, 
-			 &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
+			 &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;, &quot;crushedthroat&quot;},
  shrugging = {&quot;brokenleftarm&quot;, &quot;brokenrightarm&quot;, &quot;brokenleftleg&quot;, &quot;brokenrightleg&quot;, &quot;paralysis&quot;, &quot;slickness&quot;, &quot;agoraphobia&quot;, &quot;claustrophobia&quot;, 
           &quot;loneliness&quot;, &quot;masochism&quot;, &quot;vertigo&quot;, &quot;recklessness&quot;, &quot;asthma&quot;, &quot;clumsiness&quot;, &quot;sensitivity&quot;, &quot;paralysis&quot;, 
           &quot;hypochondria&quot;, &quot;healthleech&quot;, &quot;darkshade&quot;, &quot;scytherus&quot;, &quot;addiction&quot;, &quot;lethargy&quot;, &quot;haemophilia&quot;, &quot;nausea&quot;, 
           &quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;, &quot;confusion&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;hypersomnia&quot;, 
           &quot;paranoia&quot;, &quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;, &quot;slickness&quot;, &quot;disloyalty&quot;,
           &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;,
-          &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
+          &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;, &quot;crushedthroat&quot;},
  restore = {&quot;brokenleftarm&quot;, &quot;brokenrightarm&quot;, &quot;brokenleftleg&quot;, &quot;brokenrightleg&quot;, &quot;carm&quot;, &quot;cleg&quot;},
  dheal = {&quot;brokenleftarm&quot;, &quot;brokenrightarm&quot;, &quot;brokenleftleg&quot;, &quot;brokenrightleg&quot;, &quot;paralysis&quot;, &quot;slickness&quot;, &quot;agoraphobia&quot;, &quot;claustrophobia&quot;, 
           &quot;loneliness&quot;, &quot;masochism&quot;, &quot;vertigo&quot;, &quot;recklessness&quot;, &quot;asthma&quot;, &quot;clumsiness&quot;, &quot;sensitivity&quot;, &quot;weariness&quot;, 
@@ -43743,7 +43810,7 @@ wsys.tb.cures = {
           &quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;, &quot;confusion&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;hypersomnia&quot;, 
           &quot;paranoia&quot;, &quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;, &quot;slickness&quot;, &quot;disloyalty&quot;,
           &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;,
-          &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
+          &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;, &quot;crushedthroat&quot;},
  flex = {&quot;webbed&quot;, &quot;entangled&quot;},
  writhe = {&quot;webbed&quot;, &quot;entangled&quot;, &quot;bound&quot;, &quot;impaled&quot;, &quot;transfixation&quot;, &quot;speared&quot;, &quot;daeggerimpale&quot;},
  fool = {&quot;brokenleftarm&quot;, &quot;brokenrightarm&quot;, &quot;brokenleftleg&quot;, &quot;brokenrightleg&quot;, &quot;paralysis&quot;, &quot;slickness&quot;, &quot;agoraphobia&quot;, &quot;claustrophobia&quot;, 
@@ -43752,7 +43819,7 @@ wsys.tb.cures = {
           &quot;generosity&quot;, &quot;lovers&quot;, &quot;justice&quot;, &quot;pacified&quot;, &quot;peace&quot;, &quot;confusion&quot;, &quot;dementia&quot;, &quot;hallucinations&quot;, &quot;hypersomnia&quot;, 
           &quot;paranoia&quot;, &quot;stupidity&quot;, &quot;impatience&quot;, &quot;dizziness&quot;, &quot;epilepsy&quot;, &quot;dissonance&quot;, &quot;shyness&quot;, &quot;slickness&quot;, &quot;disloyalty&quot;,
           &quot;aeon&quot;, &quot;whisperingmadness&quot;, &quot;hellsight&quot;, &quot;deadening&quot;, &quot;burning&quot;, &quot;stuttering&quot;, &quot;carm&quot;, &quot;cleg&quot;, &quot;anorexia&quot;, &quot;voyria&quot;,
-          &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;},
+          &quot;parasite&quot;, &quot;depression&quot;, &quot;shadowmadness&quot;, &quot;retribution&quot;, &quot;timeloop&quot;, &quot;crushedthroat&quot;},
  concentrate = {&quot;disrupted&quot;},
  compose = {&quot;fear&quot;},
  clot = {&quot;bleeding&quot;},
@@ -43895,6 +43962,7 @@ wsys.tb.curetype = {
  sensorybody = &quot;salve&quot;,
  mendingbody = &quot;salve&quot;,
  renewalbody = &quot;salve&quot;,
+ mendinghead = &quot;salve&quot;,
  epidermalhead = &quot;salve&quot;,
  sensoryhead = &quot;salve&quot;,
  caloric = &quot;salve&quot;,

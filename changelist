@@ -1,1 +1,0 @@
-- Diagnosing will now correctly send got aff/lost aff events based on what afflictions you actually have (and thought you had)

@@ -40045,9 +40045,7 @@ wsys.tb.defstripTable = {
 }
 
 </script>
-                            <eventHandlerList>
-                                <string>logged in</string>
-                            </eventHandlerList>
+                            <eventHandlerList/>
                         </Script>
                         <Script isActive="yes" isFolder="no">
                             <name>Lyre Functions</name>
@@ -41240,7 +41238,7 @@ end</script>
                     <Script isActive="yes" isFolder="no">
                         <name>Check for Updates</name>
                         <packageName></packageName>
-                        <script>wsys.myVersion = &quot;1.2-beta&quot;
+                        <script>wsys.myVersion = &quot;1.2&quot;
 wsys.currentVersion = wsys.currentVersion or wsys.myVersion
 wsys.updateAvailable = false
 local downloadsURL = &quot;https://github.com/sailgoat/WunderSys/releases&quot;

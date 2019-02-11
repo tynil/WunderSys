@@ -2148,6 +2148,126 @@ wsys.humourReset("temperedsanguine")</script>
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Parasite -</name>
+						<script>wsys.affcured("parasite")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>The leeching of your strength comes to an end.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Depression -</name>
+						<script>wsys.affcured("depression")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Maybe things aren't so bad after all.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Shadowmadness -</name>
+						<script>wsys.affcured("shadowmadness")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your sanity reestablishes itself.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Retribution -</name>
+						<script>wsys.affcured("retribution")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>The terrible sense of foreboding lifts.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Timeloop -</name>
+						<script>wsys.affcured("timeloop")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>You break out of the feedback loop.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Crushedthroat -</name>
+						<script>wsys.affcured("crushedthroat")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your crushed throat mends and you can draw breath easily once again.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
 				</TriggerGroup>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Diag</name>
@@ -5770,7 +5890,6 @@ end</script>
 							<string>My friend, clearly you know little of the sultry tango, if you think that you can perform it without a partner.</string>
 							<string>Tears fill your eyes and begin to slowly run down your face.</string>
 							<string>You are far too selfish to throw anything away like that.</string>
-							<string>You burp obscenely.</string>
 							<string>You fall to your knees in worship.</string>
 							<string>You flap your arms madly.</string>
 							<string>You flip the bird.</string>
@@ -5795,7 +5914,6 @@ end</script>
 							<string>You drop to one knee.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>3</integer>
 							<integer>3</integer>
 							<integer>3</integer>
 							<integer>3</integer>
@@ -5865,6 +5983,29 @@ end</script>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>stupidity burping</name>
+						<script>if wsys.morphing == false then
+  wsys.affadd("stupidity")
+end
+  </script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>You burp obscenely.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -17508,6 +17649,158 @@ wsys.undef("insulation")
 						<integer>1</integer>
 					</regexCodePropertyList>
 				</Trigger>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Shadowmancy</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Parasite</name>
+						<script>wsys.affadd("parasite")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>As the weapon strikes you, you feel your strength being leeched away.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Depression</name>
+						<script>wsys.affadd("depression")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Everything seems so pointless.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Shadowmadness</name>
+						<script>wsys.affadd("shadowmadness")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your sanity begins to escape you.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Retribution</name>
+						<script>wsys.affadd("retribution")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>A terrible sense of foreboding descends upon you.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Timeloop</name>
+						<script>wsys.affadd("timeloop")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>The world seems to grow distorted around you, as if through a thick fog.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Shikudo</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Crushedthroat</name>
+						<script>wsys.affadd("crushedthroat")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Blinding pain radiates from your throat and you suddenly find yourself unable to draw breath.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
 			</TriggerGroup>
 			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>Curing</name>
@@ -17541,7 +17834,11 @@ wsys.undef("insulation")
 					<regexCodePropertyList />
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>eating herb</name>
-						<script>wsys.cure = string.lower(multimatches[2][2])</script>
+						<script>wsys.cure = string.lower(multimatches[2][2])
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>1</mStayOpen>
@@ -17909,7 +18206,9 @@ end -- if</script>
 					<regexCodePropertyList />
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>concentrating</name>
-						<script></script>
+						<script>if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>1</mStayOpen>
@@ -17969,7 +18268,9 @@ end -- if</script>
 					<regexCodePropertyList />
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>composing</name>
-						<script></script>
+						<script>if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>1</mStayOpen>
@@ -18141,7 +18442,11 @@ wsys.affadd("recklessness")</script>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>smoking pipe</name>
 						<script>wsys.pipes.smoking = string.lower(multimatches[2][2])
-wsys.cure = string.lower(multimatches[2][2])</script>
+wsys.cure = string.lower(multimatches[2][2])
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>1</mStayOpen>
@@ -18823,6 +19128,8 @@ if applied ~= "quicksilver" and applied ~= "sileris" then
 end
 if applied == "density" then
   deleteFull()
+elseif wsys.settings.gagcuring then
+  deleteLine()
 end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
@@ -18851,6 +19158,10 @@ if twolower == "health" then
   wsys.lostBal("hm", 6)
 else
   wsys.applying = twolower .. string.lower(multimatches[2][3])
+end
+
+if wsys.settings.gagcuring then
+  deleteLine()
 end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
@@ -18931,7 +19242,11 @@ end</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>touching tree</name>
-						<script>wsys.timer.treewait = true</script>
+						<script>wsys.timer.treewait = true
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>1</mStayOpen>
@@ -19133,7 +19448,9 @@ end</script>
 					<regexCodePropertyList />
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>writhe</name>
-						<script></script>
+						<script>if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>1</mStayOpen>
@@ -19533,7 +19850,10 @@ end</script>
 						<name>standing</name>
 						<script>wsys.cure = "stand"
 if wsys.aff.blackout then wsys.affcured("prone") end
---deleteLine()</script>
+--deleteLine()
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>1</mStayOpen>
@@ -19590,7 +19910,9 @@ wsys.focusbal()</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>focussing</name>
-						<script></script>
+						<script>if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>1</mStayOpen>
@@ -19688,7 +20010,11 @@ end</script>
 					<regexCodePropertyList />
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>sipping</name>
-						<script>wsys.sipping = string.lower(multimatches[2][2])</script>
+						<script>wsys.sipping = string.lower(multimatches[2][2])
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>1</mStayOpen>
@@ -20101,7 +20427,11 @@ end</script>
 					<regexCodePropertyList />
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>waking up</name>
-						<script>wsys.cure = "wake"</script>
+						<script>wsys.cure = "wake"
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -20116,6 +20446,149 @@ end</script>
 							<string>[Curing]: WAKE</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Curingsets</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Curingset Begin</name>
+						<script>deleteFull()
+wsys.curingSets = {}
+disableTrigger("Curingset Begin")
+enableTrigger("Curingset Parse")
+enableTrigger("Curingset End")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your current curing sets</string>
+							<string>--------------------------------------------------------------------------------</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Curingset Parse</name>
+						<script>deleteFull()
+wsys.curingSets[matches[2]] = true</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^(\w+)$</string>
+							<string>^(\w+) \(current\)$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Curingset None</name>
+						<script>deleteFull()
+wsys.addCuringSets()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>You have no sets defined - you are currently using default priorities.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Curingset End</name>
+						<script>deleteFull()
+disableTrigger("Curingset Parse")
+disableTrigger("Curingset End")
+disableTrigger("Curingset None")
+
+if not (wsys.curingSets.wundersys ~= nil and wsys.curingSets.wundersys_default ~= nil) then
+  if tonumber(matches[3]) &gt;= (tonumber(matches[2]) + 2) then
+    wsys.addCuringSets()
+  else
+    wsys.report("You need two curing sets free to set up WunderSys! Please ensure you have two free and reconnect to the game.") 
+  end
+else
+	wsys.setSettings("curingsets", "true")
+end</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^You are using a total of (\w+) of your allowed (\w+) curing sets.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Gag Switches</name>
+						<script>deleteFull()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>You will now cure using the wundersys set.</string>
+							<string>Cloned the contents of the wundersys_default curing set into your currently active one.</string>
+							<string>You already have a set with that name. Either pick a new name or rename the old set.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+							<integer>3</integer>
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -22320,8 +22793,10 @@ wsys.dragonBreath( matches[2] )</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>Your mind has been touched by Thoth, the Lord of Death.</string>
+							<string>Your mind has been attuned to the realm of Death.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>3</integer>
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -23175,22 +23650,6 @@ end
 							<integer>3</integer>
 							<integer>3</integer>
 						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Flying (def)</name>
-						<script></script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList />
-						<regexCodePropertyList />
 					</Trigger>
 				</TriggerGroup>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -27146,7 +27605,11 @@ wsys.cannotdef("flailingstaff")</script>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>embrace serverside error</name>
-							<script>send("embrace spirit")</script>
+							<script>send("embrace spirit")
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>1</conditonLineDelta>
 							<mStayOpen>0</mStayOpen>
@@ -28882,6 +29345,1027 @@ wsys.undef("stealth")</script>
 								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>spiritform (def)</name>
+							<script>wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.defLine(matches[2])</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^An? (\w+) spirit co-habits your body.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>human-form</name>
+							<script>wsys.defmissingdep("affinity")
+wsys.defmissingdep("spiritbonded")
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>You remain in \w+ form, dolt.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>elusiveness (-)</name>
+							<script>wsys.undef("elusiveness")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>You are not watching for pursuers, Metamorph.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>elusiveness (failed)</name>
+							<script>wsys.defmissingdep("elusiveness")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>I cannot fathom the meaning of "elusiveness".</string>
+								<string>I'm sorry, I don't know what "elusiveness" does.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>spirit forms</name>
+							<script></script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList />
+							<regexCodePropertyList />
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>eagle</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("eagle")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Your soul dwells resplendent in companion with the majesty of the spirit of the Eagle.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>squirrel</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("squirrel")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Your heart beats faster and you look about anxiously as the spirit of the Squirrel inhabits your soul.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>wildcat</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("wildcat")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>You feel quick and alert as you receive the gifts of the Wildcat.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>wolf</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("wolf")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>You cast your eyes upwards towards the moon, as the howl of the Wolf rings in your ears.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>turtle</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("turtle")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>You feel the power of the oceans as the spirit of the Turtle enters you.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>hyena</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("hyena")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>You gaze impassionately at the world through cold eyes as the Hyena takes hold.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>jackdaw</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("jackdaw")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>You feel the spirit of the Jackdaw peering cautiously out from behind your beady eyes.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>cheetah</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("cheetah")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>You welcome the spirit of the Cheetah into your soul.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>owl</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("owl")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>A sense of inner wisdom and peace spreads through your mind as the spirit of the Owl works its influence.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>condor</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("condor")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Your soul soars as the buoyant spirit of the Condor joins you.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>gopher</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("gopher")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>As the spirit of the Gopher enters you, the ground begins to look quite tempting.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>sloth</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("sloth")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>You yawn and slouch about as the spirit of the Sloth permeates your being.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>bear</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("bear")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>You feel the spirit of the mighty Grizzly enter your body as your limbs grow in massive power.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>nightingale</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("nightingale")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Strains of birdsong fill your ears as the spirit of the Nightingale is summoned to you.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>elephant</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("elephant")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>The spirit of the massive Elephant enters your body, and all obstacles seem as nothing.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>wolverine</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("wolverine")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Your muscles feel like taut steel as the spirit of the Wolverine enters you.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>jaguar</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("jaguar")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>You settle back on your haunches, revelling in the natural power and confidence of the spirit of the Jaguar.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>icewyrm</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("icewyrm")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Images of cold, unseen lands drift before your mind's eye as the mysterious spirit of the Icewyrm dwells within your uneasy soul.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>gorilla</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("gorilla")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Your arms fill with power and you feel nimbleness and strength imbue you as the spirit of the Gorilla enters you.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+								<name>basilisk</name>
+								<script>wsys.morphing = false
+wsys.undef("squirrel")
+wsys.undef("wildcat")
+wsys.undef("wolf")
+wsys.undef("turtle")
+wsys.undef("jackdaw")
+wsys.undef("cheetah")
+wsys.undef("owl")
+wsys.undef("hyena")
+wsys.undef("condor")
+wsys.undef("gopher")
+wsys.undef("sloth")
+wsys.undef("bear")
+wsys.undef("nightingale")
+wsys.undef("elephant")
+wsys.undef("wolverine")
+wsys.undef("jaguar")
+wsys.undef("icewyrm")
+wsys.undef("eagle")
+wsys.undef("gorilla")
+wsys.undef("basilisk")
+wsys.deffed("basilisk")</script>
+								<triggerType>0</triggerType>
+								<conditonLineDelta>0</conditonLineDelta>
+								<mStayOpen>0</mStayOpen>
+								<mCommand></mCommand>
+								<packageName></packageName>
+								<mFgColor>#ff0000</mFgColor>
+								<mBgColor>#ffff00</mBgColor>
+								<mSoundFile></mSoundFile>
+								<colorTriggerFgColor>#000000</colorTriggerFgColor>
+								<colorTriggerBgColor>#000000</colorTriggerBgColor>
+								<regexCodeList>
+									<string>Your breathing slows to a gentle whisper as the stealthy spirit of the Basilisk approaches and takes form within you.</string>
+								</regexCodeList>
+								<regexCodePropertyList>
+									<integer>3</integer>
+								</regexCodePropertyList>
+							</Trigger>
+						</TriggerGroup>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>avasion (failed)</name>
+							<script>wsys.defmissingdep("evasion")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>You must be in the air before you can begin evasive flying.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>hiding (failed)</name>
+							<script>wsys.defmissingdep("hiding")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Too many prying eyes prevent you from finding a suitable hiding place.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>def failed</name>
+							<script>wsys.defmissingdep(matches[2])</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^I'm sorry, I don't know what "(\w+)" does.$</string>
+								<string>^I cannot fathom the meaning of "(\w+)".$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
 					</TriggerGroup>
 					<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Woodlore</name>
@@ -29046,6 +30530,86 @@ end</script>
 							<colorTriggerBgColor>#000000</colorTriggerBgColor>
 							<regexCodeList>
 								<string>You must be in the air before you can begin evasive flying.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>barkskin (def)</name>
+							<script>wsys.defLine("barkskin")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Your skin is hard and tough like the bark of an oak tree.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>barkskin (+)</name>
+							<script>wsys.deffed("barkskin")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>You concentrate for a moment, and your skin becomes rough and thick like tree bark.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>fleetness (def)</name>
+							<script>wsys.defLine("fleetness")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>You are able to navigate forests more easily.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>fleetness (+)</name>
+							<script>wsys.deffed("fleetness")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>You will seek out the best paths through the forest.</string>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>3</integer>
@@ -32177,7 +33741,10 @@ end
 						<name>serverside outrift</name>
 						<script>--this means it wasn't in your inventory before so well yeah check shit
 wsys.serversideOutrift(multimatches[2][2])
-</script>
+
+if wsys.settings.gagcuring then
+  deleteLine()
+end</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -32615,7 +34182,14 @@ end</script>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Clot Level</name>
 						<script>if wsys.curingstatuscheck then deleteLine() end
-if tonumber(matches[2]) &gt; wsys.stats.maxh then
+
+if matches[2] == "No" then
+  -- have clot disabled on serverside curing
+  if wsys.settings.haveclot then
+    send("curing clotat 30", false)
+    send("curing clot on", false)
+  end
+elseif tonumber(matches[2]) &gt; wsys.stats.maxh then
   if wsys.settings.haveclot then
     wsys.settings.useclot = true
     wsys.settings.stopclot = false
@@ -32640,8 +34214,10 @@ end</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^Clot at\:\s+(\d+) bleeding$</string>
+							<string>^Use clot:\s+(No)$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -35142,6 +36718,7 @@ function wsys.return_defaultsettings( no_save )
   valeriantwopipe = false,
   haverage = false,
   gagclot = true,
+  gagcuring = false,
   class = "jobless",
   gagaffshift = true,
   useinsomnia = false,
@@ -35188,6 +36765,8 @@ function wsys.return_defaultsettings( no_save )
   },
   autoshrugat = 3,
   sipmana = 80,
+  mosshealth = 80,
+  mossmana = 80,
   usetransmutation = true,
   monktransmute = false,
   havedeathsight = false,
@@ -35215,6 +36794,7 @@ function wsys.return_defaultsettings( no_save )
   autotree = false,
   automount = false,
   havevault = true,
+	curingsets = false
 }
   if not no_save then
     wsys.saveSettings()
@@ -35607,11 +37187,15 @@ function wsys.return_defaultaffprios()
   ---------------------------------
   --HERBS (+ a few focusables obv)
   ---------------------------------
-
   ["paralysis"] = 4,
-  ["impatience"] = 5,
+  ["timeloop"] = 5,
+  ["shadowmadness"] = 5,
+  ["hypochondria"] = 5,
+  ["depression"] = 6,
+  ["retribution"] = 6,
+  ["parasite"] = 6,
   ["scytherus"] = 6,
-  ["hypochondria"] = 6,
+  ["impatience"] = 6,
   ["asthma"] = 7,
   ["sensitivity"] = 7,
   ["spiritdisrupt"] = 8,
@@ -35666,6 +37250,7 @@ function wsys.return_defaultaffprios()
   ["heartseed"] = 3,
   ["hypothermia"] = 3,
   ["anorexia"] = 4,
+  ["crushedthroat"] = 5,
   ["itching"] = 5,
   
   --6 GAP: For resto leg breaks and prone
@@ -36793,10 +38378,11 @@ function wsys.focusAffCount()
   if wsys.aff.claustrophobia then fCount = fCount + 1 end
   if wsys.aff.agoraphobia then fCount = fCount + 1 end
   if wsys.aff.vertigo then fCount = fCount + 1 end
-  if wsys.aff.weariness then fCount = fCount + 1 end
   if wsys.aff.confusion then fCount = fCount + 1 end
   if wsys.aff.anorexia then fCount = fCount + 1 end
-
+  if wsys.aff.dementia then fCount = fCount + 1 end
+  if wsys.aff.paranoia then fCount = fCount + 1 end
+  if wsys.aff.hallucinations then fCount = fCount + 1 end
   
   return fCount
 end
@@ -36868,11 +38454,13 @@ end
 function wsys.return_defaultfocusshifts()
   return {
     recklessness = 12,
-    weariness = 8,
     confusion = 8,
     stupidity = 9,
     dizziness = 14,
-    shyness = 14
+    shyness = 14,
+	 paranoia = 14,
+    dementia = 14,
+    hallucinations = 14
   }
 end</script>
 						<eventHandlerList />
@@ -37377,18 +38965,26 @@ end</script>
 					<name>Affliction Priority Functions</name>
 					<packageName></packageName>
 					<script>function wsys.resetAffPrios()
-  for k,v in pairs(wsys.settings.affprio[wsys.profile][wsys.myClass()]) do
-    -- reset affs that aren't at their setting position
-    if wsys.affPosition(k) ~= wsys.defaultAffPosition(k) then
+  if wsys.settings.curingsets == "true" then
+    wsys.cloneDefaultCuringSet()
+  else
+    for k,v in pairs(wsys.settings.affprio[wsys.profile][wsys.myClass()]) do
+      -- reset affs that aren't at their setting position
+      if wsys.affPosition(k) ~= wsys.defaultAffPosition(k) then
       send("curing priority " .. k .. " " .. tostring(v), false)
+      end
     end
   end
   raiseEvent("reset aff prios")
 end
 
 function wsys.resetAllAffPrios()
-  for k,v in pairs(wsys.settings.affprio[wsys.profile][wsys.myClass()]) do
-    send("curing priority " .. k .. " " .. tostring(v), false)
+  if wsys.settings.curingsets == "true" then
+    wsys.cloneDefaultCuringSet()
+  else
+    for k,v in pairs(wsys.settings.affprio[wsys.profile][wsys.myClass()]) do
+      send("curing priority " .. k .. " " .. tostring(v), false)
+    end
   end
   raiseEvent("reset aff prios")
 end
@@ -37607,17 +39203,17 @@ function wsys.mossbal()
 end
 
 function wsys.mossThreshholdDown()
-  local mh = wsys.settings.siphealth - 10
-  local mm = wsys.settings.siphealth - 10
+  local mh = wsys.settings.mosshealth - 10
+  local mm = wsys.settings.mossmana - 10
   if mh &lt; 0 then mh = 0 end
-  if mm &lt; 0 then mh = 0 end
+  if mm &lt; 0 then mm = 0 end
   send("curing mosshealth " .. mh, false)
   send("curing mossmana " .. mm,false)
 end
 
 function wsys.mossThreshholdUp()
-  send("curing mosshealth 90", false)
-  send("curing mossmana 85", false)
+  send("curing mosshealth "..wsys.settings.mosshealth, false)
+  send("curing mossmana "..wsys.settings.mossmana, false)
 end
 
 function wsys.mossThreshholdDownFailsafe(event, bal)
@@ -37908,6 +39504,12 @@ function wsys.cannotdef(d)
   end
 end
 
+function wsys.defmissingdep(d)
+  if wsys.settings.keepup[wsys.profile][wsys.myClass()] ~= nil and wsys.settings.keepup[wsys.profile][wsys.myClass()][d] then 
+    wsys.unkeepup(d, true)
+  end
+end
+
 --defence lost function
 function wsys.defstrip(defe)
   wsys.def[wsys.tb.defstripTable[defe]] = false
@@ -37949,6 +39551,15 @@ function wsys.defup(profile)
     end
   end
 
+  -- we need a spiritform thingie too
+  for ck,cv in pairs(wsys.settings.defup[wsys.profile][wsys.myClass()]) do 
+    if wsys.tb.defenceTable[ck]["skillset"][1] == "spiritform" and wsys.tb.defenceTable[ck]["manualcommand"] then
+      wsys.doadd(wsys.tb.defenceTable[ck]["manualcommand"])
+      -- quit the loop, we're done here
+      break
+    end
+  end
+    
 
   for k,v in pairs(wsys.settings.defup[wsys.profile][wsys.myClass()]) do
     local highestprio = 25
@@ -38121,7 +39732,7 @@ wsys.tb.defenceTable = {
   ["astralvision"] = {["name"] = "Astralvision", ["skillset"] = {"occultism"}, ["manualcommand"] = "astralvision",},
   ["astronomy"] = {["name"] = "Astronomy", ["skillset"] = {"alchemy"},},
   ["balancing"] = {["name"] = "Balancing", ["skillset"] = {"pranks", "swashbuckling"},},
-  ["barkskin"] = {["name"] = "Barkskin", ["skillset"] = {"sylvan"}, ["manualcommand"] = "cast barkskin",},
+  ["barkskin"] = {["name"] = "Barkskin", ["skillset"] = {"sylvan"}, ["manualcommand"] = wsys.manualbarkskin(),},
   --["basking"] = {["name"] = "Basking", ["skillset"] = {"subterfuge"},},
   ["bedevilaura"] = {["name"] = "Bedevil Aura", ["skillset"] = {"healing"},},
   ["belltattoo"] = {["name"] = "Bell Tattoo", ["skillset"] = {"tattoos"}, ["manualcommand"] = "touch bell",},
@@ -38153,7 +39764,7 @@ wsys.tb.defenceTable = {
   ["drunkensailor"] = {["name"] = "Drunkensailor", ["skillset"] = {"swashbuckling"},},
   ["earthshield"] = {["name"] = "Earthshield", ["skillset"] = {"healing"},},
   ["electricresist"] = {["name"] = "Electric resistance", ["skillset"] = {"enchantment"},},
-  ["elusiveness"] = {["name"] = "Elusiveness", ["skillset"] = {"metamorphosis"},},
+  ["elusiveness"] = {["name"] = "Elusiveness", ["skillset"] = {"metamorphosis"}, ["manualcommand"] = "elusiveness on",},
   ["enduranceblessing"] = {["name"] = "Endurance", ["skillset"] = {"healing"},},
   --["eavesdropping"] = {["name"] = "Eavesdropping", ["skillset"] = {"subterfuge"},},
   ["evadeblock"] = {["name"] = "Evadeblock", ["skillset"] = {"tekura"},},
@@ -38164,6 +39775,7 @@ wsys.tb.defenceTable = {
   ["fireresist"] = {["name"] = "fireresist", ["skillset"] = {"enchantment"},},
   ["firstaid"] = {["name"] = "Firstaid", ["skillset"] = {"woodlore"},},
   ["flailingstaff"] = {["name"] = "Flailingstaff", ["skillset"] = {"groves"},},
+  ["fleetness"] = {["name"] = "Fleetness", ["skillset"] = {"woodlore"}, ["manualcommand"] = "fleetness",},
   --["frenzied"] = {["name"] = "Frenzy", ["skillset"] = {"necromancy"},},
   ["frostshield"] = {["name"] = "Frostshield", ["skillset"] = {"healing"},},
   ["fury"] = {["name"] = "Fury", ["skillset"] = {"chivalry"},},
@@ -38210,12 +39822,12 @@ wsys.tb.defenceTable = {
   ["putrefaction"] = {["name"] = "Putrefaction", ["skillset"] = {"necromancy"},},
   ["rebounding"] = {["name"] = "Rebounding", ["skillset"] = {"curative"},},
   ["reflections"] = {["name"] = "Reflections", ["skillset"] = {"elementalism"},},
-  ["reflexes"] = {["name"] = "Reflexes", ["skillset"] = {"metamorphosis"},},
+  --["reflexes"] = {["name"] = "Reflexes", ["skillset"] = {"metamorphosis"},},
   ["regeneration"] = {["name"] = "Regeneration", ["skillset"] = {"kaido"},},
   ["resistance"] = {["name"] = "Resistance", ["skillset"] = {"kaido", "chivalry", "metamorphosis"},},
   ["retaliation"] = {["name"] = "Retaliation", ["skillset"] = {"twoarts"},},
   ["scales"] = {["name"] = "Scales", ["skillset"] = {"subterfuge"},},
-  ["scholasticism"] = {["name"] = "Myrrh", ["skillset"] = {"curative"}, ["manualcommand"] = wsys.manualmyrrh(),},
+ -- ["scholasticism"] = {["name"] = "Myrrh", ["skillset"] = {"curative"}, ["manualcommand"] = wsys.manualmyrrh(),},
   ["secondsight"] = {["name"] = "Secondsight", ["skillset"] = {"subterfuge"},},
   ["selfishness"] = {["name"] = "Selfishness", ["skillset"] = {"survival"},},
   --["setweapon"] = {["name"] = "Impale", ["skillset"] = {"woodlore"},},
@@ -38261,6 +39873,27 @@ wsys.tb.defenceTable = {
   ["weaving"] = {["name"] = "Weaving", ["skillset"] = {"subterfuge"},},
   ["wildgrowth"] = {["name"] = "Wildgrowth", ["skillset"] = {"groves"},},
   ["willpowerblessing"] = {["name"] = "Willpower", ["skillset"] = {"healing"},},
+-- Animal spirits for spiritform
+  ["squirrel"] = {["name"] = "Squirrel", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("squirrel"),},
+  ["wildcat"] = {["name"] = "Wildcat", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wildcat"),},
+  ["wolf"] = {["name"] = "Wolf", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wolf"),},
+  ["turtle"] = {["name"] = "Turtle", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("turtle"),},
+  ["jackdaw"] = {["name"] = "Jackdaw", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("jackdaw"),},
+  ["cheetah"] = {["name"] = "Cheetah", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("cheetah"),},
+  ["owl"] = {["name"] = "Owl", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("owl"),},
+  ["hyena"] = {["name"] = "Hyena", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("hyena"),},
+  ["condor"] = {["name"] = "Condor", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("condor"),},
+  ["gopher"] = {["name"] = "Gopher", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("gopher"),},
+  ["sloth"] = {["name"] = "Sloth", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("sloth"),},
+  ["bear"] = {["name"] = "Bear", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("bear"),},
+  ["nightingale"] = {["name"] = "Nightingale", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("nightingale"),},
+  ["elephant"] = {["name"] = "Elephant", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("elephant"),},
+  ["wolverine"] = {["name"] = "Wolverine", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wolverine"),},
+  ["jaguar"] = {["name"] = "Jaguar", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("jaguar"),},
+  ["icewyrm"] = {["name"] = "Icewyrm", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("icewyrm"),},
+  ["eagle"] = {["name"] = "Eagle", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("eagle"),},
+  ["gorilla"] = {["name"] = "Gorilla", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("gorilla"),},
+  ["basilisk"] = {["name"] = "Basilisk", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("basilisk"),},
 }
 
 wsys.tb.defstripTable = {
@@ -38377,10 +40010,11 @@ wsys.tb.defstripTable = {
   ["venom"] = "poisonresist",
   ["clinging"] = "clinging",
   ["shield"] = "shield",
-  ["scholasticism"] = " scholasticism",
+  --["scholasticism"] = " scholasticism",
   ["firefly"] = "firefly",
   ["held breath"] = "heldbreath",
 }
+
 </script>
 						<eventHandlerList />
 					</Script>
@@ -38549,6 +40183,30 @@ end
 </script>
 						<eventHandlerList />
 					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>manual defs</name>
+						<packageName></packageName>
+						<script>--Sylvans use 'cast barkskin', Sentinels just do 'barkskin'.
+function wsys.manualbarkskin()
+  if wsys.myClass() == "Sylvan" then
+    return "cast barkskin"
+  elseif wsys.myClass() == "Sentinel" then
+    return "barkskin"
+  end
+end</script>
+						<eventHandlerList />
+					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>metaform</name>
+						<packageName></packageName>
+						<script>function wsys.metaform(form)
+  if ( wsys.myClass() == "sentinel" or wsys.myClass() == "druid" )  then
+    wsys.morphing = true
+    return("belch;morph "..form)
+  end
+end</script>
+						<eventHandlerList />
+					</Script>
 				</ScriptGroup>
 				<ScriptGroup isActive="yes" isFolder="yes">
 					<name>Defences Queues</name>
@@ -38646,6 +40304,7 @@ local classSkills = {
   ["sylvan"] = {"sylvan", "groves", "elementalism"},
   ["dragon"] = {"dragoncraft"},
   ["free"] = {"curative", "survival", "vision", "enchantment", "tattoos"},
+  ["animalspirit"] = {"spiritform"},
   ["artefact"] = {"artefact"}, 
 }
 
@@ -38743,6 +40402,10 @@ function wsys.showDefMenu(style, profile ,class)
   wsys.defupDisplay(style, profile ,"free")
   wsys.report(string.title(menuClass).." Defs:")
   wsys.defupDisplay(style, profile, menuClass)
+  if wsys.myClass() == "sentinel" or wsys.myClass() == "druid" then
+    wsys.report("Metamorphosis animal spirits:")
+    wsys.defupDisplay(style, profile ,"animalspirit")
+  end
   wsys.report("Artefacts:")
   wsys.defupDisplay(style, profile, "artefact")
 end
@@ -38755,15 +40418,22 @@ function wsys.defToggle(style, profile, class, defname)
     wsys.settings[style][profile][class][defname] = nil
     wsys.report("Removed " .. defname .. " ("..wsys.tb.defenceTable[defname]["name"] ..") from " ..style.. " in " ..profile.." profile")
     wsys.showDefMenu(style, profile, class)
-    send("curing priority defence " .. defname .. " reset", false)
+    -- spiritforms are not counted as defenses. So we cheat a little.
+    if wsys.tb.defenceTable[defname]["skillset"][1] ~= "spiritform" then 
+      send("curing priority defence " .. defname .. " reset", false)
+    end
   else
     wsys.settings[style][profile][class][defname] = true
     wsys.report("Added " .. defname .. " ("..wsys.tb.defenceTable[defname]["name"] ..") to " ..style.. " in " ..profile.." profile")
     wsys.showDefMenu(style, profile, class)
     --add stuff to serverside keepup if this is displaying a keepup list.
+    --Unless it's a spiritform
       if style == "keepup" and class == wsys.myClass() then
         wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] = wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] or 25
-        wsys.enableSSDef( defname, wsys.settings.defprio[wsys.profile][wsys.myClass()][defname], true )
+        -- let's not keep up a spiritform, it would cause too much trouble with the other defenses.
+        if wsys.tb.defenceTable[defname]["skillset"][1] ~= "spiritform" then 
+          wsys.enableSSDef( defname, wsys.settings.defprio[wsys.profile][wsys.myClass()][defname], true )
+        end
       elseif style == "defup" and class == wsys.myClass() then
         if not wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] then
            wsys.settings.defprio[wsys.profile][wsys.myClass()][defname] = 25
@@ -39033,7 +40703,6 @@ function wsys.affprint(affliction, affline)
     end -- if 
   end
 end -- func
-
 
 -- AEON ACTION PRINT
 function wsys.aeoncolour()
@@ -39540,7 +41209,7 @@ end</script>
 				<Script isActive="yes" isFolder="no">
 					<name>Check for Updates</name>
 					<packageName></packageName>
-					<script>wsys.myVersion = "v1.1.3"
+					<script>wsys.myVersion = "1.2"
 wsys.currentVersion = wsys.currentVersion or wsys.myVersion
 wsys.updateAvailable = false
 local downloadsURL = "https://github.com/tynil/WunderSys/releases"
@@ -39733,9 +41402,13 @@ function wsys.displaySettings()
   cecho("\n&lt;white&gt;unsoftpausehealth: "..tostring(wsys.settings.unsoftpausehealth))
 
   cecho("\n\n&lt;white&gt;usemoss: "..tostring(wsys.settings.usemoss))
-  cecho("\n&lt;white&gt;useinsomnia: "..tostring(wsys.settings.useinsomnia))
+  cecho("\n&lt;white&gt;mosshealth: "..tostring(wsys.settings.mosshealth))
+  cecho("\n&lt;white&gt;mossmana: "..tostring(wsys.settings.mossmana))
+
+  cecho("\n\n&lt;white&gt;useinsomnia: "..tostring(wsys.settings.useinsomnia))
   cecho("\n&lt;white&gt;usefocus: "..tostring(wsys.settings.usefocus))
   cecho("\n&lt;white&gt;useclot: "..tostring(wsys.settings.useclot))
+  cecho("\n&lt;white&gt;autotree: "..tostring(wsys.settings.autotree))
   if wsys.isKnight() then
     cecho("\n&lt;white&gt;userage: "..tostring(wsys.settings.userage))
   end
@@ -39780,6 +41453,7 @@ function wsys.displayEchosAndGags()
   cecho("\n\n&lt;white&gt;affgainedechos: "..tostring(wsys.settings.affgainedechos))
   cecho("\n&lt;white&gt;affcuredechos: "..tostring(wsys.settings.affcuredechos))
 
+  cecho("\n\n&lt;white&gt;gagcuring: "..tostring(wsys.settings.gagcuring))
   cecho("\n\n&lt;white&gt;gagclot: "..tostring(wsys.settings.gagclot))
   cecho("\n\n&lt;white&gt;gagaffshift: "..tostring(wsys.settings.gagaffshift))
   cecho("\n&lt;white&gt;gagdefshift: "..tostring(wsys.settings.gagdefshift))
@@ -39971,7 +41645,7 @@ end
 					<packageName></packageName>
 					<script>function wsys.resetOnDeath()
   wsys.normalsipping()
-  wsys.resetAffPrios()
+	wsys.resetAffPrios()
   wsys.lostallchannels()
 end
 
@@ -40117,6 +41791,7 @@ wsys.inittimesbals()</script>
   wsys.abilityCheck()
   wsys.setkeepouttable()
   wsys.outrqueue()
+	wsys.checkCuringSets()
   wsys.resetAffPrios()
   wsys.checkForUpdates()
   wsys.def = {}
@@ -40311,6 +41986,35 @@ local function deepcopy(orig)
 end
 
 wsys.deepcopy = deepcopy</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Curingset Management</name>
+					<packageName></packageName>
+					<script>function wsys.checkCuringSets()
+  wsys.curingsets = {}
+	send("CURINGSET LIST")
+  enableTrigger("Curingset Begin")
+	enableTrigger("Curingset None")
+end
+
+function wsys.addCuringSets()
+  send("CURINGSET NEW wundersys")
+	send("CURINGSET NEW wundersys_default")
+	send("CURINGSET SWITCH wundersys_default")
+	if wsys.settings.curingsets ~= "true" then
+	  wsys.setSettings("curingsets", "true" )
+	end
+	wsys.resetAffPrios()
+	tempTimer(1.5, function()
+		send("CURINGSET SWITCH WUNDERSYS")
+		wsys.cloneDefaultCuringSet()
+		end)
+end
+
+function wsys.cloneDefaultCuringSet()
+	send("CURINGSET CLONE wundersys_default")
+end</script>
 					<eventHandlerList />
 				</Script>
 			</ScriptGroup>
@@ -41789,12 +43493,14 @@ wsys.tb.affc = {
  clumsiness = {"kelp", "aurum"},
  confusion = {"ash", "stannum","focus"},
  concussion = {"restorationhead"},
+ crushedthroat = {"mendinghead"},
  brokenrightarm = {"mendingarms", "restore"},
  brokenrightleg = {"mendinglegs", "restore"},
  darkshade = {"ginseng", "ferrum"},
  dazed = {"elm", "cinnabar"},
  deadening = {"elm", "cinnabar"},
- dementia = {"ash", "stannum"},
+ dementia = {"ash", "stannum", "focus"},
+ depression = {"goldenseal", "plumbum"},
  disloyalty = {"valerian", "realgar"},
  disrupted = {"concentrate"},
  dissonance = {"goldenseal", "plumbum"},
@@ -41805,7 +43511,7 @@ wsys.tb.affc = {
  generosity = {"bellwort", "cuprum", "rage"},
  hamstrung = {}, -- timed
  haemophilia = {"ginseng", "ferrum"},
- hallucinations = {"ash", "stannum"},
+ hallucinations = {"ash", "stannum", "focus"},
  healthleech = {"kelp", "aurum"},
  heartseed = {"restorationtorso"},
  hellsight = {"valerian", "realgar"},
@@ -41835,14 +43541,17 @@ wsys.tb.affc = {
  nausea = {"ginseng", "ferrum"},
  pacified = {"bellwort", "cuprum", "focus", "rage"},
  paralysis = {"bloodroot", "magnesium"},
- paranoia = {"ash", "stannum"},
+ paranoia = {"ash", "stannum", "focus"},
+ parasite = {"kelp", "aurum"},
  peace = {"bellwort", "cuprum", "rage"},
  prone = {"stand"},
  recklessness = {"lobelia", "argentum", "focus"},
+ retribution = {"bellwort", "cuprum"},
  scytherus = {"ginseng", "ferrum"},
  sensitivity = {"kelp", "aurum"},
  selarnia = {"mendingtorso"},
  daeggerimpale = {"writhe"},
+ shadowmadness = {"goldenseal", "plumbum"},
  shivering = {"caloric"},
  shyness = {"goldenseal", "plumbum", "focus"},
  slashedthroat = {"epidermalhead"},
@@ -41852,8 +43561,9 @@ wsys.tb.affc = {
  stuttering = {"epidermalhead", "focus"},
  entangled = {"writhe", "flex"},
  bound = {"writhe"},
+ timeloop = {"bellwort", "cuprum"},
  transfixation = {"writhe"},
- weariness = {"kelp", "aurum", "focus"},
+ weariness = {"kelp", "aurum"},
  webbed = {"writhe", "flex"},
  vertigo = {"lobelia", "argentum", "focus"},
  voyria = {"immunity", "antigen"},
@@ -41904,12 +43614,14 @@ wsys.tb.affctype = {
  clumsiness = "herb",
  confusion = "herb",
  concussion = "salve",
+ crushedthroat = "salve",
  brokenrightarm = "salve",
  brokenrightleg = "salve",
  darkshade = "herb",
  dazed = "smoke",
  deadening = "smoke",
  dementia = "herb",
+ depression = "herb",
  disloyalty = "smoke",
  disrupted = "concentrate",
  dissonance = "herb",
@@ -41947,13 +43659,16 @@ wsys.tb.affctype = {
  pacified = "herb",
  paralysis = "herb",
  paranoia = "herb",
+ parasite = "herb",
  peace = "herb",
  prone = "stand",
  recklessness = "herb",
+ retribution = "herb",
  scytherus = "herb",
  sensitivity = "herb",
  selarnia = "salve",
  daeggerimpale = "writhe",
+ shadowmadness = "herb",
  shivering = "salve",
  shyness = "herb",
  slickness = "smoke",
@@ -41962,6 +43677,7 @@ wsys.tb.affctype = {
  stuttering = "salve",
  entangled = "writhe",
  bound = "writhe",
+ timeloop = "herb",
  transfixation = "writhe",
  weariness = "herb",
  webbed = "writhe",
@@ -42001,7 +43717,8 @@ wsys.tb.affspaired = {}
 -- AFFS RECEIVED BETWEEN SAME PROMPTS
 wsys.tb.affstogether = {}
 
-
+-- Removed Weariness from Focusable - Announce 4494
+-- Dementia, Paranoia, and Hallucination - Added as Focusable Announce #4539 
 -- CURES
 wsys.tb.cures = {
 
@@ -42009,19 +43726,19 @@ wsys.tb.cures = {
  magnesium = {"paralysis", "slickness"},
  lobelia = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spritidisrupt"},
  argentum = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spiritdisrupt"},
- kelp = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "manaleech"},
- aurum = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech"},
+ kelp = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "manaleech", "parasite"},
+ aurum = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "manaleech", "parasite"},
  ginseng = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea"},
  ferrum = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea"},
- bellwort = {"generosity", "lovers", "justice", "pacified", "peace"},
- cuprum = {"generosity", "lovers", "justice", "pacified", "peace"},
+ bellwort = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
+ cuprum = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
  ash = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
  stannum = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
- goldenseal = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness"},
- plumbum = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness"},
+ goldenseal = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop"},
+ plumbum = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop"},
  focus = {"stupidity", "dizziness", "confusion", "claustrophobia", "agoraphobia", "masochism", "lovers", "recklessness", 
-          "epilepsy", "loneliness", "shyness", "pacified", "anorexia", "vertigo", "weariness", "weakenedmind",
-			"waterdisrupt", "earthdisrupt", "firedisrupt","airdisrupt"},
+          "epilepsy", "loneliness", "shyness", "pacified", "anorexia", "vertigo", "weakenedmind",
+			"waterdisrupt", "earthdisrupt", "firedisrupt","airdisrupt", "dementia", "hallucinations", "paranoia"},
  elm = {"aeon", "whisperingmadness", "deadening", "dazed"},
  cinnabar = {"aeon", "whisperingmadness", "deadening", "dazed"},
  valerian = {"slickness", "disloyalty", "manaleech", "hellsight"},
@@ -42032,6 +43749,7 @@ wsys.tb.cures = {
  epidermalbody = {"anorexia", "itching"},
  epidermalhead = {"scalded"},
  mendingbody = {"burning", "selarnia"},
+ mendinghead = {"crushedthroat"},
  mendingtorso = {"selarnia"},
  epidermalhead = {"stuttering", "slashedthroat"},
  caloric = {"shivering", "frozen"},
@@ -42045,20 +43763,23 @@ wsys.tb.cures = {
           "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
           "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
           "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria"},
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria", 
+			 "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
  shrugging = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
           "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "paralysis", 
           "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
           "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
           "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria"},
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
  restore = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "carm", "cleg"},
  dheal = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
           "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
           "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
           "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
           "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria"},
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
  flex = {"webbed", "entangled"},
  writhe = {"webbed", "entangled", "bound", "impaled", "transfixation", "speared", "daeggerimpale"},
  fool = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
@@ -42066,7 +43787,8 @@ wsys.tb.cures = {
           "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
           "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
           "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria"},
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
  concentrate = {"disrupted"},
  compose = {"fear"},
  clot = {"bleeding"},
@@ -42209,6 +43931,7 @@ wsys.tb.curetype = {
  sensorybody = "salve",
  mendingbody = "salve",
  renewalbody = "salve",
+ mendinghead = "salve",
  epidermalhead = "salve",
  sensoryhead = "salve",
  caloric = "salve",
@@ -42584,6 +44307,7 @@ end</script>
  darkshade = "dark",
  deadening = "dea",
  dementia = "dem",
+ depression = "dep",
  disloyalty = "disl",
  disrupted = "dis",
  dissonance = "diss",
@@ -42621,12 +44345,15 @@ end</script>
  pacified = "pac",
  paralysis = "PAR",
  paranoia = "para",
+ parasite = "paras",
  peace = "pea",
  prone = "PR",
  recklessness = "reck",
+ retribution = "ret",
  scytherus = "SCY",
  sensitivity = "sen",
  daeggerimpale = "Impale",
+ shadowmadness = "sham",
  shivering = "shiv",
  shyness = "shy",
  slickness = "SLI",
@@ -42793,8 +44520,8 @@ function wsys.aeonedLost(event, affliction)
       send("curing batch on", false)
       send("curing siphealth " .. wsys.settings.siphealth, false)
       send("curing sipmana " .. wsys.settings.sipmana, false)
-      if wsys.settings.usemoss then send("curing mosshealth " .. wsys.settings.siphealth - 10, false) end
-      if wsys.settings.usemoss then send("curing mossmana " .. wsys.settings.sipmana - 10, false) end
+      if wsys.settings.usemoss then send("curing mosshealth " .. wsys.settings.mosshealth, false) end
+      if wsys.settings.usemoss then send("curing mossmana " .. wsys.settings.mossmana, false) end
       wsys.affPrioRestore( "asthma" )
       wsys.affPrioRestore( "weariness" )
       wsys.affPrioRestore( "anorexia" )
@@ -42814,8 +44541,8 @@ function wsys.unaeonDiagnose()
       send("curing batch on", false)
       send("curing siphealth " .. wsys.settings.siphealth, false)
       send("curing sipmana " .. wsys.settings.sipmana, false)
-      if wsys.settings.usemoss then send("curing mosshealth " .. wsys.settings.siphealth - 10, false) end
-      if wsys.settings.usemoss then send("curing mossmana " .. wsys.settings.sipmana - 10, false) end
+      if wsys.settings.usemoss then send("curing mosshealth " .. wsys.settings.mosshealth, false) end
+      if wsys.settings.usemoss then send("curing mossmana " .. wsys.settings.mossmana, false) end
       wsys.waittime = wsys.myPing()*2
       if wsys.retard then wsys.retardationOff() end
     end

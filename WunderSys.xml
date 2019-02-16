@@ -41682,7 +41682,7 @@ end --func
 --start a class timer
 function wsys.newClassTimer( class )
   if table.contains(wsys.classtimers, class) then
-    wsys.killClassTimer(class)
+    wsys.killClassTimer(class, true)
   else
     raiseEvent("class timer started", class)
   end
@@ -41690,11 +41690,11 @@ function wsys.newClassTimer( class )
 end
 
 --kill a class timer
-function wsys.killClassTimer( class )
+function wsys.killClassTimer( class, no_event )
   if wsys.classtimers[class] then killTimer(wsys.classtimers[class]) end
   if table.contains(wsys.classtimers, wsys.classtimers[class]) then
     wsys.classtimers[class] = nil
-    raiseEvent("class timer ended", class)
+    if not no_event then raiseEvent("class timer ended", class) end
   end
 end
 

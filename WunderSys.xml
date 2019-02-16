@@ -15752,36 +15752,29 @@ end
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Devastate 2</name>
-							<script>if matches[2] == "arms" then
+							<script>--gmcp aff added will trigger before this does. Rely on that for determining the level break
+if matches[2] == "arms" then
   wsys.fracturereset("wristfractures")
-  if wsys.aff.damagedrightarm then
-    wsys.affadd("mangledrightarm")
+  if wsys.aff.mangledrightarm then
     wsys.restobreakcheck("mangledrightarm")
   else
-    wsys.affadd("damagedrightarm")
     wsys.restobreakcheck("damagedrightarm")
   end
-  if wsys.aff.damagedleftarm then
-    wsys.affadd("mangledleftarm")
+  if wsys.aff.mangledleftarm then
     wsys.restobreakcheck("mangledleftarm")
   else
-    wsys.affadd("damagedleftarm")
     wsys.restobreakcheck("damagedleftarm")
   end
 elseif matches[2] == "legs" then
   wsys.fracturereset("torntendons")
-  if wsys.aff.damagedrightleg then
-    wsys.affadd("mangledrightleg")
+  if wsys.aff.mangledrightleg then
     wsys.restobreakcheck("mangledrightleg")
   else
-    wsys.affadd("damagedrightleg")
     wsys.restobreakcheck("damagedrightleg")
   end
-  if wsys.aff.damagedleftleg then
-    wsys.affadd("mangledleftleg")
+  if wsys.aff.mangledleftleg then
     wsys.restobreakcheck("mangledleftleg")
   else
-    wsys.affadd("damagedleftleg")
     wsys.restobreakcheck("damagedleftleg")
   end
 end

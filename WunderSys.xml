@@ -15225,6 +15225,7 @@ setTriggerStayOpen("Overhand", 0)</script>
 									<string>One of your reflections has been destroyed!</string>
 									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
 									<string>You frantically attempt to parry the attack of </string>
+									<string>You step into the attack, grab</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>3</integer>
@@ -15234,6 +15235,7 @@ setTriggerStayOpen("Overhand", 0)</script>
 									<integer>2</integer>
 									<integer>2</integer>
 									<integer>1</integer>
+									<integer>2</integer>
 									<integer>2</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -15372,6 +15374,7 @@ setTriggerStayOpen("Underhand", 0)</script>
 									<string>One of your reflections has been destroyed</string>
 									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
 									<string>You frantically attempt to parry the attack of </string>
+									<string>You step into the attack, grab</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>3</integer>
@@ -15381,6 +15384,7 @@ setTriggerStayOpen("Underhand", 0)</script>
 									<integer>2</integer>
 									<integer>2</integer>
 									<integer>1</integer>
+									<integer>2</integer>
 									<integer>2</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -15498,6 +15502,7 @@ setTriggerStayOpen("Hew", 0)</script>
 									<string>One of your reflections has been destroyed</string>
 									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
 									<string>You frantically attempt to parry the attack of </string>
+									<string>You step into the attack, grab</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>3</integer>
@@ -15507,6 +15512,7 @@ setTriggerStayOpen("Hew", 0)</script>
 									<integer>2</integer>
 									<integer>2</integer>
 									<integer>1</integer>
+									<integer>2</integer>
 									<integer>2</integer>
 								</regexCodePropertyList>
 							</Trigger>
@@ -15582,6 +15588,7 @@ setTriggerStayOpen("Pulverise", 0)</script>
 									<string>One of your reflections has been destroyed</string>
 									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
 									<string>You frantically attempt to parry the attack of </string>
+									<string>You step into the attack, grab</string>
 								</regexCodeList>
 								<regexCodePropertyList>
 									<integer>3</integer>
@@ -15591,6 +15598,7 @@ setTriggerStayOpen("Pulverise", 0)</script>
 									<integer>2</integer>
 									<integer>2</integer>
 									<integer>1</integer>
+									<integer>2</integer>
 									<integer>2</integer>
 								</regexCodePropertyList>
 							</Trigger>

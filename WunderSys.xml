@@ -44272,7 +44272,7 @@ wsys.prompttagcolors["hcolour"] = function()
   if wsys.stats.h &gt;= (wsys.stats.maxh * 0.75) then
     return "sea_green"
   elseif wsys.stats.h &gt;= (wsys.stats.maxh * 0.33) then
-    return "yellow"
+    return "gold"
   else
     return "red"
   end --if
@@ -44282,7 +44282,7 @@ wsys.prompttagcolors["mcolour"] = function()
   if wsys.stats.m &gt;= (wsys.stats.maxm * .75) then
     return "sea_green"
   elseif wsys.stats.m &gt;= (wsys.stats.maxm * .50) then
-    return "yellow"
+    return "gold"
   else
     return "red"
   end -- if
@@ -44292,7 +44292,7 @@ wsys.prompttagcolors["wcolour"] = function()
   if wsys.stats.w &gt;= (wsys.stats.maxw * .66) then
     return "sea_green"
   elseif wsys.stats.w &gt;= (wsys.stats.maxw * .50) then
-    return "yellow"
+    return "gold"
   else
     return "red"
   end -- if
@@ -44302,7 +44302,7 @@ wsys.prompttagcolors["ecolour"] = function()
   if wsys.stats.e &gt;= (wsys.stats.maxe * .66) then
     return "sea_green"
   elseif wsys.stats.e &gt;= (wsys.stats.maxe * .50) then
-    return "yellow"
+    return "gold"
   else
     return "red"
   end -- if
@@ -44323,7 +44323,7 @@ wsys.prompttagcolors["kaicolour"] = function()
     return "yellow"
   elseif wsys.stats.kai &gt;= 61 then
     --can do anything
-    return "dark_green"
+    return "green"
   end
 end
                   
@@ -44342,7 +44342,7 @@ wsys.prompttagcolors["shincolour"] = function()
     return "yellow"
   else
     --can do anything
-    return "dark_green"
+    return "green"
   end
 end</script>
 					<eventHandlerList />

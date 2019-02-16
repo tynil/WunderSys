@@ -44595,8 +44595,8 @@ function wsys.aeonedLost(event, affliction)
       send("curing batch on", false)
       send("curing siphealth " .. wsys.settings.siphealth, false)
       send("curing sipmana " .. wsys.settings.sipmana, false)
-      if wsys.settings.usemoss then send("curing mosshealth " .. wsys.settings.mosshealth, false) end
-      if wsys.settings.usemoss then send("curing mossmana " .. wsys.settings.mossmana, false) end
+      if wsys.settings.usemoss then send("curing mosshealth " .. wsys.settings.mosshealth - 10, false) end
+      if wsys.settings.usemoss then send("curing mossmana " .. wsys.settings.mossmana - 10, false) end
       wsys.affPrioRestore( "asthma" )
       wsys.affPrioRestore( "weariness" )
       wsys.affPrioRestore( "anorexia" )
@@ -44616,8 +44616,8 @@ function wsys.unaeonDiagnose()
       send("curing batch on", false)
       send("curing siphealth " .. wsys.settings.siphealth, false)
       send("curing sipmana " .. wsys.settings.sipmana, false)
-      if wsys.settings.usemoss then send("curing mosshealth " .. wsys.settings.mosshealth, false) end
-      if wsys.settings.usemoss then send("curing mossmana " .. wsys.settings.mossmana, false) end
+      if wsys.settings.usemoss then send("curing mosshealth " .. wsys.settings.mosshealth - 10, false) end
+      if wsys.settings.usemoss then send("curing mossmana " .. wsys.settings.mossmana - 10, false) end
       wsys.waittime = wsys.myPing()*2
       if wsys.retard then wsys.retardationOff() end
     end

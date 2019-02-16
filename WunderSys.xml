@@ -7192,7 +7192,7 @@ wsys.affadd("prone", "magi")</script>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Tremors</name>
 						<script>wsys.affadd("prone", "magi")
-undef("levitating")</script>
+wsys.undef("levitating")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -7337,7 +7337,7 @@ raiseEvent("loki checks")</script>
 						<script>cecho("\n&lt;red&gt;".. string.format("%s started Tzantza!", matches[2]))
 
 
-setPrefixWarning(matches[2].." started Tzantza", 2)</script>
+wsys.setPrefixWarning(matches[2].." started Tzantza", 2)</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -33517,7 +33517,7 @@ wsys.setPrefixWarning(matches[2].." judging you", 2)</script>
 						<name>Radiance one</name>
 						<script>cecho("\n&lt;red&gt;".. "Somebody started radiancing you (1/7)")
 
-setPrefixWarning("radiance started on you", 2)</script>
+wsys.setPrefixWarning("radiance started on you", 2)</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -33541,7 +33541,7 @@ setPrefixWarning("radiance started on you", 2)</script>
 tempTimer(28, [[lastradiancer = nil]])
 
 cecho("\n&lt;red&gt;".. multimatches[2][2].." radiancing you (2/7)")
-setPrefixWarning(multimatches[2][2].." radiancing", 2)
+wsys.setPrefixWarning(multimatches[2][2].." radiancing", 2)
 </script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
@@ -33567,7 +33567,7 @@ setPrefixWarning(multimatches[2][2].." radiancing", 2)
 						<script>if not lastradiancer then return end
 
 cecho("\n&lt;red&gt;".. lastradiancer .. " still radiancing you! (3/7)")
-setPrefixWarning(lastradiancer .. " radiancing you", 2)</script>
+wsys.setPrefixWarning(lastradiancer .. " radiancing you", 2)</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>99</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -33636,7 +33636,7 @@ wsys.setPrefixWarning(lastradiancer .. " radiancing you", 2)</script>
 						<script>if not lastradiancer then return end
 
 cecho("\n&lt;red&gt;".. lastradiancer .. " still radiancing you!!! (6/7)")
-setPrefixWarning(lastradiancer .. " radiancing you", 2)</script>
+wsys.setPrefixWarning(lastradiancer .. " radiancing you", 2)</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -33656,7 +33656,7 @@ setPrefixWarning(lastradiancer .. " radiancing you", 2)</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Reave started</name>
-						<script>setPrefixWarning(matches[2].." reaving you", 2)</script>
+						<script>wsys.setPrefixWarning(matches[2].." reaving you", 4, matches[2].."_reave")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -33675,8 +33675,28 @@ setPrefixWarning(lastradiancer .. " radiancing you", 2)</script>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Reave stopped</name>
+						<script>wsys.clearPrefixWarning(matches[2].."_reave")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^(\w+)'s action distracts (?:him|her) from \w+ intent focus\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Shatter start</name>
-						<script>setPrefixWarning(matches[2].." shatter", 1)</script>
+						<script>wsys.setPrefixWarning(matches[2].." shatter", 1)</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -42971,12 +42991,20 @@ end
 
 wsys.prefixWarning = ""
 
-function wsys.setPrefixWarning(message, duration)
-  wsys.prefixWarning = "&lt;MediumVioletRed&gt;&lt;" .. message .. "&lt;MediumVioletRed&gt;&gt;"
+function wsys.setPrefixWarning(message, duration, key)
+  wsys.prefixWarning = "&lt;MediumVioletRed&gt;{!" .. message .. "!}"
+	wsys.prefixWarningKey = key
   if wsys.timer.prefixWarningTimer then killTimer(wsys.timer.prefixWarningTimer) end
   wsys.timer.prefixWarningTimer = tempTimer(duration, [[wsys.timer.prefixWarningTimer = nil;wsys.prefixWarning = ""]])
 end
-</script>
+
+function wsys.clearPrefixWarning(key)
+	if wsys.prefixWarningKey == key then
+		if wsys.timer.prefixWarningTimer then killTimer(wsys.timer.prefixWarningTimer) end
+			wsys.timer.prefixWarningTimer = nil
+			wsys.prefixWarning = ""
+	end
+end</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">

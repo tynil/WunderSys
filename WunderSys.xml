@@ -38207,8 +38207,13 @@ end</script>
 						<name>Tree Functions</name>
 						<packageName></packageName>
 						<script>function wsys.tree()
- send("curing queue remove touch tree")
- send("curing queue add touch tree")
+	if not wsys.timer.treedelay then 
+	-- Bit of a hack. Calling queue add touch tree twice will touch it once, then again after 
+	-- regaining tree balance, by which point you really no longer need to touch it. 
+		send("curing queue remove touch tree")
+		send("curing queue add touch tree")
+		wsys.timer.treedelay = tempTimer( 4, function() wsys.timer.treedelay = nil end  )
+	end
 end -- func
 
 local treeprompt = false

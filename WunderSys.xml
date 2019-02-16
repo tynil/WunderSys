@@ -41621,7 +41621,6 @@ end
 					<packageName></packageName>
 					<script>function wsys.retardationOn()
  if not wsys.retard then
-  wsys.aff.aeon = true
   wsys.retard = true
   wsys.waittime = 1 + wsys.myPing()*3
   wsys.slowedsipping()

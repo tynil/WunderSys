@@ -4230,6 +4230,26 @@ wsys.checkaffs()
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Burning 5 (diag)</name>
+							<script>wsys.burningStacks( 5 )</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>the flesh is melting from your bones.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Internalbleeding (diag)</name>
 							<script>wsys.affadd("internalbleeding")</script>
 							<triggerType>0</triggerType>
@@ -6815,6 +6835,26 @@ end</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>Your skin begins to char from the bones as the fires feast upon you.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Burning Stack 5</name>
+						<script>wsys.burningStacks( 5 )</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your skin runs like wax as it melts from your bones.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>3</integer>
@@ -38802,6 +38842,7 @@ end</script>
 						<script>function wsys.burningStacks( num )
 	if wsys.aff.burning ~= num then
 		wsys.aff.burning = num
+		wsys.newClassTimer( "magi" )
 		raiseEvent( "got aff", "burning" )
 	end
 end
@@ -44940,7 +44981,7 @@ registerAnonymousEventHandler("lost aff", "wsys.humourcured")</script>
 					<packageName></packageName>
 					<script>function wsys.magisalvehandling(event, affliction)
   if event == "got aff" and wsys.classTimerExists("magi") and not wsys.raid then
-    if affliction == "dehydrated" then
+    if affliction == "dehydrated" or (affliction == "burning" and wsys.aff.dehydrated) then
       --move up burning real high #1 or so
       wsys.switchPrios( "burning", 1 )
     elseif affliction == "hypothermia" then
@@ -44971,6 +45012,7 @@ registerAnonymousEventHandler("lost aff", "wsys.humourcured")</script>
       end
     elseif affliction == "dehydrated" then
       if wsys.affPosition("burning") ~= wsys.defaultAffPosition("burning") then
+        cecho("\n&lt;yellow&gt;Resetting burning from dehydrate loss\n") 
         wsys.affPrioRestore( "burning" )
       end
     end
@@ -44984,15 +45026,16 @@ registerAnonymousEventHandler("lost aff", "wsys.magisalvehandling")
 
 
 function wsys.stoppedfightingmagi(event, class)
-  if event == "class timer ended" then
+  if event == "class timer ended" and class == "magi" then
     if wsys.affPosition("frozen") ~= wsys.defaultAffPosition("frozen") then
       wsys.affPrioRestore( "frozen" )
     end
     if wsys.affPosition("shivering") ~= wsys.defaultAffPosition("shivering") then
       wsys.affPrioRestore( "shivering" )
-      send("curing priority defence insulation " .. wsys.settings["defprio"][wsys.profile][wsys.myClass()]["caloric"])
+      wsys.enableSSDef( "insulation", wsys.settings.defprio[wsys.profile][wsys.myClass()].insulation or 25 ) --Medi
     end
     if wsys.affPosition("burning") ~= wsys.defaultAffPosition("burning") then
+      cecho("\n&lt;yellow&gt;Resetting burning from class timer\n") 
       wsys.affPrioRestore( "burning" )
     end
   end

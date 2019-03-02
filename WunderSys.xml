@@ -37248,162 +37248,161 @@ end -- func
 
 function wsys.return_defaultaffprios()
   return {
-  ---------------------------------
-  --HERBS (+ a few focusables obv)
-  ---------------------------------
-  ["paralysis"] = 4,
-  ["timeloop"] = 5,
-  ["shadowmadness"] = 5,
-  ["hypochondria"] = 5,
-  ["depression"] = 6,
-  ["retribution"] = 6,
-  ["parasite"] = 6,
-  ["scytherus"] = 6,
-  ["impatience"] = 6,
-  ["asthma"] = 7,
-  ["sensitivity"] = 7,
-  ["spiritdisrupt"] = 8,
-  ["darkshade"] = 8,
-  ["hypersomnia"] = 9,
-  ["hallucinations"] = 9,
-  --10 GAP FOR OFF-FOCUS BAL SHIFTS
-  ["nausea"] = 11,
-  ["haemophilia"] = 11,
-  ["lethargy"] = 11,
-  ["addiction"] = 11,
-  ["earthdisrupt"] = 11,
-  ["airdisrupt"] = 11,
-  ["firedisrupt"] = 11,
-  ["waterdisrupt"] = 11,
-  ["weariness"] = 12, --if off focus bal move this up to 6
-  --13 GAP
-  ["temperedmelancholic"] = 14,
-  ["temperedcholeric"] = 14,
-  ["temperedsanguine"] = 14,
-  ["temperedphlegmatic"] = 14,
-  ["lovers"] = 14, 
-  ["pacified"] = 14, 
-  ["healthleech"] = 14,
-  ["clumsiness"] = 14,
-  ["dissonance"] = 14,
-  ["loneliness"] = 16,
-  ["claustrophobia"] = 16,
-  ["agoraphobia"] = 16,
-  ["vertigo"] = 16,
+    ---------------------------------
+    --HERBS (+ a few focusables obv)
+    ---------------------------------
+    ["paralysis"] = 4,
+    ["timeloop"] = 5,
+    ["shadowmadness"] = 5,
+    ["hypochondria"] = 5,
+    ["depression"] = 6,
+    ["retribution"] = 6,
+    ["parasite"] = 6,
+    ["scytherus"] = 6,
+    ["impatience"] = 6,
+    ["asthma"] = 7,
+    ["sensitivity"] = 7,
+    ["weariness"] = 7,
+    ["guilt"] = 8,
+    ["darkshade"] = 8,
+    ["hypersomnia"] = 9,
+    ["hallucinations"] = 9,
+    --10 GAP FOR OFF-FOCUS BAL SHIFTS
+    ["nausea"] = 11,
+    ["haemophilia"] = 11,
+    ["lethargy"] = 11,
+    ["addiction"] = 11,
+    ["tenderskin"] = 11,
+    ["spiritburn"] = 11,
+    --13 GAP
+    ["temperedmelancholic"] = 14,
+    ["temperedcholeric"] = 14,
+    ["temperedsanguine"] = 14,
+    ["temperedphlegmatic"] = 14,
+    ["lovers"] = 14, 
+    ["pacified"] = 14, 
+    ["healthleech"] = 14,
+    ["clumsiness"] = 14,
+    ["dissonance"] = 14,
+    ["loneliness"] = 16,
+    ["claustrophobia"] = 16,
+    ["agoraphobia"] = 16,
+    ["vertigo"] = 16,
 
 
-  ["peace"] = 16, 
-  ["justice"] = 16, 
-  ["generosity"] = 16,
+    ["peace"] = 16, 
+    ["justice"] = 16, 
+    ["generosity"] = 16,
 
-  ["dementia"] = 17,
-  ["paranoia"] = 17,
+    ["dementia"] = 17,
+    ["paranoia"] = 17,
 
-  ["stupidity"] = 18, --move to 9 if off focus balance
-  ["epilepsy"] = 18,
-  ["confusion"] = 20, --move to 2 if disrupted, move to 8 if off focus balance
-  ["recklessness"] = 21, --move up higher if off focus balance
-  ["masochism"] = 21,
+    ["stupidity"] = 18, --move to 9 if off focus balance
+    ["epilepsy"] = 18,
+    ["confusion"] = 20, --move to 2 if disrupted, move to 8 if off focus balance
+    ["recklessness"] = 21, --move up higher if off focus balance
+    ["masochism"] = 21,
 
-  ["dizziness"] = 23, --if off focus balance move this to 14? Seems too high honestly.
-  ["shyness"] = 23, --if off focus balance move this to 14?
+    ["dizziness"] = 23, --if off focus balance move this to 14? Seems too high honestly.
+    ["shyness"] = 23, --if off focus balance move this to 14?
 
-  --------------------------
-  --SALVE
-  --------------------------
-  ["heartseed"] = 3,
-  ["hypothermia"] = 3,
-  ["anorexia"] = 4,
-  ["crushedthroat"] = 5,
-  ["itching"] = 5,
-  
-  --6 GAP: For resto leg breaks and prone
+    --------------------------
+    --SALVE
+    --------------------------
+    ["heartseed"] = 3,
+    ["hypothermia"] = 3,
+    ["anorexia"] = 4,
+    ["crushedthroat"] = 5,
+    ["itching"] = 5,
 
-  ["brokenleftleg"] = 7,
-  ["brokenrightleg"] = 7,
+    --6 GAP: For resto leg breaks and prone
 
-  ["damagedleftleg"] = 8, --move these up if prone so Sents can't screw me over.
-  ["damagedrightleg"] = 8,
-  ["mangledleftleg"] = 8,
-  ["mangledrightleg"] = 8,
+    ["brokenleftleg"] = 7,
+    ["brokenrightleg"] = 7,
 
-  ["mangledhead"] = 9,
+    ["damagedleftleg"] = 8, --move these up if prone so Sents can't screw me over.
+    ["damagedrightleg"] = 8,
+    ["mangledleftleg"] = 8,
+    ["mangledrightleg"] = 8,
 
-  ["brokenleftarm"] = 10,
-  ["brokenrightarm"] = 10,
+    ["mangledhead"] = 9,
 
-  ["damagedleftarm"] = 11,
+    ["brokenleftarm"] = 10,
+    ["brokenrightarm"] = 10,
 
-  ["damagedhead"] = 12,
-  ["concussion"] = 12,
+    ["damagedleftarm"] = 11,
 
-  ["damagedrightarm"] = 13,
+    ["damagedhead"] = 12,
+    ["concussion"] = 12,
 
-  ["mangledleftarm"] = 14,
-  ["mangledrightarm"] = 14,
+    ["damagedrightarm"] = 13,
 
-  ["frozen"] = 15,
-  ["shivering"] = 15, --same rank as frozen
-  --CALORIC(insulation) at 15 unless it's a damn sentinel, then move up to 2 along with frozen and shivering
-  ["scalded"] = 16,
-  ["mildtrauma"] = 17,
-  ["serioustrauma"] = 17,
+    ["mangledleftarm"] = 14,
+    ["mangledrightarm"] = 14,
 
-  --MASS at 18
+    ["frozen"] = 15,
+    ["shivering"] = 15, --same rank as frozen
+    --CALORIC(insulation) at 15 unless it's a damn sentinel, then move up to 2 along with frozen and shivering
+    ["scalded"] = 16,
+    ["mildtrauma"] = 17,
+    ["serioustrauma"] = 17,
 
-  ["burning"] = 19,
-  ["stuttering"] = 19,
-  ["slashedthroat"] = 19,
-  ["laceratedthroat"] = 19,
-  ["selarnia"] = 20,
-  
+    --MASS at 18
 
-  --broken = crippled
-  --damaged = broken
-  --mangled = mangled
-  --lvl1 torso = mildtrauma
-  --lvl2 torso = serioustrauma
+    ["burning"] = 19,
+    ["stuttering"] = 19,
+    ["slashedthroat"] = 19,
+    ["laceratedthroat"] = 19,
+    ["selarnia"] = 20,
 
-  ---------------------------
-  --PIPE
-  ---------------------------
-  ["aeon"] = 2,
-  ["slickness"] = 3, --1 higher than para so that smoke &gt; eat broot if para and slick.
-  ["whisperingmadness"] = 11,
-  ["hellsight"] = 12,
-  ["manaleech"] = 13,
-  ["disloyalty"] = 14,
-  ["deadening"] = 15,
-  --["rebounding"] = 16, (DEFENCE QUEUE SLOT 16)
+    --broken = crippled
+    --damaged = broken
+    --mangled = mangled
+    --lvl1 torso = mildtrauma
+    --lvl2 torso = serioustrauma
 
-  ------------------------
-  --HEALTH ELIXIR
-  ------------------------
-  ["skullfractures"] = 8,
-  ["crackedribs"] = 9,
-  ["torntendons"] = 10,
-  ["wristfractures"] = 11,
-  
-  -------------------------
-  --WRITHE
-  -------------------------
-  ["bound"] = 6,
-  ["transfixation"] = 6,
-  ["webbed"] = 6,
-  ["entangled"] = 6,
-  ["daeggerimpale"] = 6,
-  ["impaled"] = 6,
+    ---------------------------
+    --PIPE
+    ---------------------------
+    ["aeon"] = 2,
+    ["slickness"] = 3, --1 higher than para so that smoke &gt; eat broot if para and slick.
+    ["whisperingmadness"] = 11,
+    ["hellsight"] = 12,
+    -- From Oblive - Air Lord priority: manaleech&gt;deadening&gt;disloyalty&gt;tension&gt;pressure
+    ["manaleech"] = 13,
+    ["deadening"] = 14,
+    ["disloyalty"] = 15,
+    ["tension"] = 16,
+    ["pressure"] = 17,
 
+    --["rebounding"] = 18, (DEFENCE QUEUE SLOT 18) IMPORTANT TO MOVE THIS DOWN BELOW PRESSURE
 
+    ------------------------
+    --HEALTH ELIXIR
+    ------------------------
+    ["skullfractures"] = 8,
+    ["crackedribs"] = 9,
+    ["torntendons"] = 10,
+    ["wristfractures"] = 11,
 
-  -----------------------
-  --BAL FREE CURES
-  -----------------------
-  ["sleeping"] = 2,
-  ["voyria"] = 9,
-  ["prone"] = 9,
-  ["disrupted"] = 9,
-  ["fear"] = 20, --low for retardation/aeon curing
+    -------------------------
+    --WRITHE
+    -------------------------
+    ["bound"] = 6,
+    ["transfixation"] = 6,
+    ["webbed"] = 6,
+    ["entangled"] = 6,
+    ["daeggerimpale"] = 6,
+    ["impaled"] = 6,
+
+    -----------------------
+    --BAL FREE CURES
+    -----------------------
+    ["sleeping"] = 2,
+    ["voyria"] = 9,
+    ["prone"] = 9,
+    ["disrupted"] = 9,
+    ["fear"] = 20, --low for retardation/aeon curing
 
   }
 end
@@ -43641,7 +43640,7 @@ wsys.tb.affc = {
  lovers = {"bellwort", "cuprum", "focus", "rage"},
  justice = {"bellwort", "cuprum", "rage"},
  whisperingmadness = {"elm", "cinnabar"},
- manaleech = {"valerian", "realgar", "kelp"},
+ manaleech = {"valerian", "realgar"},
  masochism = {"lobelia", "argentum", "focus"},
  mangledhead = {"restorationhead"},
  mangledleftarm = {"restorationarms"},
@@ -43684,6 +43683,10 @@ wsys.tb.affc = {
  firedisrupt = {"focus", "lobelia", "argentum"},
  earthdisrupt = {"lobelia", "argentum"},
  spiritdisrupt = {"lobelia", "argentum"},
+ 
+ guilt = {"lobelia", "argentum"},
+ tenderskin = {"lobelia", "argentum"},
+ spiritburn = {"lobelia", "argentum"},
 
  temperedcholeric = {"ginger", "antimony"},
  temperedmelancholic = {"ginger", "antimony"},
@@ -43701,6 +43704,13 @@ wsys.tb.affc = {
  scalded = {"epidermalhead"},
  dehydrated = {}, --60s
  timeflux = {}, --60s
+ 
+ unweavingmind = {"goldenseal", "plumbum"},
+ unweavingbody = {"ginseng", "ferrum"},
+ unweavingspirit = {"elm", "cinnabar"},
+ 
+ tension = {"elm", "cinnabar"},
+ pressure = {"pear", "calcite"}
 
 }
 
@@ -43800,6 +43810,10 @@ wsys.tb.affctype = {
  firedisrupt = "herb",
  earthdisrupt = "herb",
  spiritdisrupt = "herb",
+ 
+ guilt = "herb",
+ tenderskin = "herb",
+ spiritburn = "herb",
 
  temperedcholeric = "herb",
  temperedmelancholic = "herb",
@@ -43814,6 +43828,9 @@ wsys.tb.affctype = {
 
  hypothermia = "salve",
  scalded = "salve",
+ 
+ pressure = "smoke",
+ tension = "smoke",
 
 }
 
@@ -43835,23 +43852,23 @@ wsys.tb.cures = {
 
  bloodroot = {"paralysis", "slickness"},
  magnesium = {"paralysis", "slickness"},
- lobelia = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spritidisrupt"},
- argentum = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spiritdisrupt"},
- kelp = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "manaleech", "parasite"},
- aurum = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "manaleech", "parasite"},
- ginseng = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea"},
- ferrum = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea"},
+ lobelia = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spritidisrupt", "guilt", "tenderskin", "spiritburn"},
+ argentum = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spiritdisrupt", "guilt", "tenderskin", "spiritburn"},
+ kelp = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "parasite"},
+ aurum = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "parasite"},
+ ginseng = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", "unweavingbody"},
+ ferrum = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", "unweavingbody"},
  bellwort = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
  cuprum = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
  ash = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
  stannum = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
- goldenseal = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop"},
- plumbum = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop"},
+ goldenseal = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop", "unweavingmind"},
+ plumbum = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop", "unweavingmind"},
  focus = {"stupidity", "dizziness", "confusion", "claustrophobia", "agoraphobia", "masochism", "lovers", "recklessness", 
           "epilepsy", "loneliness", "shyness", "pacified", "anorexia", "vertigo", "weakenedmind",
 			"waterdisrupt", "earthdisrupt", "firedisrupt","airdisrupt", "dementia", "hallucinations", "paranoia"},
- elm = {"aeon", "whisperingmadness", "deadening", "dazed"},
- cinnabar = {"aeon", "whisperingmadness", "deadening", "dazed"},
+ elm = {"aeon", "whisperingmadness", "deadening", "dazed", "tension", "unweavingspirit" },
+ cinnabar = {"aeon", "whisperingmadness", "deadening", "dazed", "tension", "unweavingspirit" },
  valerian = {"slickness", "disloyalty", "manaleech", "hellsight"},
  realgar = {"slickness", "disloyalty", "manaleech", "hellsight"},
  mendinglegs = {"brokenleftleg", "brokenrightleg", "cleg"},
@@ -43875,7 +43892,7 @@ wsys.tb.cures = {
           "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
           "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
           "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria", 
-			 "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
+			    "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin" },
  shrugging = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
           "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "paralysis", 
           "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
@@ -43890,7 +43907,7 @@ wsys.tb.cures = {
           "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
           "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
           "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
-          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin"},
  flex = {"webbed", "entangled"},
  writhe = {"webbed", "entangled", "bound", "impaled", "transfixation", "speared", "daeggerimpale"},
  fool = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
@@ -43899,7 +43916,7 @@ wsys.tb.cures = {
           "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
           "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
           "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
-          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin"},
  concentrate = {"disrupted"},
  compose = {"fear"},
  clot = {"bleeding"},

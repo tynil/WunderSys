@@ -41306,52 +41306,71 @@ end</script>
 					<packageName></packageName>
 					<script>wsys.myVersion = "1.2"
 wsys.currentVersion = wsys.currentVersion or wsys.myVersion
-wsys.updateAvailable = false
-local downloadsURL = "https://github.com/tynil/WunderSys/releases"
+wsys.updateAvailable = wsys.updateAvailable or false
+wsys.lastVersionCheck = wsys.lastVersionCheck or 0
+wsys.downloadsURL = "https://github.com/tynil/WunderSys/releases"
 
--- download latest version number file
-function wsys.checkForUpdates()
-  if string.char(getMudletHomeDir():byte()) == "/" then 
-    _sep = "/" 
-  else 
-    _sep = "\\" 
-  end -- if
-  local current_version = getMudletHomeDir().._sep.."WunderSysVersion"
-  downloadFile(current_version, "https://raw.githubusercontent.com/tynil/WunderSys/master/WunderSysVersion")
+local register_update_listeners = function( should_register )
+	if wsys.events.dl_update_success then killAnonymousEventHandler( wsys.events.dl_update_success ) end
+	if wsys.events.dl_update_fail then killAnonymousEventHandler( wsys.events.dl_update_fail ) end
+	
+	if should_register then
+		wsys.events.dl_update_success = registerAnonymousEventHandler("sysDownloadDone", "wsys.downloadedVersionFile")
+		wsys.events.dl_update_fail = registerAnonymousEventHandler("sysDownloadError", "wsys.downloadedFileError")
+	end
 end
 
-registerAnonymousEventHandler("sysLoadEvent", "wsys.checkForUpdates")
+-- download latest version number file
+function wsys.checkForUpdates( force )
+  -- Don't check for updates too often
+  if force or ( os.time() - wsys.lastVersionCheck ) > ( 5 * 60 ) then
+    wsys.lastVersionCheck = os.time()
+    if string.char(getMudletHomeDir():byte()) == "/" then 
+    	_sep = "/" 
+    else 
+    	_sep = "\\" 
+    end -- if
+    local current_version = getMudletHomeDir().._sep.."WunderSysVersion"
+    
+    register_update_listeners( true )
+    downloadFile(current_version, "https://raw.githubusercontent.com/tynil/WunderSys/master/WunderSysVersion")
+  end
+end
+
+
+if wsys.events.sys_load_update then killAnonymousEventHandler( wsys.events.sys_load_update ) end
+wsys.events.sys_load_update = registerAnonymousEventHandler("sysLoadEvent", "wsys.checkForUpdates")
 
 function wsys.downloadedVersionFile(_, filename)
   -- is the file that downloaded ours?
   if not filename:match("WunderSysVersion", 1, true) then return end
+  
+  register_update_listeners( false )
+  
   -- parse downloaded file for current version
   local ver = io.open(filename):read("*all")
   wsys.currentVersion = string.trim(ver)
-
+  
   if wsys.currentVersion == wsys.myVersion then
     wsys.report("Running the latest WunderSys version: "..wsys.myVersion)
     wsys.updateAvailable = false
   else
-    wsys.report("Update available ("..wsys.currentVersion..")")
+    wsys.report("")
+    cechoLink("&lt;white&gt;Update available (&lt;green&gt;"..wsys.currentVersion.."&lt;white&gt;). Click to download.", "wsys.downloadNow()", wsys.downloadsURL, true )
     wsys.updateAvailable = true
     wsys.updatePopup()
   end
-  
-  --io.open():close()
-  --os.remove(filename)
 end
 
-registerAnonymousEventHandler("sysDownloadDone", "wsys.downloadedVersionFile")
+
 
 function wsys.downloadedFileError(_, reason)
-  display(reason)
-  wsys.report("Could not check for updates. Please check ")
-  cechoLink( "&lt;white&gt;"..downloadsURL, [[wsys.downloadNow()]], downloadsURL, true )
+	wsys.lastVersionCheck = 0
+	register_update_listeners( false )
+	display(reason)
+	wsys.report("Could not check for updates. Please check ")
+	cechoLink( "&lt;white&gt;"..wsys.downloadsURL, [[wsys.downloadNow()]], wsys.downloadsURL, true )
 end
-
-registerAnonymousEventHandler("sysDownloadError", "wsys.downloadedFileError")
-
 
 function wsys.updatePopup()
 wundersysDownloadContainer = Geyser.Container:new({
@@ -41399,7 +41418,7 @@ wundersysDownloadLaterButton:setClickCallback("wsys.downloadLater")
 end
 
 function wsys.downloadNow()
-  openUrl(downloadsURL)
+  openUrl(wsys.downloadsURL)
   wundersysDownloadContainer:hide()
 end
 
@@ -41433,7 +41452,7 @@ registerAnonymousEventHandler("sysDataSendRequest", "wsys.denyInputOnAeon")</scr
     wsys.report("&lt;green&gt;Update Available! &lt;white&gt;" ..wsys.currentVersion.." ")
     setUnderline(true)
     fg("antique_white")
-    echoLink("Visit Download Website!", [[openUrl("https://dl.dropboxusercontent.com/u/6980966/ServersideSystem/Changelog.html")]], "clickity click", true)
+    echoLink("Visit Download Website!", "wsys.downloadNow()", wsys.downloadsURL, true)
   end
   wsys.report("Show settings ")
   setUnderline(true)

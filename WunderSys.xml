@@ -44446,6 +44446,7 @@ end</script>
  justice = "just",
  whisperingmadness = "MAD",
  masochism = "maso",
+ manaleech = "mleech",
  mangledhead = "h2",
  mangledleftarm = "la3",
  mangledleftleg = "ll3",
@@ -44498,42 +44499,64 @@ end</script>
   end,
 }
 
+local getAffShort = function( aff )
+  local short = wsys.tb.aff_short[aff]
+  if short then
+    if type(short) == "function" then
+    	return short()
+    else
+    	return short
+    end
+  else
+    return aff
+  end
+end
 
 function wsys.affTags()
   local s = {}
-  if wsys.bleeding and wsys.bleeding > 50 then
-  	s[#s+1] = "<maroon>bld("..wsys.bleeding..")"
+  if wsys.bleeding and wsys.bleeding &gt; 50 then
+  	s[#s+1] = "&lt;maroon&gt;bld("..wsys.bleeding..")"
   end
   if next(wsys.aff) then
     for k,v in pairs(wsys.aff) do
-        if k == "prone" then
-          s[#s+1] = "&lt;orchid&gt;PR"
+      if k == "prone" then
+      	s[#s+1] = "&lt;orchid&gt;PR"
+      elseif table.contains(wsys.tb.cures.kelp, k) then
         --kelp stack coloring
-        elseif k=="asthma" or k=="sensitivity" or k=="weariness" or k=="clumsiness" or k=="hypochondria" or k=="healthleech" then
-          s[#s+1] = "&lt;chartreuse&gt;"..wsys.tb.aff_short[k]
+        s[#s+1] = "&lt;chartreuse&gt;"..getAffShort(k)
+      elseif table.contains(wsys.tb.cures.goldenseal, k) then
         --goldenseal stack coloring
-        elseif k=="dissonance" or k=="dizziness" or k=="epilepsy" or k=="impatience" or k=="shyness" or k=="stupidity" then
-          s[#s+1] = "&lt;yellow&gt;"..wsys.tb.aff_short[k]
+        s[#s+1] = "&lt;yellow&gt;"..getAffShort(k)
+      elseif table.contains(wsys.tb.cures.ginseng, k) then
         --ginseng stack
-        elseif k=="addiction" or k=="darkshade" or k=="haemophilia" or k=="lethargy" or k=="nausea" or k=="scytherus" then
-          s[#s+1] = "&lt;dark_goldenrod&gt;"..wsys.tb.aff_short[k]
+        s[#s+1] = "&lt;dark_goldenrod&gt;"..getAffShort(k)
+      elseif table.contains(wsys.tb.cures.lobelia, k) then
+        --lobelia stack
+        s[#s+1] = "&lt;moccasin&gt;"..getAffShort(k)
+      elseif table.contains(wsys.tb.cures.elm, k) then
+        --elm stack
+        s[#s+1] = "&lt;sky_blue&gt;"..getAffShort(k)
+      elseif table.contains(wsys.tb.cures.valerian, k) then
+        --valerian stack
+        s[#s+1] = "&lt;royal_blue&gt;"..getAffShort(k)
+      elseif k=="damagedhead" or k=="damagedleftarm" or k=="damagedleftleg" or k=="damagedrightarm" or k=="damagedrightleg" or k=="mildtrauma" or k=="carm" or k=="brokenleftarm" or k=="brokenleftleg" or k=="clef" or k=="climb" or k=="brokenrightarm" or k=="brokenrightleg" or k=="mangledhead" or k=="mangledleftarm" or k=="mangledleftleg" or k=="mangledrightarm" or k=="mangledrightleg" or k=="serioustrauma" then
         --broken limbs
-        elseif k=="damagedhead" or k=="damagedleftarm" or k=="damagedleftleg" or k=="damagedrightarm" or k=="damagedrightleg" or k=="mildtrauma" or k=="carm" or k=="brokenleftarm" or k=="brokenleftleg" or k=="clef" or k=="climb" or k=="brokenrightarm" or k=="brokenrightleg" or k=="mangledhead" or k=="mangledleftarm" or k=="mangledleftleg" or k=="mangledrightarm" or k=="mangledrightleg" or k=="serioustrauma" then
-          s[#s+1] = "&lt;brown&gt;"..wsys.tb.aff_short[k]
-        --all other affs get default coloring
-        elseif k:find("tempered") then
-          s[#s+1] = "&lt;MediumPurple&gt;"..wsys.tb.aff_short[k]()
-        elseif k=="torntendons" or k=="wristfractures" or k=="crackedribs" or k=="skullfractures" then
-          s[#s+1] = "&lt;medium_violet_red&gt;"..wsys.tb.aff_short[k]()
-        elseif k == "bleeding" then
+        s[#s+1] = "&lt;brown&gt;"..getAffShort(k)
+      elseif k:find("tempered") then
+      	s[#s+1] = "&lt;MediumPurple&gt;"..getAffShort(k)
+      elseif k=="torntendons" or k=="wristfractures" or k=="crackedribs" or k=="skullfractures" then
+      	s[#s+1] = "&lt;medium_violet_red&gt;"..getAffShort(k)
+      elseif k == "bleeding" then
       	-- Ignore, handled above
-        elseif k == "burning" then
-          s[#s+1] = wsys.tb.aff_short[k]()
-        elseif not wsys.tb.aff_short[k] then
-         s[#s+1] = "&lt;IndianRed&gt;"..k
-        else
-         s[#s+1] = "&lt;SlateGrey&gt;"..wsys.tb.aff_short[k]
-        end
+      elseif k == "burning" then
+      	s[#s+1] = getAffShort(k)
+      elseif k == "mindravaged" then
+      	s[#s+1] = "&lt;red:gray&gt;MIND RAVAGE"
+      elseif not wsys.tb.aff_short[k] then
+      	s[#s+1] = "&lt;IndianRed&gt;"..k
+      else
+      	s[#s+1] = "&lt;SlateGrey&gt;"..getAffShort(k)
+      end
     end
   end
   return #s &gt; 0 and ("&lt;IndianRed&gt;["..table.concat(s, " ").."&lt;IndianRed&gt;]") or ""

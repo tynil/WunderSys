@@ -1756,8 +1756,8 @@ enableTrigger("Prompt Checks")</script>
 					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Blackout -</name>
 						<script>if wsys.aff.blackout then
-  wsys.aff.blackout = nil
-  tempLineTrigger(1,1, [[wsys.blackoutloss()]])
+	wsys.aff.blackout = nil
+	raiseEvent("lost aff", "blackout")
 end
 </script>
 						<triggerType>0</triggerType>
@@ -6023,6 +6023,28 @@ end
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>You burp obscenely.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Disrupted (in blackout)</name>
+						<script>if wsys.aff.blackout then
+	send("curing predict disrupted")
+end</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>You must regain equilibrium first.</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>3</integer>
@@ -37223,25 +37245,30 @@ function wsys.unstunned()
  wsys.canaction()
 end -- func
 
+if wsys.events.blackoutloss then killAnonymousEventHandler( wsys.events.blackoutloss ) end
+wsys.events.blackoutloss = registerAnonymousEventHandler( "lost aff", "wsys.blackoutloss" )
 
-function wsys.blackoutloss()
- raiseEvent("lost aff", "blackout")
- disableTrigger("Blackout -")
- if not wsys.bals.e then
-  send("curing predict disrupted", false)
- end -- if
- if wsys.stats.h == wsys.stats.maxh and wsys.stats.m == wsys.stats.maxm then
-  send("curing predict recklessness", false)
-  wsys.aff.recklessness = true
-  enableTrigger("Recklessness -")
- end -- if
- if not wsys.aff.aeon and wsys.classTimerExists("occultist") or wsys.classTimerExists("jester") or wsys.classTimerExists("shaman") then
-   send("curing predict aeon")
- end
- send("plist")
- if not wsys.aff.aeon then
-  send("curing queue add speed")
- end
+function wsys.blackoutloss( event, affliction )
+  if event == "lost aff" and affliction == "blackout" then
+    disableTrigger("Blackout -")
+    tempPromptTrigger(function()
+      if not wsys.bals.e then
+      	send("curing predict disrupted", false)
+      end -- if
+      if wsys.stats.h == wsys.stats.maxh and wsys.stats.m == wsys.stats.maxm then
+      	send("curing predict recklessness", false)
+      	wsys.aff.recklessness = true
+      	enableTrigger("Recklessness -")
+      end -- if
+      if not wsys.aff.aeon and wsys.classTimerExists("occultist") or wsys.classTimerExists("jester") or wsys.classTimerExists("shaman") then
+      	send("curing predict aeon")
+      end
+      --send("plist")
+      if not wsys.aff.aeon then
+      	send("curing queue add speed")
+      end
+    end, 1)
+  end
 end -- func
 
 function wsys.return_defaultaffprios()

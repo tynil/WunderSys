@@ -4376,28 +4376,6 @@ wsys.affadd("agoraphobia")
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Amnesia +</name>
-						<script>if not wsys.paused and not wsys.softpaused then
- wsys.salviaSend("touch flaws")
-end -- if</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>Your mind feels suddenly vacant as</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>2</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Anorexia (class source?)</name>
 						<script>wsys.affadd("anorexia")</script>
 						<triggerType>0</triggerType>
@@ -12254,10 +12232,7 @@ raiseEvent("loki checks")</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Fear</name>
-						<script>if not wsys.paused and not wsys.softpaused then
- wsys.salviaSend("touch flaws")
-end -- if
-wsys.affadd("fear", "priest")</script>
+						<script>wsys.affadd("fear", "priest")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -39554,6 +39529,21 @@ function wsys.thornrended(event, limb, attack)
 end
 
 registerAnonymousEventHandler("myLimbHit", "wsys.thornrended")</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Amnesia</name>
+					<packageName></packageName>
+					<script>function wsys.onAmnesiaCheck(event, affliction)
+  if event == "got aff" and affliction == "amnesia" then
+    if not wsys.paused and not wsys.softpaused then
+    	send("touch flaws", false)
+    end -- if
+  end
+end
+
+if wsys.events.on_amnesia then killAnonymousEventHandler( wsys.events.on_amnesia ) end
+wsys.events.on_amnesia = registerAnonymousEventHandler("got aff", "wsys.onAmnesiaCheck")</script>
 					<eventHandlerList />
 				</Script>
 			</ScriptGroup>

@@ -36710,7 +36710,8 @@ echo("\n")</script>
 			<name>WunderSys</name>
 			<packageName></packageName>
 			<script>-- initialise wsys namespace
-wsys = wsys or {}</script>
+wsys = wsys or {}
+wsys.events = wsys.events or {}</script>
 			<eventHandlerList />
 			<ScriptGroup isActive="yes" isFolder="yes">
 				<name>Settings</name>

@@ -37490,13 +37490,13 @@ function wsys.clotcure()
 end -- func
 
 function wsys.bleedingfor(amount, type)
-  wsys.affadd("bleeding")
+  --[=[wsys.affadd("bleeding")
   wsys.bleeding = tonumber(amount)
   wsys.bleedtype = tostring(type)
   if wsys.timer.bleedingTimer then
    killTimer(wsys.timer.bleedingTimer)
   end
-  wsys.timer.bleedingTimer = tempTimer(15, [[wsys.timer.bleedingTimer = nil;wsys.clotcure()]])
+  wsys.timer.bleedingTimer = tempTimer(15, [[wsys.timer.bleedingTimer = nil;wsys.clotcure()]])]=]
 end --func
 
 --clots as much as you will allow according to your mana threshold.
@@ -38919,7 +38919,7 @@ end -- func</script>
 						<name>Clot Queue</name>
 						<packageName></packageName>
 						<script>function wsys.clotqueue()
- if wsys.cancure() and wsys.aff.bleeding and wsys.bleeding &gt; 30 and not wsys.aff.haemophilia and not wsys.settings.stopclot then
+ if wsys.cancure() and wsys.bleeding &gt; 30 and not wsys.aff.haemophilia and not wsys.settings.stopclot then
   if wsys.bleedtype == "health" then
    if (wsys.stats.m&gt;wsys.manathreshold()) and wsys.stats.m &gt; 500 then
     wsys.clot()
@@ -44500,8 +44500,11 @@ end</script>
 
 
 function wsys.affTags()
+  local s = {}
+  if wsys.bleeding and wsys.bleeding > 50 then
+  	s[#s+1] = "<maroon>bld("..wsys.bleeding..")"
+  end
   if next(wsys.aff) then
-    local s = {}
     for k,v in pairs(wsys.aff) do
         if k == "prone" then
           s[#s+1] = "&lt;orchid&gt;PR"
@@ -44523,9 +44526,7 @@ function wsys.affTags()
         elseif k=="torntendons" or k=="wristfractures" or k=="crackedribs" or k=="skullfractures" then
           s[#s+1] = "&lt;medium_violet_red&gt;"..wsys.tb.aff_short[k]()
         elseif k == "bleeding" then
-          if wsys.bleeding &gt; 50 then
-            s[#s+1] = "&lt;maroon&gt;"..wsys.tb.aff_short[k]()
-          end
+      	-- Ignore, handled above
         elseif k == "burning" then
           s[#s+1] = wsys.tb.aff_short[k]()
         elseif not wsys.tb.aff_short[k] then
@@ -44534,10 +44535,8 @@ function wsys.affTags()
          s[#s+1] = "&lt;SlateGrey&gt;"..wsys.tb.aff_short[k]
         end
     end
-    return #s &gt; 0 and ("&lt;IndianRed&gt;["..table.concat(s, " ").."&lt;IndianRed&gt;]") or "" -- don't display just [] b/c of bleeding
-  else
-    return ""
   end
+  return #s &gt; 0 and ("&lt;IndianRed&gt;["..table.concat(s, " ").."&lt;IndianRed&gt;]") or ""
 end</script>
 					<eventHandlerList />
 				</Script>

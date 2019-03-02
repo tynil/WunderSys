@@ -11911,16 +11911,16 @@ wsys.undef("insulation")
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Bloodlet</name>
 						<script>--wsys.osend("show bleeding")
-wsys.maxclot()
+--wsys.maxclot()
 wsys.newClassTimer("shaman")
 wsys.switchPrios( "haemophilia", wsys.affPosition("paralysis") )
 
 
-for k,v in pairs(wsys.aff) do
+--[[for k,v in pairs(wsys.aff) do
   if wsys.tb.affc[k][1] == "ginseng" then
     wsys.affcuredconfirm(k)
   end
-end</script>
+end]]-- Old behavior</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>

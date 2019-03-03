@@ -37646,7 +37646,7 @@ function wsys.ate(herb)
  wsys.atesub(herb) 
  wsys.cure = herb
  wsys.eating = false
- if wsys.aff.homunculusmercury then
+ if not wsys.aff.homunculusmercury then
   wsys.lostBal("herb", 1.9)
  else
   wsys.lostBal("herb", 2.9)

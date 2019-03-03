@@ -39000,8 +39000,18 @@ end -- func</script>
       wsys.restore()
      else
       cecho("\n&lt;pale_violet_red&gt;RIFTLOCK SUSPECTED, DIAGNOSE OR GO MANUAL\n")
-     end -- if
-   end
+		end
+		-- Special tree cases 
+		elseif (not wsys.aff.paralysis and wsys.bals.tree) and not wsys.damagedarms() then
+			local kelp = wsys.affamount("kelp")
+			local ginseng = wsys.affamount("kelp")
+			if wsys.aff.slickness and wsys.aff.asthma and kelp >= 3 and (kelp + ginseng >= 4) then
+				-- Not a lock, but we're far behind and asthma is buried
+				wsys.tree()
+			end
+		end
+
+   	end
   end -- if
 end -- func</script>
 						<eventHandlerList />
@@ -39074,22 +39084,23 @@ end
 
 wsys.afflictionPrioritiesCurrent = wsys.afflictionPrioritiesCurrent or {}
 
-function wsys.switchPrios( aff, pos )
+-- If higher_only == true, then only allow shifting to higher priorities (e.g. 5-&gt;2 but not 2-&gt;5)
+function wsys.switchPrios( aff, pos, higher_only )
   if not (wsys.afflictionPrioritiesCurrent[aff] == pos) then
-    send("curing priority " .. aff .. " " .. tostring(pos), false)
+    if not higher_only or not wsys.afflictionPrioritiesCurrent[aff] or pos &lt; wsys.afflictionPrioritiesCurrent[aff] then
+    	send("curing priority " .. aff .. " " .. tostring(pos), false)
+    end
   end
 end
 
 function wsys.affPrioChanged( aff, pos )
-  if wsys.defaultAffPosition(aff) ~= pos then
-    wsys.afflictionPrioritiesCurrent[aff] = pos
-  elseif wsys.defaultAffPosition(aff) == pos then
-    wsys.afflictionPrioritiesCurrent[aff] = nil
-  end
+	wsys.afflictionPrioritiesCurrent[aff] = pos
 end
 
 function wsys.affPrioRestore( aff )
-  send("curing priority " .. aff .. " " .. tostring(wsys.defaultAffPosition(aff)), false)
+	if not wsys.afflictionPrioritiesCurrent[aff] or wsys.afflictionPrioritiesCurrent[aff] ~= wsys.defaultAffPosition(aff) then
+		send("curing priority " .. aff .. " " .. tostring(wsys.defaultAffPosition(aff)), false)
+	end
 end
 
 --AI check on cure
@@ -44829,7 +44840,7 @@ registerAnonymousEventHandler("lost aff", "wsys.impatienceLost")</script>
   if event == "got aff" then
       if (wsys.aff.sensitivity or wsys.aff.clumsiness or wsys.aff.weariness or wsys.aff.hypochondria) and wsys.aff.asthma and (wsys.aff.slickness and not wsys.aff.demonstain) and not wsys.aff.anorexia then 
 		 --1 scenario
-        wsys.switchPrios( "slickness", 1 )
+        --wsys.switchPrios( "slickness", 1 )
       end
     end
 end --func
@@ -44852,25 +44863,25 @@ registerAnonymousEventHandler("lost aff", "wsys.slicknessLost")</script>
 					<name>asthma weariness slickness</name>
 					<packageName></packageName>
 					<script>function wsys.asthmaWearinessSlicknessGained(event, affliction, class)
-  if event == "got aff" then
+  --[[if event == "got aff" then
       if wsys.aff.slickness and (wsys.aff.asthma and wsys.aff.weariness) then --1 scenario
         wsys.switchPrios( "asthma", 2 )
       end
-  end
+  end]]
 end --func
 
-registerAnonymousEventHandler("got aff", "wsys.asthmaWearinessSlicknessGained")
-registerAnonymousEventHandler("reset aff prios", "wsys.asthmaWearinessSlicknessGained")
+--registerAnonymousEventHandler("got aff", "wsys.asthmaWearinessSlicknessGained")
+--registerAnonymousEventHandler("reset aff prios", "wsys.asthmaWearinessSlicknessGained")
 
 function wsys.asthmaLost(event, affliction)
-  if event == "lost aff" then
+  --[[if event == "lost aff" then
     if affliction == "asthma" and (wsys.affPosition("asthma") ~= wsys.defaultAffPosition("asthma")) then
       wsys.affPrioRestore( "asthma" )
     end
-  end
+  end]]
 end --func
 
-registerAnonymousEventHandler("lost aff", "wsys.asthmaLost")</script>
+--registerAnonymousEventHandler("lost aff", "wsys.asthmaLost")</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">
@@ -44963,7 +44974,7 @@ registerAnonymousEventHandler("lost aff", "wsys.spiritdisruptLost")</script>
 					<packageName></packageName>
 					<script>function wsys.hypochondriaFull(event, affliction, class)
   if event == "got aff" then
-    if (wsys.aff.lethargy or wsys.aff.nausea or wsys.aff.addiction) and wsys.aff.hypochondria then
+    if (wsys.aff.lethargy or wsys.aff.nausea or wsys.aff.addiction or wsys.aff.darkshade) and wsys.aff.hypochondria then
       wsys.switchPrios( "hypochondria", 1 )
       wsys.switchPrios( "impatience", 4)
     end
@@ -44992,7 +45003,7 @@ registerAnonymousEventHandler("lost aff", "wsys.hypochondriaLost")</script>
   if event == "got aff" then
     if affliction == "darkshade" then
       if wsys.lightwall then
-        wsys.switchPrios( "darkshade", 5 )
+        --wsys.switchPrios( "darkshade", 5, true )
         wsys.darkshadeTimer(true)
       else
         wsys.darkshadeTimer(false)
@@ -45001,7 +45012,9 @@ registerAnonymousEventHandler("lost aff", "wsys.hypochondriaLost")</script>
   end
 end --func
 
-registerAnonymousEventHandler("got aff", "wsys.darkshadeGained")
+if wsys.events.got_darskade then killAnonymousEventHandler( wsys.events.got_darskade ) end
+
+wsys.events.got_darskade = registerAnonymousEventHandler("got aff", "wsys.darkshadeGained")
 
 function wsys.darkshadeLost(event, affliction)
   if event == "lost aff" then
@@ -45013,7 +45026,8 @@ function wsys.darkshadeLost(event, affliction)
   end
 end --func
 
-registerAnonymousEventHandler("lost aff", "wsys.darkshadeLost")
+if wsys.events.lost_darskade then killAnonymousEventHandler( wsys.events.lost_darskade ) end
+wsys.events.lost_darskade = registerAnonymousEventHandler("lost aff", "wsys.darkshadeLost")
 
 
 function wsys.darkshadeTimer(lightwall)
@@ -45091,7 +45105,7 @@ registerAnonymousEventHandler("lost aff", "wsys.haemoLost")
 					<packageName></packageName>
 					<script>function wsys.asthmaHandling(event, affliction, class)
   if event == "got aff" then
-    if wsys.aff.paralysis and wsys.aff.slickness and not wsys.aff.impatience then
+    if wsys.aff.asthma and wsys.aff.slickness --[[ and not wsys.aff.impatience ]] and ( wsys.aff.weariness or wsys.aff.paralysis ) then
       wsys.switchPrios("asthma", 2 )
     elseif wsys.aff.impatience and wsys.aff.asthma and wsys.classTimerExists("alchemist") then
       wsys.switchPrios("asthma", 1 )
@@ -45105,7 +45119,7 @@ registerAnonymousEventHandler("reset aff prios", "wsys.asthmaHandling")
 
 function wsys.asthmaHandlingLost(event, affliction)
   if event == "lost aff" then
-    if not (wsys.aff.paralysis and wsys.aff.slickness and not wsys.aff.impatience) and not wsys.classTimerExists("alchemist") then
+    if not (wsys.aff.asthma and wsys.aff.slickness and not wsys.aff.impatience and ( wsys.aff.weariness or wsys.aff.paralysis )) and not wsys.classTimerExists("alchemist") then
       wsys.affPrioRestore( "asthma" )
     elseif not (wsys.aff.impatience and wsys.aff.asthma) and wsys.classTimerExists("alchemist") and (wsys.affPosition("temperedcholeric") ~= 2) then
       wsys.affPrioRestore( "asthma" )

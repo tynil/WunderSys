@@ -37855,7 +37855,7 @@ end -- func
 
 function wsys.refill(pipe)
   -- check to make sure pipe exists in settings
-  if pipe then
+  --[=[if pipe then
     enableTrigger("Pipe Refilling")
     if wsys.timer.refillwait then
       killTimer(tostring(wsys.timer.refillwait))
@@ -37884,7 +37884,7 @@ function wsys.refill(pipe)
       wsys.timer.lightpipewait = tempTimer(0.5, [[wsys.timer.lightpipewait = nil]])
       wsys.dofreeadd("light pipes")
     end
-  end
+  end]=]
 end
 
 

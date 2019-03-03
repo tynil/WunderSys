@@ -41319,7 +41319,7 @@ end</script>
 				<Script isActive="yes" isFolder="no">
 					<name>Check for Updates</name>
 					<packageName></packageName>
-					<script>wsys.myVersion = "1.2"
+					<script>wsys.myVersion = "1.2.1"
 wsys.currentVersion = wsys.currentVersion or wsys.myVersion
 wsys.updateAvailable = wsys.updateAvailable or false
 wsys.lastVersionCheck = wsys.lastVersionCheck or 0

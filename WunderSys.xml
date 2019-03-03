@@ -36480,6 +36480,20 @@ end</script>
 					<packageName></packageName>
 					<regex>^va( \w+)?$</regex>
 				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Reset Profile Affs</name>
+					<script>wsys.resetProfileAffs( matches[2], matches[3], true )</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^wconfig profile resetaffs? (\w+) (\w+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
+					<name>Reset all profile affs</name>
+					<script>wsys.resetAllProfileAffs( matches[2] )</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^wconfig profile resetaffs? all(| confirm)?$</regex>
+				</Alias>
 			</AliasGroup>
 			<AliasGroup isActive="yes" isFolder="yes">
 				<name>Curing Commands</name>
@@ -42022,6 +42036,87 @@ function wsys.deleteProfile( name )
     wsys.settings.focusshifts[name] = nil
     wsys.report("Deleted the " .. name .. " profile.")
   end
+end
+
+local find_differences = function(a, b)
+	local diff = {}
+	for k,v in pairs(a) do
+		if v ~= b[k] then
+			diff[k] = { v, b[k] }
+		end
+	end
+	for k,v in pairs(b) do
+		if not diff[k] and not a[k] then
+			diff[k] = { false, v }
+		end
+	end
+	
+	return diff
+end
+
+function wsys.resetProfileAffs( class, profile, confirm )
+	if not profile or not class then
+		return -- Invalid commands. Expects a profile and class
+	end
+	profile = profile:lower()
+	class = class:lower()
+	
+	if class == "all" then
+		-- This is the reset all option
+		return
+	end
+
+	local prios = wsys.settings.affprio[profile] and wsys.settings.affprio[profile][class]
+	
+	if not prios then
+		wsys.report("Invalid profile combination: '"..profile.."', "..class )
+		return
+	end
+		
+	wsys.report("Resetting aff prios for '"..profile.."', "..class )
+	local diffs = find_differences( prios, wsys.return_defaultaffprios() )
+
+	-- Update this class/mode prio set to default
+	if confirm then
+		wsys.settings.affprio[profile][class] = wsys.return_defaultaffprios()
+	end
+	
+	-- Display any changes that occurred
+	for aff,changes in pairs(diffs) do
+		local display_str = string.format("&lt;white&gt;[&lt;grey&gt;%s&lt;white&gt;][&lt;grey&gt;%s&lt;white&gt;]: %-10s &lt;yellow&gt;%-3s&lt;white&gt;-&gt;&lt;green&gt;%3s",
+												profile, class, aff, (changes[1] or "nil"), (changes[2] or "nil") )
+		
+		
+		if changes[1] then
+			-- If there was an old value, allow reverting
+			local command = string.format([[wsys.affprioset("%s", "%s", "%s", "%s" )]], aff, changes[1], profile, class )
+			wsys.report("")
+			cechoLink( display_str, command, "Revert "..aff.." priority change to " ..changes[1], true)
+		else
+			-- No previous value, this is a new affliction priority
+			wsys.report( display_str )
+		end		
+	end
+	
+	if wsys.profile == profile and wsys.myClass() == class then
+		wsys.resetAffPrios()
+	end
+end
+
+function wsys.resetAllProfileAffs( confirm )
+	confirm = confirm and confirm == " confirm" or false
+	
+	if not confirm then
+		wsys.report("(Dry run only): No changes will be made")
+	end
+	for profile,v in pairs(wsys.settings.affprio) do
+		for class,prios in pairs(v) do
+			wsys.resetProfileAffs( class, profile, confirm )
+		end
+	end
+	if not confirm then
+		wsys.report("(Dry run only): Use '&lt;light_grey&gt;wconfig profile resetaff all confirm&lt;white&gt;' to confirm changes.") 
+	end
 end
 
 function wsys.profileSwitchOnDeath()

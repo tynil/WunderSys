@@ -38486,9 +38486,10 @@ end</script>
 						<name>Focus Shifts</name>
 						<packageName></packageName>
 						<script>function wsys.focusshifthandler(event, bal)
-  if event == "got bal" and bal == "focus" and not wsys.settings.stopfocus then
+	-- Shift when off both focus and herb balance. Only restore when both are back
+  if event == "got bal" and not wsys.settings.stopfocus and ( ( bal == "focus" and wsys.bals.herb ) or ( bal == "herb" and wsys.bals.focus ) ) then
     wsys.onfocusbalprios()
-  elseif event == "lost bal" and bal == "focus" then
+  elseif event == "lost bal" and ( ( bal == "focus" and not wsys.bals.herb ) or ( bal == "herb" and not wsys.bals.focus ) ) then
     wsys.offfocusbalprios()
   end
 end

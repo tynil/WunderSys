@@ -39001,17 +39001,15 @@ end -- func</script>
       wsys.restore()
      else
       cecho("\n&lt;pale_violet_red&gt;RIFTLOCK SUSPECTED, DIAGNOSE OR GO MANUAL\n")
-		end
-		-- Special tree cases 
-		elseif (not wsys.aff.paralysis and wsys.bals.tree) and not wsys.damagedarms() then
+     end
+    -- Special tree cases 
+    elseif (not wsys.aff.paralysis and wsys.bals.tree) and not wsys.damagedarms() then
 			local kelp = wsys.affamount("kelp")
 			local ginseng = wsys.affamount("kelp")
 			if wsys.aff.slickness and wsys.aff.asthma and kelp >= 3 and (kelp + ginseng >= 4) then
 				-- Not a lock, but we're far behind and asthma is buried
 				wsys.tree()
 			end
-		end
-
    	end
   end -- if
 end -- func</script>

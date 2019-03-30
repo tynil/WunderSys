@@ -11947,14 +11947,7 @@ wsys.undef("insulation")
 						<script>--wsys.osend("show bleeding")
 --wsys.maxclot()
 wsys.newClassTimer("shaman")
-wsys.switchPrios( "haemophilia", wsys.affPosition("paralysis") )
-
-
---[[for k,v in pairs(wsys.aff) do
-  if wsys.tb.affc[k][1] == "ginseng" then
-    wsys.affcuredconfirm(k)
-  end
-end]]-- Old behavior</script>
+wsys.switchPrios( "haemophilia", wsys.affPosition("paralysis") )</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>

@@ -43450,6 +43450,7 @@ function wsys.my_limb_hit_next_line(limb, attack)
      or line:match( "One of your reflections has been destroyed" )
      or line:match( "You twist your body out of harm's way." )
      or line:match( "You quickly jump back, avoiding the attack." )
+     or line:match( "The attack rebounds off your rebounding aura!" )
      or line:match( "You frantically attempt to parry the attack of %w+, but succeed only in redirecting it." )
 	  or line:match("You move inside %w+'s guard, deflecting %w+ attack to one side with your forearm before countering with a swift blow to %w+ temple.") then
   else
@@ -43473,14 +43474,14 @@ function wsys.resetSelfDamage(limb)
 end
 
 function wsys.addSelfDamage(limb, n)
-  wsys.tb.selflimbdamage[limb]["damage"] = wsys.tb.selflimbdamage[limb]["damage"] + n
+  wsys.tb.selflimbdamage[limb].damage = wsys.tb.selflimbdamage[limb].damage + n
   timers[limb] = timers[limb] or {}
   if timers[limb].timer then killTimer( timers[limb].timer ) end
   timers[limb].timer = tempTimer( 180, [[wsys.resetSelfDamage("]]..limb..[[")]] )
 end
 
 function wsys.clearSelfDamage(limb)
-  wsys.tb.selflimbdamage[limb]["damage"] = 0
+  wsys.tb.selflimbdamage[limb].damage = 0
   if timers[limb] and timers[limb].timer then killTimer( timers[limb].timer ) end
   timers[limb] = nil
 end

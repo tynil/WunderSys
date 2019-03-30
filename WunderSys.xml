@@ -39086,7 +39086,7 @@ end -- func</script>
     elseif (not wsys.aff.paralysis and wsys.bals.tree) and not wsys.damagedarms() then
 			local kelp = wsys.affamount("kelp")
 			local ginseng = wsys.affamount("kelp")
-			if wsys.aff.slickness and wsys.aff.asthma and kelp >= 3 and (kelp + ginseng >= 4) then
+			if wsys.aff.slickness and wsys.aff.asthma and kelp &gt;= 3 and (kelp + ginseng &gt;= 4) then
 				-- Not a lock, but we're far behind and asthma is buried
 				wsys.tree()
 			end
@@ -41439,7 +41439,7 @@ end
 -- download latest version number file
 function wsys.checkForUpdates( force )
   -- Don't check for updates too often
-  if force or ( os.time() - wsys.lastVersionCheck ) > ( 5 * 60 ) then
+  if force or ( os.time() - wsys.lastVersionCheck ) &gt; ( 5 * 60 ) then
     wsys.lastVersionCheck = os.time()
     if string.char(getMudletHomeDir():byte()) == "/" then 
     	_sep = "/" 

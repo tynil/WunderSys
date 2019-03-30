@@ -44445,7 +44445,7 @@ wsys.prompttags["warning"] = function() return wsys.prefixWarning end
 wsys.prompttags["mw"] = function() if wsys.def.metawake then return "MW" else return "" end end
 wsys.prompttags["breathing"] = function() if wsys.def.breathing then return "br" else return "" end end
 wsys.prompttags["xp"] = function() return gmcp.Char.Vitals.nl end
-wsys.prompttags["affs"] = function() return wsys.affTags() end
+wsys.prompttags["affs"] = function() return wsys.affTags( wsys.aff ) end
 wsys.prompttags["timestamp"] = function() return getTimestamp(getLineCount()):gsub("^%s*(.-)%s*$", "%1") end
 wsys.prompttags["rage"] = function() if wsys.stats.rage &gt; 0 then return wsys.stats.rage.." " else return "" end end
 
@@ -44613,17 +44613,21 @@ end</script>
 				<Script isActive="yes" isFolder="no">
 					<name>Aff shortnames on prompt</name>
 					<packageName></packageName>
-					<script>wsys.tb.aff_short = {
-
+					<script>local aff_short = {
+ deafness = "",
+ blindness = "",
+ insomnia = "",
  addiction = "add",
  aeon = "ae",
  agoraphobia = "agor",
  anorexia = "ano",
+ asphyxiating = "", -- Lets Air Lord see what smoke cure you used
  sleeping = "slp",
  asthma = "ast",
+ concussion = "concuss",
  damagedhead = "h1",
  blackout = "",
- bleeding = function() return "bld(" .. wsys.bleeding .. ")" end,
+ bleeding = "bld",
  demonstain = "stain",
  damagedleftarm = "la2",
  damagedleftleg = "ll2",
@@ -44651,6 +44655,7 @@ end</script>
  dizziness = "diz",
  epilepsy = "epi",
  fear = "fear",
+ frozen = "frozen",
  generosity = "gen",
  haemophilia = "haem",
  hallucinations = "hallu",
@@ -44706,85 +44711,109 @@ end</script>
  vertigo = "vert",
  voyria = "voy",
  heartseed = "hseed",
- temperedsanguine = function() return "sang(" .. wsys.aff.temperedsanguine .. ")" end,
- temperedcholeric = function() return "chol(" .. wsys.aff.temperedcholeric .. ")" end,
- temperedphlegmatic = function() return "phleg(" .. wsys.aff.temperedphlegmatic .. ")" end,
- temperedmelancholic = function() return "melan(" .. wsys.aff.temperedmelancholic .. ")" end,
- torntendons = function() return "tendons(" .. wsys.aff.torntendons .. ")" end,
- wristfractures = function() return "wrist(" .. wsys.aff.wristfractures .. ")" end,
- crackedribs = function() return "ribs(" .. wsys.aff.crackedribs .. ")" end,
- skullfractures = function() return "skull(" .. wsys.aff.skullfractures .. ")" end,
- burning = function()
-    local count = tonumber( wsys.aff.burning ) or 1
-    if count &gt; 1 then
-      local color = count == 2 and "brown" or "red"
-      return "&lt;"..color.."&gt;burn(" ..wsys.aff.burning ..")"
-    else
-      return "&lt;SlateGrey&gt;burn"
-    end
-  end,
+ temperedsanguine = "sang",
+ temperedcholeric = "chol",
+ temperedphlegmatic = "phleg",
+ temperedmelancholic = "melan",
+ torntendons = "tendons",
+ wristfractures = "wrist",
+ crackedribs = "ribs",
+ skullfractures = "skull",
+ burning = "burn",
+ unweavingmind = "UNM",
+ unweavingbody = "UNB",
+ unweavingspirit = "UNS",
+ pressure = "PRESS",
+ tension = "tens",
 }
 
-local getAffShort = function( aff )
-  local short = wsys.tb.aff_short[aff]
-  if short then
-    if type(short) == "function" then
-    	return short()
-    else
-    	return short
-    end
-  else
-    return aff
-  end
+local aff_colors = {
+	bleeding = { "maroon", [500] = "red" },
+	burning = { "SlateGrey", "brown", "red" },
+	pressure = { "SlateGrey", "DeepSkyBlue", [4] = "cyan", [6] = "white" },
+	prone = { "orchid" },
+	mindravaged = { "red:gray" },
+}
+
+-- The cure may be the prefix to an actual cure
+-- E.g. "mending" matches "mendingarms" or "mendinglegs" but not "foomending"
+local cure_colors = {
+	kelp = "chartreuse",
+	goldenseal = "yellow",
+	ginseng = "dark_goldenrod",
+	lobelia = "moccasin",
+	elm = "sky_blue",
+	valerian = "royal_blue",
+	restoration = "brown",
+	mending = "brown",
+	health = "medium_violet_red", -- fractures
+	ginger = "medium_purple"
+}
+
+local getAffLabel = function( aff, value )
+  local short = aff_short[aff]
+	
+	if not short then
+		-- No short means we don't know about it. Use a default color
+		return "&lt;IndianRed&gt;"..aff
+	end
+	
+	if #short == 0 then
+		-- Short is "", don't display anythign
+		return false
+	end
+	
+	local color = false
+	
+	if aff_colors[aff] then
+		-- Pick a color based on value
+		local max = 0
+		local current_val = tonumber(value) or ( value and 1 ) or 0
+		
+		for i,v in pairs(aff_colors[aff]) do
+			if i &gt; max and current_val &gt;= i then
+				max = i
+				color = v
+			end
+		end
+	end
+	
+	if not color and wsys.tb.affc[aff] then
+		-- Pick a color based on cure-type
+		for cure,ccolor in pairs(cure_colors) do
+			for _,aff_cure in ipairs(wsys.tb.affc[aff]) do
+				if string.match( aff_cure, "^"..cure ) then
+					color = ccolor
+					break
+				end
+			end
+		end
+	end
+	
+	if not color then
+		-- No special color
+		color = "SlateGrey"
+	end
+	
+	if tonumber(value) and value &gt; 1 then
+		-- Stackable aff, append (#)
+		short = short .."("..value..")"
+	end
+	
+  return "&lt;"..color.."&gt;"..short
 end
 
-function wsys.affTags()
+function wsys.affTags( affs )
   local s = {}
   if wsys.bleeding and wsys.bleeding &gt; 50 then
-  	s[#s+1] = "&lt;maroon&gt;bld("..wsys.bleeding..")"
+  	s[#s+1] = getAffLabel( "bleeding", wsys.bleeding )
   end
-  if next(wsys.aff) then
-    for k,v in pairs(wsys.aff) do
-      if k == "prone" then
-      	s[#s+1] = "&lt;orchid&gt;PR"
-      elseif table.contains(wsys.tb.cures.kelp, k) then
-        --kelp stack coloring
-        s[#s+1] = "&lt;chartreuse&gt;"..getAffShort(k)
-      elseif table.contains(wsys.tb.cures.goldenseal, k) then
-        --goldenseal stack coloring
-        s[#s+1] = "&lt;yellow&gt;"..getAffShort(k)
-      elseif table.contains(wsys.tb.cures.ginseng, k) then
-        --ginseng stack
-        s[#s+1] = "&lt;dark_goldenrod&gt;"..getAffShort(k)
-      elseif table.contains(wsys.tb.cures.lobelia, k) then
-        --lobelia stack
-        s[#s+1] = "&lt;moccasin&gt;"..getAffShort(k)
-      elseif table.contains(wsys.tb.cures.elm, k) then
-        --elm stack
-        s[#s+1] = "&lt;sky_blue&gt;"..getAffShort(k)
-      elseif table.contains(wsys.tb.cures.valerian, k) then
-        --valerian stack
-        s[#s+1] = "&lt;royal_blue&gt;"..getAffShort(k)
-      elseif k=="damagedhead" or k=="damagedleftarm" or k=="damagedleftleg" or k=="damagedrightarm" or k=="damagedrightleg" or k=="mildtrauma" or k=="carm" or k=="brokenleftarm" or k=="brokenleftleg" or k=="clef" or k=="climb" or k=="brokenrightarm" or k=="brokenrightleg" or k=="mangledhead" or k=="mangledleftarm" or k=="mangledleftleg" or k=="mangledrightarm" or k=="mangledrightleg" or k=="serioustrauma" then
-        --broken limbs
-        s[#s+1] = "&lt;brown&gt;"..getAffShort(k)
-      elseif k:find("tempered") then
-      	s[#s+1] = "&lt;MediumPurple&gt;"..getAffShort(k)
-      elseif k=="torntendons" or k=="wristfractures" or k=="crackedribs" or k=="skullfractures" then
-      	s[#s+1] = "&lt;medium_violet_red&gt;"..getAffShort(k)
-      elseif k == "bleeding" then
-      	-- Ignore, handled above
-      elseif k == "burning" then
-      	s[#s+1] = getAffShort(k)
-      elseif k == "mindravaged" then
-      	s[#s+1] = "&lt;red:gray&gt;MIND RAVAGE"
-      elseif not wsys.tb.aff_short[k] then
-      	s[#s+1] = "&lt;IndianRed&gt;"..k
-      else
-      	s[#s+1] = "&lt;SlateGrey&gt;"..getAffShort(k)
-      end
-    end
-  end
+  for aff,value in pairs(affs) do
+		entry = getAffLabel(aff, value)
+		if entry then
+			s[#s+1] = entry
+		end
+	end
   return #s &gt; 0 and ("&lt;IndianRed&gt;["..table.concat(s, " ").."&lt;IndianRed&gt;]") or ""
 end</script>
 					<eventHandlerList />

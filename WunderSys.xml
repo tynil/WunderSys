@@ -16460,7 +16460,7 @@ wsys.undef("mounted")</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>butterfly</name>
-						<script>--wsys.affadd("transfixation", "sentinel") -- Stupidity now</script>
+						<script>wsys.newClassTimer("sentinel")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -16472,10 +16472,10 @@ wsys.undef("mounted")</script>
 						<colorTriggerFgColor>#000000</colorTriggerFgColor>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
-							<string>You are bedazzled by the sight of a huge gossamer butterfly fluttering wildly.</string>
+							<string>A gossamer butterfly goes into a frenzy of motion in front of your face,</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>3</integer>
+							<integer>2</integer>
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -16517,6 +16517,26 @@ wsys.newClassTimer("sentinel")</script>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Butterfly Descends</name>
+						<script>wsys.butterflyDescended()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>A huge gossamer butterfly descends from the treetops.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
 				</TriggerGroup>
@@ -39657,6 +39677,22 @@ function wsys.enableSSDef( defence, priority, silent )
   send("curing priority defence " ..defence.." ".. priority .. preempt, not silent )
 end
 
+function wsys.switchDefPrios( def, pos )
+  if wsys.settings.keepup[wsys.profile][wsys.myClass()] then
+		-- TODO: Check shifts so we don't do it multiple times
+  	send("curing priority defence " .. def .. " " .. tostring(pos), true)
+  end
+end
+
+function wsys.defPrioRestore( def )
+	if wsys.settings.keepup[wsys.profile][wsys.myClass()][def] and wsys.settings.defprio[wsys.profile][wsys.myClass()][def] then
+		-- TODO: Track shifts so we don't reset multiple times
+		send("curing priority defence " .. def .. " " .. tostring(wsys.settings.defprio[wsys.profile][wsys.myClass()][def]), true)
+	else
+		send("curing priority defence "..def.. " reset")
+	end
+end
+
 --defup a certain profile
 function wsys.defup(profile)
   profile = profile or wsys.profile
@@ -45310,6 +45346,38 @@ end
 
 registerAnonymousEventHandler("got aff", "wsys.corruptionhandling")
 registerAnonymousEventHandler("lost aff", "wsys.corruptionhandling")</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Sentinel Blind Handling</name>
+					<packageName></packageName>
+					<script>local butterfly_blind_shifted = false
+
+function wsys.butterflyDescended()
+	-- If prone, set blindness priority to 2 until not prone or blind cured
+	if wsys.aff.prone and not wsys.def.blindness then
+		-- Set blindness priority 2
+		butterfly_blind_shifted = true
+		wsys.switchDefPrios( "blindness", 2 )
+	end
+end
+
+
+function wsys.blindShiftCheck(event, affliction, class)
+  if butterfly_blind_shifted and
+     ( event == "got aff" and affliction == "blindness" ) or
+	   ( event == "lost aff" and affliction == "prone" ) then
+		-- Reset blindness priority
+		butterfly_blind_shifted = false
+		wsys.defPrioRestore( "blindness" )
+  end
+end --func
+
+if wsys.events.blind_check_got_aff then killAnonymousEventHandler( wsys.events.blind_check_got_aff ) end
+if wsys.events.blind_check_lost_aff then killAnonymousEventHandler( wsys.events.blind_check_lost_aff ) end
+
+wsys.events.blind_check_got_aff = registerAnonymousEventHandler("got aff", "wsys.blindShiftCheck")
+wsys.events.blind_check_lost_aff = registerAnonymousEventHandler("lost aff", "wsys.blindShiftCheck")</script>
 					<eventHandlerList />
 				</Script>
 			</ScriptGroup>

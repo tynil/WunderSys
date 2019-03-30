@@ -37142,7 +37142,7 @@ function wsys.affcured(affliction)
   if (wsys.cure and table.contains(wsys.tb.affc[affliction], wsys.cure)) or (wsys.applying and table.contains(wsys.tb.affc[affliction], wsys.applying)) or wsys.cure == "tree" or wsys.cure == "dheal" or wsys.cure == "fool" or affliction == "aeon"  or affliction == "inquisition" or affliction == "crone" or wsys.cure == "corrupt" or affliction == "sleeping" or wsys.cure == "passive" or wsys.cure == "shrugging" then
    wsys.affcuredconfirm(affliction)
    if wsys.targettedCure(wsys.cure) then
-     wsys.curedAICheck(affliction)
+     --wsys.curedAICheck(affliction)
    end
   end -- if 
  end -- if

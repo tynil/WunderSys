@@ -43267,7 +43267,6 @@ function wsys.pause()
     wsys.report("Paused")
     wsys.paused = true
     send("curing off")
-    wsys.promptsub()
   end
 end
 
@@ -43277,7 +43276,6 @@ function wsys.unpause()
     wsys.paused = false
     send("curing on")
     --wsys.lyrequeue()
-    wsys.promptsub()
 
     wsys.canaction()
   end
@@ -43296,7 +43294,6 @@ function wsys.softpause()
     wsys.report("SoftPaused")
     wsys.softpaused = true
     send("curing off")
-    wsys.promptsub()
   end
 end
 
@@ -43306,7 +43303,6 @@ function wsys.unsoftpause()
     wsys.softpaused = false
     send("curing on")
     --wsys.lyrequeue()
-    wsys.promptsub()
 
     wsys.canaction()
   end

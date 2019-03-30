@@ -37089,16 +37089,10 @@ function wsys.affadd(affliction, class, time, from_gmcp)
 
     if affliction == "sleeping" then
       if not wsys.aff.prone then
-        raiseEvent("got aff", "prone")
-        outriftqueue = {}
+        raiseEvent("got aff", "prone") -- We get this with GMCP
         wsys.aff.prone = true
-        wsys.def.mounted = false
         enableTrigger("Prone -")
       end -- if
-    elseif affliction == "aeon" then
-      outriftqueue = {}
-    elseif affliction == "prone" then
-      wsys.def.mounted = false
     elseif string.match(affliction, "leg") or string.match(affliction, "arm") or string.match(affliction, "head") or string.match(affliction, "torso") then
       wsys.affaddsalve(affliction)
     elseif affliction == "sensitivity" and wsys.def.deafness then
@@ -37316,7 +37310,6 @@ end -- func
 
 function wsys.unstunned()
  wsys.cleartimers()
- outriftqueue = {}
  wsys.checkaffs()
  wsys.canaction()
 end -- func
@@ -38628,7 +38621,7 @@ function wsys.return_defaultfocusshifts()
     stupidity = 9,
     dizziness = 14,
     shyness = 14,
-	 paranoia = 14,
+    paranoia = 14,
     dementia = 14,
     hallucinations = 14
   }
@@ -40390,6 +40383,13 @@ function wsys.checkAutoMount()
     end
   end
 end
+
+if wsys.events.mount_aff_got then killAnonymousEventHandler( wsys.events.mount_aff_got ) end
+wsys.events.mount_aff_got = registerAnonymousEventHandler( "got aff", function( event, aff )
+	if event == "got aff" and aff == "prone" then
+		wsys.def.mounted = false
+	end
+end)
 
 </script>
 						<eventHandlerList />

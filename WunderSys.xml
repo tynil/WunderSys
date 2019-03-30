@@ -37041,6 +37041,12 @@ wsys.saveSettings()</script>
 						<name>Affliction Functions</name>
 						<packageName></packageName>
 						<script>local aff_debug = false
+local def_affs = {
+   insomnia = true,
+   blindness = true,
+   deafness = true,
+	 }
+	 
 
 function wsys.affadd(affliction, class, time, from_gmcp)
   if not wsys.lifevision then
@@ -37083,7 +37089,7 @@ function wsys.affadd(affliction, class, time, from_gmcp)
       end
     elseif affliction == "burning" and wsys.aff.burning then
       --Do nothing? We're already burning
-    else
+    elseif not def_affs[affliction] then
       wsys.aff[affliction] = true
     end
 
@@ -37145,7 +37151,7 @@ end -- func
 
 
 function wsys.affcuredconfirm(affliction, from_gmcp)
-  if wsys.aff[affliction] then
+  if wsys.aff[affliction] or def_affs[affliction] then
     if aff_debug then echo("lost aff "..affliction) end
     wsys.aff[affliction] = nil
     raiseEvent("lost aff", affliction)
@@ -37504,10 +37510,6 @@ end
 --gmcp.Char.Afflictions
 
 local exclude = {
-   insomnia = true,
-   blindness = true,
-   deafness = true,
-
    numbedrightarm  = true,
    numbedleftarm = true,
 

@@ -10938,6 +10938,40 @@ send("curing queue add speed")</script>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Unnameable</name>
+						<script>-- A sudden sense of wrongness overwhelms you.
+--You realise with horror that the eldritch utterence has caused 2 insanities to descend upon you.
+-- Possible pool: confusion, dementia, stupidity
+
+local count = tonumber( matches[2] )
+
+-- Confusion and dementia are both cured by ash, so predict them first.
+-- Stupidity will likely be caught be secondary affs, so predict it last
+send("curing predict confusion")
+if count &gt;= 2 then
+	send("curing predict dementia")
+end
+if count &gt;= 3 then
+	send("curing predict stupidity")
+end</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^You realise with horror that the eldritch utterence has caused (\d+) insanities to descend upon you\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
 				</TriggerGroup>
 				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 					<name>Physiology</name>

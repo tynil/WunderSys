@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>WunderSys Foundation</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Affliction Tracking</name>
+				<script></script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList />
+				<regexCodePropertyList />
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Psion</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Unweave Body up</name>
+						<script>wsysf.aff_tracking.stack_up("unweavingbody")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>You feel the weave of your physical form unravelling, your end drawing ever closer.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Unweave Mind Up</name>
+						<script>wsysf.aff_tracking.stack_up("unweavingmind")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Dizziness overcomes you as your mind continues to unravel.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Unweave Spirit Up</name>
+						<script>wsysf.aff_tracking.stack_up("unweavingspirit")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>You feel a terrible chill as you are drawn ever closer to the Finality's unforgiving grasp.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Weaves Inverted</name>
+						<script>wsysf.aff_tracking.psion.invert()</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^(\w+) plucks at invisible threads in the air before h(?:er|im), and you feel a sudden nausea as your fundamental essence shifts\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Air Elemental Lord</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Pressure Up</name>
+						<script>local count = wsysf.affv.manaleech + wsysf.affv.deadening + wsysf.affv.disloyalty + 1
+
+if count &gt; 3 then count = 3 end
+
+wsysf.aff_tracking.stack_up("pressure", count)</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^As the dark intent of (\w+) falls upon you, you feel the air surrounding you begin to thrum with tension\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Pressure Up from Tension</name>
+						<script>wsysf.aff_tracking.stack_up("pressure")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>You feel the air suddenly growing thick around you, your breaths becoming cloying.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>2h Weaponmastery</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>2h Fracture</name>
+						<script>wsysf.aff_tracking.twoh.current_person = matches[2]</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>10</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^([A-Z][a-z]+) brings .+ down upon you with a brutal overhand blow\.$</string>
+							<string>^([A-Z][a-z]+) explodes upward from a low crouch, driving .+ toward your torso\.$</string>
+							<string>^([A-Z][a-z]+) unleashes a terrible blow at your (right|left) (arm|leg) with .+\.$</string>
+							<string>^([A-Z][a-z]+) comes around with a terrible swing of .+ toward your (left|right) (arm|leg)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+						</regexCodePropertyList>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Prompt</name>
+							<script>setTriggerStayOpen("2h Fracture", 0)
+wsysf.aff_tracking.twoh.current_person = nil</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>return isPrompt()</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>4</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Skull Fractures</name>
+							<script>wsysf.aff_tracking.twoh.fractureup("skullfractures")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>As the blade slams into the side of your head, you feel the unmistakable sensation of bones cracking.</string>
+								<string>You feel bones grating together as the hammer catches you a savage blow to the head.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Torn Tendons</name>
+							<script>wsysf.aff_tracking.twoh.fractureup("torntendons")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^As the blade bites into your lower (left|right) leg, it traces a line of agonising pain\.$</string>
+								<string>Your leg almost gives out as the hammer crunches brutally into your ankle.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Wrist Fractures</name>
+							<script>wsysf.aff_tracking.twoh.fractureup("wristfractures")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^A sharp spike of pain lances down your (left|right) arm as the blade impacts your wrist\.$</string>
+								<string>^You feel something snap in your (left|right) arm as the hammer smashes home\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Cracked Ribs</name>
+							<script>wsysf.aff_tracking.twoh.fractureup("crackedribs")</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>Lances of pain radiate from your chest as the blade smashes into your ribs.</string>
+								<string>The breath is savagely driven from your lungs as the hammer crunches into your side.</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>3</integer>
+								<integer>3</integer>
+							</regexCodePropertyList>
+						</Trigger>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Battlefury focus precision</name>
+						<script>wsysf.aff_tracking.twoh.focus_prec( matches[2] )</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^([A-Z][a-z]+) shifts into a more aggressive stance\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Alchemist</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Temper</name>
+						<script></script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>1</conditonLineDelta>
+						<mStayOpen>1</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^[A-Z][a-z]+ glowers at you with a look of repressed disgust before making a slight gesture toward you\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+							<name>Humour Up</name>
+							<script>local aff = "tempered"..matches[2]
+
+if wsysf.affv[aff] &gt;= 5 then
+	wsysf.aff_tracking.stack_up( aff, 2 )
+else
+	wsysf.aff_tracking.stack_up( aff )
+end</script>
+							<triggerType>0</triggerType>
+							<conditonLineDelta>0</conditonLineDelta>
+							<mStayOpen>0</mStayOpen>
+							<mCommand></mCommand>
+							<packageName></packageName>
+							<mFgColor>#ff0000</mFgColor>
+							<mBgColor>#ffff00</mBgColor>
+							<mSoundFile></mSoundFile>
+							<colorTriggerFgColor>#000000</colorTriggerFgColor>
+							<colorTriggerBgColor>#000000</colorTriggerBgColor>
+							<regexCodeList>
+								<string>^You feel a sudden wave of malaise as your (\w+) humour is tempered\.$</string>
+							</regexCodeList>
+							<regexCodePropertyList>
+								<integer>1</integer>
+							</regexCodePropertyList>
+						</Trigger>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Humour down</name>
+						<script>wsysf.aff_tracking.stack_down( "tempered"..matches[2] )</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Your (\w+) humour drains some\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
+				<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<name>Magi</name>
+					<script></script>
+					<triggerType>0</triggerType>
+					<conditonLineDelta>0</conditonLineDelta>
+					<mStayOpen>0</mStayOpen>
+					<mCommand></mCommand>
+					<packageName></packageName>
+					<mFgColor>#ff0000</mFgColor>
+					<mBgColor>#ffff00</mBgColor>
+					<mSoundFile></mSoundFile>
+					<colorTriggerFgColor>#000000</colorTriggerFgColor>
+					<colorTriggerBgColor>#000000</colorTriggerBgColor>
+					<regexCodeList />
+					<regexCodePropertyList />
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Burning Stack 2</name>
+						<script>wsysf.aff_tracking.set_aff_value( "burning", 2 )</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>The fires consuming your flesh begin to crackle with greater intensity.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Burning Stack 3</name>
+						<script>wsysf.aff_tracking.set_aff_value( "burning", 3 )</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your vision begins to fade with the all-consuming agony of the fires that are consuming you.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Burning Stack 4</name>
+						<script>wsysf.aff_tracking.set_aff_value( "burning", 4 )</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your skin begins to char from the bones as the fires feast upon you.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Burning Stack 5</name>
+						<script>wsysf.aff_tracking.set_aff_value( "burning", 5 )</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>Your skin runs like wax as it melts from your bones.</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>3</integer>
+						</regexCodePropertyList>
+					</Trigger>
+				</TriggerGroup>
+			</TriggerGroup>
+		</TriggerGroup>
+	</TriggerPackage>
+	<ScriptPackage>
+		<ScriptGroup isActive="yes" isFolder="yes">
+			<name>WunderSys Foundation</name>
+			<packageName></packageName>
+			<script>-------------------------------------------------
+--         Put your Lua functions here.        --
+--                                             --
+-- Note that you can also use external Scripts --
+-------------------------------------------------
+</script>
+			<eventHandlerList />
+			<ScriptGroup isActive="yes" isFolder="yes">
+				<name>Core</name>
+				<packageName></packageName>
+				<script>wsysf = wsysf or {}
+wsysf.core = wsysf.core or {}
+
+-- TODO: Probably should move these someplace else
+
+function wsysf.core.report(message)
+	cecho("\n&lt;lime_green&gt;[&lt;DarkTurquoise&gt;WunderSys2&lt;lime_green&gt;]: &lt;snow&gt;" .. message)
+end</script>
+				<eventHandlerList />
+				<Script isActive="yes" isFolder="no">
+					<name>Debug</name>
+					<packageName></packageName>
+					<script>wsysf.core.debug = wsysf.core.debug or {}
+wsysf.core.debug.level = 2	 -- 1 = ERROR, 2 = WARN, 3 = INFO, 4 = DEBUG, 5-10 = Verbose
+-- TODO lower debug level before release. Probably to 1 or 2 by default
+
+local levels = {
+	[1] = { color = "red", name = "ERROR" },
+	[2] = { color = "OrangeRed", name = "WARNING" },
+	[3] = { color = "gold", name = "INFO" },
+	[4] = { color = "PaleGoldenrod", name = "DEBUG" },
+	default = { color = "light_grey", name = "VERBOSE" },
+}
+
+function wsysf.core.debug.print( level, str )
+	if wsysf.core.debug.level &gt;= level then
+		local border = "lime_green"
+		local level_t = levels[level] or levels.default
+		local color = level_t.color
+		
+		cecho( string.format("\n&lt;%s&gt;[&lt;%s&gt;%s&lt;%s&gt;](&lt;%s&gt;%d&lt;%s&gt;): &lt;%s&gt;%s", 
+					border, color, level_t.name, border, color, level, border, color, str ) )
+	end
+end
+
+function wsysf.core.debug.display( level, t, str )
+	if wsysf.core.debug.level &gt;= level then
+		wsysf.core.debug.print( level, ( str or "" ) .. "\n" )
+		display( t )
+	end
+end</script>
+					<eventHandlerList />
+				</Script>
+			</ScriptGroup>
+			<ScriptGroup isActive="yes" isFolder="yes">
+				<name>State Tracking</name>
+				<packageName></packageName>
+				<script>-- Does not include mounted. Need to track that separately
+-- For affs, need to track counts for 2h and alchemist separately</script>
+				<eventHandlerList />
+				<Script isActive="yes" isFolder="no">
+					<name>Def Tracking</name>
+					<packageName></packageName>
+					<script>wsysf.def_tracking = wsysf.def_tracking or { ids = {} }
+
+wsysf.defs = wsysf.defs or {}
+
+-- Translate "parrying (head)" to parrying,head
+local function get_defs_value( name )
+
+	def,value = name:match("(%w+) %((.+)%)")
+	if def then
+		return def,value
+	end
+	
+	return name,true
+end
+
+function wsysf_test()
+	def,value = get_defs_value( "parrying (right leg)" )
+	
+	echo("\ndef="..def.."\nvalue="..tostring(value))
+	
+	def,value = get_defs_value( "tekurastance" )
+	
+	echo("\ndef="..def.."\nvalue="..tostring(value))
+end
+
+-- Largely taken from MMP Defense tracking
+function wsysf.def_tracking.add()
+  local def,value = get_defs_value( gmcp.Char.Defences.Add.name )
+	
+	wsysf.core.debug.display( 10, gmcp.Char.Defences.Add, "Def Added" )
+	
+  if wsysf.defs[def] ~= value then
+    wsysf.defs[def] = value
+		wsysf.core.debug.print( 5, "Def: "..def.."="..tostring(value) )
+		
+    raiseEvent("wsysf got def", def)
+  end
+end
+	
+function wsysf.def_tracking.remove()
+	wsysf.core.debug.display( 10, gmcp.Char.Defences.Remove, "Defs Removed" )
+
+  for _, def in ipairs(gmcp.Char.Defences.Remove) do
+    wsysf.defs[def] = nil
+    raiseEvent("wsysf lost def", def)
+  end
+end
+	
+function wsysf.def_tracking.list()
+  local newDefs = {}
+  local addedDefs, lostDefs = {}, {}
+	
+	wsysf.core.debug.display( 10, gmcp.Char.Defences.List, "Def List" )
+	
+  for _, v in ipairs(gmcp.Char.Defences.List) do
+		local def,value = get_defs_value( v.name )
+    newDefs[def] = value
+    if wsysf.defs[def] ~= value then
+      addedDefs[#addedDefs + 1] = def
+    end
+  end
+  for def in pairs(wsysf.defs) do
+    if not newDefs[def] then
+      lostDefs[#lostDefs + 1] = def
+    end
+  end
+  wsysf.defs = newDefs
+  for _, def in pairs(lostDefs) do
+    raiseEvent("wsysf lost def", def)
+  end
+  for _, def in ipairs(addedDefs) do
+    raiseEvent("wsysf got def", def)
+  end
+end
+	
+for _,id in pairs(wsysf.def_tracking.ids) do
+	killAnonymousEventHandler( id )
+end
+
+-- EVENT HANDLERS
+wsysf.def_tracking.ids.add =
+	registerAnonymousEventHandler("gmcp.Char.Defences.Add", "wsysf.def_tracking.add")
+wsysf.def_tracking.ids.remove =
+	registerAnonymousEventHandler("gmcp.Char.Defences.Remove", "wsysf.def_tracking.remove")
+wsysf.def_tracking.ids.list =
+	registerAnonymousEventHandler("gmcp.Char.Defences.List", "wsysf.def_tracking.list")
+</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Char Stats</name>
+					<packageName></packageName>
+					<script>wsysf.vitals = wsysf.vitals or {}
+wsysf.stats = wsysf.stats or {}
+wsysf.char_stat_tracking = wsysf.char_stat_tracking or {}
+
+local vitals = {
+	"wp", "eq", "ep", "maxhp", "hp", "nl", "maxpep", "maxpwp", "mp", "maxwp", "bal"
+}
+-- 
+
+function wsysf.char_stat_tracking.vitals()
+	wsysf.core.debug.display( 10, gmcp.Char.Vitals, "Vitals" )
+	
+	-- Vitals (excluding charstats)
+	local new_vitals = {}
+	wsysf.vitals.prev = nil
+	new_vitals.prev = wsysf.vitals
+	
+	for _,v in ipairs( vitals ) do
+		if gmcp.Char.Vitals[v] then
+			new_vitals[v] = tonumber( gmcp.Char.Vitals[v] )
+		end
+	end
+	
+	wsysf.vitals = new_vitals
+	
+	-- Charstats parsing 
+	local new_stats = {}
+	wsysf.stats.prev = nil
+	new_stats.prev = wsysf.stats
+	
+	for _,v in ipairs( gmcp.Char.Vitals.charstats ) do
+    local key,value = v:match("(%w+): (.+)")
+		if key and value then
+			if value:sub(-1) == "%" then value = value:sub(1,-2) end
+			if tonumber(value) then value = tonumber(value) end
+			new_stats[key:lower()] = value
+		end
+  end
+	
+	wsysf.stats = new_stats
+	
+	wsysf.core.debug.display( 9, wsysf.vitals, "Vitals" )
+	wsysf.core.debug.display( 9, wsysf.stats, "Stats" )
+	wsysf.core.debug.print(7, "Got Vitals")
+	
+end
+
+if wsysf.char_stat_tracking.id then killAnonymousEventHandler( wsysf.char_stat_tracking.id ) end
+-- EVENT HANDLERS
+wsysf.char_stat_tracking.id = registerAnonymousEventHandler("gmcp.Char.Vitals", "wsysf.char_stat_tracking.vitals")</script>
+					<eventHandlerList />
+				</Script>
+				<ScriptGroup isActive="yes" isFolder="yes">
+					<name>Aff Tracking</name>
+					<packageName></packageName>
+					<script>wsysf.aff_tracking = wsysf.aff_tracking or { ids = {} }
+wsysf.aff_tracking.diagnose_lines = wsysf.aff_tracking.diagnose_lines or {}
+
+wsysf.affs = wsysf.affs or {}
+
+wsysf.aff_tracking.new = {} -- These are the affs that were added since the previous prompt
+wsysf.aff_tracking.lost = {} -- These are the affs that were removed since the previous prompt
+wsysf.aff_tracking.trigger_ids = {}
+
+local stackables = {
+	-- Alchemist Tempers cap at 8
+	temperedcholeric = { max = 8 },
+	temperedmelancholic = { max = 8 },
+	temperedphlegmatic = { max = 8 }, 
+	temperedsanguine = { max = 8 },
+	
+	-- Unweave stackables cap at 6
+	unweavingbody = { max = 6 },
+	unweavingmind = { max = 6 },
+	unweavingspirit = { max = 6 },
+	
+	-- 2h fractures are uncapped, but cure double if at or above 6
+	torntendons = { doublecure_at = 6, max = 7 },
+	wristfractures = { doublecure_at = 6, max = 7 },
+	skullfractures = { doublecure_at = 6, max = 7 },
+	crackedribs = { doublecure_at = 6, max = 7 },
+}
+
+--setmetatable(wsysf.affs, aff_mt)
+
+--- wsysf.affv = "aff value". If the aff is valid, then returns it as a number
+-- if the specified aff is not valid, then returns 0, rather than false
+-- This means: if wsysf.affv.whatever then ... will always pass
+-- But it also allows kelp = wsysf.affv.asthma + wsysf.affv.weariness + ... etc
+-- to be valid, without needing to convert them all to numbers
+wsysf.affv = setmetatable({}, {
+	__index = function(t,k)
+		local value = wsysf.affs[k]
+
+		if not value then 
+			return 0
+		elseif value == true then 
+			return 1 
+		else 
+			return tonumber(value) or value 
+		end
+	end,
+})
+
+-- Translate "wristfractures (1)" to wristfractures,1
+local function get_affs_value( name )
+	aff,value = name:match("(%w+) %((.+)%)")
+	if aff then
+		return aff,tonumber(value) or value,true
+	end
+	
+	return name,1,false
+end
+
+--- Track affs that have been gained or lost until the next prompt
+function wsysf.aff_tracking.on_prompt()
+	wsysf.aff_tracking.on_prompt_id = nil
+	wsysf.core.debug.display( 9, wsysf.aff_tracking.new, "Affs gained on prompt" )
+	wsysf.core.debug.display( 9, wsysf.aff_tracking.lost, "Affs lost on prompt" )
+	wsysf.aff_tracking.new = {}
+	wsysf.aff_tracking.lost = {}
+	
+	for _,id in ipairs(wsysf.aff_tracking.trigger_ids) do
+		killTrigger( id )
+	end
+	wsysf.aff_tracking.trigger_ids = {}
+end
+
+function wsysf.aff_tracking.set_aff_value( aff, value )
+	if value == true then value = 1 end -- Convert "true" to 1
+	
+	if wsysf.affs[aff] ~= value then
+		wsysf.aff_tracking.new[aff] = value
+		if not wsysf.aff_tracking.on_prompt_id then wsysf.aff_tracking.on_prompt_id = tempPromptTrigger( wsysf.aff_tracking.on_prompt, 1 ) end
+		
+		wsysf.affs[aff] = value
+		
+		wsysf.core.debug.print( 5, "Aff: "..aff.."="..tostring(value) )
+		
+    raiseEvent("wsysf got aff", aff)
+	end
+end
+
+function wsysf.aff_tracking.add()
+  local aff,value = get_affs_value( gmcp.Char.Afflictions.Add.name )
+	
+	wsysf.core.debug.display( 7, gmcp.Char.Afflictions.Add, "Aff Added" )
+	
+	-- Track affs that have been added, and clear them on the next prompt
+	-- This will let us perform special handling on triggers if needed
+	wsysf.aff_tracking.new[aff] = value
+	if not wsysf.aff_tracking.on_prompt_id then wsysf.aff_tracking.on_prompt_id = tempPromptTrigger( wsysf.aff_tracking.on_prompt, 1 ) end
+	
+  wsysf.aff_tracking.set_aff_value( aff, value )
+end
+	
+function wsysf.aff_tracking.remove()
+	wsysf.core.debug.display( 7, gmcp.Char.Afflictions.Remove, "affs Removed" )
+
+  for _, v in ipairs(gmcp.Char.Afflictions.Remove) do
+		local aff,value = get_affs_value( v )
+		
+		-- Track affs that have been lost, and clear them on the next prompt
+		wsysf.aff_tracking.lost[ aff ] = wsysf.affs[aff] or value
+		if not wsysf.aff_tracking.on_prompt_id then wsysf.aff_tracking.on_prompt_id = tempPromptTrigger( wsysf.aff_tracking.on_prompt, 1 ) end
+		
+		if type(value) == "number" and value &gt; 1 then
+			-- When stackable affs are reduced, you get removed "aff (#)" where # is the previous number of stacks. 
+			-- Assume we removed one stack, except for special cases
+			if stackables[aff] and stackables[aff].doublecure_at and value &gt;= stackables[aff].doublecure_at then
+				value = value - 1
+			end
+			value = value - 1
+			
+		else
+			value = nil
+		end
+		
+  	wsysf.affs[aff] = value or nil
+		wsysf.core.debug.print( 5, "Aff: "..aff.."="..tostring(wsysf.affs[aff]) )
+  	raiseEvent("wsysf lost aff", aff)
+  end
+end
+	
+function wsysf.aff_tracking.list()
+  local newaffs = {}
+  local addedaffs, lostaffs = {}, {}
+	
+	wsysf.core.debug.display( 7, gmcp.Char.Afflictions.List, "Aff List" )
+	
+  for _, v in ipairs(gmcp.Char.Afflictions.List) do
+		local aff,value,has_value = get_affs_value( v.name )
+		
+		-- For stackable affs, the list just gives "aff", no (#). Should keep the old number if we have it
+    newaffs[aff] = value
+    if wsysf.affs[aff] ~= value then
+      
+			if type(wsysf.affs[aff]) == "number" and wsysf.affs[aff] &gt; 0 and not has_value then
+				newaffs[aff] = wsysf.affs[aff]
+			else
+				addedaffs[#addedaffs + 1] = aff
+			end
+    end
+		
+		-- Check for custom diagnose lines if we don't get stack info from gmcp
+		if wsysf.aff_tracking.diagnose_lines[aff] then
+			local trigger_id = tempRegexTrigger( wsysf.aff_tracking.diagnose_lines[aff].regex_line, wsysf.aff_tracking.diagnose_lines[aff].func, 1 )
+			
+			echo("Added trigger for "..aff.." "..trigger_id )
+			
+			table.insert(wsysf.aff_tracking.trigger_ids, trigger_id) 
+		end
+  end
+  for aff in pairs(wsysf.affs) do
+    if not newaffs[aff] then
+      lostaffs[#lostaffs + 1] = aff
+    end
+  end
+  wsysf.affs = newaffs
+  for _, aff in pairs(lostaffs) do
+    raiseEvent("wsysf lost aff", aff)
+  end
+  for _, aff in ipairs(addedaffs) do
+    raiseEvent("wsysf got aff", aff)
+  end
+end
+	
+for _,id in pairs(wsysf.aff_tracking.ids) do
+	killAnonymousEventHandler( id )
+end
+
+-- EVENT HANDLERS
+wsysf.aff_tracking.ids.add =
+	registerAnonymousEventHandler("gmcp.Char.Afflictions.Add", "wsysf.aff_tracking.add")
+wsysf.aff_tracking.ids.remove =
+	registerAnonymousEventHandler("gmcp.Char.Afflictions.Remove", "wsysf.aff_tracking.remove")
+wsysf.aff_tracking.ids.list =
+	registerAnonymousEventHandler("gmcp.Char.Afflictions.List", "wsysf.aff_tracking.list")
+	
+	
+-- If value is a number, it stays a number. If value is true, return 1. Otherwise 0
+local get_aff_count = function( value )
+	if not value then
+		return 0
+	else
+		return value and tonumber(value) or 1
+	end
+end
+	
+function wsysf.aff_tracking.stack_up( aff, count )
+	if wsysf.affs[aff] then
+	-- Assume we only get these messages if we already know about them
+		
+		count = count or 1
+		-- If we just gained this, the count may not match what we expect.
+		-- E.g. gaining tenonds gives torntendons (1), even if focused precision
+		count = count - get_aff_count( wsysf.aff_tracking.new[aff] )
+		
+		if count &gt; 0 then
+			local new_count = wsysf.affs[aff] + count
+			
+			-- Some stackable affs have a hard upper limit.
+			if stackables[aff] and stackables[aff].max and new_count &gt; stackables[aff].max then
+				new_count = stackables[aff].max
+			end	
+			
+			wsysf.affs[aff] = new_count
+			-- Add count to the aff count, with an optional max limit
+  		wsysf.core.debug.print(5, aff.."="..wsysf.affs[aff] )
+  		
+  		raiseEvent( "wsysf got aff", aff )
+		end
+	end
+end
+
+function wsysf.aff_tracking.stack_down( aff, count )
+	if wsysf.affs[aff] then
+	-- Assume we only get these messages if we already know about them
+		
+		count = count or 1
+
+		-- We shouldn't be using stack down with gmcp, should we?
+		if wsysf.aff_tracking.lost[aff] then
+			cecho("&lt;red&gt;Wsysf: stack_down( "..aff.." ) but gmcp lost it?")
+			wsysf.core.debug.print(1, "stack_down( "..aff.." ) but gmcp lost it?")
+		elseif wsysf.affv[aff] &gt; 1 then
+			wsysf.affs[aff] = wsysf.affv[aff] - count
+			
+			wsysf.core.debug.print(5, aff.."="..wsysf.affs[aff] )
+			raiseEvent( "wsysf lost aff", aff )
+		else
+			wsysf.core.debug.print(2, "stack_down( "..aff.." ) at 1 stack?: "..tostring(wsysf.affs[aff]))
+		end
+	end
+end
+</script>
+					<eventHandlerList />
+					<Script isActive="yes" isFolder="no">
+						<name>Psion Affs</name>
+						<packageName></packageName>
+						<script>wsysf.aff_tracking.psion = {}
+local psion = {}
+
+wsysf.aff_tracking.psion.invert = function()
+	local unweaves = { "unweavingspirit", "unweavingbody", "unweavingmind" }
+	local from_weave = false
+	local to_weave = false
+	
+	-- TODO: Really, this swaps the values. Does this work if you have some of both already?
+	-- How do we know which are swapped?	
+	for _,unw in ipairs( unweaves ) do
+		if wsysf.aff_tracking.lost[unw] then
+			from_weave = unw
+		elseif wsysf.aff_tracking.new[unw] then
+			to_weave = unw
+		end
+	end
+	if from_weave and to_weave then
+		wsysf.aff_tracking.set_aff_value( to_weave, wsysf.aff_tracking.lost[from_weave] )
+
+		wsysf.core.debug.print( 5, "Unweave converted ".. from_weave .." to "..to_weave .. " value=".. wsysf.affs[to_weave] )
+	end
+end
+</script>
+						<eventHandlerList />
+					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>2H Weaponmastery</name>
+						<packageName></packageName>
+						<script>wsysf.aff_tracking.twoh = wsysf.aff_tracking.twoh or {}
+wsysf.aff_tracking.twoh.precision = {}
+
+
+wsysf.aff_tracking.twoh.focus_prec = function( person )
+	if wsysf.aff_tracking.twoh.precision[person] then
+		killTimer( wsysf.aff_tracking.twoh.precision[person] )
+	end
+	wsysf.aff_tracking.twoh.precision[person] = tempTimer( 2, function()
+		wsysf.aff_tracking.twoh.precision[person] = nil
+	end)
+end
+
+wsysf.aff_tracking.twoh.fractureup = function( aff )
+	local person = wsysf.aff_tracking.twoh.current_person
+	local count = 1
+	
+	if wsysf.aff_tracking.twoh.precision[ person ] then
+		-- If the current person had focused precision, increase by 2
+		count = 2
+		killTimer( wsysf.aff_tracking.twoh.precision[ person ] )
+		wsysf.aff_tracking.twoh.precision[ person ] = nil
+		wsysf.aff_tracking.twoh.current_person = nil
+	end
+	
+	wsysf.aff_tracking.stack_up( aff, count )
+end</script>
+						<eventHandlerList />
+					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>Custom Diagnose Lines</name>
+						<packageName></packageName>
+						<script>-------------------------------------------------
+-- Custom Diagnose Lines
+--
+-- We get a gmcp aff List event before every
+-- diagnose, before the prompt comes through.
+-- Add custom lines here for things that don't give
+-- the correct value through gmcp
+-------------------------------------------------
+
+wsysf.aff_tracking.diagnose_lines = wsysf.aff_tracking.diagnose_lines or {}
+
+local humour_diagnose = function()
+	local aff = "tempered"..matches[2]
+	local new_count = tonumber(matches[3])
+	
+	wsysf.aff_tracking.set_aff_value( aff, new_count )
+end
+
+wsysf.aff_tracking.diagnose_lines.temperedcholeric = {
+	regex_line = "^your (choleric) humour has been tempered a total of (\\d+) times\.$",
+	func = humour_diagnose,
+}
+wsysf.aff_tracking.diagnose_lines.temperedmelancholic = {
+	regex_line = "^your (melancholic) humour has been tempered a total of (\\d+) times\.$",
+	func = humour_diagnose,
+}
+wsysf.aff_tracking.diagnose_lines.temperedphlegmatic = {
+	regex_line = "^your (phlegmatic) humour has been tempered a total of (\\d+) times\.$",
+	func = humour_diagnose,
+}
+wsysf.aff_tracking.diagnose_lines.temperedsanguine = {
+	regex_line = "^your (sanguine) humour has been tempered a total of (\\d+) times\.$",
+	func = humour_diagnose,
+}</script>
+						<eventHandlerList />
+					</Script>
+				</ScriptGroup>
+			</ScriptGroup>
+		</ScriptGroup>
+	</ScriptPackage>
+</MudletPackage>

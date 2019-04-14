@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+-- Triggers here
+	</TriggerPackage>
+	<TimerPackage/>
+	<AliasPackage>
+-- Alias here
+	</AliasPackage>
+	<ActionPackage/>
+	<ScriptPackage>
+-- Script here
+	</ScriptPackage>
+	<KeyPackage/>
+</MudletPackage>

@@ -9860,7 +9860,7 @@ raiseEvent("loki checks")</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Hypersomnia</name>
-						<script>wsys.affadd("hypersomnia", "serpent")</script>
+						<script>wsys.affadd("hypersomnia")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -34803,8 +34803,10 @@ end
 							<string>^[A-Z][a-z]+ slashes into your (.+) with</string>
 							<string>^[A-Z][a-z]+ swings .+ at your (.+) with all (?:his|her) might\.$</string>
 							<string>^Lightning\-quick, [A-Z][a-z]+ (?:jabs|stabs) your (.+) with .+\.$</string>
+							<string>^[A-Z][a-z]+ unleashes a terrible blow at your (.+) with a .+\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -35084,6 +35086,55 @@ wsys.my_limb_hit(matches[3], "monk")</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^(?:[A-Z][a-z]+) utters a prayer and smites your (.+) with .+\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Shikudo Leg Hit</name>
+						<script>local limb = ""
+if matches[2] == "left thigh" then
+	limb = "left leg"
+elseif matches[2] == "right thigh" then
+	limb = "right leg"
+else
+	limb = matches[2]
+end
+
+wsys.my_limb_hit(matches[2], "shikudo")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Dropping back into a low crouch, [A-Z][a-z]+ whips .+ at your (.*).$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Shikudo Arm Hit</name>
+						<script>wsys.my_limb_hit(matches[2], "shikudo")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^[A-Z][a-z]+ whips .+ in a controlled arc, bringing the length of the weapon to crash into your (.*).$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
 							<integer>1</integer>
@@ -36066,7 +36117,7 @@ end</script>
 			</TriggerGroup>
 		</TriggerGroup>
 	</TriggerPackage>
-	<TimerPackage/>
+	<TimerPackage />
 	<AliasPackage>
 		<AliasGroup isActive="yes" isFolder="yes">
 			<name>WunderSys</name>
@@ -36802,7 +36853,7 @@ echo("\n")</script>
 			</AliasGroup>
 		</AliasGroup>
 	</AliasPackage>
-	<ActionPackage/>
+	<ActionPackage />
 	<ScriptPackage>
 		<ScriptGroup isActive="yes" isFolder="yes">
 			<name>WunderSys</name>
@@ -39128,6 +39179,9 @@ function wsys.bellwortAffCount()
   if wsys.aff.generosity then count = count + 1 end
   if wsys.aff.lovers then count = count + 1 end
   if wsys.aff.pacified then count = count + 1 end
+	if wsys.aff.indifference then count = count + 1 end
+	if wsys.aff.retribution then count = count + 1 end
+	if wsys.aff.timeloop then count = count + 1 end
 
   return count
 end</script>
@@ -44057,6 +44111,11 @@ wsys.tb.affctype = {
  
  pressure = "smoke",
  tension = "smoke",
+ 
+ unweavingbody = "herb",
+ unweavingmind = "herb",
+ unweavingspirit = "smoke",
+ 
 
 }
 
@@ -45861,5 +45920,8 @@ end
 			</ScriptGroup>
 		</ScriptGroup>
 	</ScriptPackage>
-	<KeyPackage/>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
 </MudletPackage>

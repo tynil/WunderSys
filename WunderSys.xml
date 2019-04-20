@@ -41612,6 +41612,8 @@ wsys.updateAvailable = wsys.updateAvailable or false
 wsys.lastVersionCheck = wsys.lastVersionCheck or 0
 wsys.downloadsURL = "https://github.com/tynil/WunderSys/releases"
 
+local branch = "master"
+
 local register_update_listeners = function( should_register )
 	if wsys.events.dl_update_success then killAnonymousEventHandler( wsys.events.dl_update_success ) end
 	if wsys.events.dl_update_fail then killAnonymousEventHandler( wsys.events.dl_update_fail ) end
@@ -41635,7 +41637,7 @@ function wsys.checkForUpdates( force )
     local current_version = getMudletHomeDir().._sep.."WunderSysVersion"
     
     register_update_listeners( true )
-    downloadFile(current_version, "https://raw.githubusercontent.com/tynil/WunderSys/master/WunderSysVersion")
+    downloadFile(current_version, "https://raw.githubusercontent.com/tynil/WunderSys/"..branch.."/WunderSysVersion")
   end
 end
 

@@ -300,21 +300,20 @@ if next(wsys.tb.justreckless) then
 end -- func
 
 
-if next(wsys.tb.restorationlist) and ((wsys.aff.recklessness or wsys.absorbed) or ((wsys.stats.h &lt; wsys.stats.oh) or wsys.puppetmangle) or wsys.aff.blackout) and not wsys.lifevision then
- for k,v in ipairs(wsys.tb.restorationlist) do
-  enableTrigger(string.title(v[1]) .. " -")
-  wsys.boxDisplay(v[1] .. " BROKE!", "white:orange")
-  wsys.affadd(v[1])
- end -- for
-else
- --Announce breaks regardless of checks if we know we have the affliction already
- for k,v in ipairs(wsys.tb.restorationlist) do
-  if wsys.aff[v[1]] then
-    enableTrigger(string.title(v[1]) .. " -")
-    wsys.boxDisplay(v[1] .. " BROKE!", "white:orange")
-    wsys.affadd(v[1])
-  end
- end -- for
+if next(wsys.tb.restorationlist) then
+  local is_real = ((wsys.aff.recklessness or wsys.absorbed) or ((wsys.stats.h &lt; wsys.stats.oh) or wsys.puppetmangle) or wsys.aff.blackout) and not wsys.lifevision
+  for k,v in ipairs(wsys.tb.restorationlist) do
+    local aff = v[1]
+    --Announce breaks regardless of checks if we know we have the affliction already
+    if is_real or wsys.aff[aff] then
+      wsys.affadd(v[1])
+			
+      local leg = v[1]:find("leg")
+      local arm = v[1]:find("arm")
+			
+      wsys.boxDisplay(v[1] .. " BROKE!", ( (leg or arm) and "white" or "LightGray")..":"..(leg and "orange" or "orange_red") )
+    end
+  end -- for
 end
 
 wsys.puppetmangle = false

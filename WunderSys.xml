@@ -615,7 +615,7 @@ forced = nil
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Bleeding -</name>
 						<script>wsys.clotcure()</script>
 						<triggerType>0</triggerType>
@@ -1080,7 +1080,7 @@ if wsys.aff.inquisition then wsys.affcured("inquisition") end</script>
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Impaled -</name>
 						<script>wsys.writhedimpaled()
 -- statrefresh()</script>
@@ -1581,7 +1581,7 @@ enableTrigger("Prompt Checks")
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Bound -</name>
 						<script>wsys.canaction()
 wsys.writhed("bound")
@@ -1964,7 +1964,7 @@ wsys.undef("insulation")</script>
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Laceratedthroat -</name>
 						<script>wsys.affcured("laceratedthroat")
 wsys.affadd("slashedthroat")</script>
@@ -39208,7 +39208,7 @@ end -- func</script>
   --asthma anorexia slickness impatience/off focus bal
     if wsys.aff.asthma and wsys.aff.anorexia and wsys.aff.slickness and (wsys.aff.impatience or not wsys.bals.focus) then
       if (not wsys.aff.paralysis and wsys.bals.tree) and not wsys.damagedarms() then
-       wsys.tree()
+       	wsys.tree()
       elseif (wsys.isClass("magi") or wsys.isClass("sylvan")) and not wsys.isHindered() and wsys.bals.b and wsys.bals.e then
         send("cast bloodboil")
       elseif wsys.isClass("alchemist") and not wsys.isHindered() and wsys.bals.b and wsys.bals.e then
@@ -39292,9 +39292,9 @@ function wsys.bellwortAffCount()
   if wsys.aff.generosity then count = count + 1 end
   if wsys.aff.lovers then count = count + 1 end
   if wsys.aff.pacified then count = count + 1 end
-	if wsys.aff.indifference then count = count + 1 end
-	if wsys.aff.retribution then count = count + 1 end
-	if wsys.aff.timeloop then count = count + 1 end
+  if wsys.aff.indifference then count = count + 1 end
+  if wsys.aff.retribution then count = count + 1 end
+  if wsys.aff.timeloop then count = count + 1 end
 
   return count
 end</script>
@@ -39926,14 +39926,13 @@ function wsys.defup(profile)
 
   -- we need a spiritform thingie too
   for ck,cv in pairs(wsys.settings.defup[wsys.profile][wsys.myClass()]) do 
-    if wsys.tb.defenceTable[ck]["skillset"][1] == "spiritform" and wsys.tb.defenceTable[ck]["manualcommand"] then
+    if wsys.tb.defenceTable[ck] and wsys.tb.defenceTable[ck]["skillset"][1] == "spiritform" and wsys.tb.defenceTable[ck]["manualcommand"] then
       wsys.doadd(wsys.tb.defenceTable[ck]["manualcommand"])
       -- quit the loop, we're done here
       break
     end
   end
     
-
   for k,v in pairs(wsys.settings.defup[wsys.profile][wsys.myClass()]) do
     local highestprio = 25
     local highestdef = ""
@@ -40095,6 +40094,7 @@ end -- func</script>
 						<packageName></packageName>
 						<script>wsys.def = wsys.def or {}
 
+wsys.tb = wsys.tb or {}
 wsys.tb.defenceTable = {
   ["acrobatics"] = {["name"] = "Acrobatics", ["skillset"] = {"pranks", "swashbuckling"},},
   ["affinity"] = {["name"] = "Affinity", ["skillset"] = {"metamorphosis"}, ["manualcommand"] = "embrace spirit",},
@@ -41665,7 +41665,6 @@ function wsys.downloadedVersionFile(_, filename)
 end
 
 
-
 function wsys.downloadedFileError(_, reason)
 	wsys.lastVersionCheck = 0
 	register_update_listeners( false )
@@ -42313,7 +42312,6 @@ function wsys.switchProfile( name )
     end
     -- make sure all the herbs that are needed are precached
     wsys.outrqueue()
-
   else
     wsys.report(name .. " profile does not exist.")
   end
@@ -44009,7 +44007,7 @@ wsys.tb.restorationlist = {}
 wsys.tb.justreckless = {}
 
 -- LIST OF CURRENT AFFS
-wsys.aff = {}
+wsys.aff = wsys.aff or {}
 
 
 -- CURES FOR EACH AFF

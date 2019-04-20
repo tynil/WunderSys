@@ -306,6 +306,8 @@ if next(wsys.tb.restorationlist) then
     local aff = v[1]
     --Announce breaks regardless of checks if we know we have the affliction already
     if is_real or wsys.aff[aff] then
+      wsys.brokenLimbListener("got aff", v[1])
+			
       wsys.affadd(v[1])
 			
       local leg = v[1]:find("leg")
@@ -34781,6 +34783,26 @@ end
 						</regexCodePropertyList>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>BM Compass Slash</name>
+						<script>wsys.my_limb_hit(matches[3], "compassslash")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Whispering a prayer to the \w+ winds, ([A-Z][a-z']+) draws \w+ \w+ and unleashes a slash towards your (.+)\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Weapon hit</name>
 						<script>wsys.my_limb_hit(matches[2], "weapon")</script>
 						<triggerType>0</triggerType>
@@ -35161,6 +35183,54 @@ wsys.my_limb_hit(matches[2], "shikudo")</script>
 							<string>^[A-Z][a-z]+ whips .+ in a controlled arc, bringing the length of the weapon to crash into your (.*).$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>Psion Limb Hits</name>
+						<script>-- All break limbs in 4
+local limb = matches[2]
+
+local map = {
+	guts = "torso",
+	throat = "head",
+	skull = "head",
+	eyes = "head",
+	["left shoulder"] = "left arm",
+	["right shoulder"] = "right arm",
+}
+
+limb = map[limb] or limb
+
+wsys.my_limb_hit( limb, "psion")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>0</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^Your ((left|right) arm) flops uselessly as \w+ severs the muscles in it with a precise blow of (?:his|her) a translucent sword\.$</string>
+							<string>^Stars explode in front of your eyes as \w+'s a translucent mace smashes into the side of your (head)\.$</string>
+							<string>^\w+ ducks low, (?:his|her) blade slicing into your ((right|left) leg)\.$</string>
+							<string>^With a brutal thrust of a translucent sword, \w+ sinks (?:his|her) weapon into your (guts), ripping it free in a spray of crimson\.$</string>
+							<string>^A sharp pain across your (throat) and a sudden lack of breath comes moments before you register the retreat of \w+, bloody dagger in hand\.$</string>
+							<string>^Pain explodes through your (skull) as \w+ brings a translucent mace around in a savage backhanded blow to your face\.$</string>
+							<string>^A terrible weariness overcomes you as \w+ darts out (?:his|her) blade and drives the tip into you just beneath your ((right|left) shoulder)\.$</string>
+							<string>^Horrific pain overcomes you as \w+ slashes a translucent dagger across your (eyes) in a lightning-fast motion, the world falling into darkness\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -43519,6 +43589,8 @@ end</script>
 					<name>my limb hit</name>
 					<packageName></packageName>
 					<script>-- self limb damage table
+wsys = wsys or {}
+wsys.tb = wsys.tb or {}
 wsys.tb.selflimbdamage = wsys.tb.selflimbdamage or {
 	["head"] = {damage = 0,},
 	["torso"] = {damage = 0,},
@@ -43528,8 +43600,37 @@ wsys.tb.selflimbdamage = wsys.tb.selflimbdamage or {
 	["right leg"] = {damage = 0,},
 }
 
+local off_limbs = {
+	head = "torso",
+	torso = "head",
+	["left arm"] = "right arm",
+	["right arm"] = "left arm",
+	["left leg"] = "right leg",
+	["right leg"] = "left leg",
+}
+
 local timers = timers or {}
+
 wsys.lastlimbhit = wsys.lastlimbhit or "left leg"
+
+-- BM: Main slash 1.5, off slash 1, compassslash 1.5, drawslash = ? These are rough guesses.
+-- Psion: breaks in 4
+-- Dragon: breaks in 4
+	
+local attacks = {
+  ["snb rend"] = 1.75,
+  ["legslash"] = 1.5,
+  ["armslash"] = 1.5,
+  ["centreslash"] = 1.5,
+  ["compassslash"] = 1.5,
+  ["drawslash"] = 1.3
+  }
+	
+local off_attacks = {
+  ["legslash"] = 1,
+  ["armslash"] = 1,
+  ["centreslash"] = 1,
+}
 
 function wsys.my_limb_hit(limb, attack)
   selectString(limb, 1)
@@ -43540,16 +43641,17 @@ end
 
 function wsys.my_limb_hit_next_line(limb, attack)
   if line:match("You parry the attack with a deft manoeuvre.")
-     or line:match( "The attack rebounds back onto %w+!" )
-     or line:match( "The attack rebounds onto %w+!" )
-     or line:match( "%w+ misses you with " )
-     or line:match( "You dodge nimbly out of the way." )
-     or line:match( "One of your reflections has been destroyed" )
-     or line:match( "You twist your body out of harm's way." )
-     or line:match( "You quickly jump back, avoiding the attack." )
-     or line:match( "The attack rebounds off your rebounding aura!" )
-     or line:match( "You frantically attempt to parry the attack of %w+, but succeed only in redirecting it." )
-	  or line:match("You move inside %w+'s guard, deflecting %w+ attack to one side with your forearm before countering with a swift blow to %w+ temple.") then
+    or line:match( "The attack rebounds back onto %w+!" )
+    or line:match( "The attack rebounds onto %w+!" )
+    or line:match( "%w+ misses you with " )
+    or line:match( "You dodge nimbly out of the way." )
+    or line:match( "One of your reflections has been destroyed" )
+    or line:match( "You twist your body out of harm's way." )
+    or line:match( "You quickly jump back, avoiding the attack." )
+    or line:match( "The attack rebounds off your rebounding aura!" )
+    or line:match( "You frantically attempt to parry the attack of %w+, but succeed only in redirecting it." )
+    or line:match( "You move inside %w+'s guard, deflecting %w+ attack to one side with your forearm before countering with a swift blow to %w+ temple.")
+    or line:match( "%w+'s blow lands upon you but is robbed of much of its impact by %w+ flawed technique." ) then -- psion only
   else
     wsys.my_limb_hit_add( limb, attack )
   end
@@ -43557,13 +43659,17 @@ end
 
 function wsys.my_limb_hit_add(limb, attack)
   wsys.lastlimbhit = limb
-  wsys.addSelfDamage(limb, 1)
+	
+  if off_attacks[attack] then
+    wsys.addSelfDamage(off_limbs[limb], off_attacks[attack])
+  end
+	
+  wsys.addSelfDamage(limb, attacks[attack] or 1 )
   selectString(limb, 1)
   setItalics(true) fg("white") bg("blue")
   resetFormat() deselect()
   raiseEvent("myLimbHit", limb, attack)
 end
-
 
 function wsys.resetSelfDamage(limb)
   wsys.clearSelfDamage(limb)
@@ -43583,8 +43689,15 @@ function wsys.clearSelfDamage(limb)
   timers[limb] = nil
 end
 
+function wsys.clearSelfDamageAll()
+  for limb,_t in pairs( wsys.tb.selflimbdamage ) do
+    wsys.clearSelfDamage( limb )
+  end
+end
+
 function wsys.brokenLimbListener(event, affliction)
-  if event == "got aff" then
+  -- GMCP triggers before the limb hit line, so don't rely on gmcp to call the got aff event here
+  if event == "got aff" or event == "lost aff" then
     if affliction == "damagedleftarm" or affliction == "mangledleftarm" then
       wsys.clearSelfDamage("left arm")
     elseif affliction == "damagedrightarm" or affliction == "mangledrightarm" then
@@ -43601,7 +43714,9 @@ function wsys.brokenLimbListener(event, affliction)
   end
 end
 
-registerAnonymousEventHandler("got aff", "wsys.brokenLimbListener")</script>
+if wsys.events.limbhit_lost_aff then killAnonymousEventHandler( wsys.events.limbhit_lost_aff ) end
+
+wsys.events.limbhit_lost_aff = registerAnonymousEventHandler("lost aff", "wsys.brokenLimbListener")</script>
 					<eventHandlerList />
 				</Script>
 				<Script isActive="yes" isFolder="no">

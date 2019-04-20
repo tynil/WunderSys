@@ -36294,6 +36294,14 @@ end
 					<regex>^wconfig (\w+) (.+)$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
+					<name>defup / keepup config toggle (this class and profile)</name>
+					<script>--example usage wconfig defup profile fangbarrier
+wsys.defToggle(matches[2], wsys.profile, wsys.myClass(), matches[4])</script>
+					<command></command>
+					<packageName></packageName>
+					<regex>^wconfig (defup|keepup) (\w+)$</regex>
+				</Alias>
+				<Alias isActive="yes" isFolder="no">
 					<name>defup / keepup config toggle (this class)</name>
 					<script>--example usage wconfig defup profile fangbarrier
 wsys.defToggle(matches[2], matches[3], wsys.myClass(), matches[4])</script>

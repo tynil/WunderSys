@@ -44630,6 +44630,46 @@ wsys.prompttags["npchp"] = function()
   end
 end
 
+wsys.prompttags.mylimbs = function()
+	local str = ""
+	
+	local limbs = {
+	"left leg",
+	"right leg",
+	"left arm",
+	"right arm",
+	"torso",
+	"head",
+}
+	local colors = { 
+		{ c = "&lt;dark_slate_gray&gt;", val = 0 },
+		{ c = "&lt;grey&gt;", val = 1 },
+		{ c = "&lt;brown&gt;", val = 4 },
+		{ c = "&lt;orange&gt;", val = 7 },
+		{ c = "&lt;red&gt;", val = 10 },
+		}
+
+	local first = true
+	for _,limb in pairs(limbs) do
+		if not first then
+			str = str.."&lt;dark_slate_gray&gt;|"
+		end
+		local d = tonumber(wsys.tb.selflimbdamage[limb].damage)
+		local color = colors[0] 
+		d = math.floor(d+0.5)
+		for _,t in ipairs( colors ) do
+			if d &gt;= t.val then
+				color = t.c
+			else
+				break
+			end
+		end
+
+		str = str.. color..d
+		first = false
+	end
+	return str
+end
 
 --table of default prompt tag colors
 wsys.prompttagcolors = wsys.prompttagcolors or {} 

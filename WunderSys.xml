@@ -15266,7 +15266,6 @@ setTriggerStayOpen("Overhand", 0)</script>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>Prompt</name>
 								<script>--adds skull fracture (+ sip bal)
-wsys.my_limb_hit_add("head", "overhand")
 wsys.affadd("skullfractures", "twohander")
 setTriggerStayOpen("Overhand", 0)</script>
 								<triggerType>0</triggerType>
@@ -15415,7 +15414,6 @@ setTriggerStayOpen("Underhand", 0)</script>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>Prompt</name>
 								<script>--at torso (- effectiveness of health sip)
-wsys.my_limb_hit_add("torso", "underhand")
 wsys.affadd("crackedribs", "twohander")
 setTriggerStayOpen("Underhand", 0)</script>
 								<triggerType>0</triggerType>
@@ -15486,7 +15484,7 @@ end</script>
 							<name>Hew</name>
 							<script>--gate opened, see if parry/miss/dodge
 wsys.twohandsmacker = matches[2]
-wsys.lastlimbhit = matches[3] .. " " .. matches[4]</script>
+wsys.twoh_lastlimbhit = matches[3] .. " " .. matches[4]</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
 							<mStayOpen>10</mStayOpen>
@@ -15543,10 +15541,9 @@ setTriggerStayOpen("Hew", 0)</script>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>Prompt</name>
 								<script>--targets arms/legs
-wsys.my_limb_hit_add(wsys.lastlimbhit, "hew")
-if wsys.lastlimbhit == "right arm" or wsys.lastlimbhit == "left arm" then
+if wsys.twoh_lastlimbhit == "right arm" or wsys.twoh_lastlimbhit == "left arm" then
  wsys.affadd("wristfractures", "twohander")
-elseif wsys.lastlimbhit == "left leg" or wsys.lastlimbhit == "right leg" then
+elseif wsys.twoh_lastlimbhit == "left leg" or wsys.twoh_lastlimbhit == "right leg" then
  wsys.affadd("torntendons", "twohander")
 end
 setTriggerStayOpen("Hew", 0)</script>
@@ -15572,7 +15569,7 @@ setTriggerStayOpen("Hew", 0)</script>
 							<name>Pulverise</name>
 							<script>--gate opened, see if parry/miss/dodge
 wsys.twohandsmacker = matches[2]
-wsys.lastlimbhit = matches[3] .. " " .. matches[4]</script>
+wsys.twoh_lastlimbhit = matches[3] .. " " .. matches[4]</script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
 							<mStayOpen>10</mStayOpen>
@@ -15629,10 +15626,9 @@ setTriggerStayOpen("Pulverise", 0)</script>
 							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 								<name>Prompt</name>
 								<script>--targets arms/legs
-wsys.my_limb_hit_add(wsys.lastlimbhit, "pulverise")
-if wsys.lastlimbhit == "right arm" or wsys.lastlimbhit == "left arm" then
+if wsys.twoh_lastlimbhit == "right arm" or wsys.twoh_lastlimbhit == "left arm" then
  wsys.affadd("wristfractures", "twohander")
-elseif wsys.lastlimbhit == "left leg" or wsys.lastlimbhit == "right leg" then
+elseif wsys.twoh_lastlimbhit == "left leg" or wsys.twoh_lastlimbhit == "right leg" then
  wsys.affadd("torntendons", "twohander")
 end
 setTriggerStayOpen("Pulverise", 0)</script>
@@ -34803,10 +34799,8 @@ end
 							<string>^[A-Z][a-z]+ slashes into your (.+) with</string>
 							<string>^[A-Z][a-z]+ swings .+ at your (.+) with all (?:his|her) might\.$</string>
 							<string>^Lightning\-quick, [A-Z][a-z]+ (?:jabs|stabs) your (.+) with .+\.$</string>
-							<string>^[A-Z][a-z]+ unleashes a terrible blow at your (.+) with a .+\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
-							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
 							<integer>1</integer>
@@ -35088,6 +35082,37 @@ wsys.my_limb_hit(matches[3], "monk")</script>
 							<string>^(?:[A-Z][a-z]+) utters a prayer and smites your (.+) with .+\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
+						</regexCodePropertyList>
+					</Trigger>
+					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+						<name>2h weapon hit</name>
+						<script>local limb = matches[3]
+if limb == "overhand" then
+	limb = "head"
+end
+
+wsys.my_limb_hit(limb, "2h")</script>
+						<triggerType>0</triggerType>
+						<conditonLineDelta>0</conditonLineDelta>
+						<mStayOpen>10</mStayOpen>
+						<mCommand></mCommand>
+						<packageName></packageName>
+						<mFgColor>#ff0000</mFgColor>
+						<mBgColor>#ffff00</mBgColor>
+						<mSoundFile></mSoundFile>
+						<colorTriggerFgColor>#000000</colorTriggerFgColor>
+						<colorTriggerBgColor>#000000</colorTriggerBgColor>
+						<regexCodeList>
+							<string>^([A-Z][a-z]+) brings .+ down upon you with a brutal (overhand) blow\.$</string>
+							<string>^([A-Z][a-z]+) explodes upward from a low crouch, driving .+ toward your (torso)\.$</string>
+							<string>^([A-Z][a-z]+) unleashes a terrible blow at your ((right|left) (arm|leg)) with .+\.$</string>
+							<string>^([A-Z][a-z]+) comes around with a terrible swing of .+ toward your ((left|right) (arm|leg))\.$</string>
+						</regexCodeList>
+						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>

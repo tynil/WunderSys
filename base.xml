@@ -4,13 +4,16 @@
 	<TriggerPackage>
 -- Triggers here
 	</TriggerPackage>
-	<TimerPackage/>
+	<TimerPackage />
 	<AliasPackage>
 -- Alias here
 	</AliasPackage>
-	<ActionPackage/>
+	<ActionPackage />
 	<ScriptPackage>
 -- Script here
 	</ScriptPackage>
-	<KeyPackage/>
+	<KeyPackage />
+	<HelpPackage>
+		<helpURL></helpURL>
+	</HelpPackage>
 </MudletPackage>

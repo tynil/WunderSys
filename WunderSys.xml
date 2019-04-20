@@ -38468,6 +38468,16 @@ end</script>
 	end
 end -- func
 
+if wsys.events.tree_para_check then killAnonymousEventHandler( wsys.events.tree_para_check ) end
+wsys.events.tree_para_check = registerAnonymousEventHandler( "got aff",
+  function(event, affliction)
+		if wsys.timer.treedelay and event == "got aff" and affliction == "paralysis" then
+			killTimer( wsys.timer.treedelay )
+			wsys.timer.treedelay = nil
+			send("curing queue remove touch tree")
+		end
+	end)
+
 local treeprompt = false
 
 function wsys.treed(empty)

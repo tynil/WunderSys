@@ -37504,15 +37504,16 @@ function wsys.return_defaultaffprios()
     ---------------------------------
     --HERBS (+ a few focusables obv)
     ---------------------------------
+    -- depsthwalker priors: paralysis &gt; timeloop &gt; madness/depression &gt; retribution &gt; parasite
     ["paralysis"] = 4,
     ["timeloop"] = 5,
-    ["shadowmadness"] = 5,
     ["hypochondria"] = 5,
+    ["shadowmadness"] = 6,
     ["depression"] = 6,
-    ["retribution"] = 6,
-    ["parasite"] = 6,
+    ["retribution"] = 6,	-- This should be &gt; madness, but &lt; parasite. So either 6 or 7
     ["scytherus"] = 6,
     ["impatience"] = 6,
+    ["parasite"] = 7,
     ["asthma"] = 7,
     ["sensitivity"] = 7,
     ["weariness"] = 7,
@@ -37625,8 +37626,8 @@ function wsys.return_defaultaffprios()
     ["manaleech"] = 13,
     ["deadening"] = 14,
     ["disloyalty"] = 15,
-    ["tension"] = 16,
-    ["pressure"] = 17,
+    ["pressure"] = 16,
+    ["tension"] = 17,	--  Pressure &gt; Tension, unless sent airborne, then swap
 
     --["rebounding"] = 18, (DEFENCE QUEUE SLOT 18) IMPORTANT TO MOVE THIS DOWN BELOW PRESSURE
 

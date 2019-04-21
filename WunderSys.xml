@@ -44999,6 +44999,7 @@ end</script>
  unweavingmind = "UNM",
  unweavingbody = "UNB",
  unweavingspirit = "UNS",
+ mindravaged = "MIND RAVAGE",
  pressure = "PRESS",
  tension = "tens",
 }

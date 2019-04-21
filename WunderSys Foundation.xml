@@ -770,10 +770,10 @@ local stackables = {
 	temperedphlegmatic = { max = 8 }, 
 	temperedsanguine = { max = 8 },
 	
-	-- Unweave stackables cap at 6
-	unweavingbody = { max = 6 },
-	unweavingmind = { max = 6 },
-	unweavingspirit = { max = 6 },
+	-- Unweave stackables cap at 5
+	unweavingbody = { max = 5 },
+	unweavingmind = { max = 5 },
+	unweavingspirit = { max = 5 },
 	
 	-- 2h fractures are uncapped, but cure double if at or above 6
 	torntendons = { doublecure_at = 6, max = 7 },

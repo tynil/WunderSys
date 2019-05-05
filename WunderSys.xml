@@ -184,52 +184,6 @@ end
 						</Trigger>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Blackout Prompt</name>
-						<script>wsys.aff.blackout = true
-enableTrigger("Blackout -")</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>-</string>
-							<string> Vote-</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>3</integer>
-							<integer>3</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Blackout Prompt Kai/Shin</name>
-						<script>wsys.aff.blackout = true
-enableTrigger("Blackout -")</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>-</string>
-							<string>^-\d+-$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>2</integer>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>End</name>
 						<script>wsys.prompt()
  </script>
@@ -291,9 +245,7 @@ if next(wsys.tb.justreckless) then
  if wsys.stats.h == wsys.stats.maxh and wsys.stats.m == wsys.stats.maxm and not wsys.lifevision then
   moveCursor("main", 0, wsys.tb.justreckless[2])
   wsys.affprint("recklessness", wsys.tb.justreckless[1])
-  wsys.aff.recklessness = true
-  send("curing predict recklessness", false)
-  enableTrigger("Recklessness -")
+	wsys.affpredict( "recklessness" )
   --herbqueue()
  end -- if
  wsys.tb.justreckless = {}
@@ -328,7 +280,8 @@ wsys.self_illusion = false
 if wsys.starbursted then
  if not wsys.def.blindness and not wsys.def.deafness and not wsys.def.kola then
   raiseEvent("You Starbursted")
-  wsys.aff = {}
+	
+  --wsys.aff = {}
   for k,v in pairs(wsys.herbsout) do
    wsys.herbsout[k] = 0
   end -- for
@@ -344,7 +297,7 @@ end -- if
 
 if wsys.mogged then
  if not wsys.def.blindness and not wsys.def.deafness and not wsys.def.kola then
-  wsys.aff = {}
+  --wsys.aff = {}
   for k in pairs(wsys.def) do
    wsys.def[k] = false
   end -- for
@@ -1805,7 +1758,6 @@ end
 					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Shivering -</name>
 						<script>wsys.affcured("shivering")
-wsys.aff.frozen = nil
 wsys.undef("insulation")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
@@ -2292,9 +2244,7 @@ wsys.humourReset("temperedsanguine")</script>
  wsys.timer.diagwait = nil
  enableTrigger("Diag Lines")
 
- wsys.oldAff = wsys.aff
-
- wsys.aff = {}
+ --wsys.aff = {}
  wsys.resetAffPrios()
  wsys.def.blindness = false
  wsys.def.deafness = false
@@ -3780,7 +3730,6 @@ end -- if</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>humour (diag)</name>
 							<script>wsys.affadd("tempered"..matches[2])
-wsys.aff["tempered"..matches[2]] = tonumber(matches[3])
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -3822,7 +3771,6 @@ wsys.aff["tempered"..matches[2]] = tonumber(matches[3])
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Skullfractures (diag)</name>
 							<script>wsys.affadd("skullfractures")
-wsys.aff["skullfractures"] = tonumber(matches[2])
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -3844,7 +3792,6 @@ wsys.aff["skullfractures"] = tonumber(matches[2])
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Crackedribs (diag)</name>
 							<script>wsys.affadd("crackedribs")
-wsys.aff["crackedribs"] = tonumber(matches[2])
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -3866,7 +3813,6 @@ wsys.aff["crackedribs"] = tonumber(matches[2])
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Wristfractures (diag)</name>
 							<script>wsys.affadd("wristfractures")
-wsys.aff["wristfractures"] = tonumber(matches[2])
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -3888,7 +3834,6 @@ wsys.aff["wristfractures"] = tonumber(matches[2])
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Torntendons (diag)</name>
 							<script>wsys.affadd("torntendons")
-wsys.aff["torntendons"] = tonumber(matches[2])
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -4132,26 +4077,6 @@ wsys.aff["torntendons"] = tonumber(matches[2])
 							<script>
 disableTrigger("Diag Lines")
 wsys.checkaffs()
-
-
-  --if we used to think we had the aff, and don't now
-  --send the lost aff event
-  for k, v in pairs(wsys.oldAff) do
-    if not wsys.aff[k] then
-      raiseEvent("lost aff", k)
-    end
-  end
-
-  --if we thought we didn't have it, but do now
-  --send the got aff event
-  for k,v in pairs(wsys.aff) do
-    if not wsys.oldAff[k] then
-      raiseEvent("got aff", k)
-    end
-  end
-
-   --Clean up
-   wsys.oldAff = nil
                             </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -7789,9 +7714,9 @@ wsys.newClassTimer("occultist")</script>
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Pyradius firelord</name>
-						<script></script>
+						<script>-- TODO: Need to confirm this behavior. GMCP should cover us?</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>999</mStayOpen>
@@ -11272,7 +11197,7 @@ wsys.newClassTimer("alchemist")</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Mercury +</name>
-						<script>wsys.aff.homunculusmercury = true</script>
+						<script>--wsys.aff.homunculusmercury = true</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -11295,7 +11220,7 @@ wsys.newClassTimer("alchemist")</script>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Mercury -</name>
 						<script>-- yes this trigger belongs here and not with other cures, don't fucking touch it.
-wsys.aff.homunculusmercury = nil</script>
+--wsys.aff.homunculusmercury = nil</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -15208,112 +15133,6 @@ wsys.newClassTimer("bard")</script>
 						<regexCodeList />
 						<regexCodePropertyList />
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Overhand</name>
-							<script>--gate opened, see if parry/miss/dodge
-wsys.twohandsmacker = matches[2]</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>10</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^([A-Z][a-z]+) brings .+ down upon you with a brutal overhand blow\.$</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Parry Dodge</name>
-								<script>--parried, close the gate
-setTriggerStayOpen("Overhand", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>You parry the attack with a deft manoeuvre.</string>
-									<string>You dodge nimbly out of the way.</string>
-									<string>You twist your body out of harm's way.</string>
-									<string>You quickly jump back, avoiding the attack.</string>
-									<string>The attack rebounds back onto</string>
-									<string>One of your reflections has been destroyed!</string>
-									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
-									<string>You frantically attempt to parry the attack of </string>
-									<string>You step into the attack, grab</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Prompt</name>
-								<script>--adds skull fracture (+ sip bal)
-wsys.affadd("skullfractures", "twohander")
-setTriggerStayOpen("Overhand", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>return isPrompt()</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>4</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Skullfractures lowered</name>
-							<script>if wsys.cure == "healthhead" or wsys.cure == "tree" or wsys.cure == "passive" or wsys.cure == "restore" then
-  if wsys.aff.skullfractures &gt; 5 then
-    wsys.fracturedown("skullfractures", 2)
-  else
-    wsys.fracturedown("skullfractures", 1)
-  end
-end</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>The pain in your head lessens somewhat.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>3</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Carve</name>
 							<script>wsys.undef("rebounding")
 wsys.undef("shield")</script>
@@ -15356,112 +15175,6 @@ wsys.undef("shield")</script>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Underhand</name>
-							<script>--gate opened, see if parry/miss/dodge
-wsys.twohandsmacker = matches[2]</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>10</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^([A-Z][a-z]+) explodes upward from a low crouch, driving .+ toward your torso\.$</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Parry Miss Dodge</name>
-								<script>--parried, close the gate
-setTriggerStayOpen("Underhand", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>You parry the attack with a deft manoeuvre.</string>
-									<string>You dodge nimbly out of the way.</string>
-									<string>You twist your body out of harm's way.</string>
-									<string>You quickly jump back, avoiding the attack.</string>
-									<string>The attack rebounds back onto </string>
-									<string>One of your reflections has been destroyed</string>
-									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
-									<string>You frantically attempt to parry the attack of </string>
-									<string>You step into the attack, grab</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Prompt</name>
-								<script>--at torso (- effectiveness of health sip)
-wsys.affadd("crackedribs", "twohander")
-setTriggerStayOpen("Underhand", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>return isPrompt()</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>4</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Crackedribs lowered</name>
-							<script>if wsys.cure == "healthtorso" or wsys.cure == "tree" or wsys.cure == "passive" or wsys.cure == "restore" then
-  if wsys.aff.crackedribs &gt; 5 then
-    wsys.fracturedown("crackedribs", 2)
-  else
-    wsys.fracturedown("crackedribs", 1)
-  end
-end</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>It becomes somewhat easier to draw breath.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>3</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Upset (prone)</name>
 							<script>wsys.affadd("prone", "twohander")</script>
 							<triggerType>0</triggerType>
@@ -15479,228 +15192,6 @@ end</script>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Hew</name>
-							<script>--gate opened, see if parry/miss/dodge
-wsys.twohandsmacker = matches[2]
-wsys.twoh_lastlimbhit = matches[3] .. " " .. matches[4]</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>10</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^([A-Z][a-z]+) unleashes a terrible blow at your (right|left) (arm|leg) with .+\.$</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Parry Miss Dodge</name>
-								<script>--parried, close the gate
-setTriggerStayOpen("Hew", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>You parry the attack with a deft manoeuvre.</string>
-									<string>You dodge nimbly out of the way.</string>
-									<string>You twist your body out of harm's way.</string>
-									<string>You quickly jump back, avoiding the attack.</string>
-									<string>The attack rebounds back onto</string>
-									<string>One of your reflections has been destroyed</string>
-									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
-									<string>You frantically attempt to parry the attack of </string>
-									<string>You step into the attack, grab</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Prompt</name>
-								<script>--targets arms/legs
-if wsys.twoh_lastlimbhit == "right arm" or wsys.twoh_lastlimbhit == "left arm" then
- wsys.affadd("wristfractures", "twohander")
-elseif wsys.twoh_lastlimbhit == "left leg" or wsys.twoh_lastlimbhit == "right leg" then
- wsys.affadd("torntendons", "twohander")
-end
-setTriggerStayOpen("Hew", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>return isPrompt()</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>4</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Pulverise</name>
-							<script>--gate opened, see if parry/miss/dodge
-wsys.twohandsmacker = matches[2]
-wsys.twoh_lastlimbhit = matches[3] .. " " .. matches[4]</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>10</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^([A-Z][a-z]+) comes around with a terrible swing of .+ toward your (left|right) (arm|leg)\.$</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Parry Miss Dodge</name>
-								<script>--parried, close the gate
-setTriggerStayOpen("Pulverise", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>You parry the attack with a deft manoeuvre.</string>
-									<string>You dodge nimbly out of the way.</string>
-									<string>You twist your body out of harm's way.</string>
-									<string>You quickly jump back, avoiding the attack.</string>
-									<string>The attack rebounds back onto </string>
-									<string>One of your reflections has been destroyed</string>
-									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
-									<string>You frantically attempt to parry the attack of </string>
-									<string>You step into the attack, grab</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Prompt</name>
-								<script>--targets arms/legs
-if wsys.twoh_lastlimbhit == "right arm" or wsys.twoh_lastlimbhit == "left arm" then
- wsys.affadd("wristfractures", "twohander")
-elseif wsys.twoh_lastlimbhit == "left leg" or wsys.twoh_lastlimbhit == "right leg" then
- wsys.affadd("torntendons", "twohander")
-end
-setTriggerStayOpen("Pulverise", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>return isPrompt()</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>4</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Torntendons lowered</name>
-							<script>if wsys.cure == "healthlegs" or wsys.cure == "tree" or wsys.cure == "passive" or wsys.cure == "restore" then
-  if wsys.aff.torntendons &gt; 5 then
-    wsys.fracturedown("torntendons", 2)
-  else
-    wsys.fracturedown("torntendons", 1)
-  end
-end</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>The agonising pain in your lower legs recedes somewhat.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>3</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Wristfractures lowered</name>
-							<script>if wsys.cure == "healtharms" or wsys.cure == "tree" or wsys.cure == "passive" or wsys.cure == "restore" then
-  if wsys.aff.wristfractures &gt; 5 then
-    wsys.fracturedown("wristfractures", 2)
-  else
-    wsys.fracturedown("wristfractures", 1)
-  end
-end</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>The dull ache in your arms subsides somewhat.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -15743,11 +15234,9 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Devastate 1</name>
 							<script>if matches[2] == "arms" then
-  wsys.fracturereset("wristfractures")
   wsys.affadd("brokenrightarm")
   wsys.affadd("brokenleftarm")
 elseif matches[2] == "legs" then
-  wsys.fracturereset("torntendons")
   wsys.affadd("brokenrightleg")
   wsys.affadd("brokenleftleg")
 end
@@ -15775,7 +15264,6 @@ end
 							<name>Devastate 2</name>
 							<script>--gmcp aff added will trigger before this does. Rely on that for determining the level break
 if matches[2] == "arms" then
-  wsys.fracturereset("wristfractures")
   if wsys.aff.mangledrightarm then
     wsys.restobreakcheck("mangledrightarm")
   else
@@ -15787,7 +15275,6 @@ if matches[2] == "arms" then
     wsys.restobreakcheck("damagedleftarm")
   end
 elseif matches[2] == "legs" then
-  wsys.fracturereset("torntendons")
   if wsys.aff.mangledrightleg then
     wsys.restobreakcheck("mangledrightleg")
   else
@@ -15824,15 +15311,9 @@ end
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Devastate 3</name>
 							<script>if matches[2] == "arms" then
-  wsys.fracturereset("wristfractures")
-  wsys.affadd("mangledrightarm")
-  wsys.affadd("mangledleftarm")
   wsys.restobreakcheck("mangledrightarm")
   wsys.restobreakcheck("mangledleftarm")
 elseif matches[2] == "legs" then
-  wsys.fracturereset("torntendons")
-  wsys.affadd("mangledrightleg")
-  wsys.affadd("mangledleftleg")
   wsys.restobreakcheck("mangledrightleg")
   wsys.restobreakcheck("mangledleftleg")
 end
@@ -15853,26 +15334,6 @@ end
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
-								<integer>1</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Battlefury focus precision</name>
-							<script>wsys.twohanddoubled(matches[2])</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^([A-Z][a-z]+) shifts into a more aggressive stance\.$</string>
-							</regexCodeList>
-							<regexCodePropertyList>
 								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
@@ -37087,9 +36548,9 @@ function wsys.return_defaultsettings( no_save )
     },
   },
   container = "pack",
-  affcuredechos = true,
+  affcuredechos = false,
   autoshrugging = false,
-  affgainedechos = true,
+  affgainedechos = false,
   manapercent = 10,
   usemoss = false,
   prompt = "@warning#red@paused@softpaused#DodgerBlue@retardation#yellow@phase#hcolour@healthh #mcolour@manam #ecolour@percentendurance%e #wcolour@percentwillpower%w @kai@shin#white@bal@bal#MidnightBlue|#white@eq@eq @invdef#DarkOrchid@mw@affs@diffhealth@diffmana",
@@ -37240,95 +36701,77 @@ wsys.saveSettings()</script>
 					<Script isActive="yes" isFolder="no">
 						<name>Affliction Functions</name>
 						<packageName></packageName>
-						<script>local aff_debug = false
-local def_affs = {
-   insomnia = true,
-   blindness = true,
-   deafness = true,
-	 }
-	 
+						<script>wsys.predicted = {}
 
+---------------------------------------------------
+-- Translation layer to map wsysf.affs to wsys.aff
+---------------------------------------------------
+
+-- Note, this meta table allows you to access the values
+-- From wsysf.affs, but it does not automatically map pairs()
+-- or next(). Both of these will always be empty
+wsys.aff = setmetatable({}, {
+	__index = function(table, key)
+		return wsysf.affs[key] or wsys.predicted[aff]
+	end,
+	__newindex = function(table, key, value)
+		echo("!Don't set wsys.aff."..key.." = "..tostring(value))
+	end
+})
+
+local wsysf_aff_event_handler = function( event, affliction )
+
+	if wsys.predicted[ affliction ] then wsys.predicted[ affliction ] = nil end
+	
+	wsys.checkaffs_next_prompt()
+	
+	if event == "wsysf got aff" then
+		raiseEvent( "got aff", affliction )
+	elseif event == "wsysf lost aff" then
+		raiseEvent( "lost aff", affliction )
+	end
+end
+
+if wsys.events.aff_add then killAnonymousEventHandler( wsys.events.aff_add ) end
+if wsys.events.aff_remove then killAnonymousEventHandler( wsys.events.aff_remove ) end
+if wsys.events.aff_list then killAnonymousEventHandler( wsys.events.aff_list ) end
+
+wsys.events.aff_add = registerAnonymousEventHandler("wsysf got aff", wsysf_aff_event_handler)
+wsys.events.aff_remove = registerAnonymousEventHandler("wsysf lost aff", wsysf_aff_event_handler)
+wsys.events.aff_list = registerAnonymousEventHandler("gmcp.Char.Afflictions.List", function() wsys.predicted = {} end)
+
+function wsys.affpredict(aff, value)
+  if value == nil then value = true end
+	
+	if not wsysf.affs[aff] and wsys.predicted[aff] ~= value then
+		if value then
+			send("curing predict "..aff) -- ,false)
+		else
+			send("curing unpredict "..aff) -- ,false)
+  		end
+  		wsys.predicted[aff] = value
+	end
+end
+	
+---------------------------------------------------
+-- Old Aff tracking functions. Some of these may
+-- functions may no longer be needed
+---------------------------------------------------
+	
+-- Deprecated in favour of pure GMCP aff tracking
+-- This is only used for class tracking and the aff print lines now
 function wsys.affadd(affliction, class, time, from_gmcp)
   if not wsys.lifevision then
     local gained = wsys.affs_gained[affliction]
     if not from_gmcp and wsys.affline ~= getLineNumber() then
       wsys.affprint(affliction)
     end -- if
-    --set aff to true or level number (tempered humours)
-    if affliction == "temperedcholeric" then
-      wsys.humourUp("choleric")
-    elseif affliction == "temperedmelancholic" then
-      wsys.humourUp("melancholic")
-    elseif affliction == "temperedphlegmatic" then
-      wsys.humourUp("phlegmatic")
-    elseif affliction == "temperedsanguine" then
-      wsys.humourUp("sanguine")
-    elseif affliction == "skullfractures" then
-      if wsys.is_twohanddoubled(wsys.twohandsmacker) then
-        wsys.fractureup("skullfractures",2)
-      else
-        wsys.fractureup("skullfractures",1)
-      end
-    elseif affliction == "crackedribs" then
-      if wsys.is_twohanddoubled(wsys.twohandsmacker) then
-        wsys.fractureup("crackedribs",2)
-      else
-        wsys.fractureup("crackedribs",1)
-      end
-    elseif affliction == "wristfractures" then
-      if wsys.is_twohanddoubled(wsys.twohandsmacker) then
-        wsys.fractureup("wristfractures",2)
-      else
-        wsys.fractureup("wristfractures",1)
-      end
-    elseif affliction == "torntendons" then
-      if wsys.is_twohanddoubled(wsys.twohandsmacker) then
-        wsys.fractureup("torntendons",2)
-      else
-        wsys.fractureup("torntendons",1)
-      end
-    elseif affliction == "burning" and wsys.aff.burning then
-      --Do nothing? We're already burning
-    elseif not def_affs[affliction] then
-      wsys.aff[affliction] = true
-    end
-
-    if affliction == "sleeping" then
-      if not wsys.aff.prone then
-        raiseEvent("got aff", "prone") -- We get this with GMCP
-        wsys.aff.prone = true
-        enableTrigger("Prone -")
-      end -- if
-    elseif string.match(affliction, "leg") or string.match(affliction, "arm") or string.match(affliction, "head") or string.match(affliction, "torso") then
-      wsys.affaddsalve(affliction)
-    elseif affliction == "sensitivity" and wsys.def.deafness then
-      return
-    end -- if
 
     if class then wsys.newClassTimer( class ) end
-
-    if not gained then
-      wsys.affs_gained[affliction] = true
-      if aff_debug then echo("got aff "..affliction) end
-      raiseEvent("got aff", affliction, class)
-      enableTrigger(string.title(affliction) .. " -")
-      wsys.ragequeue()
-      wsys.lockqueue()
-    end
 
     if not from_gmcp then
       wsys.affline = getLineNumber()
     end
-
-    -- handling for self decaying affs
-    if time then
-      if wsys.timer[affliction.."decay"] then killTimer(wsys.timer[affliction.."decay"]) end
-      wsys.timer[affliction.."decay"] = tempTimer(time + wsys.myPing() * 1.5, function() 
-        wsys.timer[affliction.."decay"] = nil
-        wsys.affcuredconfirm(affliction)
-        end)
-    end
-
   end -- if
 end -- func
 
@@ -37346,17 +36789,11 @@ function wsys.affcured(affliction)
    end
   end -- if 
  end -- if
- wsys.checkaffs()
+ --wsys.checkaffs()
 end -- func
 
 
 function wsys.affcuredconfirm(affliction, from_gmcp)
-  if wsys.aff[affliction] or def_affs[affliction] then
-    if aff_debug then echo("lost aff "..affliction) end
-    wsys.aff[affliction] = nil
-    raiseEvent("lost aff", affliction)
-  end
-
   if affliction == "aeon" then
     wsys.def.speed = false
   end -- if
@@ -37365,14 +36802,6 @@ function wsys.affcuredconfirm(affliction, from_gmcp)
     disableTrigger(string.title(affliction) .. " -")
     wsys.affcureprint(affliction)
   end
-
-  for k,v in ipairs(wsys.tb.affspaired) do
-    for a,b in ipairs(wsys.tb.affspaired[k]) do
-      if b == affliction then
-        table.remove(wsys.tb.affspaired, k)
-      end -- if
-    end -- for
-  end -- for
 
   wsys.checkaffs(affliction)
 
@@ -37440,13 +36869,17 @@ function wsys.affcheckblackout(affliction)
 end -- func
 
 
+local affs_next_prompt_id = nil
+function wsys.checkaffs_next_prompt()
+	if not affs_next_prompt_id then
+		affs_next_prompt_id = tempPromptTrigger( function()
+			affs_next_prompt_id = nil
+			wsys.checkaffs()
+		end, 1)
+	end
+end
 
-function wsys.checkaffs(affliction)
- if next(wsys.aff) then
-  for k in pairs(wsys.aff) do
-   enableTrigger(string.title(k) .. " -")
-  end -- for
- end -- if
+function wsys.checkaffs()
  wsys.lockqueue()
 end -- func
     
@@ -37457,25 +36890,7 @@ function wsys.firequeues()
   if not wsys.self_illusion then cecho("&lt;pink&gt;ILLUSION BITCH!") end
   do return end
  end -- if
- if #wsys.tb.affstogether &gt; 1 then
-  if next(wsys.tb.affspaired) then
-   for k,v in ipairs(wsys.tb.affspaired) do
-    for a,b in ipairs(wsys.tb.affspaired[k]) do
-     if table.contains(wsys.tb.affstogether, b) then
-      table.remove(wsys.tb.affspaired, k) -- might cause problems, keep an eye out
-     end -- if
-    end -- for
-   end -- for
-  end -- if
-  wsys.tb.affspaired[#wsys.tb.affspaired+1] = {wsys.tb.affstogether[1], wsys.tb.affstogether[2], wsys.tb.affstogether[3], wsys.tb.affstogether[4]}
- end -- if
- local fired = {}
- for k,v in pairs(wsys.tb.affstogether) do
-  wsys.aff[v] = true
-  enableTrigger(string.title(v) .. " -")
-
- end -- for
- wsys.tb.affstogether = {}
+ 
  if wsys.aff.aeon then
   if wsys.retard then
    --retardqueue()
@@ -37484,32 +36899,13 @@ function wsys.firequeues()
   end -- if
   do return end
  end -- if
- for k,v in ipairs(fired) do
-  --_G["wsys"][v .. "queue"]()
- end -- for
+
  wsys.ragequeue()
  wsys.lockqueue()
 end -- func
 
 
-function wsys.pairscheck(cure)
- for k,v in ipairs(wsys.tb.affspaired) do
-  for a,b in ipairs(wsys.tb.affspaired[k]) do
-   if table.contains(wsys.tb.cures[cure], b) then
-    wsys.aff[wsys.tb.affspaired[k][1]] = nil
-    wsys.aff[wsys.tb.affspaired[k][2]] = nil
-    if wsys.aff[wsys.tb.affspaired[k][3]] then
-     wsys.aff[wsys.tb.affspaired[k][3]] = nil
-     disableTrigger(string.title(wsys.tb.affspaired[k][3]) .. " -")
-    end -- if
-    if wsys.aff[wsys.tb.affspaired[k][4]] then
-     wsys.aff[wsys.tb.affspaired[k][4]] = nil
-     disableTrigger(string.title(wsys.tb.affspaired[k][4]) .. " -")
-    end -- if
-    table.remove(wsys.tb.affspaired, k)
-   end -- if
-  end -- for
- end -- for
+function wsys.pairscheck(cure) -- What is this for?
  wsys.checkaffs()
 end -- func
 
@@ -37531,9 +36927,7 @@ function wsys.blackoutloss( event, affliction )
       	send("curing predict disrupted", false)
       end -- if
       if wsys.stats.h == wsys.stats.maxh and wsys.stats.m == wsys.stats.maxm then
-      	send("curing predict recklessness", false)
-      	wsys.aff.recklessness = true
-      	enableTrigger("Recklessness -")
+        wsys.affpredict("recklessness")
       end -- if
       if not wsys.aff.aeon and wsys.classTimerExists("occultist") or wsys.classTimerExists("jester") or wsys.classTimerExists("shaman") then
       	send("curing predict aeon")
@@ -37706,47 +37100,7 @@ function wsys.return_defaultaffprios()
     ["fear"] = 20, --low for retardation/aeon curing
 
   }
-end
-
---gmcp.Char.Afflictions
-
-local exclude = {
-   numbedrightarm  = true,
-   numbedleftarm = true,
-
-   --Tempers and fractures don't give counts in GMCP. Ignore them for now
-   temperedcholeric = true,
-   temperedmelancholic = true,
-   temperedphlegmatic = true,
-   temperedsanguine = true,
-
-   torntendons = true,
-   skullfractures = true,
-   crackedribs = true,
-   wristfractures = true,
-   }
-
-function wsys.gmcpAffAdded()
-   local aff,count = string.match( gmcp.Char.Afflictions.Add.name, "(%w+) %((%d+)%)" )
-   aff = aff or gmcp.Char.Afflictions.Add.name
-   if not exclude[aff] then
-      wsys.affadd( aff, nil, nil, true )
-   end
-end
-
-function wsys.gmcpAffRemoved()
-   for _,aff in ipairs( gmcp.Char.Afflictions.Remove ) do
-      local aff2,count = string.match( aff, "(%w+) %((%d+)%)" )
-      aff = aff2 or aff
-      if aff_debug then echo("wsys.gmcpAffRemoved:'"..aff.."'") end
-      if not exclude[aff] then
-         wsys.affcuredconfirm(aff, true)
-      end
-   end
-end
-
-registerAnonymousEventHandler("gmcp.Char.Afflictions.Add", "wsys.gmcpAffAdded")
-registerAnonymousEventHandler("gmcp.Char.Afflictions.Remove", "wsys.gmcpAffRemoved")</script>
+end</script>
 						<eventHandlerList />
 					</Script>
 					<Script isActive="yes" isFolder="no">
@@ -37766,7 +37120,6 @@ end -- func
 function wsys.clotd()
   if wsys.bleeding &lt;= 30 then
     wsys.bleeding = 0
-    wsys.aff.bleeding = nil
   else
     wsys.bleeding = wsys.bleeding - 30
   end
@@ -37777,7 +37130,6 @@ end -- func
 function wsys.clotcure()
   wsys.timer.bleedingTimer = nil
   wsys.cure = "clot"
-  wsys.aff.bleeding = nil
   wsys.bleeding = 0
   if wsys.timer.bleedingTimer then
    killTimer(wsys.timer.bleedingTimer)
@@ -37887,7 +37239,9 @@ end -- func
 
 function wsys.emptydheal()
  for k,v in pairs(wsys.tb.cures.dheal) do
-  wsys.aff[v] = nil
+ 	if wsysf.affs[v] then
+  	wsysf.core.debug.print(2, "Empty dheal should clear ".. v.."?")
+	end
   disableTrigger(string.title(v) .. " -")
  end -- for
  wsys.pairscheck("dheal")
@@ -37941,7 +37295,11 @@ function wsys.emptyherb()
   wsys.def.insomnia = true
  elseif wsys.cure ~= "hawthorn" and wsys.cure ~= "calamine" then
   for k,v in pairs(wsys.tb.cures[wsys.cure]) do
-   wsys.aff[v] = nil
+    wsys.predicted[v] = nil
+	
+    if wsysf.affs[v] then
+      wsysf.core.debug.print(2, "Empty herb eat should clear ".. v.."?")
+    end
    disableTrigger(string.title(v) .. " -")
   end -- for
  end -- if
@@ -37981,7 +37339,7 @@ end -- func
  if wsys.stats.h == 0 and wsys.stats.oh &gt; 0 then
   raiseEvent("You Died")
   wsys.pause()
-  wsys.aff = {}
+  --wsys.aff = {}
   for k in pairs(wsys.herbsout) do
    wsys.herbsout[k] = 0
   end -- for
@@ -38061,7 +37419,6 @@ local pipeprompt = false
 
 function wsys.smoked(herb)
   wsys.lostBal("smoke", 2)
-  wsys.aff.asthma = nil
   if herb == "empty" then
    wsys.emptySmoke(wsys.pipes.smoking)
   else
@@ -38266,8 +37623,12 @@ end
 function wsys.emptypipe(herb)
  if herb ~= "skullcap" and herb ~= "malachite" then
   for k,v in pairs(wsys.tb.cures[herb]) do
-   wsys.aff[v] = nil
-   disableTrigger(string.title(v) .. " -")
+    wsys.predicted[v] = nil
+	
+    if wsysf.affs[v] then
+      wsysf.core.debug.print(2, "Empty smoke should clear ".. v .."?")
+    end
+    disableTrigger(string.title(v) .. " -")
   end -- for
  end --if
  wsys.cure = nil
@@ -38326,7 +37687,11 @@ end -- func
 
 function wsys.emptyrestore()
  for k,v in pairs(wsys.tb.cures.restore) do
-  wsys.aff[v] = nil
+    wsys.predicted[v] = nil
+	
+    if wsysf.affs[v] then
+      wsysf.core.debug.print(2, "Empty restore should clear ".. v.."?")
+    end
   disableTrigger(string.title(v) .. " -")
  end -- for
  wsys.pairscheck("restore")
@@ -38366,33 +37731,19 @@ end</script>
 					<Script isActive="yes" isFolder="no">
 						<name>Salve Functions</name>
 						<packageName></packageName>
-						<script>function wsys.affaddsalve(affliction)
- if affliction == "damagedleftarm" or affliction == "mangledleftarm" then
-  wsys.aff.brokenleftarm = nil
-  disableTrigger("Brokenleftarm -")
- elseif affliction == "damagedrightarm" or affliction == "mangledrightarm" then
-  wsys.aff.brokenrightarm = nil
-  disableTrigger("Brokenrightarm -")
- elseif affliction == "damagedleftleg" or affliction == "mangledleftleg" then
-  wsys.aff.brokenleftleg = nil
-  disableTrigger("Brokenleftleg -")
- elseif affliction == "damagedrightleg" or affliction == "mangledrightleg" then
-  wsys.aff.brokenrightleg = nil
-  disableTrigger("Brokenrightleg -")
- end -- if
- wsys.lockqueue()
-end -- func
-
-
-function wsys.affcuredsalve(affliction)
+						<script>function wsys.affcuredsalve(affliction)
  wsys.applying = nil
 end -- func
 
 
 function wsys.emptysalve()
  for k,v in pairs(wsys.tb.cures[wsys.applying]) do
-  wsys.aff[v] = nil
-  disableTrigger(string.title(v) .. " -")
+   wsys.predicted[v] = nil
+	
+   if wsysf.affs[v] then
+     wsysf.core.debug.print(2, "Empty salve should clear ".. v.."?")
+   end
+   disableTrigger(string.title(v) .. " -")
  end -- for
  wsys.pairscheck(wsys.cure)
  wsys.applying = nil
@@ -38563,7 +37914,10 @@ registerAnonymousEventHandler("got bal", "wsys.treebal")
 
 function wsys.emptytree()
  for k,v in pairs(wsys.tb.cures.tree) do
-  wsys.aff[v] = nil
+   wsys.predicted[v] = nil
+   if wsysf.affs[v] then
+     wsysf.core.debug.print(2, "Empty tree should clear ".. v.."?")
+   end
   disableTrigger(string.title(v) .. " -")
  end -- for
  wsys.pairscheck("tree")
@@ -38572,47 +37926,10 @@ end -- func
 
 function wsys.treeAffs()
   local c = 0
-
-  if wsys.aff.addiction then c = c + 1 end
-  if wsys.aff.agoraphobia then c = c + 1 end
-  if wsys.aff.anorexia then c = c + 1 end
-  if wsys.aff.asthma then c = c + 1 end
-  if wsys.aff.carm then c = c + 1 end
-  if wsys.aff.claustrophobia then c = c + 1 end
-  if wsys.aff.cleg then c = c + 1 end
-  if wsys.aff.clumsiness then c = c + 1 end
-  if wsys.aff.confusion then c = c + 1 end
-  if wsys.aff.brokenrightleg then c = c + 1 end
-  if wsys.aff.darkshade then c = c + 1 end
-  if wsys.aff.dissonance then c = c + 1 end
-  if wsys.aff.dizziness then c = c + 1 end
-  if wsys.aff.epilepsy then c = c + 1 end
-  if wsys.aff.generosity then c = c + 1 end
-  if wsys.aff.haemophilia then c = c + 1 end
-  if wsys.aff.hallucinations then c = c + 1 end
-  if wsys.aff.healthleech then c = c + 1 end
-  if wsys.aff.hypersomnia then c = c + 1 end
-  if wsys.aff.hypochondria then c = c + 1 end
-  if wsys.aff.impatience then c = c + 1 end
-  if wsys.aff.lethargy then c = c + 1 end
-  if wsys.aff.loneliness then c = c + 1 end
-  if wsys.aff.lovers then c = c + 1 end
-  if wsys.aff.justice then c = c + 1 end
-  if wsys.aff.manaleech then c = c + 1 end
-  if wsys.aff.masochism then c = c + 1 end
-  if wsys.aff.nausea then c = c + 1 end
-  if wsys.aff.pacified then c = c + 1 end
-  if wsys.aff.paranoia then c = c + 1 end
-  if wsys.aff.peace then c = c + 1 end
-  if wsys.aff.recklessness then c = c + 1 end
-  if wsys.aff.scytherus then c = c + 1 end
-  if wsys.aff.sensitivity then c = c + 1 end
-  if wsys.aff.shivering then c = c + 1 end
-  if wsys.aff.shyness then c = c + 1 end
-  if wsys.aff.slickness then c = c + 1 end
-  if wsys.aff.stupidity then c = c + 1 end
-  if wsys.aff.weariness then c = c + 1 end
-  if wsys.aff.vertigo then c = c + 1 end
+	
+	for _,aff in ipairs(wsys.tb.cures.tree) do
+		c = c + wsysf.affv[aff]
+	end
 
   return c
 end</script>
@@ -38628,8 +37945,11 @@ end</script>
   end
   wsys.timer.writhewait = nil
   for k,v in pairs(wsys.tb.cures.writhe) do
-   wsys.aff[v] = nil
-   disableTrigger(string.title(v) .. " -")
+    wsys.predicted[v] = nil
+    if wsysf.affs[v] then
+      wsysf.core.debug.print(2, "Empty writhe should clear ".. v.."?")
+    end
+    disableTrigger(string.title(v) .. " -")
   end -- for
   wsys.cure = nil
 end -- func
@@ -38731,33 +38051,36 @@ end -- func
 
 function wsys.emptyfocus()
  if wsys.stats.m &lt; wsys.stats.om then
-  for k,v in pairs(wsys.tb.cures.focus) do
-   wsys.aff[v] = nil
-   disableTrigger(string.title(v) .. " -")
-  end -- for
-  wsys.pairscheck("focus")
+   for k,v in pairs(wsys.tb.cures.focus) do
+     wsys.predicted[v] = nil
+     if wsysf.affs[v] then
+       wsysf.core.debug.print(2, "Empty focus should clear ".. v.."?")
+     end
+     disableTrigger(string.title(v) .. " -")
+   end -- for
+   wsys.pairscheck("focus")
  end -- if
  wsys.cure = nil
 end -- func
 
 
 function wsys.focusAffCount()
-  local fCount = 0
-  if wsys.aff.stupidity then fCount = fCount + 1 end
-  if wsys.aff.epilepsy then fCount = fCount + 1 end
-  if wsys.aff.dizziness then fCount = fCount + 1 end
-  if wsys.aff.shyness then fCount = fCount + 1 end
-  if wsys.aff.recklessness then fCount = fCount + 1 end
-  if wsys.aff.masochism then fCount = fCount + 1 end
-  if wsys.aff.loneliness then fCount = fCount + 1 end
-  if wsys.aff.claustrophobia then fCount = fCount + 1 end
-  if wsys.aff.agoraphobia then fCount = fCount + 1 end
-  if wsys.aff.vertigo then fCount = fCount + 1 end
-  if wsys.aff.confusion then fCount = fCount + 1 end
-  if wsys.aff.anorexia then fCount = fCount + 1 end
-  if wsys.aff.dementia then fCount = fCount + 1 end
-  if wsys.aff.paranoia then fCount = fCount + 1 end
-  if wsys.aff.hallucinations then fCount = fCount + 1 end
+  local fCount = 
+    wsysf.affv.stupidity +
+    wsysf.affv.epilepsy +
+    wsysf.affv.dizziness +
+    wsysf.affv.shyness +
+    wsysf.affv.recklessness +
+    wsysf.affv.masochism +
+    wsysf.affv.loneliness +
+    wsysf.affv.claustrophobia +
+    wsysf.affv.agoraphobia +
+    wsysf.affv.vertigo +
+    wsysf.affv.confusion +
+    wsysf.affv.anorexia +
+    wsysf.affv.dementia +
+    wsysf.affv.paranoia +
+    wsysf.affv.hallucinations
   
   return fCount
 end
@@ -38879,7 +38202,9 @@ end -- func
 
 function wsys.emptyfool()
  for k,v in pairs(wsys.tb.cures.fool) do
-  wsys.aff[v] = nil
+  if wsysf.affs[v] then
+   wsysf.core.debug.print(2, "Empty fool should clear ".. v.."?")
+ end
   disableTrigger(string.title(v) .. " -")
  end -- for
  wsys.pairscheck("dheal")
@@ -39017,7 +38342,9 @@ function wsys.emptyrage()
   end
   wsys.timer.ragewait = nil
   for k,v in pairs(wsys.tb.cures.rage) do
-    wsys.aff[v] = nil
+    if wsysf.affs[v] then
+      wsysf.core.debug.print(2, "Empty rage should clear ".. v.."?")
+    end
     disableTrigger(string.title(v) .. " -")
   end -- for
  end -- if
@@ -39062,100 +38389,18 @@ local humourafftable = {
   "haemophilia", "recklessness", "paralysis",
   } 
 
-function wsys.humourUp(h)
-  local humour = "tempered" .. h
-  if not wsys.aff[humour] then
-    wsys.aff[humour] = 1
-  elseif wsys.aff[humour] &lt; 6 then
-    --math min ensures it caps at 8
-    wsys.aff[humour] = math.min(wsys.aff[humour] + 1, 8)
-  elseif wsys.aff[humour] &gt;= 6 then
-    for k,v in pairs(humourafftable) do
-      if wsys.aff[v] then
-        wsys.aff[humour] = math.min(wsys.aff[humour] + 2, 8)
-        return
-      end
-    end
-    wsys.aff[humour] = math.min(wsys.aff[humour] + 1, 8)
-  end
-end
-
-function wsys.humourDown(h)
-  local humour = "tempered" .. h
-  if wsys.aff[humour] then
-    --math.max ensures that its capped at 1 (cause it dropped one, didn't cure)
-    wsys.aff[humour] = math.max(wsys.aff[humour] - wsys.gingerlevel, 1)
-  end
-end
-
 function wsys.humourReset(h)
-  local humour = "tempered" .. h
-  wsys.aff[humour] = nil
+  --local humour = "tempered" .. h
+  --wsys.aff[humour] = nil
 end</script>
 						<eventHandlerList />
 					</Script>
 					<Script isActive="yes" isFolder="no">
 						<name>Fracture Functions</name>
 						<packageName></packageName>
-						<script>function wsys.fractureup(li, n)
-  if not wsys.aff[li] then
-    wsys.aff[li] = n
-  elseif wsys.aff[li] &gt;= 1 then
-    wsys.aff[li] = math.min(wsys.aff[li] + n, 7)
-  end
-end
-
-function wsys.fracturedown(li, n)
-  if wsys.aff[li] then
-    wsys.aff[li] = math.max(wsys.aff[li] - n, 1)
-    raiseEvent( "got aff", li )
-  end
-end
-
-function wsys.fracturereset(li)
-  wsys.aff[li] = nil
-end
-
-function wsys.fracturecount()
-  local c = 0
-  if wsys.aff["skullfractures"] then
-    c = c + wsys.aff["skullfractures"]
-  elseif wsys.aff["crackedribs"] then
-    c = c + wsys.aff["crackedribs"]
-  elseif wsys.aff["torntendons"] then
-    c = c + wsys.aff["torntendons"]
-  elseif wsys.aff["wristfractures"] then
-    c = c + wsys.aff["wristfractures"]
-  end
-  return c
-end
-
-wsys.tb.twohanddouble = wsys.tb.twohanddouble or {}
-wsys.twohandsmacker = wsys.twohandsmacker or "nobody"
-
-function wsys.twohanddoubled(p)
-  if not table.contains(wsys.tb.twohanddouble, p) then
-    wsys.tb.twohanddouble[#wsys.tb.twohanddouble+1] = p
-    if wsys.timer["twohanddouble"..p] then killTimer(wsys.timer["twohanddouble"..p]) end
-    wsys.timer["twohanddouble"..p] = tempTimer(2.9, function() 
-        wsys.timer["twohanddouble"..p] = nil
-        wsys.twohandsingled(p)
-      end)
-  end
-end
-
-function wsys.twohandsingled(p)
-  if table.contains(wsys.tb.twohanddouble, p) then
-    table.remove(wsys.tb.twohanddouble, table.index_of(wsys.tb.twohanddouble, p))
-  end
-end
-
-function wsys.is_twohanddoubled(p)
-  local ans = table.contains(wsys.tb.twohanddouble, p)
-  wsys.twohandsingled(p)
-  return ans
-end
-</script>
+						<script>function wsys.fracturecount()
+  return wsysf.affv.skullfractures + wsysf.affv.crackedribs + wsysf.affv.torntendons + wsysf.affv.wristfractures
+end</script>
 						<eventHandlerList />
 					</Script>
 					<Script isActive="yes" isFolder="no">
@@ -39396,36 +38641,6 @@ function wsys.affPrioRestore( aff )
 	if not wsys.afflictionPrioritiesCurrent[aff] or wsys.afflictionPrioritiesCurrent[aff] ~= wsys.defaultAffPosition(aff) then
 		send("curing priority " .. aff .. " " .. tostring(wsys.defaultAffPosition(aff)), false)
 	end
-end
-
---AI check on cure
-
-function wsys.curedAICheck( affliction )
-  --get the prio number of the affliction
-  local currentCureAffSpot = wsys.affPosition(affliction) or false
-  local highestSameCureAff = wsys.affPosition(affliction) or false
-
-  --check all affs in the aff table. If something is lower higher than this aff it isn't around.
-  --UNLESS IT USES THE SAME FUCKING CURE!
-  if currentCureAffSpot and not (affliction == "slickness" and (wsys.cure == "magnesium" or wsys.cure == "bloodroot")) then
-    for k,v in pairs(wsys.aff) do
-      local kPosition = wsys.affPosition(k) or false
-      if kPosition then
-        if (kPosition &lt; currentCureAffSpot) and (kPosition &lt; highestSameCureAff) and table.contains(wsys.tb.affc[k], wsys.cure) then
-          highestSameCureAff = kPosition
-        end
-      end
-    end --for
-    
-    for k,v in pairs(wsys.aff) do
-      if highestSameCureAff and wsys.affPosition(k) then
-        if wsys.affPosition(k) &lt; highestSameCureAff and (wsys.tb.curetype[wsys.tb.affc[k][1]] == wsys.tb.curetype[wsys.cure]) then
-          wsys.aff[k] = nil
-        end --if
-      end
-    end --for
-
-  end --if
 end
 
 function wsys.affPosition(affliction)
@@ -41032,9 +40247,7 @@ end
 function wsys.affamount(cure)
   local c = 0
   for k,v in pairs(wsys.tb.cures[cure]) do
-    if wsys.aff[v] then
-      c = c + 1
-    end
+	  c = c + wsysf.affv[v]
   end
   return c
 end
@@ -44728,7 +43941,7 @@ wsys.prompttags["warning"] = function() return wsys.prefixWarning end
 wsys.prompttags["mw"] = function() if wsys.def.metawake then return "MW" else return "" end end
 wsys.prompttags["breathing"] = function() if wsys.def.breathing then return "br" else return "" end end
 wsys.prompttags["xp"] = function() return gmcp.Char.Vitals.nl end
-wsys.prompttags["affs"] = function() return wsys.affTags( wsys.aff ) end
+wsys.prompttags["affs"] = function() return wsys.affTags( wsysf.affs, true ) .. wsys.affTags( wsys.predicted, false ) end
 wsys.prompttags["timestamp"] = function() return getTimestamp(getLineCount()):gsub("^%s*(.-)%s*$", "%1") end
 wsys.prompttags["rage"] = function() if wsys.stats.rage &gt; 0 then return wsys.stats.rage.." " else return "" end end
 
@@ -45162,10 +44375,10 @@ local getAffLabel = function( aff, value )
   return "&lt;"..color.."&gt;"..short
 end
 
-function wsys.affTags( affs )
+function wsys.affTags( affs, include_bleed )
   local s = {}
-  if wsys.bleeding and wsys.bleeding &gt; 50 then
-  	s[#s+1] = getAffLabel( "bleeding", wsys.bleeding )
+  if include_bleed and wsysf.stats.bleed and wsysf.stats.bleed &gt; 50 then
+  	s[#s+1] = getAffLabel( "bleeding", wsysf.stats.bleed )
   end
   for aff,value in pairs(affs) do
 		entry = getAffLabel(aff, value)
@@ -46119,7 +45332,9 @@ function wsys.emptyshrug()
     killTimer(tostring(wsys.timer.shrugwait))
     wsys.timer.shrugwait = nil
     for k,v in pairs(wsys.tb.cures.shrugging) do
-      wsys.aff[v] = nil
+      if wsysf.affs[v] then
+        wsysf.core.debug.print(2, "Empty shrug should clear ".. v.."?")
+      end
       disableTrigger(string.title(v) .. " -")
     end
   end

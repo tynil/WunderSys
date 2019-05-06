@@ -36437,7 +36437,11 @@ echo("\n")</script>
 			<packageName></packageName>
 			<script>-- initialise wsys namespace
 wsys = wsys or {}
-wsys.events = wsys.events or {}</script>
+wsys.events = wsys.events or {}
+
+function wsys.debug( str )
+	--cecho( str )
+end</script>
 			<eventHandlerList />
 			<Script isActive="yes" isFolder="no">
 				<name>Overrides</name>

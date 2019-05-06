@@ -42317,6 +42317,7 @@ local function eval_command( element )
     return wsys.doOnce_list[element.label]()
   else
     -- TODO: Allow external expansions
+    return element.ac
   end
 end
 

@@ -35831,12 +35831,26 @@ wsys.report("WunderSys primary settings configured and installed.")</script>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>Diagnose</name>
-					<script>enableTrigger("Diagnose")
+					<script>if wsys.bals.b and wsys.bals.e then
+  enableTrigger("Diagnose")
 wsys.salviaSend("diagnose")
 if wsys.timer.diagwait then
   killTimer(tostring(wsys.timer.diagwait))
-end
-wsys.timer.diagwait = tempTimer(wsys.myPing() * 3, [[wsys.timer.diagwait = nil;disableTrigger("Diagnose")]])</script>
+  end
+wsys.timer.diagwait = tempTimer(wsys.myPing() * 3, [[wsys.timer.diagwait = nil;disableTrigger("Diagnose")]])
+elseif not wsys.doqueue_pending or wsys.doqueue_pending.element.ac ~= "diagnose" then
+  enableTrigger("Diagnose")
+  wsys.dofirst( "diagnose", 5, true )
+  if wsys.timer.diagwait then
+    killTimer(tostring(wsys.timer.diagwait))
+  end
+  wsys.timer.diagwait = tempTimer( 8, [[wsys.timer.diagwait = nil;disableTrigger("Diagnose")]])
+elseif wsys.doqueue_pending and wsys.doqueue_pending.element.ac == "diagnose" then
+  if wsys.timer.diagwait then
+    killTimer(tostring(wsys.timer.diagwait))
+  end
+  wsys.timer.diagwait = tempTimer( 8, [[wsys.timer.diagwait = nil;disableTrigger("Diagnose")]])
+end</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^(dv|diag)$</regex>
@@ -37209,7 +37223,7 @@ end</script>
    killTimer(tostring(wsys.timer.dhealwait))
  end
  wsys.timer.dhealwait = tempTimer(wsys.myPing() * 2, [[wsys.timer.dhealwait = nil;disableTrigger("Dheal");wsys.lockqueue()]])
- wsys.salviaSend("dragonheal")
+ wsys.doOnce("dragonheal", 5 )
 end -- func
 
 local dhealprompt = false
@@ -37662,7 +37676,7 @@ end</script>
   killTimer(tostring(wsys.timer.restorewait))
  end
  wsys.timer.restorewait = tempTimer(wsys.myPing() * 2, [[wsys.timer.restorewait = nil;disableTrigger("Restore");wsys.lockqueue()]])
- wsys.salviaSend("restore")
+ wsys.doOnce("restore", 5)
 end -- func
 
 local restoreprompt = false
@@ -38236,8 +38250,8 @@ registerAnonymousEventHandler("got bal", "wsys.foolbal")</script>
  if wsys.timer.fitnesswait then
    killTimer(tostring(wsys.timer.fitnesswait))
  end
- wsys.timer.fitnesswait = tempTimer(wsys.myPing() * 3, [[wsys.timer.fitnesswait = nil;disableTrigger("Fitness");wsys.addqueue("lock")]])
- wsys.salviaSend("fitness on")
+ wsys.timer.fitnesswait = tempTimer(5, [[wsys.timer.fitnesswait = nil;disableTrigger("Fitness");wsys.addqueue("lock")]])
+ wsys.doOnce("fitness", 5 )
 end -- func
 
 
@@ -38513,7 +38527,7 @@ end -- func</script>
         wsys.shrug()
       elseif (wsys.isClass("occultist") or wsys.isClass("jester")) and wsys.bals.b and wsys.bals.e and not wsys.isHindered() and not wsys.timer.foolwait and wsys.bals.fool then
         wsys.fool()
-      elseif wsys.isFitnessClass() and wsys.bals.fitness and wsys.bals.b and wsys.bals.e and not wsys.aff.weariness then
+      elseif wsys.isFitnessClass() and wsys.bals.fitness and not wsys.aff.weariness then --and wsys.bals.b and wsys.bals.e
         wsys.fitness()
       elseif wsys.isDragon() and wsys.bals.dragonheal and wsys.bals.b and wsys.bals.e and wsys.stats.m &gt;= 1500 and not (wsys.aff.weariness and wsys.aff.recklessness) then
         wsys.dheal()
@@ -38521,8 +38535,8 @@ end -- func</script>
         cecho("\n&lt;pale_violet_red&gt;TRUELOCK SUSPECTED, DIAGNOSE OR GO MANUAL\n")
       end --curable lock bit end
       --vivi mode curing
-    elseif wsys.vmode and wsys.bals.b and wsys.bals.e and not wsys.bals.salve and (wsys.stats.m &gt;= 100) and wsys.damagedarms() and wsys.bothdamagedlegs() and (wsys.aff.brokenleftarm or wsys.aff.brokenrightarm or wsys.aff.brokenleftleg or wsys.aff.brokenrightleg) then
-        --cecho("&lt;orange&gt;should be restoring")
+    elseif wsys.vmode and not wsys.bals.salve and (wsys.stats.m &gt;= 100) and wsys.damagedarms() and wsys.bothdamagedlegs() and (wsys.aff.brokenleftarm or wsys.aff.brokenrightarm or wsys.aff.brokenleftleg or wsys.aff.brokenrightleg) then
+        cecho("&lt;orange&gt;should be restoring")
         wsys.restore()
     -- empty valerian pipe
     elseif wsys.aff.impatience and wsys.aff.anorexia and wsys.aff.slickness and (wsys.aff.asthma or wsys.emptyValerianPipes()) then
@@ -42287,11 +42301,20 @@ registerAnonymousEventHandler("gmcp.Room.Info", "wsys.GMCPRefreshRoomExits")</sc
 						<script>wsys.dofreequeue = wsys.dofreequeue or {}
 wsys.dofreeSub = wsys.dofreeSub or {}
 wsys.doqueue = wsys.doqueue or {}
+wsys.doOnce_list = wsys.doOnce_list or {}
 
 wsys.doSub = wsys.doSub or ""
 wsys.dorSub = wsys.dorSub or ""
 
 wsys.doqueued = false
+
+local function eval_command( element )
+  if element.label and wsys.doOnce_list[element.label] then
+    return wsys.doOnce_list[element.label]()
+  else
+    -- TODO: Allow external expansions
+  end
+end
 
 --use / to seperate multiple commands
 --ex. wsys.dofreeadd("g gold/put gold in "..myPack)
@@ -42362,26 +42385,88 @@ function wsys.priority_queue_insert( queue, element, priority, lifo )
   end
 end
 
-function wsys.doadd(ac, priority, silent)
-  wsys.priority_queue_insert( wsys.doqueue, { ac = ac, silent = silent }, priority or default_queue_priority )
-  wsys.dosend()
+function wsys.doadd(ac, priority, silent, on_run )
+  wsys.priority_queue_insert( wsys.doqueue, { ac = ac, silent = silent, on_run = on_run }, priority or default_queue_priority )
+  
+	-- TODO: Need to check for priority?
+	if not wsys.doqueue_pending then
+		wsys.dosend()
+  end
 end
  
-function wsys.dofirst(ac, priority, silent)
-  wsys.priority_queue_insert( wsys.doqueue, { ac = ac, silent = silent }, priority or default_queue_priority, true )
+function wsys.dofirst(ac, priority, silent, on_run )
+  wsys.priority_queue_insert( wsys.doqueue, { ac = ac, silent = silent, on_run = on_run }, priority or default_queue_priority, true )
   wsys.dosend()
 end
 
+function wsys.doOnce( label, priority, silent )
+  local match_found = false
+  --Check the current pending command for a match
+  if wsys.doqueue_pending and wsys.doqueue_pending.element.label and wsys.doqueue_pending.element.label == label then
+    --Match found. See if we need to update
+    wsys.doupdate()
+    match_found = true
+  else
+    for i,item in ipairs( wsys.doqueue ) do
+      if item.element.label == label then
+        match_found = true
+        --TODO: Update priority?
+        break
+      end
+    end
+  end
+
+  if not match_found then
+    wsys.priority_queue_insert( wsys.doqueue, { ac = "ONCE: "..label, silent = silent, label = label }, priority or default_queue_priority, true )
+    wsys.dosend()
+  end
+end
+
+function wsys.doupdate()
+	--Check this from aff tracking update?
+  if wsys.doqueue_pending then
+    local text = eval_command( wsys.doqueue_pending.element )
+    if not text or #text == 0 then
+      wsys.debug("\ndoupdate() Updating action! Is now empty")
+      --Action is empty. Remove it and queue the next thing
+      send("clearqueue eqbal", false )
+      -- Make sure the next command gets sent
+      wsys.dosent()
+    elseif wsys.do1_eval ~= text then
+      wsys.debug("\ndoupdate() Updating attack!")
+      wsys.do1_eval = sys_ext.doqueue_sub( wsys.doqueue_pending.element.ac )
+      send("setalias do1 "..wsys.do1_eval, not wsys.doqueue_pending.element.silent )
+    end
+  end
+end
+
+local function get_next_action()
+  while #wsys.doqueue &gt; 0 do
+    local text = eval_command( wsys.doqueue[1].element )
+    if text and #text &gt; 0 then
+      return text
+    else
+      -- action evaluated to nil or empty string. Remove it
+      table.remove(wsys.doqueue, 1)
+    end
+  end
+  return false
+end
 
 function wsys.dosend()
-  if not wsys.timer.dowait then
-    if next(wsys.doqueue) then
-                if wsys.doqueued and wsys.doqueue_pending and wsys.doqueue_pending.element.ac == wsys.doqueue[1].element.ac then
-                        --Next element is same as pending command. Don't re-queue
-                        return
-                end
+  wsys.debug( "dosend() - dowait = " .. ( tostring(wsys.timer.dowait) or "nil" ) )
+  wsys.debug("\ndosend() - " .. #wsys.doqueue .. " queued.")
+  if not wsys.paused then--or	not wsys.timer.dowait then
+  local text = get_next_action()
+    if text then
+		if wsys.doqueued and wsys.doqueue_pending and ( wsys.do1_eval == text or wsys.doqueue_pending.priority &lt; wsys.doqueue[1].priority ) then
+			--Next element is same as pending command, or higher priority. Don't re-queue
+			wsys.debug("\ndosend() returning early "..wsys.do1_eval)
+			return
+		end
       wsys.timer.dowait = tempTimer(wsys.myPing()*3, [[wsys.timer.dowait = nil]])
-      send("setalias do1 "..wsys.doqueue[1].element.ac, not wsys.doqueue[1].element.silent )
+		wsys.do1_eval = text
+      send("setalias do1 "..wsys.do1_eval , not wsys.doqueue[1].element.silent )
       --if wsys.doraction then
         send("clearqueue eqbal", not wsys.doqueue[1].element.silent )
       --end
@@ -42407,9 +42492,15 @@ end
 function wsys.dosent(type)
   if type == "do" then
     raiseEvent("do action ran", wsys.doSub)
+		
+		if wsys.doqueue_pending and wsys.doqueue_pending.element.on_run then
+			wsys.doqueue_pending.element.on_run()
+		end
+		
   elseif type == "dor" then
     raiseEvent("dor action ran", wsys.dorSub)
   end
+	
   wsys.doqueued = false
   wsys.doqueue_pending = nil
   if wsys.timer.dowait then
@@ -42506,6 +42597,35 @@ function wsys.dorclear()
   wsys.doraction = false
   send("clearqueue eqbal", false)
   wsys.report("&lt;green&gt;Cleared the dorepeat queue.")
+end</script>
+						<eventHandlerList />
+					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>do once</name>
+						<packageName></packageName>
+						<script>
+-- Table of label -&gt; function pairs for do commands that should only
+-- be entered into the queue once
+wsys.doOnce_list = wsys.doOnce_list or {}
+
+wsys.doOnce_list.fitness = function()
+	return "fitness on"
+end
+
+wsys.doOnce_list.manualcure = function()
+	return "fitness on"
+end
+
+wsys.doOnce_list.stand = function()
+	return "stand"
+end
+
+wsys.doOnce_list.restore = function()
+	return "restore"
+end
+
+wsys.doOnce_list.dragonheal = function()
+	return "dragonheal"
 end</script>
 						<eventHandlerList />
 					</Script>

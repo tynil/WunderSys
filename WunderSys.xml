@@ -39234,6 +39234,15 @@ function wsys.defPrioRestore( def )
 	end
 end
 
+local function get_manual_command( command )
+  if type(command) == "function" then
+    return command()
+  else
+    if not type(command) == "string" then cecho("\n&lt;red&gt;Manual commands should be strings or functions: "..command ) end
+    return command
+  end
+end
+
 --defup a certain profile
 function wsys.defup(profile)
   profile = profile or wsys.profile
@@ -39266,7 +39275,7 @@ function wsys.defup(profile)
   -- we need a spiritform thingie too
   for ck,cv in pairs(wsys.settings.defup[wsys.profile][wsys.myClass()]) do 
     if wsys.tb.defenceTable[ck] and wsys.tb.defenceTable[ck]["skillset"][1] == "spiritform" and wsys.tb.defenceTable[ck]["manualcommand"] then
-      wsys.doadd(wsys.tb.defenceTable[ck]["manualcommand"])
+      wsys.doadd( get_manual_command( wsys.tb.defenceTable[ck]["manualcommand"] ))
       -- quit the loop, we're done here
       break
     end
@@ -39292,7 +39301,7 @@ function wsys.defup(profile)
         wsys.settings.defprio[wsys.profile][wsys.myClass()][k] = 25
       end
     elseif not wsys.def[k] and wsys.tb.defenceTable[k]["manualcommand"] then
-      manualdefs[#manualdefs+1] = wsys.tb.defenceTable[k]["manualcommand"]
+      manualdefs[#manualdefs+1] = get_manual_command( wsys.tb.defenceTable[k]["manualcommand"] )
     end --if
     send(highestdef, false)
     for k,v in pairs(alldefs) do
@@ -39444,7 +39453,7 @@ wsys.tb.defenceTable = {
   ["astralvision"] = {["name"] = "Astralvision", ["skillset"] = {"occultism"}, ["manualcommand"] = "astralvision",},
   ["astronomy"] = {["name"] = "Astronomy", ["skillset"] = {"alchemy"},},
   ["balancing"] = {["name"] = "Balancing", ["skillset"] = {"pranks", "swashbuckling"},},
-  ["barkskin"] = {["name"] = "Barkskin", ["skillset"] = {"sylvan"}, ["manualcommand"] = wsys.manualbarkskin(),},
+  ["barkskin"] = {["name"] = "Barkskin", ["skillset"] = {"sylvan"}, ["manualcommand"] = function() return wsys.manualbarkskin() end,},
   --["basking"] = {["name"] = "Basking", ["skillset"] = {"subterfuge"},},
   ["bedevilaura"] = {["name"] = "Bedevil Aura", ["skillset"] = {"healing"},},
   ["belltattoo"] = {["name"] = "Bell Tattoo", ["skillset"] = {"tattoos"}, ["manualcommand"] = "touch bell",},
@@ -39464,7 +39473,7 @@ wsys.tb.defenceTable = {
   ["deflect"] = {["name"] = "Deflect", ["skillset"] = {"weaponmastery"}, ["manualcommand"] = "deflect",},
   ["deafness"] = {["name"] = "Deafness", ["skillset"] = {"curative"},},
   ["deathaura"] = {["name"] = "Deathaura", ["skillset"] = {"necromancy"},},
-  ["deathsight"] = {["name"] = "Deathsight", ["skillset"] = {"vision", "necromancy"}, ["manualcommand"] = wsys.manualdeathsight(),},
+  ["deathsight"] = {["name"] = "Deathsight", ["skillset"] = {"vision", "necromancy"}, ["manualcommand"] = function() return wsys.manualdeathsight() end,},
   ["demonarmour"] = {["name"] = "Demon armour", ["skillset"] = {"apostasy"},},
   --["demonfury"] = {["name"] = "Demon fury", ["skillset"] = {"apostasy"},},
   ["density"] = {["name"] = "Mass/Density", ["skillset"] = {"curative"},},
@@ -39598,26 +39607,26 @@ wsys.tb.defenceTable = {
   ["wildgrowth"] = {["name"] = "Wildgrowth", ["skillset"] = {"groves"},},
   ["willpowerblessing"] = {["name"] = "Willpower", ["skillset"] = {"healing"},},
 -- Animal spirits for spiritform
-  ["squirrel"] = {["name"] = "Squirrel", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("squirrel"),},
-  ["wildcat"] = {["name"] = "Wildcat", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wildcat"),},
-  ["wolf"] = {["name"] = "Wolf", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wolf"),},
-  ["turtle"] = {["name"] = "Turtle", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("turtle"),},
-  ["jackdaw"] = {["name"] = "Jackdaw", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("jackdaw"),},
-  ["cheetah"] = {["name"] = "Cheetah", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("cheetah"),},
-  ["owl"] = {["name"] = "Owl", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("owl"),},
-  ["hyena"] = {["name"] = "Hyena", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("hyena"),},
-  ["condor"] = {["name"] = "Condor", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("condor"),},
-  ["gopher"] = {["name"] = "Gopher", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("gopher"),},
-  ["sloth"] = {["name"] = "Sloth", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("sloth"),},
-  ["bear"] = {["name"] = "Bear", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("bear"),},
-  ["nightingale"] = {["name"] = "Nightingale", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("nightingale"),},
-  ["elephant"] = {["name"] = "Elephant", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("elephant"),},
-  ["wolverine"] = {["name"] = "Wolverine", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wolverine"),},
-  ["jaguar"] = {["name"] = "Jaguar", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("jaguar"),},
-  ["icewyrm"] = {["name"] = "Icewyrm", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("icewyrm"),},
-  ["eagle"] = {["name"] = "Eagle", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("eagle"),},
-  ["gorilla"] = {["name"] = "Gorilla", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("gorilla"),},
-  ["basilisk"] = {["name"] = "Basilisk", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("basilisk"),},
+  ["squirrel"] = {["name"] = "Squirrel", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("squirrel") end,},
+  ["wildcat"] = {["name"] = "Wildcat", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("wildcat") end,},
+  ["wolf"] = {["name"] = "Wolf", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("wolf") end,},
+  ["turtle"] = {["name"] = "Turtle", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("turtle") end,},
+  ["jackdaw"] = {["name"] = "Jackdaw", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("jackdaw") end,},
+  ["cheetah"] = {["name"] = "Cheetah", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("cheetah") end,},
+  ["owl"] = {["name"] = "Owl", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("owl") end,},
+  ["hyena"] = {["name"] = "Hyena", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("hyena") end,},
+  ["condor"] = {["name"] = "Condor", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("condor") end,},
+  ["gopher"] = {["name"] = "Gopher", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("gopher") end,},
+  ["sloth"] = {["name"] = "Sloth", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("sloth") end,},
+  ["bear"] = {["name"] = "Bear", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("bear") end,},
+  ["nightingale"] = {["name"] = "Nightingale", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("nightingale") end,},
+  ["elephant"] = {["name"] = "Elephant", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("elephant") end,},
+  ["wolverine"] = {["name"] = "Wolverine", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("wolverine") end,},
+  ["jaguar"] = {["name"] = "Jaguar", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("jaguar") end,},
+  ["icewyrm"] = {["name"] = "Icewyrm", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("icewyrm") end,},
+  ["eagle"] = {["name"] = "Eagle", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("eagle") end,},
+  ["gorilla"] = {["name"] = "Gorilla", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("gorilla") end,},
+  ["basilisk"] = {["name"] = "Basilisk", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("basilisk") end,},
 }
 
 wsys.tb.defstripTable = {
@@ -39924,13 +39933,9 @@ function wsys.manualbarkskin()
   elseif wsys.myClass() == "Sentinel" then
     return "barkskin"
   end
-end</script>
-						<eventHandlerList />
-					</Script>
-					<Script isActive="yes" isFolder="no">
-						<name>metaform</name>
-						<packageName></packageName>
-						<script>function wsys.metaform(form)
+end
+
+function wsys.metaform(form)
   if ( wsys.myClass() == "sentinel" or wsys.myClass() == "druid" )  then
     wsys.morphing = true
     return("belch;morph "..form)

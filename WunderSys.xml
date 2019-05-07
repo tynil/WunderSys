@@ -33942,8 +33942,10 @@ deleteFull()</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Do ran</name>
-						<script>wsys.dosent("do")
-deleteFull()</script>
+						<script>--deleteLine()
+selectCurrentLine(); replace("")
+wsys.dosent("do")
+</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -35714,6 +35716,64 @@ end</script>
 						<regex>^sp$</regex>
 					</Alias>
 				</AliasGroup>
+				<AliasGroup isActive="yes" isFolder="yes">
+					<name>Do Queue</name>
+					<script></script>
+					<command></command>
+					<packageName></packageName>
+					<regex></regex>
+					<Alias isActive="yes" isFolder="no">
+						<name>Do List</name>
+						<script>wsys.dolist()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^dolist$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>Undo All</name>
+						<script>wsys.undoall()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^undoall$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>do action</name>
+						<script>wsys.doadd(matches[2])
+
+</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^do (.*)$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>do first</name>
+						<script>wsys.dofirst(matches[2])
+
+</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^dofirst (.*)$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>dofree action</name>
+						<script>wsys.dofreeadd(matches[2])</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^dofree (.*)$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>Dor Action</name>
+						<script>if matches[2] then
+ wsys.doradd(matches[2])
+else
+ wsys.dorclear()
+end -- if
+ </script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^dor(?: (.+))?$</regex>
+					</Alias>
+				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
 					<name>wshow</name>
 					<script>wsys.wshow()</script>
@@ -35930,34 +35990,6 @@ end -- if</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^ret\s*(on|off)$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>do action</name>
-					<script>wsys.doadd(matches[2])
-
-</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^do (.*)$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>dofree action</name>
-					<script>wsys.dofreeadd(matches[2])</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^dofree (.*)$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>Dor Action</name>
-					<script>if matches[2] then
- wsys.doradd(matches[2])
-else
- wsys.dorclear()
-end -- if
- </script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^dor(?: (.+))?$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>Fullstats action</name>
@@ -36487,7 +36519,34 @@ wsys.overrides.afftags.colors = wsys.overrides.afftags.colors or {}
 --   This would display fractures (cured by "healthlegs", "healtharms", etc) as green from 1-2 stacks, 
 --   blue at 3-5, and blue with a white background at 6+
 wsys.overrides.afftags.cure_colors = wsys.overrides.afftags.cure_colors or {}
-</script>
+
+-------------------------------------------------
+--            Do Queue Expansions              --
+-------------------------------------------------
+wsys.overrides.doqueue = wsys.overrides.doqueue or {}
+
+--- Doqueue variable function expansion support
+-- Each entry you add to this table will be called when prefixed with $
+-- The key should be a string, and the value should be a function that returns a string.
+-- The input command will be expanded once when you queue the command, and again if wsys.doupdate() is called.
+--
+--[[ Examples:
+wsys.overrides.doqueue.expand.target = function() return my_target end
+wsys.overrides.doqueue.expand.atk = function()
+  if has_rebounding or has_shield then 
+    return "raze"
+  else
+    return "jab"
+  end
+end
+-- You may then call: wsys.dofirst("$atk $target")
+-- If "Tynil" is my_target, then this would expand to "raze Tynil" if has_rebounding or has_shield is true.
+-- Else, it expands to "jab Tynil"
+-- Calling wsys.doupdate() when those has_rebounding/shield variables change would cause this to re-evaluate
+-- and potentially change which attack is queued.
+-- You don't need to use all expansions. wsys.doadd("kick $target") would expand to "kick Tynil" here.
+]]
+wsys.overrides.doqueue.expand = wsys.overrides.doqueue.expand or {}</script>
 				<eventHandlerList />
 			</Script>
 			<ScriptGroup isActive="yes" isFolder="yes">
@@ -42312,12 +42371,19 @@ wsys.dorSub = wsys.dorSub or ""
 
 wsys.doqueued = false
 
+local function expand_command( str )
+  return str:gsub( "$(%w+)", 
+    function( n )
+		  local expand_to = wsys.overrides.doqueue.expand[ n ]
+      return expand_to and expand_to() or n
+		end)
+end
+
 local function eval_command( element )
   if element.label and wsys.doOnce_list[element.label] then
     return wsys.doOnce_list[element.label]()
   else
-    -- TODO: Allow external expansions
-    return element.ac
+	  return expand_command( element.ac )
   end
 end
 
@@ -42439,7 +42505,7 @@ function wsys.doupdate()
       wsys.dosent()
     elseif wsys.do1_eval ~= text then
       wsys.debug("\ndoupdate() Updating attack!")
-      wsys.do1_eval = sys_ext.doqueue_sub( wsys.doqueue_pending.element.ac )
+      wsys.do1_eval = text
       send("setalias do1 "..wsys.do1_eval, not wsys.doqueue_pending.element.silent )
     end
   end

@@ -39459,7 +39459,7 @@ wsys.tb.defenceTable = {
   ["astralvision"] = {["name"] = "Astralvision", ["skillset"] = {"occultism"}, ["manualcommand"] = "astralvision",},
   ["astronomy"] = {["name"] = "Astronomy", ["skillset"] = {"alchemy"},},
   ["balancing"] = {["name"] = "Balancing", ["skillset"] = {"pranks", "swashbuckling"},},
-  ["barkskin"] = {["name"] = "Barkskin", ["skillset"] = {"sylvan"}, ["manualcommand"] = function() return wsys.manualbarkskin() end,},
+  ["barkskin"] = {["name"] = "Barkskin", ["skillset"] = {"sylvan", "woodlore"}, ["manualcommand"] = function() return wsys.manualbarkskin() end,},
   --["basking"] = {["name"] = "Basking", ["skillset"] = {"subterfuge"},},
   ["bedevilaura"] = {["name"] = "Bedevil Aura", ["skillset"] = {"healing"},},
   ["belltattoo"] = {["name"] = "Bell Tattoo", ["skillset"] = {"tattoos"}, ["manualcommand"] = "touch bell",},

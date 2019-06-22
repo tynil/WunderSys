@@ -34579,7 +34579,7 @@ end
 wsys.my_limb_hit(limb, "2h")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>10</mStayOpen>
+						<mStayOpen>0</mStayOpen>
 						<mCommand></mCommand>
 						<packageName></packageName>
 						<mFgColor>#ff0000</mFgColor>
@@ -34611,7 +34611,7 @@ else
 	limb = matches[2]
 end
 
-wsys.my_limb_hit(matches[2], "shikudo")</script>
+wsys.my_limb_hit(limb, "shikudo")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -34624,8 +34624,12 @@ wsys.my_limb_hit(matches[2], "shikudo")</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^Dropping back into a low crouch, [A-Z][a-z]+ whips .+ at your (.*).$</string>
+							<string>^[\w'-]+ spins a full rotation, bringing .+ around in a blur to crash intoyour (\w+)\.$</string>
+							<string>^Whirling around, [\w'-]+ brings the ball of \w+ foot crashing into the side of your (head)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>

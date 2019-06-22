@@ -36556,6 +36556,1159 @@ wsys.overrides.doqueue.expand = wsys.overrides.doqueue.expand or {}</script>
 				<eventHandlerList />
 			</Script>
 			<ScriptGroup isActive="yes" isFolder="yes">
+				<name>Tables</name>
+				<packageName></packageName>
+				<script>-- table subfolder. For stuff that's usually just for Wunder internal use.
+wsys.tb = wsys.tb or {}</script>
+				<eventHandlerList />
+				<Script isActive="yes" isFolder="no">
+					<name>Homeless Wsys Variables</name>
+					<packageName></packageName>
+					<script>wsys.profile = "basic"
+wsys.puppetmangle = false
+wsys.waittime = .70
+wsys.lifevision = false
+wsys.vmode = false
+wsys.absorbed = false
+wsys.starbursted = false
+wsys.mogged = false
+wsys.affline = wsys.affline or 0
+wsys.innewsroom = false
+wsys.deletefull = false</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Affliction Tables</name>
+					<packageName></packageName>
+					<script>-- RESTORATION AI TABLE
+wsys.tb.restorationlist = {}
+
+wsys.tb.justreckless = {}
+
+-- LIST OF CURRENT AFFS
+wsys.aff = wsys.aff or {}
+
+
+-- CURES FOR EACH AFF
+wsys.tb.affc = {
+
+ burning = {"mendingtorso"},
+ addiction = {"ginseng", "ferrum"},
+ aeon = {"elm", "cinnabar"},
+ agoraphobia = {"lobelia", "argentum", "focus"},
+ anorexia = {"epidermalbody", "focus"},
+ sleeping = {"wake"},
+ asthma = {"kelp", "aurum", "fitness"},
+ concussion = {"restorationhead"},
+ damagedhead = {"restorationhead"},
+ blackout = {},
+ bleeding = {"clot"},
+ damagedleftarm = {"restorationarms"},
+ damagedleftleg = {"restorationlegs"},
+ damagedrightarm = {"restorationarms"},
+ damagedrightleg = {"restorationlegs"},
+ mildtrauma = {"restorationtorso"},
+ carm = {"mendingarms", "restore"},
+ claustrophobia = {"lobelia", "argentum", "focus"},
+ brokenleftarm = {"mendingarms", "restore"},
+ brokenleftleg = {"mendinglegs", "restore"},
+ cleg = {"mendinglegs", "restore"},
+ climb = {"mendingskin","restore"},
+ clumsiness = {"kelp", "aurum"},
+ confusion = {"ash", "stannum","focus"},
+ concussion = {"restorationhead"},
+ crushedthroat = {"mendinghead"},
+ brokenrightarm = {"mendingarms", "restore"},
+ brokenrightleg = {"mendinglegs", "restore"},
+ darkshade = {"ginseng", "ferrum"},
+ dazed = {"elm", "cinnabar"},
+ deadening = {"elm", "cinnabar"},
+ dementia = {"ash", "stannum", "focus"},
+ depression = {"goldenseal", "plumbum"},
+ disloyalty = {"valerian", "realgar"},
+ disrupted = {"concentrate"},
+ dissonance = {"goldenseal", "plumbum"},
+ dizziness = {"goldenseal", "plumbum", "focus"},
+ epilepsy = {"goldenseal", "plumbum", "focus"},
+ fear = {"compose"},
+ frozen = {"caloric"},
+ generosity = {"bellwort", "cuprum", "rage"},
+ hamstrung = {}, -- timed
+ haemophilia = {"ginseng", "ferrum"},
+ hallucinations = {"ash", "stannum", "focus"},
+ healthleech = {"kelp", "aurum"},
+ heartseed = {"restorationtorso"},
+ hellsight = {"valerian", "realgar"},
+ hypersomnia = {"ash", "stannum"},
+ hypochondria = {"kelp", "aurum"},
+ impaled = {"writhe"},
+ impatience = {"goldenseal", "plumbum"},
+ inquisition = {},
+ hecatecurse = {},
+ bubonis = {},
+ weakenedmind = {"focus"},
+ itching = {"epidermalbody"},
+ laceratedthroat = {"restorationhead"},
+ lethargy = {"ginseng", "ferrum"},
+ loneliness = {"lobelia", "argentum", "focus"},
+ lovers = {"bellwort", "cuprum", "focus", "rage"},
+ justice = {"bellwort", "cuprum", "rage"},
+ whisperingmadness = {"elm", "cinnabar"},
+ manaleech = {"valerian", "realgar"},
+ masochism = {"lobelia", "argentum", "focus"},
+ mangledhead = {"restorationhead"},
+ mangledleftarm = {"restorationarms"},
+ mangledleftleg = {"restorationlegs"},
+ mangledrightarm = {"restorationarms"},
+ mangledrightleg = {"restorationlegs"},
+ serioustrauma = {"restorationtorso"},
+ nausea = {"ginseng", "ferrum"},
+ pacified = {"bellwort", "cuprum", "focus", "rage"},
+ paralysis = {"bloodroot", "magnesium"},
+ paranoia = {"ash", "stannum", "focus"},
+ parasite = {"kelp", "aurum"},
+ peace = {"bellwort", "cuprum", "rage"},
+ prone = {"stand"},
+ recklessness = {"lobelia", "argentum", "focus"},
+ retribution = {"bellwort", "cuprum"},
+ scytherus = {"ginseng", "ferrum"},
+ sensitivity = {"kelp", "aurum"},
+ selarnia = {"mendingtorso"},
+ daeggerimpale = {"writhe"},
+ shadowmadness = {"goldenseal", "plumbum"},
+ shivering = {"caloric"},
+ shyness = {"goldenseal", "plumbum", "focus"},
+ slashedthroat = {"epidermalhead"},
+ slickness = {"bloodroot", "magnesium", "valerian", "realgar"},
+ speared = {"writhe"},
+ stupidity = {"goldenseal", "plumbum", "focus"},
+ stuttering = {"epidermalhead", "focus"},
+ entangled = {"writhe", "flex"},
+ bound = {"writhe"},
+ timeloop = {"bellwort", "cuprum"},
+ transfixation = {"writhe"},
+ weariness = {"kelp", "aurum"},
+ webbed = {"writhe", "flex"},
+ vertigo = {"lobelia", "argentum", "focus"},
+ voyria = {"immunity", "antigen"},
+
+ waterdisrupt = {"focus", "lobelia", "argentum"},
+ airdisrupt = {"focus", "lobelia", "argentum"},
+ firedisrupt = {"focus", "lobelia", "argentum"},
+ earthdisrupt = {"lobelia", "argentum"},
+ spiritdisrupt = {"lobelia", "argentum"},
+ 
+ guilt = {"lobelia", "argentum"},
+ tenderskin = {"lobelia", "argentum"},
+ spiritburn = {"lobelia", "argentum"},
+
+ temperedcholeric = {"ginger", "antimony"},
+ temperedmelancholic = {"ginger", "antimony"},
+ temperedphlegmatic = {"ginger", "antimony"},
+ temperedsanguine = {"ginger", "antimony"},
+
+ corruption = {}, --45s
+
+ skullfractures = {"healthhead", "restore"},
+ crackedribs = {"healthtorso", "restore"},
+ wristfractures = {"healtharms", "restore"},
+ torntendons = {"healthlegs", "restore"},
+
+ hypothermia = {"restorationtorso"},
+ scalded = {"epidermalhead"},
+ dehydrated = {}, --60s
+ timeflux = {}, --60s
+ 
+ unweavingmind = {"goldenseal", "plumbum"},
+ unweavingbody = {"ginseng", "ferrum"},
+ unweavingspirit = {"elm", "cinnabar"},
+ 
+ tension = {"elm", "cinnabar"},
+ pressure = {"pear", "calcite"}
+
+}
+
+wsys.tb.affctype = {
+
+ addiction = "herb",
+ aeon = "smoke",
+ agoraphobia = "herb",
+ anorexia = "salve",
+ sleeping = "wake",
+ asthma = "herb",
+ burning = "salve",
+ concussion = "salve",
+ damagedhead = "salve",
+ damagedleftarm = "salve",
+ damagedleftleg = "salve",
+ damagedrightarm = "salve",
+ damagedrightleg = "salve",
+ mildtrauma = "salve",
+ claustrophobia = "herb",
+ brokenleftarm = "salve",
+ brokenleftleg = "salve",
+ clumsiness = "herb",
+ confusion = "herb",
+ concussion = "salve",
+ crushedthroat = "salve",
+ brokenrightarm = "salve",
+ brokenrightleg = "salve",
+ darkshade = "herb",
+ dazed = "smoke",
+ deadening = "smoke",
+ dementia = "herb",
+ depression = "herb",
+ disloyalty = "smoke",
+ disrupted = "concentrate",
+ dissonance = "herb",
+ dizziness = "herb",
+ epilepsy = "herb",
+ fear = "compose",
+ frozen = "salve",
+ generosity = "herb",
+ haemophilia = "herb",
+ hallucinations = "herb",
+ healthleech = "herb",
+ heartseed = "salve",
+ hellsight = "smoke",
+ hypersomnia = "herb",
+ hypochondria = "herb",
+ impaled = "writhe",
+ impatience = "herb",
+ itching = "salve",
+ lethargy = "herb",
+ loneliness = "herb",
+ lovers = "herb",
+ justice = "herb",
+ whisperingmadness = "smoke",
+ laceratedthroat = "salve",
+ slashedthroat = "salve",
+ manaleech = "smoke",
+ masochism = "herb",
+ mangledhead = "salve",
+ mangledleftarm = "salve",
+ mangledleftleg = "salve",
+ mangledrightarm = "salve",
+ mangledrightleg = "salve",
+ serioustrauma = "salve",
+ nausea = "herb",
+ pacified = "herb",
+ paralysis = "herb",
+ paranoia = "herb",
+ parasite = "herb",
+ peace = "herb",
+ prone = "stand",
+ recklessness = "herb",
+ retribution = "herb",
+ scytherus = "herb",
+ sensitivity = "herb",
+ selarnia = "salve",
+ daeggerimpale = "writhe",
+ shadowmadness = "herb",
+ shivering = "salve",
+ shyness = "herb",
+ slickness = "smoke",
+ speared = "writhe",
+ stupidity = "herb",
+ stuttering = "salve",
+ entangled = "writhe",
+ bound = "writhe",
+ timeloop = "herb",
+ transfixation = "writhe",
+ weariness = "herb",
+ webbed = "writhe",
+ vertigo = "herb",
+ voyria = "immunity",
+
+ waterdisrupt = "herb",
+ airdisrupt = "herb",
+ firedisrupt = "herb",
+ earthdisrupt = "herb",
+ spiritdisrupt = "herb",
+ 
+ guilt = "herb",
+ tenderskin = "herb",
+ spiritburn = "herb",
+
+ temperedcholeric = "herb",
+ temperedmelancholic = "herb",
+ temperedphlegmatic = "herb",
+ temperedsanguine = "herb",
+
+
+ skullfractures = "health",
+ crackedribs = "health",
+ wristfractures = "health",
+ torntendons = "health",
+
+ hypothermia = "salve",
+ scalded = "salve",
+ 
+ pressure = "smoke",
+ tension = "smoke",
+ 
+ unweavingbody = "herb",
+ unweavingmind = "herb",
+ unweavingspirit = "smoke",
+ 
+
+}
+
+
+
+
+
+-- AFFS RECEIVED TOGETHER FOR AI PURPOSES
+wsys.tb.affspaired = {}
+
+
+-- AFFS RECEIVED BETWEEN SAME PROMPTS
+wsys.tb.affstogether = {}
+
+-- Removed Weariness from Focusable - Announce 4494
+-- Dementia, Paranoia, and Hallucination - Added as Focusable Announce #4539 
+-- CURES
+wsys.tb.cures = {
+
+ bloodroot = {"paralysis", "slickness"},
+ magnesium = {"paralysis", "slickness"},
+ lobelia = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spritidisrupt", "guilt", "tenderskin", "spiritburn"},
+ argentum = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spiritdisrupt", "guilt", "tenderskin", "spiritburn"},
+ kelp = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "parasite"},
+ aurum = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "parasite"},
+ ginseng = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", "unweavingbody"},
+ ferrum = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", "unweavingbody"},
+ bellwort = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
+ cuprum = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
+ ash = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
+ stannum = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
+ goldenseal = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop", "unweavingmind"},
+ plumbum = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop", "unweavingmind"},
+ focus = {"stupidity", "dizziness", "confusion", "claustrophobia", "agoraphobia", "masochism", "lovers", "recklessness", 
+          "epilepsy", "loneliness", "shyness", "pacified", "anorexia", "vertigo", "weakenedmind",
+			"waterdisrupt", "earthdisrupt", "firedisrupt","airdisrupt", "dementia", "hallucinations", "paranoia"},
+ elm = {"aeon", "whisperingmadness", "deadening", "dazed", "tension", "unweavingspirit" },
+ cinnabar = {"aeon", "whisperingmadness", "deadening", "dazed", "tension", "unweavingspirit" },
+ valerian = {"slickness", "disloyalty", "manaleech", "hellsight"},
+ realgar = {"slickness", "disloyalty", "manaleech", "hellsight"},
+ mendinglegs = {"brokenleftleg", "brokenrightleg", "cleg"},
+ mendingarms = {"brokenleftarm", "brokenrightarm", "carm"},
+ mendingskin = {"climb", "brokenleftleg", "brokenrightleg", "cleg", "brokenrightarm", "brokenleftarm", "brokenarm"},
+ epidermalbody = {"anorexia", "itching"},
+ epidermalhead = {"scalded"},
+ mendingbody = {"burning", "selarnia"},
+ mendinghead = {"crushedthroat"},
+ mendingtorso = {"selarnia"},
+ epidermalhead = {"stuttering", "slashedthroat"},
+ caloric = {"shivering", "frozen"},
+ restorationarms = {"damagedleftarm", "damagedrightarm", "mangledleftarm", "mangledrightarm", "bleg"},
+ restorationlegs = {"damagedleftleg", "damagedrightleg", "mangledleftleg", "mangledrightleg", "bleg"},
+ restorationhead = {"damagedhead", "mangledhead", "laceratedthroat", "concussion"},
+ restorationtorso = {"mildtrauma", "serioustrauma", "heartseed"},
+ restorationbody = {"hypothermia"},
+ tree = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
+          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
+          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
+          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
+          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria", 
+			    "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin" },
+ shrugging = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
+          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "paralysis", 
+          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
+          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
+          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
+ restore = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "carm", "cleg"},
+ dheal = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
+          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
+          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
+          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
+          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin"},
+ flex = {"webbed", "entangled"},
+ writhe = {"webbed", "entangled", "bound", "impaled", "transfixation", "speared", "daeggerimpale"},
+ fool = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
+          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
+          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
+          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
+          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin"},
+ concentrate = {"disrupted"},
+ compose = {"fear"},
+ clot = {"bleeding"},
+ immunity = {"voyria"},
+ fitness = {"asthma"},
+ rage = {"generosity", "justice", "lovers", "pacified", "peace"},
+ antimony = { "temperedcholeric", "temperedmelancholic", "temperedphlegmatic", "temperedsanguine"},
+ ginger = { "temperedcholeric", "temperedmelancholic", "temperedphlegmatic", "temperedsanguine"},
+ healthhead = {"skullfractures"},
+ healthtorso = {"crackedribs"},
+ healtharms = {"wristfractures"},
+ healthlegs = {"torntendons"},
+}
+
+wsys.tb.targettedCureTable = {
+  "mendingtorso", "renewaltorso",
+  "ginseng", "ferrum",
+  "bloodroot", "magnesium",
+  "elm", "cinnabar",
+  "valerian", "realgar",
+  "ginger", "antimony",
+  "bellwort", "cuprum",
+  "lobelia", "argentum",
+  "epidermalbody", "sensorybody",
+  "kelp", "aurum",
+  "ash", "stannum",
+  "restorationarms", "reconstructivearms",
+  "restorationhead", "reconstructivehead",
+  "restorationlegs", "reconstructivelegs",
+  "restorationtorso", "reconstructivetorso",
+  "epidermalbody", "sensorybody",
+  "mendingarms", "renewalarms",
+  "mendinglegs", "renewallegs",
+  "mendingbody", "renewalbody",
+  "epidermalhead", "sensoryhead",
+  "calorictorso", "exothermictorso",
+  "goldenseal", "plumbum",
+}</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Curatives Tables</name>
+					<packageName></packageName>
+					<script>
+wsys.tb.opps = {
+
+ ash = "stannum",
+ stannum = "ash",
+ bayberry = "arsenic",
+ arsenic = "bayberry",
+ bellwort = "cuprum",
+ cuprum = "bellwort",
+ bloodroot = "magnesium",
+ magnesium = "bloodroot",
+ cohosh = "gypsum",
+ gypsum = "cohosh",
+ elm = "cinnabar",
+ realgar = "valerian",
+ ginseng = "ferrum",
+ ferrum = "ginseng",
+ goldenseal = "plumbum",
+ plumbum = "goldenseal",
+ hawthorn = "calamine",
+ calamine = "hawthorn",
+ kelp = "aurum",
+ aurum = "kelp",
+ kola = "quartz",
+ quartz = "kola",
+ lobelia = "argentum",
+ argentum = "lobelia",
+ skullcap = "malachite",
+ malachite = "skullcap",
+ valerian = "realgar",
+ cinnabar = "valerian",
+ sileris = "quicksilver",
+ quicksilver = "sileris",
+ irid = "potash",
+ potash = "irid",
+ pear = "calcite",
+ calcite = "pear",
+ caloric = "exothermic",
+ exothermic = "caloric",
+ health = "vitality",
+ vitality = "health",
+ antigen = "immunity",
+ immunity = "antigen",
+ hovering = "levitation",
+ levitation = "hovering",
+ mana = "mentality",
+ mentality = "mana",
+ haste = "speed",
+ speed = "haste",
+ endothermia = "frost",
+ frost = "endothermia",
+ epidermal = "sensory",
+ sensory = "epidermal",
+ mass = "density",
+ density = "mass",
+ mending = "renewal",
+ renewal = "mending",
+ restoration = "reconstructive",
+ reconstructive = "restoration",
+ venom = "toxin",
+ toxin = "venom",
+ ginger = "antimony",
+ antimony = "ginger",
+
+}
+
+
+-- Cure types
+wsys.tb.curetype = {
+
+ bloodroot = "herb",
+ magnesium = "herb",
+ lobelia = "herb",
+ argentum = "herb",
+ kelp = "herb",
+ aurum = "herb",
+ ginseng = "herb",
+ ferrum = "herb",
+ bellwort = "herb",
+ cuprum = "herb",
+ ash = "herb",
+ stannum = "herb",
+ goldenseal = "herb",
+ plumbum = "herb",
+ focus = "focus",
+ elm = "pipe",
+ cinnabar = "pipe",
+ valerian = "pipe",
+ realgar = "pipe",
+ mendinglegs = "salve",
+ renewallegs = "salve",
+ mendingarms = "salve",
+ renewalarms = "salve",
+ mendingskin = "salve",
+ renewalskin = "salve",
+ epidermalbody = "salve",
+ sensorybody = "salve",
+ mendingbody = "salve",
+ renewalbody = "salve",
+ mendinghead = "salve",
+ epidermalhead = "salve",
+ sensoryhead = "salve",
+ caloric = "salve",
+ exothermic = "salve",
+ restorationarms = "salve",
+ reconstructivearms = "salve",
+ restorationlegs = "salve",
+ reconstructivelegs = "salve",
+ restorationhead = "salve",
+ reconstructivehead = "salve",
+ restorationtorso = "salve",
+ reconstructivetorso = "salve",
+ tree = "tree",
+ restore = "restore",
+ dheal = "dheal",
+ flex = "flex",
+ writhe = "writhe",
+ fool = "fool",
+ concentrate = "concentrate",
+ compose = "compose",
+ clot = "clot",
+ immunity = "elixir",
+ antigen = "elixir",
+ fitness = "fitness",
+ rage = "rage",
+ antimony = "herb",
+ ginger = "herb",
+}
+</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Stats</name>
+					<packageName></packageName>
+					<script>-- STATS TABLE
+wsys.stats = {
+
+ h = 5000,
+ m = 5000,
+ e = 20000,
+ w = 20000,
+ maxh = 5000,
+ maxm = 5000,
+ maxw = 20000,
+ maxe = 20000,
+ oh = 5000, --old health
+ om = 5000, --old mana
+ xp = 0,
+ oxp = 0, --old xp
+ kai = 0,
+ shin = 0,
+ rage = 0,
+}
+
+local charstats = {
+  ["Bleed"] = function( val ) wsys.bleeding = tonumber( val ) end,
+  ["Rage"] = function( val ) wsys.stats.rage = tonumber( val ) end,
+}
+
+function wsys.statupdate()
+ 
+  wsys.stats.oh = wsys.stats.h or 5000
+  wsys.stats.om = wsys.stats.m or 5000
+  wsys.stats.oxp = wsys.stats.xp or 0
+
+  wsys.stats.h = tonumber(gmcp.Char.Vitals.hp)
+  wsys.stats.m = tonumber(gmcp.Char.Vitals.mp)
+  wsys.stats.e = tonumber(gmcp.Char.Vitals.ep)
+  wsys.stats.w = tonumber(gmcp.Char.Vitals.wp)
+
+  wsys.stats.maxh = tonumber(gmcp.Char.Vitals.maxhp)
+  wsys.stats.maxm = tonumber(gmcp.Char.Vitals.maxmp)
+  wsys.stats.maxe = tonumber(gmcp.Char.Vitals.maxep)
+  wsys.stats.maxw = tonumber(gmcp.Char.Vitals.maxwp)
+
+  for _,str in ipairs( gmcp.Char.Vitals.charstats ) do
+    local sep = str:find( ": " )
+    if sep then
+      local key = str:sub( 1, sep - 1 )
+      local val = str:sub( sep + 2 )
+      if charstats[key] then charstats[key]( val ) end
+    end
+  end
+
+  if wsys.stats.oh ~= wsys.stats.h then
+    raiseEvent("health changed")
+  end
+  if wsys.stats.om ~= wsys.stats.m then
+    raiseEvent("mana changed")
+  end
+end -- func
+
+registerAnonymousEventHandler("gmcp.Char.Vitals", "wsys.statupdate")
+</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Timers Table</name>
+					<packageName></packageName>
+					<script>-- TIMERS TABLE
+
+wsys.timer = wsys.timer or {}
+</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Balances Table</name>
+					<packageName></packageName>
+					<script>-- BALS Table
+wsys.bals = {
+  b = true, -- balance
+  e = true, -- equilibrium
+
+  moss = true,
+  hm = true, --rename to sip maybe?
+  immunity = true, --7s
+
+  tree = true,
+  focus = true,
+
+  salve = true,
+  herb = true,
+  smoke = true,
+
+
+  dragonheal = true,
+  fool = true,
+  voice = true,
+  rage = true,
+  shrugging = true,
+  fitness = true,
+
+}
+
+-- reset all balances
+function wsys.resetBals()
+  for k in pairs(wsys.bals) do
+    wsys.gotBal(k)
+  end
+end
+
+-- balances are all true on starburst or death
+registerAnonymousEventHandler("You Died", "wsys.resetBals")
+registerAnonymousEventHandler("You Starbursted", "wsys.resetBals")
+
+
+</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Prompt Tags and Tag Colours</name>
+					<packageName></packageName>
+					<script>-- Table of default prompt tags
+wsys.prompttags = wsys.prompttags or {} 
+
+wsys.prompttags["health"] = function() return wsys.stats.h end
+wsys.prompttags["percenthealth"] = function() return math.floor(wsys.stats.h / wsys.stats.maxh * 100) end
+wsys.prompttags["mana"] = function() return wsys.stats.m end
+wsys.prompttags["percentmana"] = function() return math.floor(wsys.stats.m / wsys.stats.maxm * 100) end
+wsys.prompttags["endurance"] = function() return wsys.stats.e end
+wsys.prompttags["percentendurance"] = function() return math.floor(wsys.stats.e / wsys.stats.maxe * 100) end
+wsys.prompttags["willpower"] = function() return wsys.stats.w end
+wsys.prompttags["percentwillpower"] = function() return math.floor(wsys.stats.w / wsys.stats.maxw * 100) end
+wsys.prompttags["bal"] = function() if wsys.bals.b then return "X" else return "" end end
+wsys.prompttags["eq"] = function() if wsys.bals.e then return "E" else return "" end end
+wsys.prompttags["lbal"] = function() if wsys.bals.b then return "x" else return "" end end
+wsys.prompttags["leq"] = function() if wsys.bals.e then return "e" else return "" end end
+wsys.prompttags["target"] = function() if target then return target else return "" end end
+wsys.prompttags["paused"] = function() if wsys.paused then return "(PP)" else return "" end end
+wsys.prompttags["softpaused"] = function() if wsys.softpaused then return "(sP)" else return "" end end
+wsys.prompttags["phase"] = function() if wsys.def.phased or wsys.def.blackwind or wsys.def.astralform then return "@" else return "" end end
+wsys.prompttags["retardation"] = function() if wsys.retard then return "[RET]" else return "" end end
+wsys.prompttags["kai"] = function() if wsys.def.kaitrance then return wsys.stats.kai .." " else return "" end end
+wsys.prompttags["shin"] = function() if wsys.def.shintrance then return wsys.stats.shin.." " else return "" end end
+wsys.prompttags["warning"] = function() return wsys.prefixWarning end
+wsys.prompttags["mw"] = function() if wsys.def.metawake then return "MW" else return "" end end
+wsys.prompttags["breathing"] = function() if wsys.def.breathing then return "br" else return "" end end
+wsys.prompttags["xp"] = function() return gmcp.Char.Vitals.nl end
+wsys.prompttags["affs"] = function() return wsys.affTags( wsysf.affs, true ) .. wsys.affTags( wsys.predicted, false ) end
+wsys.prompttags["timestamp"] = function() return getTimestamp(getLineCount()):gsub("^%s*(.-)%s*$", "%1") end
+wsys.prompttags["rage"] = function() if wsys.stats.rage &gt; 0 then return wsys.stats.rage.." " else return "" end end
+
+wsys.prompttags["diffhealth"] = function()
+  if wsys.stats.h &lt; wsys.stats.oh then 
+    return("&lt;red&gt; (-"..wsys.stats.oh - wsys.stats.h .. "h, " .. string.format("%.1f", ((wsys.stats.oh - wsys.stats.h) / wsys.stats.maxh) * 100) .. "%)")
+  elseif wsys.stats.h &gt; wsys.stats.oh then 
+    return("&lt;green&gt; (+"..wsys.stats.h - wsys.stats.oh .. "h, " .. string.format("%.1f", ((wsys.stats.h - wsys.stats.oh) / wsys.stats.maxh) * 100) .. "%)") 
+  else
+    return ""
+  end -- if
+end
+
+wsys.prompttags["diffmana"] = function()
+  if wsys.stats.m &lt; wsys.stats.om then 
+    return("&lt;slate_blue&gt; (-"..wsys.stats.om - wsys.stats.m .. "m, " .. string.format("%.1f", ((wsys.stats.om - wsys.stats.m) / wsys.stats.maxm) * 100) .. "%)")
+  elseif wsys.stats.m &gt; wsys.stats.om then 
+    return("&lt;purple&gt; (+".. wsys.stats.m - wsys.stats.om .. "m, " .. string.format("%.1f", ((wsys.stats.m - wsys.stats.om) / wsys.stats.maxm) * 100) .. "%)") 
+  else
+    return ""
+  end -- if
+end
+
+wsys.prompttags["def"] = function() 
+  local defstring = ""
+  if wsys.def.blindness then
+    defstring = defstring .. "&lt;SeaGreen&gt;B "
+  end
+  if wsys.def.deafness then
+    defstring = defstring .. "&lt;SeaGreen&gt;D "
+  end
+  if wsys.def.cloak then
+    defstring = defstring .. "&lt;deep_sky_blue&gt;C "
+  end
+  if wsys.def.kola then
+    defstring = defstring .. "&lt;yellow&gt;K "
+  end
+  if wsys.def.density then
+    defstring = defstring .. "&lt;maroon&gt;M "
+  end -- if
+  if wsys.def.heldbreath then
+    defstring = defstring .. "&lt;light_grey&gt;br"
+  end --if
+  return defstring
+end
+
+wsys.prompttags["invdef"] = function() 
+  local invdefstring = ""
+  if not wsys.def.blindness then
+    invdefstring = invdefstring .. "&lt;SeaGreen&gt;B "
+  end
+  if not wsys.def.deafness then
+    invdefstring = invdefstring .. "&lt;SeaGreen&gt;D "
+  end
+  if not wsys.def.cloak then
+    invdefstring = invdefstring .. "&lt;deep_sky_blue&gt;C "
+  end
+  if not wsys.def.kola then
+    invdefstring = invdefstring .. "&lt;yellow&gt;K "
+  end
+  if not wsys.def.density then
+    invdefstring = invdefstring .. "&lt;maroon&gt;M "
+  end -- if
+  if wsys.def.heldbreath then
+    invdefstring = invdefstring .. "&lt;light_grey&gt;br"
+  end --if
+  return invdefstring
+end
+
+wsys.prompttags["npchp"] = function()
+  if gmcp.IRE.Target then         
+    if gmcp.IRE.Target.Set == "" or gmcp.IRE.Target.Info.id == "-1" then
+      return ""
+    elseif gmcp.IRE.Target then
+      return tonumber(string.findPattern(gmcp.IRE.Target.Info.hpperc, "%d+"))
+    end
+  else
+    return ""
+  end
+end
+
+wsys.prompttags.mylimbs = function()
+	local str = ""
+	
+	local limbs = {
+	"left leg",
+	"right leg",
+	"left arm",
+	"right arm",
+	"torso",
+	"head",
+}
+	local colors = { 
+		{ c = "&lt;dark_slate_gray&gt;", val = 0 },
+		{ c = "&lt;grey&gt;", val = 1 },
+		{ c = "&lt;brown&gt;", val = 4 },
+		{ c = "&lt;orange&gt;", val = 7 },
+		{ c = "&lt;red&gt;", val = 10 },
+		}
+
+	local first = true
+	for _,limb in pairs(limbs) do
+		if not first then
+			str = str.."&lt;dark_slate_gray&gt;|"
+		end
+		local d = tonumber(wsys.tb.selflimbdamage[limb].damage)
+		local color = colors[0] 
+		d = math.floor(d+0.5)
+		for _,t in ipairs( colors ) do
+			if d &gt;= t.val then
+				color = t.c
+			else
+				break
+			end
+		end
+
+		str = str.. color..d
+		first = false
+	end
+	return str
+end
+
+--table of default prompt tag colors
+wsys.prompttagcolors = wsys.prompttagcolors or {} 
+  
+wsys.prompttagcolors["hcolour"] = function()
+  if wsys.stats.h &gt;= (wsys.stats.maxh * 0.75) then
+    return "sea_green"
+  elseif wsys.stats.h &gt;= (wsys.stats.maxh * 0.33) then
+    return "gold"
+  else
+    return "red"
+  end --if
+end
+
+wsys.prompttagcolors["mcolour"] = function()
+  if wsys.stats.m &gt;= (wsys.stats.maxm * .75) then
+    return "sea_green"
+  elseif wsys.stats.m &gt;= (wsys.stats.maxm * .50) then
+    return "gold"
+  else
+    return "red"
+  end -- if
+end
+
+wsys.prompttagcolors["wcolour"] = function()
+  if wsys.stats.w &gt;= (wsys.stats.maxw * .66) then
+    return "sea_green"
+  elseif wsys.stats.w &gt;= (wsys.stats.maxw * .50) then
+    return "gold"
+  else
+    return "red"
+  end -- if
+end
+
+wsys.prompttagcolors["ecolour"] = function()
+  if wsys.stats.e &gt;= (wsys.stats.maxe * .66) then
+    return "sea_green"
+  elseif wsys.stats.e &gt;= (wsys.stats.maxe * .50) then
+    return "gold"
+  else
+    return "red"
+  end -- if
+end
+
+wsys.prompttagcolors["kaicolour"] = function()
+  if wsys.stats.kai &lt; 10 then
+    --can't even choke
+    return "red"
+  elseif wsys.stats.kai &lt; 21 then
+    --can't heal
+    return "firebrick"
+  elseif wsys.stats.kai &lt; 41 then
+    --can't cripple
+    return "dark_orange"
+  elseif wsys.stats.kai &lt; 61 then
+    --can't enfeeble
+    return "yellow"
+  elseif wsys.stats.kai &gt;= 61 then
+    --can do anything
+    return "green"
+  end
+end
+                  
+wsys.prompttagcolors["shincolour"] = function()
+  if wsys.stats.shin &lt; 4 then
+    --can't even infuse
+    return "red"
+  elseif wsys.stats.shin &lt; 14 then
+    --can't fist
+    return "firebrick"
+  elseif wsys.stats.shin &lt; 29 then
+    --can't blizzard
+    return "dark_orange"
+  elseif wsys.stats.shin &lt; 39 then
+    --can't annihilate
+    return "yellow"
+  else
+    --can do anything
+    return "green"
+  end
+end</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Aff shortnames on prompt</name>
+					<packageName></packageName>
+					<script>wsys.overrides.afftags = wsys.overrides.afftags or {}
+-- Shortnames = { aff = "name" }
+wsys.overrides.afftags.shortnames = wsys.overrides.afftags.shortnames or {}
+-- colors = { aff = "color", aff2 = { "color1", [4] = "color at 4+ stacks" } }
+wsys.overrides.afftags.colors = wsys.overrides.afftags.colors or {}
+-- cure_colors = { cure = "color", cure2 = { "color1", [6] = "color at 6+ stacks" } }
+wsys.overrides.afftags.cure_colors = wsys.overrides.afftags.cure_colors or {}
+
+
+-- Probably use an override table
+local aff_short = {
+ deafness = "",
+ blindness = "",
+ insomnia = "",
+ addiction = "add",
+ aeon = "ae",
+ agoraphobia = "agor",
+ anorexia = "ano",
+ asphyxiating = "", -- Lets Air Lord see what smoke cure you used
+ sleeping = "slp",
+ asthma = "ast",
+ concussion = "concuss",
+ damagedhead = "h1",
+ blackout = "",
+ bleeding = "bld",
+ demonstain = "stain",
+ damagedleftarm = "la2",
+ damagedleftleg = "ll2",
+ bleg = "uleg1",
+ damagedrightarm = "ra2",
+ damagedrightleg = "rl2",
+ mildtrauma = "t1",
+ carm = "uwna",
+ claustrophobia = "clau",
+ brokenleftarm = "la1",
+ brokenleftleg = "ll1",
+ cleg = "uwnl",
+ climb = "uwcrip",
+ clumsiness = "Cl",
+ confusion = "con",
+ brokenrightarm = "ra1",
+ brokenrightleg = "rl1",
+ darkshade = "dark",
+ deadening = "dea",
+ dementia = "dem",
+ depression = "dep",
+ disloyalty = "disl",
+ disrupted = "dis",
+ dissonance = "diss",
+ dizziness = "diz",
+ epilepsy = "epi",
+ fear = "fear",
+ frozen = "frozen",
+ generosity = "gen",
+ haemophilia = "haem",
+ hallucinations = "hallu",
+ healthleech = "hleech",
+ hellsight = "hell",
+ hypersomnia = "hypers",
+ hypochondria = "hypo",
+ impaled = "Impale",
+ impatience = "IMP",
+ internalbleeding = "ImpaleSlash",
+ inquisition = "",
+ cadmuscurse = "cadmus",
+ weakenedmind = "rixil",
+ hecatecurse = "HECATE",
+ itching = "",
+ lethargy = "let",
+ loneliness = "lon",
+ lovers = "lust",
+ justice = "just",
+ whisperingmadness = "MAD",
+ masochism = "maso",
+ manaleech = "mleech",
+ mangledhead = "h2",
+ mangledleftarm = "la3",
+ mangledleftleg = "ll3",
+ mangledrightarm = "ra3",
+ mangledrightleg = "rl3",
+ serioustrauma = "t2",
+ nausea = "nau",
+ pacified = "pac",
+ paralysis = "PAR",
+ paranoia = "para",
+ parasite = "paras",
+ peace = "pea",
+ prone = "PR",
+ recklessness = "reck",
+ retribution = "ret",
+ scytherus = "SCY",
+ sensitivity = "sen",
+ daeggerimpale = "Impale",
+ shadowmadness = "sham",
+ shivering = "shiv",
+ shyness = "shy",
+ slickness = "SLI",
+ speared = "Impale",
+ stupidity = "st",
+ stuttering = "stut",
+ entangled = "tangled",
+ bound = "bound",
+ transfixation = "transf",
+ weariness = "Wea",
+ webbed = "web",
+ vertigo = "vert",
+ voyria = "voy",
+ heartseed = "hseed",
+ temperedsanguine = "sang",
+ temperedcholeric = "chol",
+ temperedphlegmatic = "phleg",
+ temperedmelancholic = "melan",
+ torntendons = "tendons",
+ wristfractures = "wrist",
+ crackedribs = "ribs",
+ skullfractures = "skull",
+ burning = "burn",
+ unweavingmind = "UNM",
+ unweavingbody = "UNB",
+ unweavingspirit = "UNS",
+ mindravaged = "MIND RAVAGE",
+ pressure = "PRESS",
+ tension = "tens",
+}
+
+local aff_colors = {
+	bleeding = { "maroon", [500] = "red" },
+	burning = { "SlateGrey", "brown", "red" },
+	pressure = { "SlateGrey", "DeepSkyBlue", [4] = "cyan", [6] = "white" },
+	prone = "orchid",
+	mindravaged = "red:gray",
+}
+
+-- The cure may be the prefix to an actual cure
+-- E.g. "mending" matches "mendingarms" or "mendinglegs" but not "foomending"
+local cure_colors = {
+	kelp = "chartreuse",
+	goldenseal = "yellow",
+	ginseng = "dark_goldenrod",
+	lobelia = "moccasin",
+	elm = "sky_blue",
+	valerian = "royal_blue",
+	restoration = "brown",
+	mending = "brown",
+	health = { "medium_violet_red", [6] = "deep_pink" }, -- fractures
+	ginger = { "medium_purple", [6] = "purple" },
+}
+
+-- Return the color to use for an value, given a color_option
+-- Color_option is either a string "color", or a table with a list of colors to
+-- use based on the aff_value
+local getColor = function( color_option, value )
+  local color = false
+	
+	if type(color_option) == "string" then
+		-- Aff color is a string, so use it
+		color = color_option
+		
+	elseif type(color_option) == "table" then
+		-- Pick a color based on value
+		local max = 0
+		local current_val = tonumber(value) or ( value and 1 ) or 0
+		
+		for i,v in pairs(color_option) do
+			if i &gt; max and current_val &gt;= i then
+				max = i
+				color = v
+			end
+		end
+	end
+	return color
+end
+
+local getAffLabel = function( aff, value )
+  local short = wsys.overrides.afftags.shortnames[aff] or aff_short[aff]
+	
+	if short and #short == 0 then
+		-- Short is "", don't display anythign
+		return false
+	end
+	
+	local color = getColor( wsys.overrides.afftags.colors[aff] or aff_colors[aff], value )
+	
+	if not color and wsys.tb.affc[aff] then
+		-- Pick a color based on cure-type
+		for _,aff_cure in ipairs(wsys.tb.affc[aff]) do
+			-- Check the overrides first
+			for cure,ccolor in pairs(wsys.overrides.afftags.cure_colors) do
+				if string.match( aff_cure, "^"..cure ) then
+					color = getColor( ccolor, value )
+					break
+				end
+			end
+			if color then break end -- Break out of the affc table loop if we found a match
+		
+			-- Check the default colors
+			for cure,ccolor in pairs(cure_colors) do
+				if string.match( aff_cure, "^"..cure ) then
+					color = getColor( ccolor, value )
+					break
+				end
+			end
+			if color then break end -- Break out of the affc table loop if we found a match
+		end
+	end
+	
+	if not color then
+		if short then
+			-- No special color
+			color = "SlateGrey"
+		else
+			-- No short means we don't know about it. Use a default color
+			color = "IndianRed"
+		end
+	end
+	
+	short = short or aff
+	
+	if tonumber(value) and value &gt; 1 then
+		-- Stackable aff, append (#)
+		short = short .."("..value..")"
+	end
+	
+  return "&lt;"..color.."&gt;"..short
+end
+
+function wsys.affTags( affs, include_bleed )
+  local s = {}
+  if include_bleed and wsysf.stats.bleed and wsysf.stats.bleed &gt; 50 then
+  	s[#s+1] = getAffLabel( "bleeding", wsysf.stats.bleed )
+  end
+  for aff,value in pairs(affs) do
+		entry = getAffLabel(aff, value)
+		if entry then
+			s[#s+1] = entry
+		end
+	end
+  return #s &gt; 0 and ("&lt;IndianRed&gt;["..table.concat(s, " ").."&lt;IndianRed&gt;]") or ""
+end</script>
+					<eventHandlerList />
+				</Script>
+			</ScriptGroup>
+			<ScriptGroup isActive="yes" isFolder="yes">
 				<name>Settings</name>
 				<packageName></packageName>
 				<script>-------------------------------------------------
@@ -43437,1159 +44590,6 @@ end
 
 registerAnonymousEventHandler("gmcp.Char.Vitals", "wsys.fullstatsHandler")
 registerAnonymousEventHandler("gmcp.Char.Vitals", "wsys.fullstatsHandler")</script>
-					<eventHandlerList />
-				</Script>
-			</ScriptGroup>
-			<ScriptGroup isActive="yes" isFolder="yes">
-				<name>Tables</name>
-				<packageName></packageName>
-				<script>-- table subfolder. For stuff that's usually just for Wunder internal use.
-wsys.tb = wsys.tb or {}</script>
-				<eventHandlerList />
-				<Script isActive="yes" isFolder="no">
-					<name>Homeless Wsys Variables</name>
-					<packageName></packageName>
-					<script>wsys.profile = "basic"
-wsys.puppetmangle = false
-wsys.waittime = .70
-wsys.lifevision = false
-wsys.vmode = false
-wsys.absorbed = false
-wsys.starbursted = false
-wsys.mogged = false
-wsys.affline = wsys.affline or 0
-wsys.innewsroom = false
-wsys.deletefull = false</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Affliction Tables</name>
-					<packageName></packageName>
-					<script>-- RESTORATION AI TABLE
-wsys.tb.restorationlist = {}
-
-wsys.tb.justreckless = {}
-
--- LIST OF CURRENT AFFS
-wsys.aff = wsys.aff or {}
-
-
--- CURES FOR EACH AFF
-wsys.tb.affc = {
-
- burning = {"mendingtorso"},
- addiction = {"ginseng", "ferrum"},
- aeon = {"elm", "cinnabar"},
- agoraphobia = {"lobelia", "argentum", "focus"},
- anorexia = {"epidermalbody", "focus"},
- sleeping = {"wake"},
- asthma = {"kelp", "aurum", "fitness"},
- concussion = {"restorationhead"},
- damagedhead = {"restorationhead"},
- blackout = {},
- bleeding = {"clot"},
- damagedleftarm = {"restorationarms"},
- damagedleftleg = {"restorationlegs"},
- damagedrightarm = {"restorationarms"},
- damagedrightleg = {"restorationlegs"},
- mildtrauma = {"restorationtorso"},
- carm = {"mendingarms", "restore"},
- claustrophobia = {"lobelia", "argentum", "focus"},
- brokenleftarm = {"mendingarms", "restore"},
- brokenleftleg = {"mendinglegs", "restore"},
- cleg = {"mendinglegs", "restore"},
- climb = {"mendingskin","restore"},
- clumsiness = {"kelp", "aurum"},
- confusion = {"ash", "stannum","focus"},
- concussion = {"restorationhead"},
- crushedthroat = {"mendinghead"},
- brokenrightarm = {"mendingarms", "restore"},
- brokenrightleg = {"mendinglegs", "restore"},
- darkshade = {"ginseng", "ferrum"},
- dazed = {"elm", "cinnabar"},
- deadening = {"elm", "cinnabar"},
- dementia = {"ash", "stannum", "focus"},
- depression = {"goldenseal", "plumbum"},
- disloyalty = {"valerian", "realgar"},
- disrupted = {"concentrate"},
- dissonance = {"goldenseal", "plumbum"},
- dizziness = {"goldenseal", "plumbum", "focus"},
- epilepsy = {"goldenseal", "plumbum", "focus"},
- fear = {"compose"},
- frozen = {"caloric"},
- generosity = {"bellwort", "cuprum", "rage"},
- hamstrung = {}, -- timed
- haemophilia = {"ginseng", "ferrum"},
- hallucinations = {"ash", "stannum", "focus"},
- healthleech = {"kelp", "aurum"},
- heartseed = {"restorationtorso"},
- hellsight = {"valerian", "realgar"},
- hypersomnia = {"ash", "stannum"},
- hypochondria = {"kelp", "aurum"},
- impaled = {"writhe"},
- impatience = {"goldenseal", "plumbum"},
- inquisition = {},
- hecatecurse = {},
- bubonis = {},
- weakenedmind = {"focus"},
- itching = {"epidermalbody"},
- laceratedthroat = {"restorationhead"},
- lethargy = {"ginseng", "ferrum"},
- loneliness = {"lobelia", "argentum", "focus"},
- lovers = {"bellwort", "cuprum", "focus", "rage"},
- justice = {"bellwort", "cuprum", "rage"},
- whisperingmadness = {"elm", "cinnabar"},
- manaleech = {"valerian", "realgar"},
- masochism = {"lobelia", "argentum", "focus"},
- mangledhead = {"restorationhead"},
- mangledleftarm = {"restorationarms"},
- mangledleftleg = {"restorationlegs"},
- mangledrightarm = {"restorationarms"},
- mangledrightleg = {"restorationlegs"},
- serioustrauma = {"restorationtorso"},
- nausea = {"ginseng", "ferrum"},
- pacified = {"bellwort", "cuprum", "focus", "rage"},
- paralysis = {"bloodroot", "magnesium"},
- paranoia = {"ash", "stannum", "focus"},
- parasite = {"kelp", "aurum"},
- peace = {"bellwort", "cuprum", "rage"},
- prone = {"stand"},
- recklessness = {"lobelia", "argentum", "focus"},
- retribution = {"bellwort", "cuprum"},
- scytherus = {"ginseng", "ferrum"},
- sensitivity = {"kelp", "aurum"},
- selarnia = {"mendingtorso"},
- daeggerimpale = {"writhe"},
- shadowmadness = {"goldenseal", "plumbum"},
- shivering = {"caloric"},
- shyness = {"goldenseal", "plumbum", "focus"},
- slashedthroat = {"epidermalhead"},
- slickness = {"bloodroot", "magnesium", "valerian", "realgar"},
- speared = {"writhe"},
- stupidity = {"goldenseal", "plumbum", "focus"},
- stuttering = {"epidermalhead", "focus"},
- entangled = {"writhe", "flex"},
- bound = {"writhe"},
- timeloop = {"bellwort", "cuprum"},
- transfixation = {"writhe"},
- weariness = {"kelp", "aurum"},
- webbed = {"writhe", "flex"},
- vertigo = {"lobelia", "argentum", "focus"},
- voyria = {"immunity", "antigen"},
-
- waterdisrupt = {"focus", "lobelia", "argentum"},
- airdisrupt = {"focus", "lobelia", "argentum"},
- firedisrupt = {"focus", "lobelia", "argentum"},
- earthdisrupt = {"lobelia", "argentum"},
- spiritdisrupt = {"lobelia", "argentum"},
- 
- guilt = {"lobelia", "argentum"},
- tenderskin = {"lobelia", "argentum"},
- spiritburn = {"lobelia", "argentum"},
-
- temperedcholeric = {"ginger", "antimony"},
- temperedmelancholic = {"ginger", "antimony"},
- temperedphlegmatic = {"ginger", "antimony"},
- temperedsanguine = {"ginger", "antimony"},
-
- corruption = {}, --45s
-
- skullfractures = {"healthhead", "restore"},
- crackedribs = {"healthtorso", "restore"},
- wristfractures = {"healtharms", "restore"},
- torntendons = {"healthlegs", "restore"},
-
- hypothermia = {"restorationtorso"},
- scalded = {"epidermalhead"},
- dehydrated = {}, --60s
- timeflux = {}, --60s
- 
- unweavingmind = {"goldenseal", "plumbum"},
- unweavingbody = {"ginseng", "ferrum"},
- unweavingspirit = {"elm", "cinnabar"},
- 
- tension = {"elm", "cinnabar"},
- pressure = {"pear", "calcite"}
-
-}
-
-wsys.tb.affctype = {
-
- addiction = "herb",
- aeon = "smoke",
- agoraphobia = "herb",
- anorexia = "salve",
- sleeping = "wake",
- asthma = "herb",
- burning = "salve",
- concussion = "salve",
- damagedhead = "salve",
- damagedleftarm = "salve",
- damagedleftleg = "salve",
- damagedrightarm = "salve",
- damagedrightleg = "salve",
- mildtrauma = "salve",
- claustrophobia = "herb",
- brokenleftarm = "salve",
- brokenleftleg = "salve",
- clumsiness = "herb",
- confusion = "herb",
- concussion = "salve",
- crushedthroat = "salve",
- brokenrightarm = "salve",
- brokenrightleg = "salve",
- darkshade = "herb",
- dazed = "smoke",
- deadening = "smoke",
- dementia = "herb",
- depression = "herb",
- disloyalty = "smoke",
- disrupted = "concentrate",
- dissonance = "herb",
- dizziness = "herb",
- epilepsy = "herb",
- fear = "compose",
- frozen = "salve",
- generosity = "herb",
- haemophilia = "herb",
- hallucinations = "herb",
- healthleech = "herb",
- heartseed = "salve",
- hellsight = "smoke",
- hypersomnia = "herb",
- hypochondria = "herb",
- impaled = "writhe",
- impatience = "herb",
- itching = "salve",
- lethargy = "herb",
- loneliness = "herb",
- lovers = "herb",
- justice = "herb",
- whisperingmadness = "smoke",
- laceratedthroat = "salve",
- slashedthroat = "salve",
- manaleech = "smoke",
- masochism = "herb",
- mangledhead = "salve",
- mangledleftarm = "salve",
- mangledleftleg = "salve",
- mangledrightarm = "salve",
- mangledrightleg = "salve",
- serioustrauma = "salve",
- nausea = "herb",
- pacified = "herb",
- paralysis = "herb",
- paranoia = "herb",
- parasite = "herb",
- peace = "herb",
- prone = "stand",
- recklessness = "herb",
- retribution = "herb",
- scytherus = "herb",
- sensitivity = "herb",
- selarnia = "salve",
- daeggerimpale = "writhe",
- shadowmadness = "herb",
- shivering = "salve",
- shyness = "herb",
- slickness = "smoke",
- speared = "writhe",
- stupidity = "herb",
- stuttering = "salve",
- entangled = "writhe",
- bound = "writhe",
- timeloop = "herb",
- transfixation = "writhe",
- weariness = "herb",
- webbed = "writhe",
- vertigo = "herb",
- voyria = "immunity",
-
- waterdisrupt = "herb",
- airdisrupt = "herb",
- firedisrupt = "herb",
- earthdisrupt = "herb",
- spiritdisrupt = "herb",
- 
- guilt = "herb",
- tenderskin = "herb",
- spiritburn = "herb",
-
- temperedcholeric = "herb",
- temperedmelancholic = "herb",
- temperedphlegmatic = "herb",
- temperedsanguine = "herb",
-
-
- skullfractures = "health",
- crackedribs = "health",
- wristfractures = "health",
- torntendons = "health",
-
- hypothermia = "salve",
- scalded = "salve",
- 
- pressure = "smoke",
- tension = "smoke",
- 
- unweavingbody = "herb",
- unweavingmind = "herb",
- unweavingspirit = "smoke",
- 
-
-}
-
-
-
-
-
--- AFFS RECEIVED TOGETHER FOR AI PURPOSES
-wsys.tb.affspaired = {}
-
-
--- AFFS RECEIVED BETWEEN SAME PROMPTS
-wsys.tb.affstogether = {}
-
--- Removed Weariness from Focusable - Announce 4494
--- Dementia, Paranoia, and Hallucination - Added as Focusable Announce #4539 
--- CURES
-wsys.tb.cures = {
-
- bloodroot = {"paralysis", "slickness"},
- magnesium = {"paralysis", "slickness"},
- lobelia = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spritidisrupt", "guilt", "tenderskin", "spiritburn"},
- argentum = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spiritdisrupt", "guilt", "tenderskin", "spiritburn"},
- kelp = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "parasite"},
- aurum = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "parasite"},
- ginseng = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", "unweavingbody"},
- ferrum = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", "unweavingbody"},
- bellwort = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
- cuprum = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
- ash = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
- stannum = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
- goldenseal = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop", "unweavingmind"},
- plumbum = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop", "unweavingmind"},
- focus = {"stupidity", "dizziness", "confusion", "claustrophobia", "agoraphobia", "masochism", "lovers", "recklessness", 
-          "epilepsy", "loneliness", "shyness", "pacified", "anorexia", "vertigo", "weakenedmind",
-			"waterdisrupt", "earthdisrupt", "firedisrupt","airdisrupt", "dementia", "hallucinations", "paranoia"},
- elm = {"aeon", "whisperingmadness", "deadening", "dazed", "tension", "unweavingspirit" },
- cinnabar = {"aeon", "whisperingmadness", "deadening", "dazed", "tension", "unweavingspirit" },
- valerian = {"slickness", "disloyalty", "manaleech", "hellsight"},
- realgar = {"slickness", "disloyalty", "manaleech", "hellsight"},
- mendinglegs = {"brokenleftleg", "brokenrightleg", "cleg"},
- mendingarms = {"brokenleftarm", "brokenrightarm", "carm"},
- mendingskin = {"climb", "brokenleftleg", "brokenrightleg", "cleg", "brokenrightarm", "brokenleftarm", "brokenarm"},
- epidermalbody = {"anorexia", "itching"},
- epidermalhead = {"scalded"},
- mendingbody = {"burning", "selarnia"},
- mendinghead = {"crushedthroat"},
- mendingtorso = {"selarnia"},
- epidermalhead = {"stuttering", "slashedthroat"},
- caloric = {"shivering", "frozen"},
- restorationarms = {"damagedleftarm", "damagedrightarm", "mangledleftarm", "mangledrightarm", "bleg"},
- restorationlegs = {"damagedleftleg", "damagedrightleg", "mangledleftleg", "mangledrightleg", "bleg"},
- restorationhead = {"damagedhead", "mangledhead", "laceratedthroat", "concussion"},
- restorationtorso = {"mildtrauma", "serioustrauma", "heartseed"},
- restorationbody = {"hypothermia"},
- tree = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
-          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
-          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
-          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
-          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria", 
-			    "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin" },
- shrugging = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
-          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "paralysis", 
-          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
-          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
-          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
-          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
- restore = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "carm", "cleg"},
- dheal = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
-          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
-          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
-          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
-          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
-          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin"},
- flex = {"webbed", "entangled"},
- writhe = {"webbed", "entangled", "bound", "impaled", "transfixation", "speared", "daeggerimpale"},
- fool = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
-          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
-          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
-          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
-          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
-          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin"},
- concentrate = {"disrupted"},
- compose = {"fear"},
- clot = {"bleeding"},
- immunity = {"voyria"},
- fitness = {"asthma"},
- rage = {"generosity", "justice", "lovers", "pacified", "peace"},
- antimony = { "temperedcholeric", "temperedmelancholic", "temperedphlegmatic", "temperedsanguine"},
- ginger = { "temperedcholeric", "temperedmelancholic", "temperedphlegmatic", "temperedsanguine"},
- healthhead = {"skullfractures"},
- healthtorso = {"crackedribs"},
- healtharms = {"wristfractures"},
- healthlegs = {"torntendons"},
-}
-
-wsys.tb.targettedCureTable = {
-  "mendingtorso", "renewaltorso",
-  "ginseng", "ferrum",
-  "bloodroot", "magnesium",
-  "elm", "cinnabar",
-  "valerian", "realgar",
-  "ginger", "antimony",
-  "bellwort", "cuprum",
-  "lobelia", "argentum",
-  "epidermalbody", "sensorybody",
-  "kelp", "aurum",
-  "ash", "stannum",
-  "restorationarms", "reconstructivearms",
-  "restorationhead", "reconstructivehead",
-  "restorationlegs", "reconstructivelegs",
-  "restorationtorso", "reconstructivetorso",
-  "epidermalbody", "sensorybody",
-  "mendingarms", "renewalarms",
-  "mendinglegs", "renewallegs",
-  "mendingbody", "renewalbody",
-  "epidermalhead", "sensoryhead",
-  "calorictorso", "exothermictorso",
-  "goldenseal", "plumbum",
-}</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Curatives Tables</name>
-					<packageName></packageName>
-					<script>
-wsys.tb.opps = {
-
- ash = "stannum",
- stannum = "ash",
- bayberry = "arsenic",
- arsenic = "bayberry",
- bellwort = "cuprum",
- cuprum = "bellwort",
- bloodroot = "magnesium",
- magnesium = "bloodroot",
- cohosh = "gypsum",
- gypsum = "cohosh",
- elm = "cinnabar",
- realgar = "valerian",
- ginseng = "ferrum",
- ferrum = "ginseng",
- goldenseal = "plumbum",
- plumbum = "goldenseal",
- hawthorn = "calamine",
- calamine = "hawthorn",
- kelp = "aurum",
- aurum = "kelp",
- kola = "quartz",
- quartz = "kola",
- lobelia = "argentum",
- argentum = "lobelia",
- skullcap = "malachite",
- malachite = "skullcap",
- valerian = "realgar",
- cinnabar = "valerian",
- sileris = "quicksilver",
- quicksilver = "sileris",
- irid = "potash",
- potash = "irid",
- pear = "calcite",
- calcite = "pear",
- caloric = "exothermic",
- exothermic = "caloric",
- health = "vitality",
- vitality = "health",
- antigen = "immunity",
- immunity = "antigen",
- hovering = "levitation",
- levitation = "hovering",
- mana = "mentality",
- mentality = "mana",
- haste = "speed",
- speed = "haste",
- endothermia = "frost",
- frost = "endothermia",
- epidermal = "sensory",
- sensory = "epidermal",
- mass = "density",
- density = "mass",
- mending = "renewal",
- renewal = "mending",
- restoration = "reconstructive",
- reconstructive = "restoration",
- venom = "toxin",
- toxin = "venom",
- ginger = "antimony",
- antimony = "ginger",
-
-}
-
-
--- Cure types
-wsys.tb.curetype = {
-
- bloodroot = "herb",
- magnesium = "herb",
- lobelia = "herb",
- argentum = "herb",
- kelp = "herb",
- aurum = "herb",
- ginseng = "herb",
- ferrum = "herb",
- bellwort = "herb",
- cuprum = "herb",
- ash = "herb",
- stannum = "herb",
- goldenseal = "herb",
- plumbum = "herb",
- focus = "focus",
- elm = "pipe",
- cinnabar = "pipe",
- valerian = "pipe",
- realgar = "pipe",
- mendinglegs = "salve",
- renewallegs = "salve",
- mendingarms = "salve",
- renewalarms = "salve",
- mendingskin = "salve",
- renewalskin = "salve",
- epidermalbody = "salve",
- sensorybody = "salve",
- mendingbody = "salve",
- renewalbody = "salve",
- mendinghead = "salve",
- epidermalhead = "salve",
- sensoryhead = "salve",
- caloric = "salve",
- exothermic = "salve",
- restorationarms = "salve",
- reconstructivearms = "salve",
- restorationlegs = "salve",
- reconstructivelegs = "salve",
- restorationhead = "salve",
- reconstructivehead = "salve",
- restorationtorso = "salve",
- reconstructivetorso = "salve",
- tree = "tree",
- restore = "restore",
- dheal = "dheal",
- flex = "flex",
- writhe = "writhe",
- fool = "fool",
- concentrate = "concentrate",
- compose = "compose",
- clot = "clot",
- immunity = "elixir",
- antigen = "elixir",
- fitness = "fitness",
- rage = "rage",
- antimony = "herb",
- ginger = "herb",
-}
-</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Stats</name>
-					<packageName></packageName>
-					<script>-- STATS TABLE
-wsys.stats = {
-
- h = 5000,
- m = 5000,
- e = 20000,
- w = 20000,
- maxh = 5000,
- maxm = 5000,
- maxw = 20000,
- maxe = 20000,
- oh = 5000, --old health
- om = 5000, --old mana
- xp = 0,
- oxp = 0, --old xp
- kai = 0,
- shin = 0,
- rage = 0,
-}
-
-local charstats = {
-  ["Bleed"] = function( val ) wsys.bleeding = tonumber( val ) end,
-  ["Rage"] = function( val ) wsys.stats.rage = tonumber( val ) end,
-}
-
-function wsys.statupdate()
- 
-  wsys.stats.oh = wsys.stats.h or 5000
-  wsys.stats.om = wsys.stats.m or 5000
-  wsys.stats.oxp = wsys.stats.xp or 0
-
-  wsys.stats.h = tonumber(gmcp.Char.Vitals.hp)
-  wsys.stats.m = tonumber(gmcp.Char.Vitals.mp)
-  wsys.stats.e = tonumber(gmcp.Char.Vitals.ep)
-  wsys.stats.w = tonumber(gmcp.Char.Vitals.wp)
-
-  wsys.stats.maxh = tonumber(gmcp.Char.Vitals.maxhp)
-  wsys.stats.maxm = tonumber(gmcp.Char.Vitals.maxmp)
-  wsys.stats.maxe = tonumber(gmcp.Char.Vitals.maxep)
-  wsys.stats.maxw = tonumber(gmcp.Char.Vitals.maxwp)
-
-  for _,str in ipairs( gmcp.Char.Vitals.charstats ) do
-    local sep = str:find( ": " )
-    if sep then
-      local key = str:sub( 1, sep - 1 )
-      local val = str:sub( sep + 2 )
-      if charstats[key] then charstats[key]( val ) end
-    end
-  end
-
-  if wsys.stats.oh ~= wsys.stats.h then
-    raiseEvent("health changed")
-  end
-  if wsys.stats.om ~= wsys.stats.m then
-    raiseEvent("mana changed")
-  end
-end -- func
-
-registerAnonymousEventHandler("gmcp.Char.Vitals", "wsys.statupdate")
-</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Timers Table</name>
-					<packageName></packageName>
-					<script>-- TIMERS TABLE
-
-wsys.timer = wsys.timer or {}
-</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Balances Table</name>
-					<packageName></packageName>
-					<script>-- BALS Table
-wsys.bals = {
-  b = true, -- balance
-  e = true, -- equilibrium
-
-  moss = true,
-  hm = true, --rename to sip maybe?
-  immunity = true, --7s
-
-  tree = true,
-  focus = true,
-
-  salve = true,
-  herb = true,
-  smoke = true,
-
-
-  dragonheal = true,
-  fool = true,
-  voice = true,
-  rage = true,
-  shrugging = true,
-  fitness = true,
-
-}
-
--- reset all balances
-function wsys.resetBals()
-  for k in pairs(wsys.bals) do
-    wsys.gotBal(k)
-  end
-end
-
--- balances are all true on starburst or death
-registerAnonymousEventHandler("You Died", "wsys.resetBals")
-registerAnonymousEventHandler("You Starbursted", "wsys.resetBals")
-
-
-</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Prompt Tags and Tag Colours</name>
-					<packageName></packageName>
-					<script>-- Table of default prompt tags
-wsys.prompttags = wsys.prompttags or {} 
-
-wsys.prompttags["health"] = function() return wsys.stats.h end
-wsys.prompttags["percenthealth"] = function() return math.floor(wsys.stats.h / wsys.stats.maxh * 100) end
-wsys.prompttags["mana"] = function() return wsys.stats.m end
-wsys.prompttags["percentmana"] = function() return math.floor(wsys.stats.m / wsys.stats.maxm * 100) end
-wsys.prompttags["endurance"] = function() return wsys.stats.e end
-wsys.prompttags["percentendurance"] = function() return math.floor(wsys.stats.e / wsys.stats.maxe * 100) end
-wsys.prompttags["willpower"] = function() return wsys.stats.w end
-wsys.prompttags["percentwillpower"] = function() return math.floor(wsys.stats.w / wsys.stats.maxw * 100) end
-wsys.prompttags["bal"] = function() if wsys.bals.b then return "X" else return "" end end
-wsys.prompttags["eq"] = function() if wsys.bals.e then return "E" else return "" end end
-wsys.prompttags["lbal"] = function() if wsys.bals.b then return "x" else return "" end end
-wsys.prompttags["leq"] = function() if wsys.bals.e then return "e" else return "" end end
-wsys.prompttags["target"] = function() if target then return target else return "" end end
-wsys.prompttags["paused"] = function() if wsys.paused then return "(PP)" else return "" end end
-wsys.prompttags["softpaused"] = function() if wsys.softpaused then return "(sP)" else return "" end end
-wsys.prompttags["phase"] = function() if wsys.def.phased or wsys.def.blackwind or wsys.def.astralform then return "@" else return "" end end
-wsys.prompttags["retardation"] = function() if wsys.retard then return "[RET]" else return "" end end
-wsys.prompttags["kai"] = function() if wsys.def.kaitrance then return wsys.stats.kai .." " else return "" end end
-wsys.prompttags["shin"] = function() if wsys.def.shintrance then return wsys.stats.shin.." " else return "" end end
-wsys.prompttags["warning"] = function() return wsys.prefixWarning end
-wsys.prompttags["mw"] = function() if wsys.def.metawake then return "MW" else return "" end end
-wsys.prompttags["breathing"] = function() if wsys.def.breathing then return "br" else return "" end end
-wsys.prompttags["xp"] = function() return gmcp.Char.Vitals.nl end
-wsys.prompttags["affs"] = function() return wsys.affTags( wsysf.affs, true ) .. wsys.affTags( wsys.predicted, false ) end
-wsys.prompttags["timestamp"] = function() return getTimestamp(getLineCount()):gsub("^%s*(.-)%s*$", "%1") end
-wsys.prompttags["rage"] = function() if wsys.stats.rage &gt; 0 then return wsys.stats.rage.." " else return "" end end
-
-wsys.prompttags["diffhealth"] = function()
-  if wsys.stats.h &lt; wsys.stats.oh then 
-    return("&lt;red&gt; (-"..wsys.stats.oh - wsys.stats.h .. "h, " .. string.format("%.1f", ((wsys.stats.oh - wsys.stats.h) / wsys.stats.maxh) * 100) .. "%)")
-  elseif wsys.stats.h &gt; wsys.stats.oh then 
-    return("&lt;green&gt; (+"..wsys.stats.h - wsys.stats.oh .. "h, " .. string.format("%.1f", ((wsys.stats.h - wsys.stats.oh) / wsys.stats.maxh) * 100) .. "%)") 
-  else
-    return ""
-  end -- if
-end
-
-wsys.prompttags["diffmana"] = function()
-  if wsys.stats.m &lt; wsys.stats.om then 
-    return("&lt;slate_blue&gt; (-"..wsys.stats.om - wsys.stats.m .. "m, " .. string.format("%.1f", ((wsys.stats.om - wsys.stats.m) / wsys.stats.maxm) * 100) .. "%)")
-  elseif wsys.stats.m &gt; wsys.stats.om then 
-    return("&lt;purple&gt; (+".. wsys.stats.m - wsys.stats.om .. "m, " .. string.format("%.1f", ((wsys.stats.m - wsys.stats.om) / wsys.stats.maxm) * 100) .. "%)") 
-  else
-    return ""
-  end -- if
-end
-
-wsys.prompttags["def"] = function() 
-  local defstring = ""
-  if wsys.def.blindness then
-    defstring = defstring .. "&lt;SeaGreen&gt;B "
-  end
-  if wsys.def.deafness then
-    defstring = defstring .. "&lt;SeaGreen&gt;D "
-  end
-  if wsys.def.cloak then
-    defstring = defstring .. "&lt;deep_sky_blue&gt;C "
-  end
-  if wsys.def.kola then
-    defstring = defstring .. "&lt;yellow&gt;K "
-  end
-  if wsys.def.density then
-    defstring = defstring .. "&lt;maroon&gt;M "
-  end -- if
-  if wsys.def.heldbreath then
-    defstring = defstring .. "&lt;light_grey&gt;br"
-  end --if
-  return defstring
-end
-
-wsys.prompttags["invdef"] = function() 
-  local invdefstring = ""
-  if not wsys.def.blindness then
-    invdefstring = invdefstring .. "&lt;SeaGreen&gt;B "
-  end
-  if not wsys.def.deafness then
-    invdefstring = invdefstring .. "&lt;SeaGreen&gt;D "
-  end
-  if not wsys.def.cloak then
-    invdefstring = invdefstring .. "&lt;deep_sky_blue&gt;C "
-  end
-  if not wsys.def.kola then
-    invdefstring = invdefstring .. "&lt;yellow&gt;K "
-  end
-  if not wsys.def.density then
-    invdefstring = invdefstring .. "&lt;maroon&gt;M "
-  end -- if
-  if wsys.def.heldbreath then
-    invdefstring = invdefstring .. "&lt;light_grey&gt;br"
-  end --if
-  return invdefstring
-end
-
-wsys.prompttags["npchp"] = function()
-  if gmcp.IRE.Target then         
-    if gmcp.IRE.Target.Set == "" or gmcp.IRE.Target.Info.id == "-1" then
-      return ""
-    elseif gmcp.IRE.Target then
-      return tonumber(string.findPattern(gmcp.IRE.Target.Info.hpperc, "%d+"))
-    end
-  else
-    return ""
-  end
-end
-
-wsys.prompttags.mylimbs = function()
-	local str = ""
-	
-	local limbs = {
-	"left leg",
-	"right leg",
-	"left arm",
-	"right arm",
-	"torso",
-	"head",
-}
-	local colors = { 
-		{ c = "&lt;dark_slate_gray&gt;", val = 0 },
-		{ c = "&lt;grey&gt;", val = 1 },
-		{ c = "&lt;brown&gt;", val = 4 },
-		{ c = "&lt;orange&gt;", val = 7 },
-		{ c = "&lt;red&gt;", val = 10 },
-		}
-
-	local first = true
-	for _,limb in pairs(limbs) do
-		if not first then
-			str = str.."&lt;dark_slate_gray&gt;|"
-		end
-		local d = tonumber(wsys.tb.selflimbdamage[limb].damage)
-		local color = colors[0] 
-		d = math.floor(d+0.5)
-		for _,t in ipairs( colors ) do
-			if d &gt;= t.val then
-				color = t.c
-			else
-				break
-			end
-		end
-
-		str = str.. color..d
-		first = false
-	end
-	return str
-end
-
---table of default prompt tag colors
-wsys.prompttagcolors = wsys.prompttagcolors or {} 
-  
-wsys.prompttagcolors["hcolour"] = function()
-  if wsys.stats.h &gt;= (wsys.stats.maxh * 0.75) then
-    return "sea_green"
-  elseif wsys.stats.h &gt;= (wsys.stats.maxh * 0.33) then
-    return "gold"
-  else
-    return "red"
-  end --if
-end
-
-wsys.prompttagcolors["mcolour"] = function()
-  if wsys.stats.m &gt;= (wsys.stats.maxm * .75) then
-    return "sea_green"
-  elseif wsys.stats.m &gt;= (wsys.stats.maxm * .50) then
-    return "gold"
-  else
-    return "red"
-  end -- if
-end
-
-wsys.prompttagcolors["wcolour"] = function()
-  if wsys.stats.w &gt;= (wsys.stats.maxw * .66) then
-    return "sea_green"
-  elseif wsys.stats.w &gt;= (wsys.stats.maxw * .50) then
-    return "gold"
-  else
-    return "red"
-  end -- if
-end
-
-wsys.prompttagcolors["ecolour"] = function()
-  if wsys.stats.e &gt;= (wsys.stats.maxe * .66) then
-    return "sea_green"
-  elseif wsys.stats.e &gt;= (wsys.stats.maxe * .50) then
-    return "gold"
-  else
-    return "red"
-  end -- if
-end
-
-wsys.prompttagcolors["kaicolour"] = function()
-  if wsys.stats.kai &lt; 10 then
-    --can't even choke
-    return "red"
-  elseif wsys.stats.kai &lt; 21 then
-    --can't heal
-    return "firebrick"
-  elseif wsys.stats.kai &lt; 41 then
-    --can't cripple
-    return "dark_orange"
-  elseif wsys.stats.kai &lt; 61 then
-    --can't enfeeble
-    return "yellow"
-  elseif wsys.stats.kai &gt;= 61 then
-    --can do anything
-    return "green"
-  end
-end
-                  
-wsys.prompttagcolors["shincolour"] = function()
-  if wsys.stats.shin &lt; 4 then
-    --can't even infuse
-    return "red"
-  elseif wsys.stats.shin &lt; 14 then
-    --can't fist
-    return "firebrick"
-  elseif wsys.stats.shin &lt; 29 then
-    --can't blizzard
-    return "dark_orange"
-  elseif wsys.stats.shin &lt; 39 then
-    --can't annihilate
-    return "yellow"
-  else
-    --can do anything
-    return "green"
-  end
-end</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Aff shortnames on prompt</name>
-					<packageName></packageName>
-					<script>wsys.overrides.afftags = wsys.overrides.afftags or {}
--- Shortnames = { aff = "name" }
-wsys.overrides.afftags.shortnames = wsys.overrides.afftags.shortnames or {}
--- colors = { aff = "color", aff2 = { "color1", [4] = "color at 4+ stacks" } }
-wsys.overrides.afftags.colors = wsys.overrides.afftags.colors or {}
--- cure_colors = { cure = "color", cure2 = { "color1", [6] = "color at 6+ stacks" } }
-wsys.overrides.afftags.cure_colors = wsys.overrides.afftags.cure_colors or {}
-
-
--- Probably use an override table
-local aff_short = {
- deafness = "",
- blindness = "",
- insomnia = "",
- addiction = "add",
- aeon = "ae",
- agoraphobia = "agor",
- anorexia = "ano",
- asphyxiating = "", -- Lets Air Lord see what smoke cure you used
- sleeping = "slp",
- asthma = "ast",
- concussion = "concuss",
- damagedhead = "h1",
- blackout = "",
- bleeding = "bld",
- demonstain = "stain",
- damagedleftarm = "la2",
- damagedleftleg = "ll2",
- bleg = "uleg1",
- damagedrightarm = "ra2",
- damagedrightleg = "rl2",
- mildtrauma = "t1",
- carm = "uwna",
- claustrophobia = "clau",
- brokenleftarm = "la1",
- brokenleftleg = "ll1",
- cleg = "uwnl",
- climb = "uwcrip",
- clumsiness = "Cl",
- confusion = "con",
- brokenrightarm = "ra1",
- brokenrightleg = "rl1",
- darkshade = "dark",
- deadening = "dea",
- dementia = "dem",
- depression = "dep",
- disloyalty = "disl",
- disrupted = "dis",
- dissonance = "diss",
- dizziness = "diz",
- epilepsy = "epi",
- fear = "fear",
- frozen = "frozen",
- generosity = "gen",
- haemophilia = "haem",
- hallucinations = "hallu",
- healthleech = "hleech",
- hellsight = "hell",
- hypersomnia = "hypers",
- hypochondria = "hypo",
- impaled = "Impale",
- impatience = "IMP",
- internalbleeding = "ImpaleSlash",
- inquisition = "",
- cadmuscurse = "cadmus",
- weakenedmind = "rixil",
- hecatecurse = "HECATE",
- itching = "",
- lethargy = "let",
- loneliness = "lon",
- lovers = "lust",
- justice = "just",
- whisperingmadness = "MAD",
- masochism = "maso",
- manaleech = "mleech",
- mangledhead = "h2",
- mangledleftarm = "la3",
- mangledleftleg = "ll3",
- mangledrightarm = "ra3",
- mangledrightleg = "rl3",
- serioustrauma = "t2",
- nausea = "nau",
- pacified = "pac",
- paralysis = "PAR",
- paranoia = "para",
- parasite = "paras",
- peace = "pea",
- prone = "PR",
- recklessness = "reck",
- retribution = "ret",
- scytherus = "SCY",
- sensitivity = "sen",
- daeggerimpale = "Impale",
- shadowmadness = "sham",
- shivering = "shiv",
- shyness = "shy",
- slickness = "SLI",
- speared = "Impale",
- stupidity = "st",
- stuttering = "stut",
- entangled = "tangled",
- bound = "bound",
- transfixation = "transf",
- weariness = "Wea",
- webbed = "web",
- vertigo = "vert",
- voyria = "voy",
- heartseed = "hseed",
- temperedsanguine = "sang",
- temperedcholeric = "chol",
- temperedphlegmatic = "phleg",
- temperedmelancholic = "melan",
- torntendons = "tendons",
- wristfractures = "wrist",
- crackedribs = "ribs",
- skullfractures = "skull",
- burning = "burn",
- unweavingmind = "UNM",
- unweavingbody = "UNB",
- unweavingspirit = "UNS",
- mindravaged = "MIND RAVAGE",
- pressure = "PRESS",
- tension = "tens",
-}
-
-local aff_colors = {
-	bleeding = { "maroon", [500] = "red" },
-	burning = { "SlateGrey", "brown", "red" },
-	pressure = { "SlateGrey", "DeepSkyBlue", [4] = "cyan", [6] = "white" },
-	prone = "orchid",
-	mindravaged = "red:gray",
-}
-
--- The cure may be the prefix to an actual cure
--- E.g. "mending" matches "mendingarms" or "mendinglegs" but not "foomending"
-local cure_colors = {
-	kelp = "chartreuse",
-	goldenseal = "yellow",
-	ginseng = "dark_goldenrod",
-	lobelia = "moccasin",
-	elm = "sky_blue",
-	valerian = "royal_blue",
-	restoration = "brown",
-	mending = "brown",
-	health = { "medium_violet_red", [6] = "deep_pink" }, -- fractures
-	ginger = { "medium_purple", [6] = "purple" },
-}
-
--- Return the color to use for an value, given a color_option
--- Color_option is either a string "color", or a table with a list of colors to
--- use based on the aff_value
-local getColor = function( color_option, value )
-  local color = false
-	
-	if type(color_option) == "string" then
-		-- Aff color is a string, so use it
-		color = color_option
-		
-	elseif type(color_option) == "table" then
-		-- Pick a color based on value
-		local max = 0
-		local current_val = tonumber(value) or ( value and 1 ) or 0
-		
-		for i,v in pairs(color_option) do
-			if i &gt; max and current_val &gt;= i then
-				max = i
-				color = v
-			end
-		end
-	end
-	return color
-end
-
-local getAffLabel = function( aff, value )
-  local short = wsys.overrides.afftags.shortnames[aff] or aff_short[aff]
-	
-	if short and #short == 0 then
-		-- Short is "", don't display anythign
-		return false
-	end
-	
-	local color = getColor( wsys.overrides.afftags.colors[aff] or aff_colors[aff], value )
-	
-	if not color and wsys.tb.affc[aff] then
-		-- Pick a color based on cure-type
-		for _,aff_cure in ipairs(wsys.tb.affc[aff]) do
-			-- Check the overrides first
-			for cure,ccolor in pairs(wsys.overrides.afftags.cure_colors) do
-				if string.match( aff_cure, "^"..cure ) then
-					color = getColor( ccolor, value )
-					break
-				end
-			end
-			if color then break end -- Break out of the affc table loop if we found a match
-		
-			-- Check the default colors
-			for cure,ccolor in pairs(cure_colors) do
-				if string.match( aff_cure, "^"..cure ) then
-					color = getColor( ccolor, value )
-					break
-				end
-			end
-			if color then break end -- Break out of the affc table loop if we found a match
-		end
-	end
-	
-	if not color then
-		if short then
-			-- No special color
-			color = "SlateGrey"
-		else
-			-- No short means we don't know about it. Use a default color
-			color = "IndianRed"
-		end
-	end
-	
-	short = short or aff
-	
-	if tonumber(value) and value &gt; 1 then
-		-- Stackable aff, append (#)
-		short = short .."("..value..")"
-	end
-	
-  return "&lt;"..color.."&gt;"..short
-end
-
-function wsys.affTags( affs, include_bleed )
-  local s = {}
-  if include_bleed and wsysf.stats.bleed and wsysf.stats.bleed &gt; 50 then
-  	s[#s+1] = getAffLabel( "bleeding", wsysf.stats.bleed )
-  end
-  for aff,value in pairs(affs) do
-		entry = getAffLabel(aff, value)
-		if entry then
-			s[#s+1] = entry
-		end
-	end
-  return #s &gt; 0 and ("&lt;IndianRed&gt;["..table.concat(s, " ").."&lt;IndianRed&gt;]") or ""
-end</script>
 					<eventHandlerList />
 				</Script>
 			</ScriptGroup>

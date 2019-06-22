@@ -43542,6 +43542,7 @@ wsys.dorSub = wsys.dorSub or ""
 wsys.doqueued = false
 
 local function expand_command( str )
+  str = str:gsub( "^ONCE: ", "")
   return str:gsub( "$(%w+)", 
     function( n )
 		  local expand_to = wsys.overrides.doqueue.expand[ n ]

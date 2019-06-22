@@ -41186,15 +41186,15 @@ end --func
 
 -- define which classes have what skills
 local classSkills = {
-  ["air elemental lord"] = {"duress"},
+  ["airelementallord"] = {"duress"},
   ["alchemist"] = {"alchemy", "physiology"},
   ["apostate"] = {"evileye", "necromancy", "apostasy"},
   ["bard"] = {"swashbuckling", "voicecraft", "harmonics"},
   ["blademaster"] = {"twoarts", "striking", "shindo"},
   ["druid"] = {"druid", "metamorphosis", "groves"},
   ["infernal"] = {"chivalry", "necromancy", "weaponmastery"},
-  ["earth elemental lord"] = {"sculpting"},
-  ["fire elemental lord"] = {"ignition"},
+  ["earthelementallord"] = {"sculpting"},
+  ["fireelementallord"] = {"ignition"},
   ["jester"] = {"pranks", "puppetry", "tarot"},
   ["magi"] = {"magi", "elementalism", "crystalism"},
   ["monk"] = {"tekura", "kaido", "telepathy"},
@@ -41207,7 +41207,7 @@ local classSkills = {
   ["serpent"] = {"subterfuge", "hypnosis"},
   ["shaman"] = {"curses", "vodun", "runelore"},
   ["sylvan"] = {"sylvan", "groves", "elementalism"},
-  ["water elemental lord"] = {"pervasion"},
+  ["waterelementallord"] = {"pervasion"},
   ["dragon"] = {"dragoncraft"},
   ["free"] = {"curative", "survival", "vision", "enchantment", "tattoos"},
   ["animalspirit"] = {"spiritform"},
@@ -41792,7 +41792,7 @@ end
 function wsys.parseDragon( str )
   local color = str:match("(%w+) Dragon")
   if color then wsys.settings.dcolor = color:lower() end
-  return color and "dragon" or str 
+  return color and "dragon" or str:gsub("%s+", ""):lower()
 end
 
 --returns your class as a string

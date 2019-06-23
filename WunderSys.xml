@@ -184,52 +184,6 @@ end
 						</Trigger>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Blackout Prompt</name>
-						<script>wsys.aff.blackout = true
-enableTrigger("Blackout -")</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>-</string>
-							<string> Vote-</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>3</integer>
-							<integer>3</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="yes" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-						<name>Blackout Prompt Kai/Shin</name>
-						<script>wsys.aff.blackout = true
-enableTrigger("Blackout -")</script>
-						<triggerType>0</triggerType>
-						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>0</mStayOpen>
-						<mCommand></mCommand>
-						<packageName></packageName>
-						<mFgColor>#ff0000</mFgColor>
-						<mBgColor>#ffff00</mBgColor>
-						<mSoundFile></mSoundFile>
-						<colorTriggerFgColor>#000000</colorTriggerFgColor>
-						<colorTriggerBgColor>#000000</colorTriggerBgColor>
-						<regexCodeList>
-							<string>-</string>
-							<string>^-\d+-$</string>
-						</regexCodeList>
-						<regexCodePropertyList>
-							<integer>2</integer>
-							<integer>1</integer>
-						</regexCodePropertyList>
-					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>End</name>
 						<script>wsys.prompt()
  </script>
@@ -291,9 +245,7 @@ if next(wsys.tb.justreckless) then
  if wsys.stats.h == wsys.stats.maxh and wsys.stats.m == wsys.stats.maxm and not wsys.lifevision then
   moveCursor("main", 0, wsys.tb.justreckless[2])
   wsys.affprint("recklessness", wsys.tb.justreckless[1])
-  wsys.aff.recklessness = true
-  send("curing predict recklessness", false)
-  enableTrigger("Recklessness -")
+	wsys.affpredict( "recklessness" )
   --herbqueue()
  end -- if
  wsys.tb.justreckless = {}
@@ -328,7 +280,8 @@ wsys.self_illusion = false
 if wsys.starbursted then
  if not wsys.def.blindness and not wsys.def.deafness and not wsys.def.kola then
   raiseEvent("You Starbursted")
-  wsys.aff = {}
+	
+  --wsys.aff = {}
   for k,v in pairs(wsys.herbsout) do
    wsys.herbsout[k] = 0
   end -- for
@@ -344,7 +297,7 @@ end -- if
 
 if wsys.mogged then
  if not wsys.def.blindness and not wsys.def.deafness and not wsys.def.kola then
-  wsys.aff = {}
+  --wsys.aff = {}
   for k in pairs(wsys.def) do
    wsys.def[k] = false
   end -- for
@@ -1805,7 +1758,6 @@ end
 					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Shivering -</name>
 						<script>wsys.affcured("shivering")
-wsys.aff.frozen = nil
 wsys.undef("insulation")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
@@ -2292,9 +2244,7 @@ wsys.humourReset("temperedsanguine")</script>
  wsys.timer.diagwait = nil
  enableTrigger("Diag Lines")
 
- wsys.oldAff = wsys.aff
-
- wsys.aff = {}
+ --wsys.aff = {}
  wsys.resetAffPrios()
  wsys.def.blindness = false
  wsys.def.deafness = false
@@ -3780,7 +3730,6 @@ end -- if</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>humour (diag)</name>
 							<script>wsys.affadd("tempered"..matches[2])
-wsys.aff["tempered"..matches[2]] = tonumber(matches[3])
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -3822,7 +3771,6 @@ wsys.aff["tempered"..matches[2]] = tonumber(matches[3])
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Skullfractures (diag)</name>
 							<script>wsys.affadd("skullfractures")
-wsys.aff["skullfractures"] = tonumber(matches[2])
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -3844,7 +3792,6 @@ wsys.aff["skullfractures"] = tonumber(matches[2])
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Crackedribs (diag)</name>
 							<script>wsys.affadd("crackedribs")
-wsys.aff["crackedribs"] = tonumber(matches[2])
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -3866,7 +3813,6 @@ wsys.aff["crackedribs"] = tonumber(matches[2])
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Wristfractures (diag)</name>
 							<script>wsys.affadd("wristfractures")
-wsys.aff["wristfractures"] = tonumber(matches[2])
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -3888,7 +3834,6 @@ wsys.aff["wristfractures"] = tonumber(matches[2])
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Torntendons (diag)</name>
 							<script>wsys.affadd("torntendons")
-wsys.aff["torntendons"] = tonumber(matches[2])
 </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -4132,26 +4077,6 @@ wsys.aff["torntendons"] = tonumber(matches[2])
 							<script>
 disableTrigger("Diag Lines")
 wsys.checkaffs()
-
-
-  --if we used to think we had the aff, and don't now
-  --send the lost aff event
-  for k, v in pairs(wsys.oldAff) do
-    if not wsys.aff[k] then
-      raiseEvent("lost aff", k)
-    end
-  end
-
-  --if we thought we didn't have it, but do now
-  --send the got aff event
-  for k,v in pairs(wsys.aff) do
-    if not wsys.oldAff[k] then
-      raiseEvent("got aff", k)
-    end
-  end
-
-   --Clean up
-   wsys.oldAff = nil
                             </script>
 							<triggerType>0</triggerType>
 							<conditonLineDelta>0</conditonLineDelta>
@@ -7789,9 +7714,9 @@ wsys.newClassTimer("occultist")</script>
 							<integer>3</integer>
 						</regexCodePropertyList>
 					</Trigger>
-					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+					<Trigger isActive="no" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Pyradius firelord</name>
-						<script></script>
+						<script>-- TODO: Need to confirm this behavior. GMCP should cover us?</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>999</mStayOpen>
@@ -11272,7 +11197,7 @@ wsys.newClassTimer("alchemist")</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Mercury +</name>
-						<script>wsys.aff.homunculusmercury = true</script>
+						<script>--wsys.aff.homunculusmercury = true</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -11295,7 +11220,7 @@ wsys.newClassTimer("alchemist")</script>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Mercury -</name>
 						<script>-- yes this trigger belongs here and not with other cures, don't fucking touch it.
-wsys.aff.homunculusmercury = nil</script>
+--wsys.aff.homunculusmercury = nil</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -15208,112 +15133,6 @@ wsys.newClassTimer("bard")</script>
 						<regexCodeList />
 						<regexCodePropertyList />
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Overhand</name>
-							<script>--gate opened, see if parry/miss/dodge
-wsys.twohandsmacker = matches[2]</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>10</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^([A-Z][a-z]+) brings .+ down upon you with a brutal overhand blow\.$</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Parry Dodge</name>
-								<script>--parried, close the gate
-setTriggerStayOpen("Overhand", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>You parry the attack with a deft manoeuvre.</string>
-									<string>You dodge nimbly out of the way.</string>
-									<string>You twist your body out of harm's way.</string>
-									<string>You quickly jump back, avoiding the attack.</string>
-									<string>The attack rebounds back onto</string>
-									<string>One of your reflections has been destroyed!</string>
-									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
-									<string>You frantically attempt to parry the attack of </string>
-									<string>You step into the attack, grab</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Prompt</name>
-								<script>--adds skull fracture (+ sip bal)
-wsys.affadd("skullfractures", "twohander")
-setTriggerStayOpen("Overhand", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>return isPrompt()</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>4</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Skullfractures lowered</name>
-							<script>if wsys.cure == "healthhead" or wsys.cure == "tree" or wsys.cure == "passive" or wsys.cure == "restore" then
-  if wsys.aff.skullfractures &gt; 5 then
-    wsys.fracturedown("skullfractures", 2)
-  else
-    wsys.fracturedown("skullfractures", 1)
-  end
-end</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>The pain in your head lessens somewhat.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>3</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Carve</name>
 							<script>wsys.undef("rebounding")
 wsys.undef("shield")</script>
@@ -15356,112 +15175,6 @@ wsys.undef("shield")</script>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Underhand</name>
-							<script>--gate opened, see if parry/miss/dodge
-wsys.twohandsmacker = matches[2]</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>10</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^([A-Z][a-z]+) explodes upward from a low crouch, driving .+ toward your torso\.$</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Parry Miss Dodge</name>
-								<script>--parried, close the gate
-setTriggerStayOpen("Underhand", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>You parry the attack with a deft manoeuvre.</string>
-									<string>You dodge nimbly out of the way.</string>
-									<string>You twist your body out of harm's way.</string>
-									<string>You quickly jump back, avoiding the attack.</string>
-									<string>The attack rebounds back onto </string>
-									<string>One of your reflections has been destroyed</string>
-									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
-									<string>You frantically attempt to parry the attack of </string>
-									<string>You step into the attack, grab</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Prompt</name>
-								<script>--at torso (- effectiveness of health sip)
-wsys.affadd("crackedribs", "twohander")
-setTriggerStayOpen("Underhand", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>return isPrompt()</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>4</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Crackedribs lowered</name>
-							<script>if wsys.cure == "healthtorso" or wsys.cure == "tree" or wsys.cure == "passive" or wsys.cure == "restore" then
-  if wsys.aff.crackedribs &gt; 5 then
-    wsys.fracturedown("crackedribs", 2)
-  else
-    wsys.fracturedown("crackedribs", 1)
-  end
-end</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>It becomes somewhat easier to draw breath.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>3</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Upset (prone)</name>
 							<script>wsys.affadd("prone", "twohander")</script>
 							<triggerType>0</triggerType>
@@ -15479,228 +15192,6 @@ end</script>
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Hew</name>
-							<script>--gate opened, see if parry/miss/dodge
-wsys.twohandsmacker = matches[2]
-wsys.twoh_lastlimbhit = matches[3] .. " " .. matches[4]</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>10</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^([A-Z][a-z]+) unleashes a terrible blow at your (right|left) (arm|leg) with .+\.$</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Parry Miss Dodge</name>
-								<script>--parried, close the gate
-setTriggerStayOpen("Hew", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>You parry the attack with a deft manoeuvre.</string>
-									<string>You dodge nimbly out of the way.</string>
-									<string>You twist your body out of harm's way.</string>
-									<string>You quickly jump back, avoiding the attack.</string>
-									<string>The attack rebounds back onto</string>
-									<string>One of your reflections has been destroyed</string>
-									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
-									<string>You frantically attempt to parry the attack of </string>
-									<string>You step into the attack, grab</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Prompt</name>
-								<script>--targets arms/legs
-if wsys.twoh_lastlimbhit == "right arm" or wsys.twoh_lastlimbhit == "left arm" then
- wsys.affadd("wristfractures", "twohander")
-elseif wsys.twoh_lastlimbhit == "left leg" or wsys.twoh_lastlimbhit == "right leg" then
- wsys.affadd("torntendons", "twohander")
-end
-setTriggerStayOpen("Hew", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>return isPrompt()</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>4</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Pulverise</name>
-							<script>--gate opened, see if parry/miss/dodge
-wsys.twohandsmacker = matches[2]
-wsys.twoh_lastlimbhit = matches[3] .. " " .. matches[4]</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>10</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^([A-Z][a-z]+) comes around with a terrible swing of .+ toward your (left|right) (arm|leg)\.$</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>1</integer>
-							</regexCodePropertyList>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Parry Miss Dodge</name>
-								<script>--parried, close the gate
-setTriggerStayOpen("Pulverise", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>You parry the attack with a deft manoeuvre.</string>
-									<string>You dodge nimbly out of the way.</string>
-									<string>You twist your body out of harm's way.</string>
-									<string>You quickly jump back, avoiding the attack.</string>
-									<string>The attack rebounds back onto </string>
-									<string>One of your reflections has been destroyed</string>
-									<string>^You move inside \w+'s guard, deflecting (?:his|her) attack to one side with your forearm before countering with a swift blow to (?:his|her) temple\.$</string>
-									<string>You frantically attempt to parry the attack of </string>
-									<string>You step into the attack, grab</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>3</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-									<integer>1</integer>
-									<integer>2</integer>
-									<integer>2</integer>
-								</regexCodePropertyList>
-							</Trigger>
-							<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-								<name>Prompt</name>
-								<script>--targets arms/legs
-if wsys.twoh_lastlimbhit == "right arm" or wsys.twoh_lastlimbhit == "left arm" then
- wsys.affadd("wristfractures", "twohander")
-elseif wsys.twoh_lastlimbhit == "left leg" or wsys.twoh_lastlimbhit == "right leg" then
- wsys.affadd("torntendons", "twohander")
-end
-setTriggerStayOpen("Pulverise", 0)</script>
-								<triggerType>0</triggerType>
-								<conditonLineDelta>0</conditonLineDelta>
-								<mStayOpen>0</mStayOpen>
-								<mCommand></mCommand>
-								<packageName></packageName>
-								<mFgColor>#ff0000</mFgColor>
-								<mBgColor>#ffff00</mBgColor>
-								<mSoundFile></mSoundFile>
-								<colorTriggerFgColor>#000000</colorTriggerFgColor>
-								<colorTriggerBgColor>#000000</colorTriggerBgColor>
-								<regexCodeList>
-									<string>return isPrompt()</string>
-								</regexCodeList>
-								<regexCodePropertyList>
-									<integer>4</integer>
-								</regexCodePropertyList>
-							</Trigger>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Torntendons lowered</name>
-							<script>if wsys.cure == "healthlegs" or wsys.cure == "tree" or wsys.cure == "passive" or wsys.cure == "restore" then
-  if wsys.aff.torntendons &gt; 5 then
-    wsys.fracturedown("torntendons", 2)
-  else
-    wsys.fracturedown("torntendons", 1)
-  end
-end</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>The agonising pain in your lower legs recedes somewhat.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>3</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Wristfractures lowered</name>
-							<script>if wsys.cure == "healtharms" or wsys.cure == "tree" or wsys.cure == "passive" or wsys.cure == "restore" then
-  if wsys.aff.wristfractures &gt; 5 then
-    wsys.fracturedown("wristfractures", 2)
-  else
-    wsys.fracturedown("wristfractures", 1)
-  end
-end</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>The dull ache in your arms subsides somewhat.</string>
-							</regexCodeList>
-							<regexCodePropertyList>
-								<integer>3</integer>
 							</regexCodePropertyList>
 						</Trigger>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
@@ -15743,11 +15234,9 @@ end</script>
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Devastate 1</name>
 							<script>if matches[2] == "arms" then
-  wsys.fracturereset("wristfractures")
   wsys.affadd("brokenrightarm")
   wsys.affadd("brokenleftarm")
 elseif matches[2] == "legs" then
-  wsys.fracturereset("torntendons")
   wsys.affadd("brokenrightleg")
   wsys.affadd("brokenleftleg")
 end
@@ -15775,7 +15264,6 @@ end
 							<name>Devastate 2</name>
 							<script>--gmcp aff added will trigger before this does. Rely on that for determining the level break
 if matches[2] == "arms" then
-  wsys.fracturereset("wristfractures")
   if wsys.aff.mangledrightarm then
     wsys.restobreakcheck("mangledrightarm")
   else
@@ -15787,7 +15275,6 @@ if matches[2] == "arms" then
     wsys.restobreakcheck("damagedleftarm")
   end
 elseif matches[2] == "legs" then
-  wsys.fracturereset("torntendons")
   if wsys.aff.mangledrightleg then
     wsys.restobreakcheck("mangledrightleg")
   else
@@ -15824,15 +15311,9 @@ end
 						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 							<name>Devastate 3</name>
 							<script>if matches[2] == "arms" then
-  wsys.fracturereset("wristfractures")
-  wsys.affadd("mangledrightarm")
-  wsys.affadd("mangledleftarm")
   wsys.restobreakcheck("mangledrightarm")
   wsys.restobreakcheck("mangledleftarm")
 elseif matches[2] == "legs" then
-  wsys.fracturereset("torntendons")
-  wsys.affadd("mangledrightleg")
-  wsys.affadd("mangledleftleg")
   wsys.restobreakcheck("mangledrightleg")
   wsys.restobreakcheck("mangledleftleg")
 end
@@ -15853,26 +15334,6 @@ end
 							</regexCodeList>
 							<regexCodePropertyList>
 								<integer>1</integer>
-								<integer>1</integer>
-							</regexCodePropertyList>
-						</Trigger>
-						<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
-							<name>Battlefury focus precision</name>
-							<script>wsys.twohanddoubled(matches[2])</script>
-							<triggerType>0</triggerType>
-							<conditonLineDelta>0</conditonLineDelta>
-							<mStayOpen>0</mStayOpen>
-							<mCommand></mCommand>
-							<packageName></packageName>
-							<mFgColor>#ff0000</mFgColor>
-							<mBgColor>#ffff00</mBgColor>
-							<mSoundFile></mSoundFile>
-							<colorTriggerFgColor>#000000</colorTriggerFgColor>
-							<colorTriggerBgColor>#000000</colorTriggerBgColor>
-							<regexCodeList>
-								<string>^([A-Z][a-z]+) shifts into a more aggressive stance\.$</string>
-							</regexCodeList>
-							<regexCodePropertyList>
 								<integer>1</integer>
 							</regexCodePropertyList>
 						</Trigger>
@@ -34481,8 +33942,10 @@ deleteFull()</script>
 					</Trigger>
 					<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 						<name>Do ran</name>
-						<script>wsys.dosent("do")
-deleteFull()</script>
+						<script>--deleteLine()
+selectCurrentLine(); replace("")
+wsys.dosent("do")
+</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -35116,7 +34579,7 @@ end
 wsys.my_limb_hit(limb, "2h")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
-						<mStayOpen>10</mStayOpen>
+						<mStayOpen>0</mStayOpen>
 						<mCommand></mCommand>
 						<packageName></packageName>
 						<mFgColor>#ff0000</mFgColor>
@@ -35148,7 +34611,7 @@ else
 	limb = matches[2]
 end
 
-wsys.my_limb_hit(matches[2], "shikudo")</script>
+wsys.my_limb_hit(limb, "shikudo")</script>
 						<triggerType>0</triggerType>
 						<conditonLineDelta>0</conditonLineDelta>
 						<mStayOpen>0</mStayOpen>
@@ -35161,8 +34624,12 @@ wsys.my_limb_hit(matches[2], "shikudo")</script>
 						<colorTriggerBgColor>#000000</colorTriggerBgColor>
 						<regexCodeList>
 							<string>^Dropping back into a low crouch, [A-Z][a-z]+ whips .+ at your (.*).$</string>
+							<string>^[\w'-]+ spins a full rotation, bringing .+ around in a blur to crash intoyour (\w+)\.$</string>
+							<string>^Whirling around, [\w'-]+ brings the ball of \w+ foot crashing into the side of your (head)\.$</string>
 						</regexCodeList>
 						<regexCodePropertyList>
+							<integer>1</integer>
+							<integer>1</integer>
 							<integer>1</integer>
 						</regexCodePropertyList>
 					</Trigger>
@@ -35635,8 +35102,10 @@ end</script>
 					<colorTriggerBgColor>#000000</colorTriggerBgColor>
 					<regexCodeList>
 						<string>You exert superior mental control and your wounds clot before your eyes.</string>
+						<string>You do not bleed, my friend.</string>
 					</regexCodeList>
 					<regexCodePropertyList>
+						<integer>3</integer>
 						<integer>3</integer>
 					</regexCodePropertyList>
 				</Trigger>
@@ -36253,6 +35722,64 @@ end</script>
 						<regex>^sp$</regex>
 					</Alias>
 				</AliasGroup>
+				<AliasGroup isActive="yes" isFolder="yes">
+					<name>Do Queue</name>
+					<script></script>
+					<command></command>
+					<packageName></packageName>
+					<regex></regex>
+					<Alias isActive="yes" isFolder="no">
+						<name>Do List</name>
+						<script>wsys.dolist()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^dolist$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>Undo All</name>
+						<script>wsys.undoall()</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^undoall$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>do action</name>
+						<script>wsys.doadd(matches[2])
+
+</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^do (.*)$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>do first</name>
+						<script>wsys.dofirst(matches[2])
+
+</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^dofirst (.*)$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>dofree action</name>
+						<script>wsys.dofreeadd(matches[2])</script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^dofree (.*)$</regex>
+					</Alias>
+					<Alias isActive="yes" isFolder="no">
+						<name>Dor Action</name>
+						<script>if matches[2] then
+ wsys.doradd(matches[2])
+else
+ wsys.dorclear()
+end -- if
+ </script>
+						<command></command>
+						<packageName></packageName>
+						<regex>^dor(?: (.+))?$</regex>
+					</Alias>
+				</AliasGroup>
 				<Alias isActive="yes" isFolder="no">
 					<name>wshow</name>
 					<script>wsys.wshow()</script>
@@ -36370,12 +35897,26 @@ wsys.report("WunderSys primary settings configured and installed.")</script>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>Diagnose</name>
-					<script>enableTrigger("Diagnose")
+					<script>if wsys.bals.b and wsys.bals.e then
+  enableTrigger("Diagnose")
 wsys.salviaSend("diagnose")
 if wsys.timer.diagwait then
   killTimer(tostring(wsys.timer.diagwait))
-end
-wsys.timer.diagwait = tempTimer(wsys.myPing() * 3, [[wsys.timer.diagwait = nil;disableTrigger("Diagnose")]])</script>
+  end
+wsys.timer.diagwait = tempTimer(wsys.myPing() * 3, [[wsys.timer.diagwait = nil;disableTrigger("Diagnose")]])
+elseif not wsys.doqueue_pending or wsys.doqueue_pending.element.ac ~= "diagnose" then
+  enableTrigger("Diagnose")
+  wsys.dofirst( "diagnose", 5, true )
+  if wsys.timer.diagwait then
+    killTimer(tostring(wsys.timer.diagwait))
+  end
+  wsys.timer.diagwait = tempTimer( 8, [[wsys.timer.diagwait = nil;disableTrigger("Diagnose")]])
+elseif wsys.doqueue_pending and wsys.doqueue_pending.element.ac == "diagnose" then
+  if wsys.timer.diagwait then
+    killTimer(tostring(wsys.timer.diagwait))
+  end
+  wsys.timer.diagwait = tempTimer( 8, [[wsys.timer.diagwait = nil;disableTrigger("Diagnose")]])
+end</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^(dv|diag)$</regex>
@@ -36455,34 +35996,6 @@ end -- if</script>
 					<command></command>
 					<packageName></packageName>
 					<regex>^ret\s*(on|off)$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>do action</name>
-					<script>wsys.doadd(matches[2])
-
-</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^do (.*)$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>dofree action</name>
-					<script>wsys.dofreeadd(matches[2])</script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^dofree (.*)$</regex>
-				</Alias>
-				<Alias isActive="yes" isFolder="no">
-					<name>Dor Action</name>
-					<script>if matches[2] then
- wsys.doradd(matches[2])
-else
- wsys.dorclear()
-end -- if
- </script>
-					<command></command>
-					<packageName></packageName>
-					<regex>^dor(?: (.+))?$</regex>
 				</Alias>
 				<Alias isActive="yes" isFolder="no">
 					<name>Fullstats action</name>
@@ -36962,7 +36475,17 @@ echo("\n")</script>
 			<packageName></packageName>
 			<script>-- initialise wsys namespace
 wsys = wsys or {}
-wsys.events = wsys.events or {}</script>
+wsys.events = wsys.events or {}
+
+if not wsysf then
+  -- If needed, download and install WunderSys Foundation, and have it before WunderSys in your Scripts
+  -- Download from: https://github.com/tynil/WunderSys
+  cecho("\n&lt;red&gt;Warning: Installing WunderSys without/before Foundation")
+end
+
+function wsys.debug( str )
+  --cecho( str )
+end</script>
 			<eventHandlerList />
 			<Script isActive="yes" isFolder="no">
 				<name>Overrides</name>
@@ -37008,9 +36531,1189 @@ wsys.overrides.afftags.colors = wsys.overrides.afftags.colors or {}
 --   This would display fractures (cured by "healthlegs", "healtharms", etc) as green from 1-2 stacks, 
 --   blue at 3-5, and blue with a white background at 6+
 wsys.overrides.afftags.cure_colors = wsys.overrides.afftags.cure_colors or {}
-</script>
+
+-------------------------------------------------
+--            Do Queue Expansions              --
+-------------------------------------------------
+wsys.overrides.doqueue = wsys.overrides.doqueue or {}
+
+--- Doqueue variable function expansion support
+-- Each entry you add to this table will be called when prefixed with $
+-- The key should be a string, and the value should be a function that returns a string.
+-- The input command will be expanded once when you queue the command, and again if wsys.doupdate() is called.
+--
+--[[ Examples:
+wsys.overrides.doqueue.expand.target = function() return my_target end
+wsys.overrides.doqueue.expand.atk = function()
+  if has_rebounding or has_shield then 
+    return "raze"
+  else
+    return "jab"
+  end
+end
+-- You may then call: wsys.dofirst("$atk $target")
+-- If "Tynil" is my_target, then this would expand to "raze Tynil" if has_rebounding or has_shield is true.
+-- Else, it expands to "jab Tynil"
+-- Calling wsys.doupdate() when those has_rebounding/shield variables change would cause this to re-evaluate
+-- and potentially change which attack is queued.
+-- You don't need to use all expansions. wsys.doadd("kick $target") would expand to "kick Tynil" here.
+]]
+wsys.overrides.doqueue.expand = wsys.overrides.doqueue.expand or {}</script>
 				<eventHandlerList />
 			</Script>
+			<ScriptGroup isActive="yes" isFolder="yes">
+				<name>Tables</name>
+				<packageName></packageName>
+				<script>-- table subfolder. For stuff that's usually just for Wunder internal use.
+wsys.tb = wsys.tb or {}</script>
+				<eventHandlerList />
+				<Script isActive="yes" isFolder="no">
+					<name>Homeless Wsys Variables</name>
+					<packageName></packageName>
+					<script>wsys.profile = "basic"
+wsys.puppetmangle = false
+wsys.waittime = .70
+wsys.lifevision = false
+wsys.vmode = false
+wsys.absorbed = false
+wsys.starbursted = false
+wsys.mogged = false
+wsys.affline = wsys.affline or 0
+wsys.innewsroom = false
+wsys.deletefull = false</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Affliction Tables</name>
+					<packageName></packageName>
+					<script>-- RESTORATION AI TABLE
+wsys.tb.restorationlist = {}
+
+wsys.tb.justreckless = {}
+
+-- LIST OF CURRENT AFFS
+wsys.aff = wsys.aff or {}
+
+
+-- CURES FOR EACH AFF
+wsys.tb.affc = {
+
+ burning = {"mendingtorso"},
+ addiction = {"ginseng", "ferrum"},
+ aeon = {"elm", "cinnabar"},
+ agoraphobia = {"lobelia", "argentum", "focus"},
+ anorexia = {"epidermalbody", "focus"},
+ sleeping = {"wake"},
+ asthma = {"kelp", "aurum", "fitness"},
+ concussion = {"restorationhead"},
+ damagedhead = {"restorationhead"},
+ blackout = {},
+ bleeding = {"clot"},
+ damagedleftarm = {"restorationarms"},
+ damagedleftleg = {"restorationlegs"},
+ damagedrightarm = {"restorationarms"},
+ damagedrightleg = {"restorationlegs"},
+ mildtrauma = {"restorationtorso"},
+ carm = {"mendingarms", "restore"},
+ claustrophobia = {"lobelia", "argentum", "focus"},
+ brokenleftarm = {"mendingarms", "restore"},
+ brokenleftleg = {"mendinglegs", "restore"},
+ cleg = {"mendinglegs", "restore"},
+ climb = {"mendingskin","restore"},
+ clumsiness = {"kelp", "aurum"},
+ confusion = {"ash", "stannum","focus"},
+ concussion = {"restorationhead"},
+ crushedthroat = {"mendinghead"},
+ brokenrightarm = {"mendingarms", "restore"},
+ brokenrightleg = {"mendinglegs", "restore"},
+ darkshade = {"ginseng", "ferrum"},
+ dazed = {"elm", "cinnabar"},
+ deadening = {"elm", "cinnabar"},
+ dementia = {"ash", "stannum", "focus"},
+ depression = {"goldenseal", "plumbum"},
+ disloyalty = {"valerian", "realgar"},
+ disrupted = {"concentrate"},
+ dissonance = {"goldenseal", "plumbum"},
+ dizziness = {"goldenseal", "plumbum", "focus"},
+ epilepsy = {"goldenseal", "plumbum", "focus"},
+ fear = {"compose"},
+ frozen = {"caloric"},
+ generosity = {"bellwort", "cuprum", "rage"},
+ hamstrung = {}, -- timed
+ haemophilia = {"ginseng", "ferrum"},
+ hallucinations = {"ash", "stannum", "focus"},
+ healthleech = {"kelp", "aurum"},
+ heartseed = {"restorationtorso"},
+ hellsight = {"valerian", "realgar"},
+ hypersomnia = {"ash", "stannum"},
+ hypochondria = {"kelp", "aurum"},
+ impaled = {"writhe"},
+ impatience = {"goldenseal", "plumbum"},
+ inquisition = {},
+ hecatecurse = {},
+ bubonis = {},
+ weakenedmind = {"focus"},
+ itching = {"epidermalbody"},
+ laceratedthroat = {"restorationhead"},
+ lethargy = {"ginseng", "ferrum"},
+ loneliness = {"lobelia", "argentum", "focus"},
+ lovers = {"bellwort", "cuprum", "focus", "rage"},
+ justice = {"bellwort", "cuprum", "rage"},
+ whisperingmadness = {"elm", "cinnabar"},
+ manaleech = {"valerian", "realgar"},
+ masochism = {"lobelia", "argentum", "focus"},
+ mangledhead = {"restorationhead"},
+ mangledleftarm = {"restorationarms"},
+ mangledleftleg = {"restorationlegs"},
+ mangledrightarm = {"restorationarms"},
+ mangledrightleg = {"restorationlegs"},
+ serioustrauma = {"restorationtorso"},
+ nausea = {"ginseng", "ferrum"},
+ pacified = {"bellwort", "cuprum", "focus", "rage"},
+ paralysis = {"bloodroot", "magnesium"},
+ paranoia = {"ash", "stannum", "focus"},
+ parasite = {"kelp", "aurum"},
+ peace = {"bellwort", "cuprum", "rage"},
+ prone = {"stand"},
+ recklessness = {"lobelia", "argentum", "focus"},
+ retribution = {"bellwort", "cuprum"},
+ scytherus = {"ginseng", "ferrum"},
+ sensitivity = {"kelp", "aurum"},
+ selarnia = {"mendingtorso"},
+ daeggerimpale = {"writhe"},
+ shadowmadness = {"goldenseal", "plumbum"},
+ shivering = {"caloric"},
+ shyness = {"goldenseal", "plumbum", "focus"},
+ slashedthroat = {"epidermalhead"},
+ slickness = {"bloodroot", "magnesium", "valerian", "realgar"},
+ speared = {"writhe"},
+ stupidity = {"goldenseal", "plumbum", "focus"},
+ stuttering = {"epidermalhead", "focus"},
+ entangled = {"writhe", "flex"},
+ bound = {"writhe"},
+ timeloop = {"bellwort", "cuprum"},
+ transfixation = {"writhe"},
+ weariness = {"kelp", "aurum"},
+ webbed = {"writhe", "flex"},
+ vertigo = {"lobelia", "argentum", "focus"},
+ voyria = {"immunity", "antigen"},
+
+ waterdisrupt = {"focus", "lobelia", "argentum"},
+ airdisrupt = {"focus", "lobelia", "argentum"},
+ firedisrupt = {"focus", "lobelia", "argentum"},
+ earthdisrupt = {"lobelia", "argentum"},
+ spiritdisrupt = {"lobelia", "argentum"},
+ 
+ guilt = {"lobelia", "argentum"},
+ tenderskin = {"lobelia", "argentum"},
+ spiritburn = {"lobelia", "argentum"},
+
+ temperedcholeric = {"ginger", "antimony"},
+ temperedmelancholic = {"ginger", "antimony"},
+ temperedphlegmatic = {"ginger", "antimony"},
+ temperedsanguine = {"ginger", "antimony"},
+
+ corruption = {}, --45s
+
+ skullfractures = {"healthhead", "restore"},
+ crackedribs = {"healthtorso", "restore"},
+ wristfractures = {"healtharms", "restore"},
+ torntendons = {"healthlegs", "restore"},
+
+ hypothermia = {"restorationtorso"},
+ scalded = {"epidermalhead"},
+ dehydrated = {}, --60s
+ timeflux = {}, --60s
+ 
+ unweavingmind = {"goldenseal", "plumbum"},
+ unweavingbody = {"ginseng", "ferrum"},
+ unweavingspirit = {"elm", "cinnabar"},
+ 
+ tension = {"elm", "cinnabar"},
+ pressure = {"pear", "calcite"}
+
+}
+
+wsys.tb.affctype = {
+
+ addiction = "herb",
+ aeon = "smoke",
+ agoraphobia = "herb",
+ anorexia = "salve",
+ sleeping = "wake",
+ asthma = "herb",
+ burning = "salve",
+ concussion = "salve",
+ damagedhead = "salve",
+ damagedleftarm = "salve",
+ damagedleftleg = "salve",
+ damagedrightarm = "salve",
+ damagedrightleg = "salve",
+ mildtrauma = "salve",
+ claustrophobia = "herb",
+ brokenleftarm = "salve",
+ brokenleftleg = "salve",
+ clumsiness = "herb",
+ confusion = "herb",
+ concussion = "salve",
+ crushedthroat = "salve",
+ brokenrightarm = "salve",
+ brokenrightleg = "salve",
+ darkshade = "herb",
+ dazed = "smoke",
+ deadening = "smoke",
+ dementia = "herb",
+ depression = "herb",
+ disloyalty = "smoke",
+ disrupted = "concentrate",
+ dissonance = "herb",
+ dizziness = "herb",
+ epilepsy = "herb",
+ fear = "compose",
+ frozen = "salve",
+ generosity = "herb",
+ haemophilia = "herb",
+ hallucinations = "herb",
+ healthleech = "herb",
+ heartseed = "salve",
+ hellsight = "smoke",
+ hypersomnia = "herb",
+ hypochondria = "herb",
+ impaled = "writhe",
+ impatience = "herb",
+ itching = "salve",
+ lethargy = "herb",
+ loneliness = "herb",
+ lovers = "herb",
+ justice = "herb",
+ whisperingmadness = "smoke",
+ laceratedthroat = "salve",
+ slashedthroat = "salve",
+ manaleech = "smoke",
+ masochism = "herb",
+ mangledhead = "salve",
+ mangledleftarm = "salve",
+ mangledleftleg = "salve",
+ mangledrightarm = "salve",
+ mangledrightleg = "salve",
+ serioustrauma = "salve",
+ nausea = "herb",
+ pacified = "herb",
+ paralysis = "herb",
+ paranoia = "herb",
+ parasite = "herb",
+ peace = "herb",
+ prone = "stand",
+ recklessness = "herb",
+ retribution = "herb",
+ scytherus = "herb",
+ sensitivity = "herb",
+ selarnia = "salve",
+ daeggerimpale = "writhe",
+ shadowmadness = "herb",
+ shivering = "salve",
+ shyness = "herb",
+ slickness = "smoke",
+ speared = "writhe",
+ stupidity = "herb",
+ stuttering = "salve",
+ entangled = "writhe",
+ bound = "writhe",
+ timeloop = "herb",
+ transfixation = "writhe",
+ weariness = "herb",
+ webbed = "writhe",
+ vertigo = "herb",
+ voyria = "immunity",
+
+ waterdisrupt = "herb",
+ airdisrupt = "herb",
+ firedisrupt = "herb",
+ earthdisrupt = "herb",
+ spiritdisrupt = "herb",
+ 
+ guilt = "herb",
+ tenderskin = "herb",
+ spiritburn = "herb",
+
+ temperedcholeric = "herb",
+ temperedmelancholic = "herb",
+ temperedphlegmatic = "herb",
+ temperedsanguine = "herb",
+
+
+ skullfractures = "health",
+ crackedribs = "health",
+ wristfractures = "health",
+ torntendons = "health",
+
+ hypothermia = "salve",
+ scalded = "salve",
+ 
+ pressure = "smoke",
+ tension = "smoke",
+ 
+ unweavingbody = "herb",
+ unweavingmind = "herb",
+ unweavingspirit = "smoke",
+ 
+
+}
+
+
+
+
+
+-- AFFS RECEIVED TOGETHER FOR AI PURPOSES
+wsys.tb.affspaired = {}
+
+
+-- AFFS RECEIVED BETWEEN SAME PROMPTS
+wsys.tb.affstogether = {}
+
+-- Removed Weariness from Focusable - Announce 4494
+-- Dementia, Paranoia, and Hallucination - Added as Focusable Announce #4539 
+-- CURES
+wsys.tb.cures = {
+
+ bloodroot = {"paralysis", "slickness"},
+ magnesium = {"paralysis", "slickness"},
+ lobelia = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spritidisrupt", "guilt", "tenderskin", "spiritburn"},
+ argentum = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spiritdisrupt", "guilt", "tenderskin", "spiritburn"},
+ kelp = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "parasite"},
+ aurum = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "parasite"},
+ ginseng = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", "unweavingbody"},
+ ferrum = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", "unweavingbody"},
+ bellwort = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
+ cuprum = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
+ ash = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
+ stannum = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
+ goldenseal = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop", "unweavingmind"},
+ plumbum = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop", "unweavingmind"},
+ focus = {"stupidity", "dizziness", "confusion", "claustrophobia", "agoraphobia", "masochism", "lovers", "recklessness", 
+          "epilepsy", "loneliness", "shyness", "pacified", "anorexia", "vertigo", "weakenedmind",
+			"waterdisrupt", "earthdisrupt", "firedisrupt","airdisrupt", "dementia", "hallucinations", "paranoia"},
+ elm = {"aeon", "whisperingmadness", "deadening", "dazed", "tension", "unweavingspirit" },
+ cinnabar = {"aeon", "whisperingmadness", "deadening", "dazed", "tension", "unweavingspirit" },
+ valerian = {"slickness", "disloyalty", "manaleech", "hellsight"},
+ realgar = {"slickness", "disloyalty", "manaleech", "hellsight"},
+ mendinglegs = {"brokenleftleg", "brokenrightleg", "cleg"},
+ mendingarms = {"brokenleftarm", "brokenrightarm", "carm"},
+ mendingskin = {"climb", "brokenleftleg", "brokenrightleg", "cleg", "brokenrightarm", "brokenleftarm", "brokenarm"},
+ epidermalbody = {"anorexia", "itching"},
+ epidermalhead = {"scalded"},
+ mendingbody = {"burning", "selarnia"},
+ mendinghead = {"crushedthroat"},
+ mendingtorso = {"selarnia"},
+ epidermalhead = {"stuttering", "slashedthroat"},
+ caloric = {"shivering", "frozen"},
+ restorationarms = {"damagedleftarm", "damagedrightarm", "mangledleftarm", "mangledrightarm", "bleg"},
+ restorationlegs = {"damagedleftleg", "damagedrightleg", "mangledleftleg", "mangledrightleg", "bleg"},
+ restorationhead = {"damagedhead", "mangledhead", "laceratedthroat", "concussion"},
+ restorationtorso = {"mildtrauma", "serioustrauma", "heartseed"},
+ restorationbody = {"hypothermia"},
+ tree = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
+          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
+          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
+          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
+          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria", 
+			    "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin" },
+ shrugging = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
+          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "paralysis", 
+          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
+          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
+          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
+ restore = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "carm", "cleg"},
+ dheal = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
+          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
+          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
+          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
+          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin"},
+ flex = {"webbed", "entangled"},
+ writhe = {"webbed", "entangled", "bound", "impaled", "transfixation", "speared", "daeggerimpale"},
+ fool = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
+          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
+          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
+          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
+          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
+          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
+          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin"},
+ concentrate = {"disrupted"},
+ compose = {"fear"},
+ clot = {"bleeding"},
+ immunity = {"voyria"},
+ fitness = {"asthma"},
+ rage = {"generosity", "justice", "lovers", "pacified", "peace"},
+ antimony = { "temperedcholeric", "temperedmelancholic", "temperedphlegmatic", "temperedsanguine"},
+ ginger = { "temperedcholeric", "temperedmelancholic", "temperedphlegmatic", "temperedsanguine"},
+ healthhead = {"skullfractures"},
+ healthtorso = {"crackedribs"},
+ healtharms = {"wristfractures"},
+ healthlegs = {"torntendons"},
+}
+
+wsys.tb.targettedCureTable = {
+  "mendingtorso", "renewaltorso",
+  "ginseng", "ferrum",
+  "bloodroot", "magnesium",
+  "elm", "cinnabar",
+  "valerian", "realgar",
+  "ginger", "antimony",
+  "bellwort", "cuprum",
+  "lobelia", "argentum",
+  "epidermalbody", "sensorybody",
+  "kelp", "aurum",
+  "ash", "stannum",
+  "restorationarms", "reconstructivearms",
+  "restorationhead", "reconstructivehead",
+  "restorationlegs", "reconstructivelegs",
+  "restorationtorso", "reconstructivetorso",
+  "epidermalbody", "sensorybody",
+  "mendingarms", "renewalarms",
+  "mendinglegs", "renewallegs",
+  "mendingbody", "renewalbody",
+  "epidermalhead", "sensoryhead",
+  "calorictorso", "exothermictorso",
+  "goldenseal", "plumbum",
+}</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Curatives Tables</name>
+					<packageName></packageName>
+					<script>
+wsys.tb.opps = {
+
+ ash = "stannum",
+ stannum = "ash",
+ bayberry = "arsenic",
+ arsenic = "bayberry",
+ bellwort = "cuprum",
+ cuprum = "bellwort",
+ bloodroot = "magnesium",
+ magnesium = "bloodroot",
+ cohosh = "gypsum",
+ gypsum = "cohosh",
+ elm = "cinnabar",
+ realgar = "valerian",
+ ginseng = "ferrum",
+ ferrum = "ginseng",
+ goldenseal = "plumbum",
+ plumbum = "goldenseal",
+ hawthorn = "calamine",
+ calamine = "hawthorn",
+ kelp = "aurum",
+ aurum = "kelp",
+ kola = "quartz",
+ quartz = "kola",
+ lobelia = "argentum",
+ argentum = "lobelia",
+ skullcap = "malachite",
+ malachite = "skullcap",
+ valerian = "realgar",
+ cinnabar = "valerian",
+ sileris = "quicksilver",
+ quicksilver = "sileris",
+ irid = "potash",
+ potash = "irid",
+ pear = "calcite",
+ calcite = "pear",
+ caloric = "exothermic",
+ exothermic = "caloric",
+ health = "vitality",
+ vitality = "health",
+ antigen = "immunity",
+ immunity = "antigen",
+ hovering = "levitation",
+ levitation = "hovering",
+ mana = "mentality",
+ mentality = "mana",
+ haste = "speed",
+ speed = "haste",
+ endothermia = "frost",
+ frost = "endothermia",
+ epidermal = "sensory",
+ sensory = "epidermal",
+ mass = "density",
+ density = "mass",
+ mending = "renewal",
+ renewal = "mending",
+ restoration = "reconstructive",
+ reconstructive = "restoration",
+ venom = "toxin",
+ toxin = "venom",
+ ginger = "antimony",
+ antimony = "ginger",
+
+}
+
+
+-- Cure types
+wsys.tb.curetype = {
+
+ bloodroot = "herb",
+ magnesium = "herb",
+ lobelia = "herb",
+ argentum = "herb",
+ kelp = "herb",
+ aurum = "herb",
+ ginseng = "herb",
+ ferrum = "herb",
+ bellwort = "herb",
+ cuprum = "herb",
+ ash = "herb",
+ stannum = "herb",
+ goldenseal = "herb",
+ plumbum = "herb",
+ focus = "focus",
+ elm = "pipe",
+ cinnabar = "pipe",
+ valerian = "pipe",
+ realgar = "pipe",
+ mendinglegs = "salve",
+ renewallegs = "salve",
+ mendingarms = "salve",
+ renewalarms = "salve",
+ mendingskin = "salve",
+ renewalskin = "salve",
+ epidermalbody = "salve",
+ sensorybody = "salve",
+ mendingbody = "salve",
+ renewalbody = "salve",
+ mendinghead = "salve",
+ epidermalhead = "salve",
+ sensoryhead = "salve",
+ caloric = "salve",
+ exothermic = "salve",
+ restorationarms = "salve",
+ reconstructivearms = "salve",
+ restorationlegs = "salve",
+ reconstructivelegs = "salve",
+ restorationhead = "salve",
+ reconstructivehead = "salve",
+ restorationtorso = "salve",
+ reconstructivetorso = "salve",
+ tree = "tree",
+ restore = "restore",
+ dheal = "dheal",
+ flex = "flex",
+ writhe = "writhe",
+ fool = "fool",
+ concentrate = "concentrate",
+ compose = "compose",
+ clot = "clot",
+ immunity = "elixir",
+ antigen = "elixir",
+ fitness = "fitness",
+ rage = "rage",
+ antimony = "herb",
+ ginger = "herb",
+}
+</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Stats</name>
+					<packageName></packageName>
+					<script>-- STATS TABLE
+wsys.stats = {
+
+ h = 5000,
+ m = 5000,
+ e = 20000,
+ w = 20000,
+ maxh = 5000,
+ maxm = 5000,
+ maxw = 20000,
+ maxe = 20000,
+ oh = 5000, --old health
+ om = 5000, --old mana
+ xp = 0,
+ oxp = 0, --old xp
+ kai = 0,
+ shin = 0,
+ rage = 0,
+}
+
+local charstats = {
+  ["Bleed"] = function( val ) wsys.bleeding = tonumber( val ) end,
+  ["Rage"] = function( val ) wsys.stats.rage = tonumber( val ) end,
+}
+
+function wsys.statupdate()
+ 
+  wsys.stats.oh = wsys.stats.h or 5000
+  wsys.stats.om = wsys.stats.m or 5000
+  wsys.stats.oxp = wsys.stats.xp or 0
+
+  wsys.stats.h = tonumber(gmcp.Char.Vitals.hp)
+  wsys.stats.m = tonumber(gmcp.Char.Vitals.mp)
+  wsys.stats.e = tonumber(gmcp.Char.Vitals.ep)
+  wsys.stats.w = tonumber(gmcp.Char.Vitals.wp)
+
+  wsys.stats.maxh = tonumber(gmcp.Char.Vitals.maxhp)
+  wsys.stats.maxm = tonumber(gmcp.Char.Vitals.maxmp)
+  wsys.stats.maxe = tonumber(gmcp.Char.Vitals.maxep)
+  wsys.stats.maxw = tonumber(gmcp.Char.Vitals.maxwp)
+
+  for _,str in ipairs( gmcp.Char.Vitals.charstats ) do
+    local sep = str:find( ": " )
+    if sep then
+      local key = str:sub( 1, sep - 1 )
+      local val = str:sub( sep + 2 )
+      if charstats[key] then charstats[key]( val ) end
+    end
+  end
+
+  if wsys.stats.oh ~= wsys.stats.h then
+    raiseEvent("health changed")
+  end
+  if wsys.stats.om ~= wsys.stats.m then
+    raiseEvent("mana changed")
+  end
+end -- func
+
+registerAnonymousEventHandler("gmcp.Char.Vitals", "wsys.statupdate")
+</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Timers Table</name>
+					<packageName></packageName>
+					<script>-- TIMERS TABLE
+
+wsys.timer = wsys.timer or {}
+</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Balances Table</name>
+					<packageName></packageName>
+					<script>-- BALS Table
+wsys.bals = {
+  b = true, -- balance
+  e = true, -- equilibrium
+
+  moss = true,
+  hm = true, --rename to sip maybe?
+  immunity = true, --7s
+
+  tree = true,
+  focus = true,
+
+  salve = true,
+  herb = true,
+  smoke = true,
+
+
+  dragonheal = true,
+  fool = true,
+  voice = true,
+  rage = true,
+  shrugging = true,
+  fitness = true,
+
+}
+
+-- reset all balances
+function wsys.resetBals()
+  for k in pairs(wsys.bals) do
+    wsys.gotBal(k)
+  end
+end
+
+-- balances are all true on starburst or death
+registerAnonymousEventHandler("You Died", "wsys.resetBals")
+registerAnonymousEventHandler("You Starbursted", "wsys.resetBals")
+
+
+</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Prompt Tags and Tag Colours</name>
+					<packageName></packageName>
+					<script>-- Table of default prompt tags
+wsys.prompttags = wsys.prompttags or {} 
+
+wsys.prompttags["health"] = function() return wsys.stats.h end
+wsys.prompttags["percenthealth"] = function() return math.floor(wsys.stats.h / wsys.stats.maxh * 100) end
+wsys.prompttags["mana"] = function() return wsys.stats.m end
+wsys.prompttags["percentmana"] = function() return math.floor(wsys.stats.m / wsys.stats.maxm * 100) end
+wsys.prompttags["endurance"] = function() return wsys.stats.e end
+wsys.prompttags["percentendurance"] = function() return math.floor(wsys.stats.e / wsys.stats.maxe * 100) end
+wsys.prompttags["willpower"] = function() return wsys.stats.w end
+wsys.prompttags["percentwillpower"] = function() return math.floor(wsys.stats.w / wsys.stats.maxw * 100) end
+wsys.prompttags["bal"] = function() if wsys.bals.b then return "X" else return "" end end
+wsys.prompttags["eq"] = function() if wsys.bals.e then return "E" else return "" end end
+wsys.prompttags["lbal"] = function() if wsys.bals.b then return "x" else return "" end end
+wsys.prompttags["leq"] = function() if wsys.bals.e then return "e" else return "" end end
+wsys.prompttags["target"] = function() if target then return target else return "" end end
+wsys.prompttags["paused"] = function() if wsys.paused then return "(PP)" else return "" end end
+wsys.prompttags["softpaused"] = function() if wsys.softpaused then return "(sP)" else return "" end end
+wsys.prompttags["phase"] = function() if wsys.def.phased or wsys.def.blackwind or wsys.def.astralform then return "@" else return "" end end
+wsys.prompttags["retardation"] = function() if wsys.retard then return "[RET]" else return "" end end
+wsys.prompttags["kai"] = function() if wsys.def.kaitrance then return wsys.stats.kai .." " else return "" end end
+wsys.prompttags["shin"] = function() if wsys.def.shintrance then return wsys.stats.shin.." " else return "" end end
+wsys.prompttags["warning"] = function() return wsys.prefixWarning end
+wsys.prompttags["mw"] = function() if wsys.def.metawake then return "MW" else return "" end end
+wsys.prompttags["breathing"] = function() if wsys.def.breathing then return "br" else return "" end end
+wsys.prompttags["xp"] = function() return gmcp.Char.Vitals.nl end
+wsys.prompttags["affs"] = function() return wsys.affTags( wsysf.affs, true ) .. wsys.affTags( wsys.predicted, false ) end
+wsys.prompttags["timestamp"] = function() return getTimestamp(getLineCount()):gsub("^%s*(.-)%s*$", "%1") end
+wsys.prompttags["rage"] = function() if wsys.stats.rage &gt; 0 then return wsys.stats.rage.." " else return "" end end
+
+wsys.prompttags["diffhealth"] = function()
+  if wsys.stats.h &lt; wsys.stats.oh then 
+    return("&lt;red&gt; (-"..wsys.stats.oh - wsys.stats.h .. "h, " .. string.format("%.1f", ((wsys.stats.oh - wsys.stats.h) / wsys.stats.maxh) * 100) .. "%)")
+  elseif wsys.stats.h &gt; wsys.stats.oh then 
+    return("&lt;green&gt; (+"..wsys.stats.h - wsys.stats.oh .. "h, " .. string.format("%.1f", ((wsys.stats.h - wsys.stats.oh) / wsys.stats.maxh) * 100) .. "%)") 
+  else
+    return ""
+  end -- if
+end
+
+wsys.prompttags["diffmana"] = function()
+  if wsys.stats.m &lt; wsys.stats.om then 
+    return("&lt;slate_blue&gt; (-"..wsys.stats.om - wsys.stats.m .. "m, " .. string.format("%.1f", ((wsys.stats.om - wsys.stats.m) / wsys.stats.maxm) * 100) .. "%)")
+  elseif wsys.stats.m &gt; wsys.stats.om then 
+    return("&lt;purple&gt; (+".. wsys.stats.m - wsys.stats.om .. "m, " .. string.format("%.1f", ((wsys.stats.m - wsys.stats.om) / wsys.stats.maxm) * 100) .. "%)") 
+  else
+    return ""
+  end -- if
+end
+
+wsys.prompttags["def"] = function() 
+  local defstring = ""
+  if wsys.def.blindness then
+    defstring = defstring .. "&lt;SeaGreen&gt;B "
+  end
+  if wsys.def.deafness then
+    defstring = defstring .. "&lt;SeaGreen&gt;D "
+  end
+  if wsys.def.cloak then
+    defstring = defstring .. "&lt;deep_sky_blue&gt;C "
+  end
+  if wsys.def.kola then
+    defstring = defstring .. "&lt;yellow&gt;K "
+  end
+  if wsys.def.density then
+    defstring = defstring .. "&lt;maroon&gt;M "
+  end -- if
+  if wsys.def.heldbreath then
+    defstring = defstring .. "&lt;light_grey&gt;br"
+  end --if
+  return defstring
+end
+
+wsys.prompttags["invdef"] = function() 
+  local invdefstring = ""
+  if not wsys.def.blindness then
+    invdefstring = invdefstring .. "&lt;SeaGreen&gt;B "
+  end
+  if not wsys.def.deafness then
+    invdefstring = invdefstring .. "&lt;SeaGreen&gt;D "
+  end
+  if not wsys.def.cloak then
+    invdefstring = invdefstring .. "&lt;deep_sky_blue&gt;C "
+  end
+  if not wsys.def.kola then
+    invdefstring = invdefstring .. "&lt;yellow&gt;K "
+  end
+  if not wsys.def.density then
+    invdefstring = invdefstring .. "&lt;maroon&gt;M "
+  end -- if
+  if wsys.def.heldbreath then
+    invdefstring = invdefstring .. "&lt;light_grey&gt;br"
+  end --if
+  return invdefstring
+end
+
+wsys.prompttags["npchp"] = function()
+  if gmcp.IRE.Target then         
+    if gmcp.IRE.Target.Set == "" or gmcp.IRE.Target.Info.id == "-1" then
+      return ""
+    elseif gmcp.IRE.Target then
+      return tonumber(string.findPattern(gmcp.IRE.Target.Info.hpperc, "%d+"))
+    end
+  else
+    return ""
+  end
+end
+
+wsys.prompttags.mylimbs = function()
+	local str = ""
+	
+	local limbs = {
+	"left leg",
+	"right leg",
+	"left arm",
+	"right arm",
+	"torso",
+	"head",
+}
+	local colors = { 
+		{ c = "&lt;dark_slate_gray&gt;", val = 0 },
+		{ c = "&lt;grey&gt;", val = 1 },
+		{ c = "&lt;brown&gt;", val = 4 },
+		{ c = "&lt;orange&gt;", val = 7 },
+		{ c = "&lt;red&gt;", val = 10 },
+		}
+
+	local first = true
+	for _,limb in pairs(limbs) do
+		if not first then
+			str = str.."&lt;dark_slate_gray&gt;|"
+		end
+		local d = tonumber(wsys.tb.selflimbdamage[limb].damage)
+		local color = colors[0] 
+		d = math.floor(d+0.5)
+		for _,t in ipairs( colors ) do
+			if d &gt;= t.val then
+				color = t.c
+			else
+				break
+			end
+		end
+
+		str = str.. color..d
+		first = false
+	end
+	return str
+end
+
+--table of default prompt tag colors
+wsys.prompttagcolors = wsys.prompttagcolors or {} 
+  
+wsys.prompttagcolors["hcolour"] = function()
+  if wsys.stats.h &gt;= (wsys.stats.maxh * 0.75) then
+    return "sea_green"
+  elseif wsys.stats.h &gt;= (wsys.stats.maxh * 0.33) then
+    return "gold"
+  else
+    return "red"
+  end --if
+end
+
+wsys.prompttagcolors["mcolour"] = function()
+  if wsys.stats.m &gt;= (wsys.stats.maxm * .75) then
+    return "sea_green"
+  elseif wsys.stats.m &gt;= (wsys.stats.maxm * .50) then
+    return "gold"
+  else
+    return "red"
+  end -- if
+end
+
+wsys.prompttagcolors["wcolour"] = function()
+  if wsys.stats.w &gt;= (wsys.stats.maxw * .66) then
+    return "sea_green"
+  elseif wsys.stats.w &gt;= (wsys.stats.maxw * .50) then
+    return "gold"
+  else
+    return "red"
+  end -- if
+end
+
+wsys.prompttagcolors["ecolour"] = function()
+  if wsys.stats.e &gt;= (wsys.stats.maxe * .66) then
+    return "sea_green"
+  elseif wsys.stats.e &gt;= (wsys.stats.maxe * .50) then
+    return "gold"
+  else
+    return "red"
+  end -- if
+end
+
+wsys.prompttagcolors["kaicolour"] = function()
+  if wsys.stats.kai &lt; 10 then
+    --can't even choke
+    return "red"
+  elseif wsys.stats.kai &lt; 21 then
+    --can't heal
+    return "firebrick"
+  elseif wsys.stats.kai &lt; 41 then
+    --can't cripple
+    return "dark_orange"
+  elseif wsys.stats.kai &lt; 61 then
+    --can't enfeeble
+    return "yellow"
+  elseif wsys.stats.kai &gt;= 61 then
+    --can do anything
+    return "green"
+  end
+end
+                  
+wsys.prompttagcolors["shincolour"] = function()
+  if wsys.stats.shin &lt; 4 then
+    --can't even infuse
+    return "red"
+  elseif wsys.stats.shin &lt; 14 then
+    --can't fist
+    return "firebrick"
+  elseif wsys.stats.shin &lt; 29 then
+    --can't blizzard
+    return "dark_orange"
+  elseif wsys.stats.shin &lt; 39 then
+    --can't annihilate
+    return "yellow"
+  else
+    --can do anything
+    return "green"
+  end
+end</script>
+					<eventHandlerList />
+				</Script>
+				<Script isActive="yes" isFolder="no">
+					<name>Aff shortnames on prompt</name>
+					<packageName></packageName>
+					<script>wsys.overrides.afftags = wsys.overrides.afftags or {}
+-- Shortnames = { aff = "name" }
+wsys.overrides.afftags.shortnames = wsys.overrides.afftags.shortnames or {}
+-- colors = { aff = "color", aff2 = { "color1", [4] = "color at 4+ stacks" } }
+wsys.overrides.afftags.colors = wsys.overrides.afftags.colors or {}
+-- cure_colors = { cure = "color", cure2 = { "color1", [6] = "color at 6+ stacks" } }
+wsys.overrides.afftags.cure_colors = wsys.overrides.afftags.cure_colors or {}
+
+
+-- Probably use an override table
+local aff_short = {
+ deafness = "",
+ blindness = "",
+ insomnia = "",
+ addiction = "add",
+ aeon = "ae",
+ agoraphobia = "agor",
+ anorexia = "ano",
+ asphyxiating = "", -- Lets Air Lord see what smoke cure you used
+ sleeping = "slp",
+ asthma = "ast",
+ concussion = "concuss",
+ damagedhead = "h1",
+ blackout = "",
+ bleeding = "bld",
+ demonstain = "stain",
+ damagedleftarm = "la2",
+ damagedleftleg = "ll2",
+ bleg = "uleg1",
+ damagedrightarm = "ra2",
+ damagedrightleg = "rl2",
+ mildtrauma = "t1",
+ carm = "uwna",
+ claustrophobia = "clau",
+ brokenleftarm = "la1",
+ brokenleftleg = "ll1",
+ cleg = "uwnl",
+ climb = "uwcrip",
+ clumsiness = "Cl",
+ confusion = "con",
+ brokenrightarm = "ra1",
+ brokenrightleg = "rl1",
+ darkshade = "dark",
+ deadening = "dea",
+ dementia = "dem",
+ depression = "dep",
+ disloyalty = "disl",
+ disrupted = "dis",
+ dissonance = "diss",
+ dizziness = "diz",
+ epilepsy = "epi",
+ fear = "fear",
+ frozen = "frozen",
+ generosity = "gen",
+ haemophilia = "haem",
+ hallucinations = "hallu",
+ healthleech = "hleech",
+ hellsight = "hell",
+ hypersomnia = "hypers",
+ hypochondria = "hypo",
+ impaled = "Impale",
+ impatience = "IMP",
+ internalbleeding = "ImpaleSlash",
+ inquisition = "",
+ cadmuscurse = "cadmus",
+ weakenedmind = "rixil",
+ hecatecurse = "HECATE",
+ itching = "",
+ lethargy = "let",
+ loneliness = "lon",
+ lovers = "lust",
+ justice = "just",
+ whisperingmadness = "MAD",
+ masochism = "maso",
+ manaleech = "mleech",
+ mangledhead = "h2",
+ mangledleftarm = "la3",
+ mangledleftleg = "ll3",
+ mangledrightarm = "ra3",
+ mangledrightleg = "rl3",
+ serioustrauma = "t2",
+ nausea = "nau",
+ pacified = "pac",
+ paralysis = "PAR",
+ paranoia = "para",
+ parasite = "paras",
+ peace = "pea",
+ prone = "PR",
+ recklessness = "reck",
+ retribution = "ret",
+ scytherus = "SCY",
+ sensitivity = "sen",
+ daeggerimpale = "Impale",
+ shadowmadness = "sham",
+ shivering = "shiv",
+ shyness = "shy",
+ slickness = "SLI",
+ speared = "Impale",
+ stupidity = "st",
+ stuttering = "stut",
+ entangled = "tangled",
+ bound = "bound",
+ transfixation = "transf",
+ weariness = "Wea",
+ webbed = "web",
+ vertigo = "vert",
+ voyria = "voy",
+ heartseed = "hseed",
+ temperedsanguine = "sang",
+ temperedcholeric = "chol",
+ temperedphlegmatic = "phleg",
+ temperedmelancholic = "melan",
+ torntendons = "tendons",
+ wristfractures = "wrist",
+ crackedribs = "ribs",
+ skullfractures = "skull",
+ burning = "burn",
+ unweavingmind = "UNM",
+ unweavingbody = "UNB",
+ unweavingspirit = "UNS",
+ mindravaged = "MIND RAVAGE",
+ pressure = "PRESS",
+ tension = "tens",
+}
+
+local aff_colors = {
+	bleeding = { "maroon", [500] = "red" },
+	burning = { "SlateGrey", "brown", "red" },
+	pressure = { "SlateGrey", "DeepSkyBlue", [4] = "cyan", [6] = "white" },
+	prone = "orchid",
+	mindravaged = "red:gray",
+}
+
+-- The cure may be the prefix to an actual cure
+-- E.g. "mending" matches "mendingarms" or "mendinglegs" but not "foomending"
+local cure_colors = {
+	kelp = "chartreuse",
+	goldenseal = "yellow",
+	ginseng = "dark_goldenrod",
+	lobelia = "moccasin",
+	elm = "sky_blue",
+	valerian = "royal_blue",
+	restoration = "brown",
+	mending = "brown",
+	health = { "medium_violet_red", [6] = "deep_pink" }, -- fractures
+	ginger = { "medium_purple", [6] = "purple" },
+}
+
+-- Return the color to use for an value, given a color_option
+-- Color_option is either a string "color", or a table with a list of colors to
+-- use based on the aff_value
+local getColor = function( color_option, value )
+  local color = false
+	
+	if type(color_option) == "string" then
+		-- Aff color is a string, so use it
+		color = color_option
+		
+	elseif type(color_option) == "table" then
+		-- Pick a color based on value
+		local max = 0
+		local current_val = tonumber(value) or ( value and 1 ) or 0
+		
+		for i,v in pairs(color_option) do
+			if i &gt; max and current_val &gt;= i then
+				max = i
+				color = v
+			end
+		end
+	end
+	return color
+end
+
+local getAffLabel = function( aff, value )
+  local short = wsys.overrides.afftags.shortnames[aff] or aff_short[aff]
+	
+	if short and #short == 0 then
+		-- Short is "", don't display anythign
+		return false
+	end
+	
+	local color = getColor( wsys.overrides.afftags.colors[aff] or aff_colors[aff], value )
+	
+	if not color and wsys.tb.affc[aff] then
+		-- Pick a color based on cure-type
+		for _,aff_cure in ipairs(wsys.tb.affc[aff]) do
+			-- Check the overrides first
+			for cure,ccolor in pairs(wsys.overrides.afftags.cure_colors) do
+				if string.match( aff_cure, "^"..cure ) then
+					color = getColor( ccolor, value )
+					break
+				end
+			end
+			if color then break end -- Break out of the affc table loop if we found a match
+		
+			-- Check the default colors
+			for cure,ccolor in pairs(cure_colors) do
+				if string.match( aff_cure, "^"..cure ) then
+					color = getColor( ccolor, value )
+					break
+				end
+			end
+			if color then break end -- Break out of the affc table loop if we found a match
+		end
+	end
+	
+	if not color then
+		if short then
+			-- No special color
+			color = "SlateGrey"
+		else
+			-- No short means we don't know about it. Use a default color
+			color = "IndianRed"
+		end
+	end
+	
+	short = short or aff
+	
+	if tonumber(value) and value &gt; 1 then
+		-- Stackable aff, append (#)
+		short = short .."("..value..")"
+	end
+	
+  return "&lt;"..color.."&gt;"..short
+end
+
+function wsys.affTags( affs, include_bleed )
+  local s = {}
+  if include_bleed and wsysf.stats.bleed and wsysf.stats.bleed &gt; 50 then
+  	s[#s+1] = getAffLabel( "bleeding", wsysf.stats.bleed )
+  end
+  for aff,value in pairs(affs) do
+		entry = getAffLabel(aff, value)
+		if entry then
+			s[#s+1] = entry
+		end
+	end
+  return #s &gt; 0 and ("&lt;IndianRed&gt;["..table.concat(s, " ").."&lt;IndianRed&gt;]") or ""
+end</script>
+					<eventHandlerList />
+				</Script>
+			</ScriptGroup>
 			<ScriptGroup isActive="yes" isFolder="yes">
 				<name>Settings</name>
 				<packageName></packageName>
@@ -37087,9 +37790,9 @@ function wsys.return_defaultsettings( no_save )
     },
   },
   container = "pack",
-  affcuredechos = true,
+  affcuredechos = false,
   autoshrugging = false,
-  affgainedechos = true,
+  affgainedechos = false,
   manapercent = 10,
   usemoss = false,
   prompt = "@warning#red@paused@softpaused#DodgerBlue@retardation#yellow@phase#hcolour@healthh #mcolour@manam #ecolour@percentendurance%e #wcolour@percentwillpower%w @kai@shin#white@bal@bal#MidnightBlue|#white@eq@eq @invdef#DarkOrchid@mw@affs@diffhealth@diffmana",
@@ -37240,95 +37943,77 @@ wsys.saveSettings()</script>
 					<Script isActive="yes" isFolder="no">
 						<name>Affliction Functions</name>
 						<packageName></packageName>
-						<script>local aff_debug = false
-local def_affs = {
-   insomnia = true,
-   blindness = true,
-   deafness = true,
-	 }
-	 
+						<script>wsys.predicted = {}
 
+---------------------------------------------------
+-- Translation layer to map wsysf.affs to wsys.aff
+---------------------------------------------------
+
+-- Note, this meta table allows you to access the values
+-- From wsysf.affs, but it does not automatically map pairs()
+-- or next(). Both of these will always be empty
+wsys.aff = setmetatable({}, {
+	__index = function(table, key)
+		return wsysf.affs[key] or wsys.predicted[aff]
+	end,
+	__newindex = function(table, key, value)
+		echo("!Don't set wsys.aff."..key.." = "..tostring(value))
+	end
+})
+
+local wsysf_aff_event_handler = function( event, affliction )
+
+	if wsys.predicted[ affliction ] then wsys.predicted[ affliction ] = nil end
+	
+	wsys.checkaffs_next_prompt()
+	
+	if event == "wsysf got aff" then
+		raiseEvent( "got aff", affliction )
+	elseif event == "wsysf lost aff" then
+		raiseEvent( "lost aff", affliction )
+	end
+end
+
+if wsys.events.aff_add then killAnonymousEventHandler( wsys.events.aff_add ) end
+if wsys.events.aff_remove then killAnonymousEventHandler( wsys.events.aff_remove ) end
+if wsys.events.aff_list then killAnonymousEventHandler( wsys.events.aff_list ) end
+
+wsys.events.aff_add = registerAnonymousEventHandler("wsysf got aff", wsysf_aff_event_handler)
+wsys.events.aff_remove = registerAnonymousEventHandler("wsysf lost aff", wsysf_aff_event_handler)
+wsys.events.aff_list = registerAnonymousEventHandler("gmcp.Char.Afflictions.List", function() wsys.predicted = {} end)
+
+function wsys.affpredict(aff, value)
+  if value == nil then value = true end
+	
+	if not wsysf.affs[aff] and wsys.predicted[aff] ~= value then
+		if value then
+			send("curing predict "..aff) -- ,false)
+		else
+			send("curing unpredict "..aff) -- ,false)
+  		end
+  		wsys.predicted[aff] = value
+	end
+end
+	
+---------------------------------------------------
+-- Old Aff tracking functions. Some of these may
+-- functions may no longer be needed
+---------------------------------------------------
+	
+-- Deprecated in favour of pure GMCP aff tracking
+-- This is only used for class tracking and the aff print lines now
 function wsys.affadd(affliction, class, time, from_gmcp)
   if not wsys.lifevision then
     local gained = wsys.affs_gained[affliction]
     if not from_gmcp and wsys.affline ~= getLineNumber() then
       wsys.affprint(affliction)
     end -- if
-    --set aff to true or level number (tempered humours)
-    if affliction == "temperedcholeric" then
-      wsys.humourUp("choleric")
-    elseif affliction == "temperedmelancholic" then
-      wsys.humourUp("melancholic")
-    elseif affliction == "temperedphlegmatic" then
-      wsys.humourUp("phlegmatic")
-    elseif affliction == "temperedsanguine" then
-      wsys.humourUp("sanguine")
-    elseif affliction == "skullfractures" then
-      if wsys.is_twohanddoubled(wsys.twohandsmacker) then
-        wsys.fractureup("skullfractures",2)
-      else
-        wsys.fractureup("skullfractures",1)
-      end
-    elseif affliction == "crackedribs" then
-      if wsys.is_twohanddoubled(wsys.twohandsmacker) then
-        wsys.fractureup("crackedribs",2)
-      else
-        wsys.fractureup("crackedribs",1)
-      end
-    elseif affliction == "wristfractures" then
-      if wsys.is_twohanddoubled(wsys.twohandsmacker) then
-        wsys.fractureup("wristfractures",2)
-      else
-        wsys.fractureup("wristfractures",1)
-      end
-    elseif affliction == "torntendons" then
-      if wsys.is_twohanddoubled(wsys.twohandsmacker) then
-        wsys.fractureup("torntendons",2)
-      else
-        wsys.fractureup("torntendons",1)
-      end
-    elseif affliction == "burning" and wsys.aff.burning then
-      --Do nothing? We're already burning
-    elseif not def_affs[affliction] then
-      wsys.aff[affliction] = true
-    end
-
-    if affliction == "sleeping" then
-      if not wsys.aff.prone then
-        raiseEvent("got aff", "prone") -- We get this with GMCP
-        wsys.aff.prone = true
-        enableTrigger("Prone -")
-      end -- if
-    elseif string.match(affliction, "leg") or string.match(affliction, "arm") or string.match(affliction, "head") or string.match(affliction, "torso") then
-      wsys.affaddsalve(affliction)
-    elseif affliction == "sensitivity" and wsys.def.deafness then
-      return
-    end -- if
 
     if class then wsys.newClassTimer( class ) end
-
-    if not gained then
-      wsys.affs_gained[affliction] = true
-      if aff_debug then echo("got aff "..affliction) end
-      raiseEvent("got aff", affliction, class)
-      enableTrigger(string.title(affliction) .. " -")
-      wsys.ragequeue()
-      wsys.lockqueue()
-    end
 
     if not from_gmcp then
       wsys.affline = getLineNumber()
     end
-
-    -- handling for self decaying affs
-    if time then
-      if wsys.timer[affliction.."decay"] then killTimer(wsys.timer[affliction.."decay"]) end
-      wsys.timer[affliction.."decay"] = tempTimer(time + wsys.myPing() * 1.5, function() 
-        wsys.timer[affliction.."decay"] = nil
-        wsys.affcuredconfirm(affliction)
-        end)
-    end
-
   end -- if
 end -- func
 
@@ -37346,17 +38031,11 @@ function wsys.affcured(affliction)
    end
   end -- if 
  end -- if
- wsys.checkaffs()
+ --wsys.checkaffs()
 end -- func
 
 
 function wsys.affcuredconfirm(affliction, from_gmcp)
-  if wsys.aff[affliction] or def_affs[affliction] then
-    if aff_debug then echo("lost aff "..affliction) end
-    wsys.aff[affliction] = nil
-    raiseEvent("lost aff", affliction)
-  end
-
   if affliction == "aeon" then
     wsys.def.speed = false
   end -- if
@@ -37365,14 +38044,6 @@ function wsys.affcuredconfirm(affliction, from_gmcp)
     disableTrigger(string.title(affliction) .. " -")
     wsys.affcureprint(affliction)
   end
-
-  for k,v in ipairs(wsys.tb.affspaired) do
-    for a,b in ipairs(wsys.tb.affspaired[k]) do
-      if b == affliction then
-        table.remove(wsys.tb.affspaired, k)
-      end -- if
-    end -- for
-  end -- for
 
   wsys.checkaffs(affliction)
 
@@ -37440,13 +38111,17 @@ function wsys.affcheckblackout(affliction)
 end -- func
 
 
+local affs_next_prompt_id = nil
+function wsys.checkaffs_next_prompt()
+	if not affs_next_prompt_id then
+		affs_next_prompt_id = tempPromptTrigger( function()
+			affs_next_prompt_id = nil
+			wsys.checkaffs()
+		end, 1)
+	end
+end
 
-function wsys.checkaffs(affliction)
- if next(wsys.aff) then
-  for k in pairs(wsys.aff) do
-   enableTrigger(string.title(k) .. " -")
-  end -- for
- end -- if
+function wsys.checkaffs()
  wsys.lockqueue()
 end -- func
     
@@ -37457,25 +38132,7 @@ function wsys.firequeues()
   if not wsys.self_illusion then cecho("&lt;pink&gt;ILLUSION BITCH!") end
   do return end
  end -- if
- if #wsys.tb.affstogether &gt; 1 then
-  if next(wsys.tb.affspaired) then
-   for k,v in ipairs(wsys.tb.affspaired) do
-    for a,b in ipairs(wsys.tb.affspaired[k]) do
-     if table.contains(wsys.tb.affstogether, b) then
-      table.remove(wsys.tb.affspaired, k) -- might cause problems, keep an eye out
-     end -- if
-    end -- for
-   end -- for
-  end -- if
-  wsys.tb.affspaired[#wsys.tb.affspaired+1] = {wsys.tb.affstogether[1], wsys.tb.affstogether[2], wsys.tb.affstogether[3], wsys.tb.affstogether[4]}
- end -- if
- local fired = {}
- for k,v in pairs(wsys.tb.affstogether) do
-  wsys.aff[v] = true
-  enableTrigger(string.title(v) .. " -")
-
- end -- for
- wsys.tb.affstogether = {}
+ 
  if wsys.aff.aeon then
   if wsys.retard then
    --retardqueue()
@@ -37484,32 +38141,13 @@ function wsys.firequeues()
   end -- if
   do return end
  end -- if
- for k,v in ipairs(fired) do
-  --_G["wsys"][v .. "queue"]()
- end -- for
+
  wsys.ragequeue()
  wsys.lockqueue()
 end -- func
 
 
-function wsys.pairscheck(cure)
- for k,v in ipairs(wsys.tb.affspaired) do
-  for a,b in ipairs(wsys.tb.affspaired[k]) do
-   if table.contains(wsys.tb.cures[cure], b) then
-    wsys.aff[wsys.tb.affspaired[k][1]] = nil
-    wsys.aff[wsys.tb.affspaired[k][2]] = nil
-    if wsys.aff[wsys.tb.affspaired[k][3]] then
-     wsys.aff[wsys.tb.affspaired[k][3]] = nil
-     disableTrigger(string.title(wsys.tb.affspaired[k][3]) .. " -")
-    end -- if
-    if wsys.aff[wsys.tb.affspaired[k][4]] then
-     wsys.aff[wsys.tb.affspaired[k][4]] = nil
-     disableTrigger(string.title(wsys.tb.affspaired[k][4]) .. " -")
-    end -- if
-    table.remove(wsys.tb.affspaired, k)
-   end -- if
-  end -- for
- end -- for
+function wsys.pairscheck(cure) -- What is this for?
  wsys.checkaffs()
 end -- func
 
@@ -37531,9 +38169,7 @@ function wsys.blackoutloss( event, affliction )
       	send("curing predict disrupted", false)
       end -- if
       if wsys.stats.h == wsys.stats.maxh and wsys.stats.m == wsys.stats.maxm then
-      	send("curing predict recklessness", false)
-      	wsys.aff.recklessness = true
-      	enableTrigger("Recklessness -")
+        wsys.affpredict("recklessness")
       end -- if
       if not wsys.aff.aeon and wsys.classTimerExists("occultist") or wsys.classTimerExists("jester") or wsys.classTimerExists("shaman") then
       	send("curing predict aeon")
@@ -37706,47 +38342,7 @@ function wsys.return_defaultaffprios()
     ["fear"] = 20, --low for retardation/aeon curing
 
   }
-end
-
---gmcp.Char.Afflictions
-
-local exclude = {
-   numbedrightarm  = true,
-   numbedleftarm = true,
-
-   --Tempers and fractures don't give counts in GMCP. Ignore them for now
-   temperedcholeric = true,
-   temperedmelancholic = true,
-   temperedphlegmatic = true,
-   temperedsanguine = true,
-
-   torntendons = true,
-   skullfractures = true,
-   crackedribs = true,
-   wristfractures = true,
-   }
-
-function wsys.gmcpAffAdded()
-   local aff,count = string.match( gmcp.Char.Afflictions.Add.name, "(%w+) %((%d+)%)" )
-   aff = aff or gmcp.Char.Afflictions.Add.name
-   if not exclude[aff] then
-      wsys.affadd( aff, nil, nil, true )
-   end
-end
-
-function wsys.gmcpAffRemoved()
-   for _,aff in ipairs( gmcp.Char.Afflictions.Remove ) do
-      local aff2,count = string.match( aff, "(%w+) %((%d+)%)" )
-      aff = aff2 or aff
-      if aff_debug then echo("wsys.gmcpAffRemoved:'"..aff.."'") end
-      if not exclude[aff] then
-         wsys.affcuredconfirm(aff, true)
-      end
-   end
-end
-
-registerAnonymousEventHandler("gmcp.Char.Afflictions.Add", "wsys.gmcpAffAdded")
-registerAnonymousEventHandler("gmcp.Char.Afflictions.Remove", "wsys.gmcpAffRemoved")</script>
+end</script>
 						<eventHandlerList />
 					</Script>
 					<Script isActive="yes" isFolder="no">
@@ -37766,7 +38362,6 @@ end -- func
 function wsys.clotd()
   if wsys.bleeding &lt;= 30 then
     wsys.bleeding = 0
-    wsys.aff.bleeding = nil
   else
     wsys.bleeding = wsys.bleeding - 30
   end
@@ -37777,7 +38372,6 @@ end -- func
 function wsys.clotcure()
   wsys.timer.bleedingTimer = nil
   wsys.cure = "clot"
-  wsys.aff.bleeding = nil
   wsys.bleeding = 0
   if wsys.timer.bleedingTimer then
    killTimer(wsys.timer.bleedingTimer)
@@ -37857,7 +38451,7 @@ end</script>
    killTimer(tostring(wsys.timer.dhealwait))
  end
  wsys.timer.dhealwait = tempTimer(wsys.myPing() * 2, [[wsys.timer.dhealwait = nil;disableTrigger("Dheal");wsys.lockqueue()]])
- wsys.salviaSend("dragonheal")
+ wsys.doOnce("dragonheal", 5 )
 end -- func
 
 local dhealprompt = false
@@ -37887,7 +38481,9 @@ end -- func
 
 function wsys.emptydheal()
  for k,v in pairs(wsys.tb.cures.dheal) do
-  wsys.aff[v] = nil
+ 	if wsysf.affs[v] then
+  	wsysf.core.debug.print(2, "Empty dheal should clear ".. v.."?")
+	end
   disableTrigger(string.title(v) .. " -")
  end -- for
  wsys.pairscheck("dheal")
@@ -37941,7 +38537,11 @@ function wsys.emptyherb()
   wsys.def.insomnia = true
  elseif wsys.cure ~= "hawthorn" and wsys.cure ~= "calamine" then
   for k,v in pairs(wsys.tb.cures[wsys.cure]) do
-   wsys.aff[v] = nil
+    wsys.predicted[v] = nil
+	
+    if wsysf.affs[v] then
+      wsysf.core.debug.print(2, "Empty herb eat should clear ".. v.."?")
+    end
    disableTrigger(string.title(v) .. " -")
   end -- for
  end -- if
@@ -37981,7 +38581,7 @@ end -- func
  if wsys.stats.h == 0 and wsys.stats.oh &gt; 0 then
   raiseEvent("You Died")
   wsys.pause()
-  wsys.aff = {}
+  --wsys.aff = {}
   for k in pairs(wsys.herbsout) do
    wsys.herbsout[k] = 0
   end -- for
@@ -38061,7 +38661,6 @@ local pipeprompt = false
 
 function wsys.smoked(herb)
   wsys.lostBal("smoke", 2)
-  wsys.aff.asthma = nil
   if herb == "empty" then
    wsys.emptySmoke(wsys.pipes.smoking)
   else
@@ -38266,8 +38865,12 @@ end
 function wsys.emptypipe(herb)
  if herb ~= "skullcap" and herb ~= "malachite" then
   for k,v in pairs(wsys.tb.cures[herb]) do
-   wsys.aff[v] = nil
-   disableTrigger(string.title(v) .. " -")
+    wsys.predicted[v] = nil
+	
+    if wsysf.affs[v] then
+      wsysf.core.debug.print(2, "Empty smoke should clear ".. v .."?")
+    end
+    disableTrigger(string.title(v) .. " -")
   end -- for
  end --if
  wsys.cure = nil
@@ -38301,7 +38904,7 @@ end</script>
   killTimer(tostring(wsys.timer.restorewait))
  end
  wsys.timer.restorewait = tempTimer(wsys.myPing() * 2, [[wsys.timer.restorewait = nil;disableTrigger("Restore");wsys.lockqueue()]])
- wsys.salviaSend("restore")
+ wsys.doOnce("restore", 5)
 end -- func
 
 local restoreprompt = false
@@ -38326,7 +38929,11 @@ end -- func
 
 function wsys.emptyrestore()
  for k,v in pairs(wsys.tb.cures.restore) do
-  wsys.aff[v] = nil
+    wsys.predicted[v] = nil
+	
+    if wsysf.affs[v] then
+      wsysf.core.debug.print(2, "Empty restore should clear ".. v.."?")
+    end
   disableTrigger(string.title(v) .. " -")
  end -- for
  wsys.pairscheck("restore")
@@ -38366,33 +38973,19 @@ end</script>
 					<Script isActive="yes" isFolder="no">
 						<name>Salve Functions</name>
 						<packageName></packageName>
-						<script>function wsys.affaddsalve(affliction)
- if affliction == "damagedleftarm" or affliction == "mangledleftarm" then
-  wsys.aff.brokenleftarm = nil
-  disableTrigger("Brokenleftarm -")
- elseif affliction == "damagedrightarm" or affliction == "mangledrightarm" then
-  wsys.aff.brokenrightarm = nil
-  disableTrigger("Brokenrightarm -")
- elseif affliction == "damagedleftleg" or affliction == "mangledleftleg" then
-  wsys.aff.brokenleftleg = nil
-  disableTrigger("Brokenleftleg -")
- elseif affliction == "damagedrightleg" or affliction == "mangledrightleg" then
-  wsys.aff.brokenrightleg = nil
-  disableTrigger("Brokenrightleg -")
- end -- if
- wsys.lockqueue()
-end -- func
-
-
-function wsys.affcuredsalve(affliction)
+						<script>function wsys.affcuredsalve(affliction)
  wsys.applying = nil
 end -- func
 
 
 function wsys.emptysalve()
  for k,v in pairs(wsys.tb.cures[wsys.applying]) do
-  wsys.aff[v] = nil
-  disableTrigger(string.title(v) .. " -")
+   wsys.predicted[v] = nil
+	
+   if wsysf.affs[v] then
+     wsysf.core.debug.print(2, "Empty salve should clear ".. v.."?")
+   end
+   disableTrigger(string.title(v) .. " -")
  end -- for
  wsys.pairscheck(wsys.cure)
  wsys.applying = nil
@@ -38563,7 +39156,10 @@ registerAnonymousEventHandler("got bal", "wsys.treebal")
 
 function wsys.emptytree()
  for k,v in pairs(wsys.tb.cures.tree) do
-  wsys.aff[v] = nil
+   wsys.predicted[v] = nil
+   if wsysf.affs[v] then
+     wsysf.core.debug.print(2, "Empty tree should clear ".. v.."?")
+   end
   disableTrigger(string.title(v) .. " -")
  end -- for
  wsys.pairscheck("tree")
@@ -38572,47 +39168,10 @@ end -- func
 
 function wsys.treeAffs()
   local c = 0
-
-  if wsys.aff.addiction then c = c + 1 end
-  if wsys.aff.agoraphobia then c = c + 1 end
-  if wsys.aff.anorexia then c = c + 1 end
-  if wsys.aff.asthma then c = c + 1 end
-  if wsys.aff.carm then c = c + 1 end
-  if wsys.aff.claustrophobia then c = c + 1 end
-  if wsys.aff.cleg then c = c + 1 end
-  if wsys.aff.clumsiness then c = c + 1 end
-  if wsys.aff.confusion then c = c + 1 end
-  if wsys.aff.brokenrightleg then c = c + 1 end
-  if wsys.aff.darkshade then c = c + 1 end
-  if wsys.aff.dissonance then c = c + 1 end
-  if wsys.aff.dizziness then c = c + 1 end
-  if wsys.aff.epilepsy then c = c + 1 end
-  if wsys.aff.generosity then c = c + 1 end
-  if wsys.aff.haemophilia then c = c + 1 end
-  if wsys.aff.hallucinations then c = c + 1 end
-  if wsys.aff.healthleech then c = c + 1 end
-  if wsys.aff.hypersomnia then c = c + 1 end
-  if wsys.aff.hypochondria then c = c + 1 end
-  if wsys.aff.impatience then c = c + 1 end
-  if wsys.aff.lethargy then c = c + 1 end
-  if wsys.aff.loneliness then c = c + 1 end
-  if wsys.aff.lovers then c = c + 1 end
-  if wsys.aff.justice then c = c + 1 end
-  if wsys.aff.manaleech then c = c + 1 end
-  if wsys.aff.masochism then c = c + 1 end
-  if wsys.aff.nausea then c = c + 1 end
-  if wsys.aff.pacified then c = c + 1 end
-  if wsys.aff.paranoia then c = c + 1 end
-  if wsys.aff.peace then c = c + 1 end
-  if wsys.aff.recklessness then c = c + 1 end
-  if wsys.aff.scytherus then c = c + 1 end
-  if wsys.aff.sensitivity then c = c + 1 end
-  if wsys.aff.shivering then c = c + 1 end
-  if wsys.aff.shyness then c = c + 1 end
-  if wsys.aff.slickness then c = c + 1 end
-  if wsys.aff.stupidity then c = c + 1 end
-  if wsys.aff.weariness then c = c + 1 end
-  if wsys.aff.vertigo then c = c + 1 end
+	
+	for _,aff in ipairs(wsys.tb.cures.tree) do
+		c = c + wsysf.affv[aff]
+	end
 
   return c
 end</script>
@@ -38628,8 +39187,11 @@ end</script>
   end
   wsys.timer.writhewait = nil
   for k,v in pairs(wsys.tb.cures.writhe) do
-   wsys.aff[v] = nil
-   disableTrigger(string.title(v) .. " -")
+    wsys.predicted[v] = nil
+    if wsysf.affs[v] then
+      wsysf.core.debug.print(2, "Empty writhe should clear ".. v.."?")
+    end
+    disableTrigger(string.title(v) .. " -")
   end -- for
   wsys.cure = nil
 end -- func
@@ -38731,33 +39293,36 @@ end -- func
 
 function wsys.emptyfocus()
  if wsys.stats.m &lt; wsys.stats.om then
-  for k,v in pairs(wsys.tb.cures.focus) do
-   wsys.aff[v] = nil
-   disableTrigger(string.title(v) .. " -")
-  end -- for
-  wsys.pairscheck("focus")
+   for k,v in pairs(wsys.tb.cures.focus) do
+     wsys.predicted[v] = nil
+     if wsysf.affs[v] then
+       wsysf.core.debug.print(2, "Empty focus should clear ".. v.."?")
+     end
+     disableTrigger(string.title(v) .. " -")
+   end -- for
+   wsys.pairscheck("focus")
  end -- if
  wsys.cure = nil
 end -- func
 
 
 function wsys.focusAffCount()
-  local fCount = 0
-  if wsys.aff.stupidity then fCount = fCount + 1 end
-  if wsys.aff.epilepsy then fCount = fCount + 1 end
-  if wsys.aff.dizziness then fCount = fCount + 1 end
-  if wsys.aff.shyness then fCount = fCount + 1 end
-  if wsys.aff.recklessness then fCount = fCount + 1 end
-  if wsys.aff.masochism then fCount = fCount + 1 end
-  if wsys.aff.loneliness then fCount = fCount + 1 end
-  if wsys.aff.claustrophobia then fCount = fCount + 1 end
-  if wsys.aff.agoraphobia then fCount = fCount + 1 end
-  if wsys.aff.vertigo then fCount = fCount + 1 end
-  if wsys.aff.confusion then fCount = fCount + 1 end
-  if wsys.aff.anorexia then fCount = fCount + 1 end
-  if wsys.aff.dementia then fCount = fCount + 1 end
-  if wsys.aff.paranoia then fCount = fCount + 1 end
-  if wsys.aff.hallucinations then fCount = fCount + 1 end
+  local fCount = 
+    wsysf.affv.stupidity +
+    wsysf.affv.epilepsy +
+    wsysf.affv.dizziness +
+    wsysf.affv.shyness +
+    wsysf.affv.recklessness +
+    wsysf.affv.masochism +
+    wsysf.affv.loneliness +
+    wsysf.affv.claustrophobia +
+    wsysf.affv.agoraphobia +
+    wsysf.affv.vertigo +
+    wsysf.affv.confusion +
+    wsysf.affv.anorexia +
+    wsysf.affv.dementia +
+    wsysf.affv.paranoia +
+    wsysf.affv.hallucinations
   
   return fCount
 end
@@ -38879,7 +39444,9 @@ end -- func
 
 function wsys.emptyfool()
  for k,v in pairs(wsys.tb.cures.fool) do
-  wsys.aff[v] = nil
+  if wsysf.affs[v] then
+   wsysf.core.debug.print(2, "Empty fool should clear ".. v.."?")
+ end
   disableTrigger(string.title(v) .. " -")
  end -- for
  wsys.pairscheck("dheal")
@@ -38911,8 +39478,8 @@ registerAnonymousEventHandler("got bal", "wsys.foolbal")</script>
  if wsys.timer.fitnesswait then
    killTimer(tostring(wsys.timer.fitnesswait))
  end
- wsys.timer.fitnesswait = tempTimer(wsys.myPing() * 3, [[wsys.timer.fitnesswait = nil;disableTrigger("Fitness");wsys.addqueue("lock")]])
- wsys.salviaSend("fitness on")
+ wsys.timer.fitnesswait = tempTimer(5, [[wsys.timer.fitnesswait = nil;disableTrigger("Fitness");wsys.addqueue("lock")]])
+ wsys.doOnce("fitness", 5 )
 end -- func
 
 
@@ -39017,7 +39584,9 @@ function wsys.emptyrage()
   end
   wsys.timer.ragewait = nil
   for k,v in pairs(wsys.tb.cures.rage) do
-    wsys.aff[v] = nil
+    if wsysf.affs[v] then
+      wsysf.core.debug.print(2, "Empty rage should clear ".. v.."?")
+    end
     disableTrigger(string.title(v) .. " -")
   end -- for
  end -- if
@@ -39062,100 +39631,18 @@ local humourafftable = {
   "haemophilia", "recklessness", "paralysis",
   } 
 
-function wsys.humourUp(h)
-  local humour = "tempered" .. h
-  if not wsys.aff[humour] then
-    wsys.aff[humour] = 1
-  elseif wsys.aff[humour] &lt; 6 then
-    --math min ensures it caps at 8
-    wsys.aff[humour] = math.min(wsys.aff[humour] + 1, 8)
-  elseif wsys.aff[humour] &gt;= 6 then
-    for k,v in pairs(humourafftable) do
-      if wsys.aff[v] then
-        wsys.aff[humour] = math.min(wsys.aff[humour] + 2, 8)
-        return
-      end
-    end
-    wsys.aff[humour] = math.min(wsys.aff[humour] + 1, 8)
-  end
-end
-
-function wsys.humourDown(h)
-  local humour = "tempered" .. h
-  if wsys.aff[humour] then
-    --math.max ensures that its capped at 1 (cause it dropped one, didn't cure)
-    wsys.aff[humour] = math.max(wsys.aff[humour] - wsys.gingerlevel, 1)
-  end
-end
-
 function wsys.humourReset(h)
-  local humour = "tempered" .. h
-  wsys.aff[humour] = nil
+  --local humour = "tempered" .. h
+  --wsys.aff[humour] = nil
 end</script>
 						<eventHandlerList />
 					</Script>
 					<Script isActive="yes" isFolder="no">
 						<name>Fracture Functions</name>
 						<packageName></packageName>
-						<script>function wsys.fractureup(li, n)
-  if not wsys.aff[li] then
-    wsys.aff[li] = n
-  elseif wsys.aff[li] &gt;= 1 then
-    wsys.aff[li] = math.min(wsys.aff[li] + n, 7)
-  end
-end
-
-function wsys.fracturedown(li, n)
-  if wsys.aff[li] then
-    wsys.aff[li] = math.max(wsys.aff[li] - n, 1)
-    raiseEvent( "got aff", li )
-  end
-end
-
-function wsys.fracturereset(li)
-  wsys.aff[li] = nil
-end
-
-function wsys.fracturecount()
-  local c = 0
-  if wsys.aff["skullfractures"] then
-    c = c + wsys.aff["skullfractures"]
-  elseif wsys.aff["crackedribs"] then
-    c = c + wsys.aff["crackedribs"]
-  elseif wsys.aff["torntendons"] then
-    c = c + wsys.aff["torntendons"]
-  elseif wsys.aff["wristfractures"] then
-    c = c + wsys.aff["wristfractures"]
-  end
-  return c
-end
-
-wsys.tb.twohanddouble = wsys.tb.twohanddouble or {}
-wsys.twohandsmacker = wsys.twohandsmacker or "nobody"
-
-function wsys.twohanddoubled(p)
-  if not table.contains(wsys.tb.twohanddouble, p) then
-    wsys.tb.twohanddouble[#wsys.tb.twohanddouble+1] = p
-    if wsys.timer["twohanddouble"..p] then killTimer(wsys.timer["twohanddouble"..p]) end
-    wsys.timer["twohanddouble"..p] = tempTimer(2.9, function() 
-        wsys.timer["twohanddouble"..p] = nil
-        wsys.twohandsingled(p)
-      end)
-  end
-end
-
-function wsys.twohandsingled(p)
-  if table.contains(wsys.tb.twohanddouble, p) then
-    table.remove(wsys.tb.twohanddouble, table.index_of(wsys.tb.twohanddouble, p))
-  end
-end
-
-function wsys.is_twohanddoubled(p)
-  local ans = table.contains(wsys.tb.twohanddouble, p)
-  wsys.twohandsingled(p)
-  return ans
-end
-</script>
+						<script>function wsys.fracturecount()
+  return wsysf.affv.skullfractures + wsysf.affv.crackedribs + wsysf.affv.torntendons + wsysf.affv.wristfractures
+end</script>
 						<eventHandlerList />
 					</Script>
 					<Script isActive="yes" isFolder="no">
@@ -39268,7 +39755,7 @@ end -- func</script>
         wsys.shrug()
       elseif (wsys.isClass("occultist") or wsys.isClass("jester")) and wsys.bals.b and wsys.bals.e and not wsys.isHindered() and not wsys.timer.foolwait and wsys.bals.fool then
         wsys.fool()
-      elseif wsys.isFitnessClass() and wsys.bals.fitness and wsys.bals.b and wsys.bals.e and not wsys.aff.weariness then
+      elseif wsys.isFitnessClass() and wsys.bals.fitness and not wsys.aff.weariness then --and wsys.bals.b and wsys.bals.e
         wsys.fitness()
       elseif wsys.isDragon() and wsys.bals.dragonheal and wsys.bals.b and wsys.bals.e and wsys.stats.m &gt;= 1500 and not (wsys.aff.weariness and wsys.aff.recklessness) then
         wsys.dheal()
@@ -39276,8 +39763,8 @@ end -- func</script>
         cecho("\n&lt;pale_violet_red&gt;TRUELOCK SUSPECTED, DIAGNOSE OR GO MANUAL\n")
       end --curable lock bit end
       --vivi mode curing
-    elseif wsys.vmode and wsys.bals.b and wsys.bals.e and not wsys.bals.salve and (wsys.stats.m &gt;= 100) and wsys.damagedarms() and wsys.bothdamagedlegs() and (wsys.aff.brokenleftarm or wsys.aff.brokenrightarm or wsys.aff.brokenleftleg or wsys.aff.brokenrightleg) then
-        --cecho("&lt;orange&gt;should be restoring")
+    elseif wsys.vmode and not wsys.bals.salve and (wsys.stats.m &gt;= 100) and wsys.damagedarms() and wsys.bothdamagedlegs() and (wsys.aff.brokenleftarm or wsys.aff.brokenrightarm or wsys.aff.brokenleftleg or wsys.aff.brokenrightleg) then
+        cecho("&lt;orange&gt;should be restoring")
         wsys.restore()
     -- empty valerian pipe
     elseif wsys.aff.impatience and wsys.aff.anorexia and wsys.aff.slickness and (wsys.aff.asthma or wsys.emptyValerianPipes()) then
@@ -39396,36 +39883,6 @@ function wsys.affPrioRestore( aff )
 	if not wsys.afflictionPrioritiesCurrent[aff] or wsys.afflictionPrioritiesCurrent[aff] ~= wsys.defaultAffPosition(aff) then
 		send("curing priority " .. aff .. " " .. tostring(wsys.defaultAffPosition(aff)), false)
 	end
-end
-
---AI check on cure
-
-function wsys.curedAICheck( affliction )
-  --get the prio number of the affliction
-  local currentCureAffSpot = wsys.affPosition(affliction) or false
-  local highestSameCureAff = wsys.affPosition(affliction) or false
-
-  --check all affs in the aff table. If something is lower higher than this aff it isn't around.
-  --UNLESS IT USES THE SAME FUCKING CURE!
-  if currentCureAffSpot and not (affliction == "slickness" and (wsys.cure == "magnesium" or wsys.cure == "bloodroot")) then
-    for k,v in pairs(wsys.aff) do
-      local kPosition = wsys.affPosition(k) or false
-      if kPosition then
-        if (kPosition &lt; currentCureAffSpot) and (kPosition &lt; highestSameCureAff) and table.contains(wsys.tb.affc[k], wsys.cure) then
-          highestSameCureAff = kPosition
-        end
-      end
-    end --for
-    
-    for k,v in pairs(wsys.aff) do
-      if highestSameCureAff and wsys.affPosition(k) then
-        if wsys.affPosition(k) &lt; highestSameCureAff and (wsys.tb.curetype[wsys.tb.affc[k][1]] == wsys.tb.curetype[wsys.cure]) then
-          wsys.aff[k] = nil
-        end --if
-      end
-    end --for
-
-  end --if
 end
 
 function wsys.affPosition(affliction)
@@ -39942,6 +40399,15 @@ function wsys.defPrioRestore( def )
 	end
 end
 
+local function get_manual_command( command )
+  if type(command) == "function" then
+    return command()
+  else
+    if not type(command) == "string" then cecho("\n&lt;red&gt;Manual commands should be strings or functions: "..command ) end
+    return command
+  end
+end
+
 --defup a certain profile
 function wsys.defup(profile)
   profile = profile or wsys.profile
@@ -39974,7 +40440,7 @@ function wsys.defup(profile)
   -- we need a spiritform thingie too
   for ck,cv in pairs(wsys.settings.defup[wsys.profile][wsys.myClass()]) do 
     if wsys.tb.defenceTable[ck] and wsys.tb.defenceTable[ck]["skillset"][1] == "spiritform" and wsys.tb.defenceTable[ck]["manualcommand"] then
-      wsys.doadd(wsys.tb.defenceTable[ck]["manualcommand"])
+      wsys.doadd( get_manual_command( wsys.tb.defenceTable[ck]["manualcommand"] ))
       -- quit the loop, we're done here
       break
     end
@@ -40000,7 +40466,7 @@ function wsys.defup(profile)
         wsys.settings.defprio[wsys.profile][wsys.myClass()][k] = 25
       end
     elseif not wsys.def[k] and wsys.tb.defenceTable[k]["manualcommand"] then
-      manualdefs[#manualdefs+1] = wsys.tb.defenceTable[k]["manualcommand"]
+      manualdefs[#manualdefs+1] = get_manual_command( wsys.tb.defenceTable[k]["manualcommand"] )
     end --if
     send(highestdef, false)
     for k,v in pairs(alldefs) do
@@ -40152,7 +40618,7 @@ wsys.tb.defenceTable = {
   ["astralvision"] = {["name"] = "Astralvision", ["skillset"] = {"occultism"}, ["manualcommand"] = "astralvision",},
   ["astronomy"] = {["name"] = "Astronomy", ["skillset"] = {"alchemy"},},
   ["balancing"] = {["name"] = "Balancing", ["skillset"] = {"pranks", "swashbuckling"},},
-  ["barkskin"] = {["name"] = "Barkskin", ["skillset"] = {"sylvan"}, ["manualcommand"] = wsys.manualbarkskin(),},
+  ["barkskin"] = {["name"] = "Barkskin", ["skillset"] = {"sylvan", "woodlore"}, ["manualcommand"] = function() return wsys.manualbarkskin() end,},
   --["basking"] = {["name"] = "Basking", ["skillset"] = {"subterfuge"},},
   ["bedevilaura"] = {["name"] = "Bedevil Aura", ["skillset"] = {"healing"},},
   ["belltattoo"] = {["name"] = "Bell Tattoo", ["skillset"] = {"tattoos"}, ["manualcommand"] = "touch bell",},
@@ -40172,7 +40638,7 @@ wsys.tb.defenceTable = {
   ["deflect"] = {["name"] = "Deflect", ["skillset"] = {"weaponmastery"}, ["manualcommand"] = "deflect",},
   ["deafness"] = {["name"] = "Deafness", ["skillset"] = {"curative"},},
   ["deathaura"] = {["name"] = "Deathaura", ["skillset"] = {"necromancy"},},
-  ["deathsight"] = {["name"] = "Deathsight", ["skillset"] = {"vision", "necromancy"}, ["manualcommand"] = wsys.manualdeathsight(),},
+  ["deathsight"] = {["name"] = "Deathsight", ["skillset"] = {"vision", "necromancy"}, ["manualcommand"] = function() return wsys.manualdeathsight() end,},
   ["demonarmour"] = {["name"] = "Demon armour", ["skillset"] = {"apostasy"},},
   --["demonfury"] = {["name"] = "Demon fury", ["skillset"] = {"apostasy"},},
   ["density"] = {["name"] = "Mass/Density", ["skillset"] = {"curative"},},
@@ -40306,26 +40772,26 @@ wsys.tb.defenceTable = {
   ["wildgrowth"] = {["name"] = "Wildgrowth", ["skillset"] = {"groves"},},
   ["willpowerblessing"] = {["name"] = "Willpower", ["skillset"] = {"healing"},},
 -- Animal spirits for spiritform
-  ["squirrel"] = {["name"] = "Squirrel", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("squirrel"),},
-  ["wildcat"] = {["name"] = "Wildcat", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wildcat"),},
-  ["wolf"] = {["name"] = "Wolf", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wolf"),},
-  ["turtle"] = {["name"] = "Turtle", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("turtle"),},
-  ["jackdaw"] = {["name"] = "Jackdaw", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("jackdaw"),},
-  ["cheetah"] = {["name"] = "Cheetah", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("cheetah"),},
-  ["owl"] = {["name"] = "Owl", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("owl"),},
-  ["hyena"] = {["name"] = "Hyena", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("hyena"),},
-  ["condor"] = {["name"] = "Condor", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("condor"),},
-  ["gopher"] = {["name"] = "Gopher", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("gopher"),},
-  ["sloth"] = {["name"] = "Sloth", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("sloth"),},
-  ["bear"] = {["name"] = "Bear", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("bear"),},
-  ["nightingale"] = {["name"] = "Nightingale", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("nightingale"),},
-  ["elephant"] = {["name"] = "Elephant", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("elephant"),},
-  ["wolverine"] = {["name"] = "Wolverine", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("wolverine"),},
-  ["jaguar"] = {["name"] = "Jaguar", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("jaguar"),},
-  ["icewyrm"] = {["name"] = "Icewyrm", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("icewyrm"),},
-  ["eagle"] = {["name"] = "Eagle", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("eagle"),},
-  ["gorilla"] = {["name"] = "Gorilla", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("gorilla"),},
-  ["basilisk"] = {["name"] = "Basilisk", ["skillset"] = {"spiritform"}, ["manualcommand"] = wsys.metaform("basilisk"),},
+  ["squirrel"] = {["name"] = "Squirrel", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("squirrel") end,},
+  ["wildcat"] = {["name"] = "Wildcat", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("wildcat") end,},
+  ["wolf"] = {["name"] = "Wolf", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("wolf") end,},
+  ["turtle"] = {["name"] = "Turtle", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("turtle") end,},
+  ["jackdaw"] = {["name"] = "Jackdaw", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("jackdaw") end,},
+  ["cheetah"] = {["name"] = "Cheetah", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("cheetah") end,},
+  ["owl"] = {["name"] = "Owl", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("owl") end,},
+  ["hyena"] = {["name"] = "Hyena", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("hyena") end,},
+  ["condor"] = {["name"] = "Condor", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("condor") end,},
+  ["gopher"] = {["name"] = "Gopher", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("gopher") end,},
+  ["sloth"] = {["name"] = "Sloth", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("sloth") end,},
+  ["bear"] = {["name"] = "Bear", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("bear") end,},
+  ["nightingale"] = {["name"] = "Nightingale", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("nightingale") end,},
+  ["elephant"] = {["name"] = "Elephant", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("elephant") end,},
+  ["wolverine"] = {["name"] = "Wolverine", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("wolverine") end,},
+  ["jaguar"] = {["name"] = "Jaguar", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("jaguar") end,},
+  ["icewyrm"] = {["name"] = "Icewyrm", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("icewyrm") end,},
+  ["eagle"] = {["name"] = "Eagle", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("eagle") end,},
+  ["gorilla"] = {["name"] = "Gorilla", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("gorilla") end,},
+  ["basilisk"] = {["name"] = "Basilisk", ["skillset"] = {"spiritform"}, ["manualcommand"] = function() return wsys.metaform("basilisk") end,},
 }
 
 wsys.tb.defstripTable = {
@@ -40632,13 +41098,9 @@ function wsys.manualbarkskin()
   elseif wsys.myClass() == "Sentinel" then
     return "barkskin"
   end
-end</script>
-						<eventHandlerList />
-					</Script>
-					<Script isActive="yes" isFolder="no">
-						<name>metaform</name>
-						<packageName></packageName>
-						<script>function wsys.metaform(form)
+end
+
+function wsys.metaform(form)
   if ( wsys.myClass() == "sentinel" or wsys.myClass() == "druid" )  then
     wsys.morphing = true
     return("belch;morph "..form)
@@ -40724,15 +41186,15 @@ end --func
 
 -- define which classes have what skills
 local classSkills = {
-  ["air elemental lord"] = {"duress"},
+  ["airelementallord"] = {"duress"},
   ["alchemist"] = {"alchemy", "physiology"},
   ["apostate"] = {"evileye", "necromancy", "apostasy"},
   ["bard"] = {"swashbuckling", "voicecraft", "harmonics"},
   ["blademaster"] = {"twoarts", "striking", "shindo"},
   ["druid"] = {"druid", "metamorphosis", "groves"},
   ["infernal"] = {"chivalry", "necromancy", "weaponmastery"},
-  ["earth elemental lord"] = {"sculpting"},
-  ["fire elemental lord"] = {"ignition"},
+  ["earthelementallord"] = {"sculpting"},
+  ["fireelementallord"] = {"ignition"},
   ["jester"] = {"pranks", "puppetry", "tarot"},
   ["magi"] = {"magi", "elementalism", "crystalism"},
   ["monk"] = {"tekura", "kaido", "telepathy"},
@@ -40745,7 +41207,7 @@ local classSkills = {
   ["serpent"] = {"subterfuge", "hypnosis"},
   ["shaman"] = {"curses", "vodun", "runelore"},
   ["sylvan"] = {"sylvan", "groves", "elementalism"},
-  ["water elemental lord"] = {"pervasion"},
+  ["waterelementallord"] = {"pervasion"},
   ["dragon"] = {"dragoncraft"},
   ["free"] = {"curative", "survival", "vision", "enchantment", "tattoos"},
   ["animalspirit"] = {"spiritform"},
@@ -41032,9 +41494,7 @@ end
 function wsys.affamount(cure)
   local c = 0
   for k,v in pairs(wsys.tb.cures[cure]) do
-    if wsys.aff[v] then
-      c = c + 1
-    end
+	  c = c + wsysf.affv[v]
   end
   return c
 end
@@ -41332,7 +41792,7 @@ end
 function wsys.parseDragon( str )
   local color = str:match("(%w+) Dragon")
   if color then wsys.settings.dcolor = color:lower() end
-  return color and "dragon" or str 
+  return color and "dragon" or str:gsub("%s+", ""):lower()
 end
 
 --returns your class as a string
@@ -41653,7 +42113,7 @@ end</script>
 				<Script isActive="yes" isFolder="no">
 					<name>Check for Updates</name>
 					<packageName></packageName>
-					<script>wsys.myVersion = "1.2.2"
+					<script>wsys.myVersion = "1.3"
 wsys.currentVersion = wsys.currentVersion or wsys.myVersion
 wsys.updateAvailable = wsys.updateAvailable or false
 wsys.lastVersionCheck = wsys.lastVersionCheck or 0
@@ -43074,11 +43534,29 @@ registerAnonymousEventHandler("gmcp.Room.Info", "wsys.GMCPRefreshRoomExits")</sc
 						<script>wsys.dofreequeue = wsys.dofreequeue or {}
 wsys.dofreeSub = wsys.dofreeSub or {}
 wsys.doqueue = wsys.doqueue or {}
+wsys.doOnce_list = wsys.doOnce_list or {}
 
 wsys.doSub = wsys.doSub or ""
 wsys.dorSub = wsys.dorSub or ""
 
 wsys.doqueued = false
+
+local function expand_command( str )
+  str = str:gsub( "^ONCE: ", "")
+  return str:gsub( "$(%w+)", 
+    function( n )
+		  local expand_to = wsys.overrides.doqueue.expand[ n ]
+      return expand_to and expand_to() or n
+		end)
+end
+
+local function eval_command( element )
+  if element.label and wsys.doOnce_list[element.label] then
+    return wsys.doOnce_list[element.label]()
+  else
+	  return expand_command( element.ac )
+  end
+end
 
 --use / to seperate multiple commands
 --ex. wsys.dofreeadd("g gold/put gold in "..myPack)
@@ -43149,26 +43627,88 @@ function wsys.priority_queue_insert( queue, element, priority, lifo )
   end
 end
 
-function wsys.doadd(ac, priority, silent)
-  wsys.priority_queue_insert( wsys.doqueue, { ac = ac, silent = silent }, priority or default_queue_priority )
-  wsys.dosend()
+function wsys.doadd(ac, priority, silent, on_run )
+  wsys.priority_queue_insert( wsys.doqueue, { ac = ac, silent = silent, on_run = on_run }, priority or default_queue_priority )
+  
+	-- TODO: Need to check for priority?
+	if not wsys.doqueue_pending then
+		wsys.dosend()
+  end
 end
  
-function wsys.dofirst(ac, priority, silent)
-  wsys.priority_queue_insert( wsys.doqueue, { ac = ac, silent = silent }, priority or default_queue_priority, true )
+function wsys.dofirst(ac, priority, silent, on_run )
+  wsys.priority_queue_insert( wsys.doqueue, { ac = ac, silent = silent, on_run = on_run }, priority or default_queue_priority, true )
   wsys.dosend()
 end
 
+function wsys.doOnce( label, priority, silent )
+  local match_found = false
+  --Check the current pending command for a match
+  if wsys.doqueue_pending and wsys.doqueue_pending.element.label and wsys.doqueue_pending.element.label == label then
+    --Match found. See if we need to update
+    wsys.doupdate()
+    match_found = true
+  else
+    for i,item in ipairs( wsys.doqueue ) do
+      if item.element.label == label then
+        match_found = true
+        --TODO: Update priority?
+        break
+      end
+    end
+  end
+
+  if not match_found then
+    wsys.priority_queue_insert( wsys.doqueue, { ac = "ONCE: "..label, silent = silent, label = label }, priority or default_queue_priority, true )
+    wsys.dosend()
+  end
+end
+
+function wsys.doupdate()
+	--Check this from aff tracking update?
+  if wsys.doqueue_pending then
+    local text = eval_command( wsys.doqueue_pending.element )
+    if not text or #text == 0 then
+      wsys.debug("\ndoupdate() Updating action! Is now empty")
+      --Action is empty. Remove it and queue the next thing
+      send("clearqueue eqbal", false )
+      -- Make sure the next command gets sent
+      wsys.dosent()
+    elseif wsys.do1_eval ~= text then
+      wsys.debug("\ndoupdate() Updating attack!")
+      wsys.do1_eval = text
+      send("setalias do1 "..wsys.do1_eval, not wsys.doqueue_pending.element.silent )
+    end
+  end
+end
+
+local function get_next_action()
+  while #wsys.doqueue &gt; 0 do
+    local text = eval_command( wsys.doqueue[1].element )
+    if text and #text &gt; 0 then
+      return text
+    else
+      -- action evaluated to nil or empty string. Remove it
+      table.remove(wsys.doqueue, 1)
+    end
+  end
+  return false
+end
 
 function wsys.dosend()
-  if not wsys.timer.dowait then
-    if next(wsys.doqueue) then
-                if wsys.doqueued and wsys.doqueue_pending and wsys.doqueue_pending.element.ac == wsys.doqueue[1].element.ac then
-                        --Next element is same as pending command. Don't re-queue
-                        return
-                end
+  wsys.debug( "dosend() - dowait = " .. ( tostring(wsys.timer.dowait) or "nil" ) )
+  wsys.debug("\ndosend() - " .. #wsys.doqueue .. " queued.")
+  if not wsys.paused then--or	not wsys.timer.dowait then
+  local text = get_next_action()
+    if text then
+		if wsys.doqueued and wsys.doqueue_pending and ( wsys.do1_eval == text or wsys.doqueue_pending.priority &lt; wsys.doqueue[1].priority ) then
+			--Next element is same as pending command, or higher priority. Don't re-queue
+			wsys.debug("\ndosend() returning early "..wsys.do1_eval)
+			return
+		end
       wsys.timer.dowait = tempTimer(wsys.myPing()*3, [[wsys.timer.dowait = nil]])
-      send("setalias do1 "..wsys.doqueue[1].element.ac, not wsys.doqueue[1].element.silent )
+		wsys.do1_eval = text
+      send("setalias do1 "..wsys.do1_eval , not wsys.doqueue[1].element.silent )
       --if wsys.doraction then
         send("clearqueue eqbal", not wsys.doqueue[1].element.silent )
       --end
@@ -43194,9 +43734,15 @@ end
 function wsys.dosent(type)
   if type == "do" then
     raiseEvent("do action ran", wsys.doSub)
+		
+		if wsys.doqueue_pending and wsys.doqueue_pending.element.on_run then
+			wsys.doqueue_pending.element.on_run()
+		end
+		
   elseif type == "dor" then
     raiseEvent("dor action ran", wsys.dorSub)
   end
+	
   wsys.doqueued = false
   wsys.doqueue_pending = nil
   if wsys.timer.dowait then
@@ -43293,6 +43839,35 @@ function wsys.dorclear()
   wsys.doraction = false
   send("clearqueue eqbal", false)
   wsys.report("&lt;green&gt;Cleared the dorepeat queue.")
+end</script>
+						<eventHandlerList />
+					</Script>
+					<Script isActive="yes" isFolder="no">
+						<name>do once</name>
+						<packageName></packageName>
+						<script>
+-- Table of label -&gt; function pairs for do commands that should only
+-- be entered into the queue once
+wsys.doOnce_list = wsys.doOnce_list or {}
+
+wsys.doOnce_list.fitness = function()
+	return "fitness on"
+end
+
+wsys.doOnce_list.manualcure = function()
+	return "fitness on"
+end
+
+wsys.doOnce_list.stand = function()
+	return "stand"
+end
+
+wsys.doOnce_list.restore = function()
+	return "restore"
+end
+
+wsys.doOnce_list.dragonheal = function()
+	return "dragonheal"
 end</script>
 						<eventHandlerList />
 					</Script>
@@ -44022,1159 +44597,6 @@ end
 
 registerAnonymousEventHandler("gmcp.Char.Vitals", "wsys.fullstatsHandler")
 registerAnonymousEventHandler("gmcp.Char.Vitals", "wsys.fullstatsHandler")</script>
-					<eventHandlerList />
-				</Script>
-			</ScriptGroup>
-			<ScriptGroup isActive="yes" isFolder="yes">
-				<name>Tables</name>
-				<packageName></packageName>
-				<script>-- table subfolder. For stuff that's usually just for Wunder internal use.
-wsys.tb = wsys.tb or {}</script>
-				<eventHandlerList />
-				<Script isActive="yes" isFolder="no">
-					<name>Homeless Wsys Variables</name>
-					<packageName></packageName>
-					<script>wsys.profile = "basic"
-wsys.puppetmangle = false
-wsys.waittime = .70
-wsys.lifevision = false
-wsys.vmode = false
-wsys.absorbed = false
-wsys.starbursted = false
-wsys.mogged = false
-wsys.affline = wsys.affline or 0
-wsys.innewsroom = false
-wsys.deletefull = false</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Affliction Tables</name>
-					<packageName></packageName>
-					<script>-- RESTORATION AI TABLE
-wsys.tb.restorationlist = {}
-
-wsys.tb.justreckless = {}
-
--- LIST OF CURRENT AFFS
-wsys.aff = wsys.aff or {}
-
-
--- CURES FOR EACH AFF
-wsys.tb.affc = {
-
- burning = {"mendingtorso"},
- addiction = {"ginseng", "ferrum"},
- aeon = {"elm", "cinnabar"},
- agoraphobia = {"lobelia", "argentum", "focus"},
- anorexia = {"epidermalbody", "focus"},
- sleeping = {"wake"},
- asthma = {"kelp", "aurum", "fitness"},
- concussion = {"restorationhead"},
- damagedhead = {"restorationhead"},
- blackout = {},
- bleeding = {"clot"},
- damagedleftarm = {"restorationarms"},
- damagedleftleg = {"restorationlegs"},
- damagedrightarm = {"restorationarms"},
- damagedrightleg = {"restorationlegs"},
- mildtrauma = {"restorationtorso"},
- carm = {"mendingarms", "restore"},
- claustrophobia = {"lobelia", "argentum", "focus"},
- brokenleftarm = {"mendingarms", "restore"},
- brokenleftleg = {"mendinglegs", "restore"},
- cleg = {"mendinglegs", "restore"},
- climb = {"mendingskin","restore"},
- clumsiness = {"kelp", "aurum"},
- confusion = {"ash", "stannum","focus"},
- concussion = {"restorationhead"},
- crushedthroat = {"mendinghead"},
- brokenrightarm = {"mendingarms", "restore"},
- brokenrightleg = {"mendinglegs", "restore"},
- darkshade = {"ginseng", "ferrum"},
- dazed = {"elm", "cinnabar"},
- deadening = {"elm", "cinnabar"},
- dementia = {"ash", "stannum", "focus"},
- depression = {"goldenseal", "plumbum"},
- disloyalty = {"valerian", "realgar"},
- disrupted = {"concentrate"},
- dissonance = {"goldenseal", "plumbum"},
- dizziness = {"goldenseal", "plumbum", "focus"},
- epilepsy = {"goldenseal", "plumbum", "focus"},
- fear = {"compose"},
- frozen = {"caloric"},
- generosity = {"bellwort", "cuprum", "rage"},
- hamstrung = {}, -- timed
- haemophilia = {"ginseng", "ferrum"},
- hallucinations = {"ash", "stannum", "focus"},
- healthleech = {"kelp", "aurum"},
- heartseed = {"restorationtorso"},
- hellsight = {"valerian", "realgar"},
- hypersomnia = {"ash", "stannum"},
- hypochondria = {"kelp", "aurum"},
- impaled = {"writhe"},
- impatience = {"goldenseal", "plumbum"},
- inquisition = {},
- hecatecurse = {},
- bubonis = {},
- weakenedmind = {"focus"},
- itching = {"epidermalbody"},
- laceratedthroat = {"restorationhead"},
- lethargy = {"ginseng", "ferrum"},
- loneliness = {"lobelia", "argentum", "focus"},
- lovers = {"bellwort", "cuprum", "focus", "rage"},
- justice = {"bellwort", "cuprum", "rage"},
- whisperingmadness = {"elm", "cinnabar"},
- manaleech = {"valerian", "realgar"},
- masochism = {"lobelia", "argentum", "focus"},
- mangledhead = {"restorationhead"},
- mangledleftarm = {"restorationarms"},
- mangledleftleg = {"restorationlegs"},
- mangledrightarm = {"restorationarms"},
- mangledrightleg = {"restorationlegs"},
- serioustrauma = {"restorationtorso"},
- nausea = {"ginseng", "ferrum"},
- pacified = {"bellwort", "cuprum", "focus", "rage"},
- paralysis = {"bloodroot", "magnesium"},
- paranoia = {"ash", "stannum", "focus"},
- parasite = {"kelp", "aurum"},
- peace = {"bellwort", "cuprum", "rage"},
- prone = {"stand"},
- recklessness = {"lobelia", "argentum", "focus"},
- retribution = {"bellwort", "cuprum"},
- scytherus = {"ginseng", "ferrum"},
- sensitivity = {"kelp", "aurum"},
- selarnia = {"mendingtorso"},
- daeggerimpale = {"writhe"},
- shadowmadness = {"goldenseal", "plumbum"},
- shivering = {"caloric"},
- shyness = {"goldenseal", "plumbum", "focus"},
- slashedthroat = {"epidermalhead"},
- slickness = {"bloodroot", "magnesium", "valerian", "realgar"},
- speared = {"writhe"},
- stupidity = {"goldenseal", "plumbum", "focus"},
- stuttering = {"epidermalhead", "focus"},
- entangled = {"writhe", "flex"},
- bound = {"writhe"},
- timeloop = {"bellwort", "cuprum"},
- transfixation = {"writhe"},
- weariness = {"kelp", "aurum"},
- webbed = {"writhe", "flex"},
- vertigo = {"lobelia", "argentum", "focus"},
- voyria = {"immunity", "antigen"},
-
- waterdisrupt = {"focus", "lobelia", "argentum"},
- airdisrupt = {"focus", "lobelia", "argentum"},
- firedisrupt = {"focus", "lobelia", "argentum"},
- earthdisrupt = {"lobelia", "argentum"},
- spiritdisrupt = {"lobelia", "argentum"},
- 
- guilt = {"lobelia", "argentum"},
- tenderskin = {"lobelia", "argentum"},
- spiritburn = {"lobelia", "argentum"},
-
- temperedcholeric = {"ginger", "antimony"},
- temperedmelancholic = {"ginger", "antimony"},
- temperedphlegmatic = {"ginger", "antimony"},
- temperedsanguine = {"ginger", "antimony"},
-
- corruption = {}, --45s
-
- skullfractures = {"healthhead", "restore"},
- crackedribs = {"healthtorso", "restore"},
- wristfractures = {"healtharms", "restore"},
- torntendons = {"healthlegs", "restore"},
-
- hypothermia = {"restorationtorso"},
- scalded = {"epidermalhead"},
- dehydrated = {}, --60s
- timeflux = {}, --60s
- 
- unweavingmind = {"goldenseal", "plumbum"},
- unweavingbody = {"ginseng", "ferrum"},
- unweavingspirit = {"elm", "cinnabar"},
- 
- tension = {"elm", "cinnabar"},
- pressure = {"pear", "calcite"}
-
-}
-
-wsys.tb.affctype = {
-
- addiction = "herb",
- aeon = "smoke",
- agoraphobia = "herb",
- anorexia = "salve",
- sleeping = "wake",
- asthma = "herb",
- burning = "salve",
- concussion = "salve",
- damagedhead = "salve",
- damagedleftarm = "salve",
- damagedleftleg = "salve",
- damagedrightarm = "salve",
- damagedrightleg = "salve",
- mildtrauma = "salve",
- claustrophobia = "herb",
- brokenleftarm = "salve",
- brokenleftleg = "salve",
- clumsiness = "herb",
- confusion = "herb",
- concussion = "salve",
- crushedthroat = "salve",
- brokenrightarm = "salve",
- brokenrightleg = "salve",
- darkshade = "herb",
- dazed = "smoke",
- deadening = "smoke",
- dementia = "herb",
- depression = "herb",
- disloyalty = "smoke",
- disrupted = "concentrate",
- dissonance = "herb",
- dizziness = "herb",
- epilepsy = "herb",
- fear = "compose",
- frozen = "salve",
- generosity = "herb",
- haemophilia = "herb",
- hallucinations = "herb",
- healthleech = "herb",
- heartseed = "salve",
- hellsight = "smoke",
- hypersomnia = "herb",
- hypochondria = "herb",
- impaled = "writhe",
- impatience = "herb",
- itching = "salve",
- lethargy = "herb",
- loneliness = "herb",
- lovers = "herb",
- justice = "herb",
- whisperingmadness = "smoke",
- laceratedthroat = "salve",
- slashedthroat = "salve",
- manaleech = "smoke",
- masochism = "herb",
- mangledhead = "salve",
- mangledleftarm = "salve",
- mangledleftleg = "salve",
- mangledrightarm = "salve",
- mangledrightleg = "salve",
- serioustrauma = "salve",
- nausea = "herb",
- pacified = "herb",
- paralysis = "herb",
- paranoia = "herb",
- parasite = "herb",
- peace = "herb",
- prone = "stand",
- recklessness = "herb",
- retribution = "herb",
- scytherus = "herb",
- sensitivity = "herb",
- selarnia = "salve",
- daeggerimpale = "writhe",
- shadowmadness = "herb",
- shivering = "salve",
- shyness = "herb",
- slickness = "smoke",
- speared = "writhe",
- stupidity = "herb",
- stuttering = "salve",
- entangled = "writhe",
- bound = "writhe",
- timeloop = "herb",
- transfixation = "writhe",
- weariness = "herb",
- webbed = "writhe",
- vertigo = "herb",
- voyria = "immunity",
-
- waterdisrupt = "herb",
- airdisrupt = "herb",
- firedisrupt = "herb",
- earthdisrupt = "herb",
- spiritdisrupt = "herb",
- 
- guilt = "herb",
- tenderskin = "herb",
- spiritburn = "herb",
-
- temperedcholeric = "herb",
- temperedmelancholic = "herb",
- temperedphlegmatic = "herb",
- temperedsanguine = "herb",
-
-
- skullfractures = "health",
- crackedribs = "health",
- wristfractures = "health",
- torntendons = "health",
-
- hypothermia = "salve",
- scalded = "salve",
- 
- pressure = "smoke",
- tension = "smoke",
- 
- unweavingbody = "herb",
- unweavingmind = "herb",
- unweavingspirit = "smoke",
- 
-
-}
-
-
-
-
-
--- AFFS RECEIVED TOGETHER FOR AI PURPOSES
-wsys.tb.affspaired = {}
-
-
--- AFFS RECEIVED BETWEEN SAME PROMPTS
-wsys.tb.affstogether = {}
-
--- Removed Weariness from Focusable - Announce 4494
--- Dementia, Paranoia, and Hallucination - Added as Focusable Announce #4539 
--- CURES
-wsys.tb.cures = {
-
- bloodroot = {"paralysis", "slickness"},
- magnesium = {"paralysis", "slickness"},
- lobelia = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spritidisrupt", "guilt", "tenderskin", "spiritburn"},
- argentum = {"agoraphobia", "claustrophobia", "loneliness", "masochism", "vertigo", "recklessness","spiritdisrupt", "guilt", "tenderskin", "spiritburn"},
- kelp = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "parasite"},
- aurum = {"asthma", "clumsiness", "sensitivity", "weariness", "hypochondria", "healthleech", "parasite"},
- ginseng = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", "unweavingbody"},
- ferrum = {"darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", "unweavingbody"},
- bellwort = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
- cuprum = {"generosity", "lovers", "justice", "pacified", "peace", "retribution", "timeloop"},
- ash = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
- stannum = {"confusion", "dementia", "hallucinations", "hypersomnia", "paranoia"},
- goldenseal = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop", "unweavingmind"},
- plumbum = {"stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "retribution", "timeloop", "unweavingmind"},
- focus = {"stupidity", "dizziness", "confusion", "claustrophobia", "agoraphobia", "masochism", "lovers", "recklessness", 
-          "epilepsy", "loneliness", "shyness", "pacified", "anorexia", "vertigo", "weakenedmind",
-			"waterdisrupt", "earthdisrupt", "firedisrupt","airdisrupt", "dementia", "hallucinations", "paranoia"},
- elm = {"aeon", "whisperingmadness", "deadening", "dazed", "tension", "unweavingspirit" },
- cinnabar = {"aeon", "whisperingmadness", "deadening", "dazed", "tension", "unweavingspirit" },
- valerian = {"slickness", "disloyalty", "manaleech", "hellsight"},
- realgar = {"slickness", "disloyalty", "manaleech", "hellsight"},
- mendinglegs = {"brokenleftleg", "brokenrightleg", "cleg"},
- mendingarms = {"brokenleftarm", "brokenrightarm", "carm"},
- mendingskin = {"climb", "brokenleftleg", "brokenrightleg", "cleg", "brokenrightarm", "brokenleftarm", "brokenarm"},
- epidermalbody = {"anorexia", "itching"},
- epidermalhead = {"scalded"},
- mendingbody = {"burning", "selarnia"},
- mendinghead = {"crushedthroat"},
- mendingtorso = {"selarnia"},
- epidermalhead = {"stuttering", "slashedthroat"},
- caloric = {"shivering", "frozen"},
- restorationarms = {"damagedleftarm", "damagedrightarm", "mangledleftarm", "mangledrightarm", "bleg"},
- restorationlegs = {"damagedleftleg", "damagedrightleg", "mangledleftleg", "mangledrightleg", "bleg"},
- restorationhead = {"damagedhead", "mangledhead", "laceratedthroat", "concussion"},
- restorationtorso = {"mildtrauma", "serioustrauma", "heartseed"},
- restorationbody = {"hypothermia"},
- tree = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
-          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
-          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
-          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
-          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria", 
-			    "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin" },
- shrugging = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
-          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "paralysis", 
-          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
-          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
-          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
-          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat"},
- restore = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "carm", "cleg"},
- dheal = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
-          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
-          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
-          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
-          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
-          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin"},
- flex = {"webbed", "entangled"},
- writhe = {"webbed", "entangled", "bound", "impaled", "transfixation", "speared", "daeggerimpale"},
- fool = {"brokenleftarm", "brokenrightarm", "brokenleftleg", "brokenrightleg", "paralysis", "slickness", "agoraphobia", "claustrophobia", 
-          "loneliness", "masochism", "vertigo", "recklessness", "asthma", "clumsiness", "sensitivity", "weariness", 
-          "hypochondria", "healthleech", "darkshade", "scytherus", "addiction", "lethargy", "haemophilia", "nausea", 
-          "generosity", "lovers", "justice", "pacified", "peace", "confusion", "dementia", "hallucinations", "hypersomnia", 
-          "paranoia", "stupidity", "impatience", "dizziness", "epilepsy", "dissonance", "shyness", "slickness", "disloyalty",
-          "aeon", "whisperingmadness", "hellsight", "deadening", "burning", "stuttering", "carm", "cleg", "anorexia", "voyria",
-          "parasite", "depression", "shadowmadness", "retribution", "timeloop", "crushedthroat", "guilt", "spiritburn", "tenderskin"},
- concentrate = {"disrupted"},
- compose = {"fear"},
- clot = {"bleeding"},
- immunity = {"voyria"},
- fitness = {"asthma"},
- rage = {"generosity", "justice", "lovers", "pacified", "peace"},
- antimony = { "temperedcholeric", "temperedmelancholic", "temperedphlegmatic", "temperedsanguine"},
- ginger = { "temperedcholeric", "temperedmelancholic", "temperedphlegmatic", "temperedsanguine"},
- healthhead = {"skullfractures"},
- healthtorso = {"crackedribs"},
- healtharms = {"wristfractures"},
- healthlegs = {"torntendons"},
-}
-
-wsys.tb.targettedCureTable = {
-  "mendingtorso", "renewaltorso",
-  "ginseng", "ferrum",
-  "bloodroot", "magnesium",
-  "elm", "cinnabar",
-  "valerian", "realgar",
-  "ginger", "antimony",
-  "bellwort", "cuprum",
-  "lobelia", "argentum",
-  "epidermalbody", "sensorybody",
-  "kelp", "aurum",
-  "ash", "stannum",
-  "restorationarms", "reconstructivearms",
-  "restorationhead", "reconstructivehead",
-  "restorationlegs", "reconstructivelegs",
-  "restorationtorso", "reconstructivetorso",
-  "epidermalbody", "sensorybody",
-  "mendingarms", "renewalarms",
-  "mendinglegs", "renewallegs",
-  "mendingbody", "renewalbody",
-  "epidermalhead", "sensoryhead",
-  "calorictorso", "exothermictorso",
-  "goldenseal", "plumbum",
-}</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Curatives Tables</name>
-					<packageName></packageName>
-					<script>
-wsys.tb.opps = {
-
- ash = "stannum",
- stannum = "ash",
- bayberry = "arsenic",
- arsenic = "bayberry",
- bellwort = "cuprum",
- cuprum = "bellwort",
- bloodroot = "magnesium",
- magnesium = "bloodroot",
- cohosh = "gypsum",
- gypsum = "cohosh",
- elm = "cinnabar",
- realgar = "valerian",
- ginseng = "ferrum",
- ferrum = "ginseng",
- goldenseal = "plumbum",
- plumbum = "goldenseal",
- hawthorn = "calamine",
- calamine = "hawthorn",
- kelp = "aurum",
- aurum = "kelp",
- kola = "quartz",
- quartz = "kola",
- lobelia = "argentum",
- argentum = "lobelia",
- skullcap = "malachite",
- malachite = "skullcap",
- valerian = "realgar",
- cinnabar = "valerian",
- sileris = "quicksilver",
- quicksilver = "sileris",
- irid = "potash",
- potash = "irid",
- pear = "calcite",
- calcite = "pear",
- caloric = "exothermic",
- exothermic = "caloric",
- health = "vitality",
- vitality = "health",
- antigen = "immunity",
- immunity = "antigen",
- hovering = "levitation",
- levitation = "hovering",
- mana = "mentality",
- mentality = "mana",
- haste = "speed",
- speed = "haste",
- endothermia = "frost",
- frost = "endothermia",
- epidermal = "sensory",
- sensory = "epidermal",
- mass = "density",
- density = "mass",
- mending = "renewal",
- renewal = "mending",
- restoration = "reconstructive",
- reconstructive = "restoration",
- venom = "toxin",
- toxin = "venom",
- ginger = "antimony",
- antimony = "ginger",
-
-}
-
-
--- Cure types
-wsys.tb.curetype = {
-
- bloodroot = "herb",
- magnesium = "herb",
- lobelia = "herb",
- argentum = "herb",
- kelp = "herb",
- aurum = "herb",
- ginseng = "herb",
- ferrum = "herb",
- bellwort = "herb",
- cuprum = "herb",
- ash = "herb",
- stannum = "herb",
- goldenseal = "herb",
- plumbum = "herb",
- focus = "focus",
- elm = "pipe",
- cinnabar = "pipe",
- valerian = "pipe",
- realgar = "pipe",
- mendinglegs = "salve",
- renewallegs = "salve",
- mendingarms = "salve",
- renewalarms = "salve",
- mendingskin = "salve",
- renewalskin = "salve",
- epidermalbody = "salve",
- sensorybody = "salve",
- mendingbody = "salve",
- renewalbody = "salve",
- mendinghead = "salve",
- epidermalhead = "salve",
- sensoryhead = "salve",
- caloric = "salve",
- exothermic = "salve",
- restorationarms = "salve",
- reconstructivearms = "salve",
- restorationlegs = "salve",
- reconstructivelegs = "salve",
- restorationhead = "salve",
- reconstructivehead = "salve",
- restorationtorso = "salve",
- reconstructivetorso = "salve",
- tree = "tree",
- restore = "restore",
- dheal = "dheal",
- flex = "flex",
- writhe = "writhe",
- fool = "fool",
- concentrate = "concentrate",
- compose = "compose",
- clot = "clot",
- immunity = "elixir",
- antigen = "elixir",
- fitness = "fitness",
- rage = "rage",
- antimony = "herb",
- ginger = "herb",
-}
-</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Stats</name>
-					<packageName></packageName>
-					<script>-- STATS TABLE
-wsys.stats = {
-
- h = 5000,
- m = 5000,
- e = 20000,
- w = 20000,
- maxh = 5000,
- maxm = 5000,
- maxw = 20000,
- maxe = 20000,
- oh = 5000, --old health
- om = 5000, --old mana
- xp = 0,
- oxp = 0, --old xp
- kai = 0,
- shin = 0,
- rage = 0,
-}
-
-local charstats = {
-  ["Bleed"] = function( val ) wsys.bleeding = tonumber( val ) end,
-  ["Rage"] = function( val ) wsys.stats.rage = tonumber( val ) end,
-}
-
-function wsys.statupdate()
- 
-  wsys.stats.oh = wsys.stats.h or 5000
-  wsys.stats.om = wsys.stats.m or 5000
-  wsys.stats.oxp = wsys.stats.xp or 0
-
-  wsys.stats.h = tonumber(gmcp.Char.Vitals.hp)
-  wsys.stats.m = tonumber(gmcp.Char.Vitals.mp)
-  wsys.stats.e = tonumber(gmcp.Char.Vitals.ep)
-  wsys.stats.w = tonumber(gmcp.Char.Vitals.wp)
-
-  wsys.stats.maxh = tonumber(gmcp.Char.Vitals.maxhp)
-  wsys.stats.maxm = tonumber(gmcp.Char.Vitals.maxmp)
-  wsys.stats.maxe = tonumber(gmcp.Char.Vitals.maxep)
-  wsys.stats.maxw = tonumber(gmcp.Char.Vitals.maxwp)
-
-  for _,str in ipairs( gmcp.Char.Vitals.charstats ) do
-    local sep = str:find( ": " )
-    if sep then
-      local key = str:sub( 1, sep - 1 )
-      local val = str:sub( sep + 2 )
-      if charstats[key] then charstats[key]( val ) end
-    end
-  end
-
-  if wsys.stats.oh ~= wsys.stats.h then
-    raiseEvent("health changed")
-  end
-  if wsys.stats.om ~= wsys.stats.m then
-    raiseEvent("mana changed")
-  end
-end -- func
-
-registerAnonymousEventHandler("gmcp.Char.Vitals", "wsys.statupdate")
-</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Timers Table</name>
-					<packageName></packageName>
-					<script>-- TIMERS TABLE
-
-wsys.timer = wsys.timer or {}
-</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Balances Table</name>
-					<packageName></packageName>
-					<script>-- BALS Table
-wsys.bals = {
-  b = true, -- balance
-  e = true, -- equilibrium
-
-  moss = true,
-  hm = true, --rename to sip maybe?
-  immunity = true, --7s
-
-  tree = true,
-  focus = true,
-
-  salve = true,
-  herb = true,
-  smoke = true,
-
-
-  dragonheal = true,
-  fool = true,
-  voice = true,
-  rage = true,
-  shrugging = true,
-  fitness = true,
-
-}
-
--- reset all balances
-function wsys.resetBals()
-  for k in pairs(wsys.bals) do
-    wsys.gotBal(k)
-  end
-end
-
--- balances are all true on starburst or death
-registerAnonymousEventHandler("You Died", "wsys.resetBals")
-registerAnonymousEventHandler("You Starbursted", "wsys.resetBals")
-
-
-</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Prompt Tags and Tag Colours</name>
-					<packageName></packageName>
-					<script>-- Table of default prompt tags
-wsys.prompttags = wsys.prompttags or {} 
-
-wsys.prompttags["health"] = function() return wsys.stats.h end
-wsys.prompttags["percenthealth"] = function() return math.floor(wsys.stats.h / wsys.stats.maxh * 100) end
-wsys.prompttags["mana"] = function() return wsys.stats.m end
-wsys.prompttags["percentmana"] = function() return math.floor(wsys.stats.m / wsys.stats.maxm * 100) end
-wsys.prompttags["endurance"] = function() return wsys.stats.e end
-wsys.prompttags["percentendurance"] = function() return math.floor(wsys.stats.e / wsys.stats.maxe * 100) end
-wsys.prompttags["willpower"] = function() return wsys.stats.w end
-wsys.prompttags["percentwillpower"] = function() return math.floor(wsys.stats.w / wsys.stats.maxw * 100) end
-wsys.prompttags["bal"] = function() if wsys.bals.b then return "X" else return "" end end
-wsys.prompttags["eq"] = function() if wsys.bals.e then return "E" else return "" end end
-wsys.prompttags["lbal"] = function() if wsys.bals.b then return "x" else return "" end end
-wsys.prompttags["leq"] = function() if wsys.bals.e then return "e" else return "" end end
-wsys.prompttags["target"] = function() if target then return target else return "" end end
-wsys.prompttags["paused"] = function() if wsys.paused then return "(PP)" else return "" end end
-wsys.prompttags["softpaused"] = function() if wsys.softpaused then return "(sP)" else return "" end end
-wsys.prompttags["phase"] = function() if wsys.def.phased or wsys.def.blackwind or wsys.def.astralform then return "@" else return "" end end
-wsys.prompttags["retardation"] = function() if wsys.retard then return "[RET]" else return "" end end
-wsys.prompttags["kai"] = function() if wsys.def.kaitrance then return wsys.stats.kai .." " else return "" end end
-wsys.prompttags["shin"] = function() if wsys.def.shintrance then return wsys.stats.shin.." " else return "" end end
-wsys.prompttags["warning"] = function() return wsys.prefixWarning end
-wsys.prompttags["mw"] = function() if wsys.def.metawake then return "MW" else return "" end end
-wsys.prompttags["breathing"] = function() if wsys.def.breathing then return "br" else return "" end end
-wsys.prompttags["xp"] = function() return gmcp.Char.Vitals.nl end
-wsys.prompttags["affs"] = function() return wsys.affTags( wsys.aff ) end
-wsys.prompttags["timestamp"] = function() return getTimestamp(getLineCount()):gsub("^%s*(.-)%s*$", "%1") end
-wsys.prompttags["rage"] = function() if wsys.stats.rage &gt; 0 then return wsys.stats.rage.." " else return "" end end
-
-wsys.prompttags["diffhealth"] = function()
-  if wsys.stats.h &lt; wsys.stats.oh then 
-    return("&lt;red&gt; (-"..wsys.stats.oh - wsys.stats.h .. "h, " .. string.format("%.1f", ((wsys.stats.oh - wsys.stats.h) / wsys.stats.maxh) * 100) .. "%)")
-  elseif wsys.stats.h &gt; wsys.stats.oh then 
-    return("&lt;green&gt; (+"..wsys.stats.h - wsys.stats.oh .. "h, " .. string.format("%.1f", ((wsys.stats.h - wsys.stats.oh) / wsys.stats.maxh) * 100) .. "%)") 
-  else
-    return ""
-  end -- if
-end
-
-wsys.prompttags["diffmana"] = function()
-  if wsys.stats.m &lt; wsys.stats.om then 
-    return("&lt;slate_blue&gt; (-"..wsys.stats.om - wsys.stats.m .. "m, " .. string.format("%.1f", ((wsys.stats.om - wsys.stats.m) / wsys.stats.maxm) * 100) .. "%)")
-  elseif wsys.stats.m &gt; wsys.stats.om then 
-    return("&lt;purple&gt; (+".. wsys.stats.m - wsys.stats.om .. "m, " .. string.format("%.1f", ((wsys.stats.m - wsys.stats.om) / wsys.stats.maxm) * 100) .. "%)") 
-  else
-    return ""
-  end -- if
-end
-
-wsys.prompttags["def"] = function() 
-  local defstring = ""
-  if wsys.def.blindness then
-    defstring = defstring .. "&lt;SeaGreen&gt;B "
-  end
-  if wsys.def.deafness then
-    defstring = defstring .. "&lt;SeaGreen&gt;D "
-  end
-  if wsys.def.cloak then
-    defstring = defstring .. "&lt;deep_sky_blue&gt;C "
-  end
-  if wsys.def.kola then
-    defstring = defstring .. "&lt;yellow&gt;K "
-  end
-  if wsys.def.density then
-    defstring = defstring .. "&lt;maroon&gt;M "
-  end -- if
-  if wsys.def.heldbreath then
-    defstring = defstring .. "&lt;light_grey&gt;br"
-  end --if
-  return defstring
-end
-
-wsys.prompttags["invdef"] = function() 
-  local invdefstring = ""
-  if not wsys.def.blindness then
-    invdefstring = invdefstring .. "&lt;SeaGreen&gt;B "
-  end
-  if not wsys.def.deafness then
-    invdefstring = invdefstring .. "&lt;SeaGreen&gt;D "
-  end
-  if not wsys.def.cloak then
-    invdefstring = invdefstring .. "&lt;deep_sky_blue&gt;C "
-  end
-  if not wsys.def.kola then
-    invdefstring = invdefstring .. "&lt;yellow&gt;K "
-  end
-  if not wsys.def.density then
-    invdefstring = invdefstring .. "&lt;maroon&gt;M "
-  end -- if
-  if wsys.def.heldbreath then
-    invdefstring = invdefstring .. "&lt;light_grey&gt;br"
-  end --if
-  return invdefstring
-end
-
-wsys.prompttags["npchp"] = function()
-  if gmcp.IRE.Target then         
-    if gmcp.IRE.Target.Set == "" or gmcp.IRE.Target.Info.id == "-1" then
-      return ""
-    elseif gmcp.IRE.Target then
-      return tonumber(string.findPattern(gmcp.IRE.Target.Info.hpperc, "%d+"))
-    end
-  else
-    return ""
-  end
-end
-
-wsys.prompttags.mylimbs = function()
-	local str = ""
-	
-	local limbs = {
-	"left leg",
-	"right leg",
-	"left arm",
-	"right arm",
-	"torso",
-	"head",
-}
-	local colors = { 
-		{ c = "&lt;dark_slate_gray&gt;", val = 0 },
-		{ c = "&lt;grey&gt;", val = 1 },
-		{ c = "&lt;brown&gt;", val = 4 },
-		{ c = "&lt;orange&gt;", val = 7 },
-		{ c = "&lt;red&gt;", val = 10 },
-		}
-
-	local first = true
-	for _,limb in pairs(limbs) do
-		if not first then
-			str = str.."&lt;dark_slate_gray&gt;|"
-		end
-		local d = tonumber(wsys.tb.selflimbdamage[limb].damage)
-		local color = colors[0] 
-		d = math.floor(d+0.5)
-		for _,t in ipairs( colors ) do
-			if d &gt;= t.val then
-				color = t.c
-			else
-				break
-			end
-		end
-
-		str = str.. color..d
-		first = false
-	end
-	return str
-end
-
---table of default prompt tag colors
-wsys.prompttagcolors = wsys.prompttagcolors or {} 
-  
-wsys.prompttagcolors["hcolour"] = function()
-  if wsys.stats.h &gt;= (wsys.stats.maxh * 0.75) then
-    return "sea_green"
-  elseif wsys.stats.h &gt;= (wsys.stats.maxh * 0.33) then
-    return "gold"
-  else
-    return "red"
-  end --if
-end
-
-wsys.prompttagcolors["mcolour"] = function()
-  if wsys.stats.m &gt;= (wsys.stats.maxm * .75) then
-    return "sea_green"
-  elseif wsys.stats.m &gt;= (wsys.stats.maxm * .50) then
-    return "gold"
-  else
-    return "red"
-  end -- if
-end
-
-wsys.prompttagcolors["wcolour"] = function()
-  if wsys.stats.w &gt;= (wsys.stats.maxw * .66) then
-    return "sea_green"
-  elseif wsys.stats.w &gt;= (wsys.stats.maxw * .50) then
-    return "gold"
-  else
-    return "red"
-  end -- if
-end
-
-wsys.prompttagcolors["ecolour"] = function()
-  if wsys.stats.e &gt;= (wsys.stats.maxe * .66) then
-    return "sea_green"
-  elseif wsys.stats.e &gt;= (wsys.stats.maxe * .50) then
-    return "gold"
-  else
-    return "red"
-  end -- if
-end
-
-wsys.prompttagcolors["kaicolour"] = function()
-  if wsys.stats.kai &lt; 10 then
-    --can't even choke
-    return "red"
-  elseif wsys.stats.kai &lt; 21 then
-    --can't heal
-    return "firebrick"
-  elseif wsys.stats.kai &lt; 41 then
-    --can't cripple
-    return "dark_orange"
-  elseif wsys.stats.kai &lt; 61 then
-    --can't enfeeble
-    return "yellow"
-  elseif wsys.stats.kai &gt;= 61 then
-    --can do anything
-    return "green"
-  end
-end
-                  
-wsys.prompttagcolors["shincolour"] = function()
-  if wsys.stats.shin &lt; 4 then
-    --can't even infuse
-    return "red"
-  elseif wsys.stats.shin &lt; 14 then
-    --can't fist
-    return "firebrick"
-  elseif wsys.stats.shin &lt; 29 then
-    --can't blizzard
-    return "dark_orange"
-  elseif wsys.stats.shin &lt; 39 then
-    --can't annihilate
-    return "yellow"
-  else
-    --can do anything
-    return "green"
-  end
-end</script>
-					<eventHandlerList />
-				</Script>
-				<Script isActive="yes" isFolder="no">
-					<name>Aff shortnames on prompt</name>
-					<packageName></packageName>
-					<script>wsys.overrides.afftags = wsys.overrides.afftags or {}
--- Shortnames = { aff = "name" }
-wsys.overrides.afftags.shortnames = wsys.overrides.afftags.shortnames or {}
--- colors = { aff = "color", aff2 = { "color1", [4] = "color at 4+ stacks" } }
-wsys.overrides.afftags.colors = wsys.overrides.afftags.colors or {}
--- cure_colors = { cure = "color", cure2 = { "color1", [6] = "color at 6+ stacks" } }
-wsys.overrides.afftags.cure_colors = wsys.overrides.afftags.cure_colors or {}
-
-
--- Probably use an override table
-local aff_short = {
- deafness = "",
- blindness = "",
- insomnia = "",
- addiction = "add",
- aeon = "ae",
- agoraphobia = "agor",
- anorexia = "ano",
- asphyxiating = "", -- Lets Air Lord see what smoke cure you used
- sleeping = "slp",
- asthma = "ast",
- concussion = "concuss",
- damagedhead = "h1",
- blackout = "",
- bleeding = "bld",
- demonstain = "stain",
- damagedleftarm = "la2",
- damagedleftleg = "ll2",
- bleg = "uleg1",
- damagedrightarm = "ra2",
- damagedrightleg = "rl2",
- mildtrauma = "t1",
- carm = "uwna",
- claustrophobia = "clau",
- brokenleftarm = "la1",
- brokenleftleg = "ll1",
- cleg = "uwnl",
- climb = "uwcrip",
- clumsiness = "Cl",
- confusion = "con",
- brokenrightarm = "ra1",
- brokenrightleg = "rl1",
- darkshade = "dark",
- deadening = "dea",
- dementia = "dem",
- depression = "dep",
- disloyalty = "disl",
- disrupted = "dis",
- dissonance = "diss",
- dizziness = "diz",
- epilepsy = "epi",
- fear = "fear",
- frozen = "frozen",
- generosity = "gen",
- haemophilia = "haem",
- hallucinations = "hallu",
- healthleech = "hleech",
- hellsight = "hell",
- hypersomnia = "hypers",
- hypochondria = "hypo",
- impaled = "Impale",
- impatience = "IMP",
- internalbleeding = "ImpaleSlash",
- inquisition = "",
- cadmuscurse = "cadmus",
- weakenedmind = "rixil",
- hecatecurse = "HECATE",
- itching = "",
- lethargy = "let",
- loneliness = "lon",
- lovers = "lust",
- justice = "just",
- whisperingmadness = "MAD",
- masochism = "maso",
- manaleech = "mleech",
- mangledhead = "h2",
- mangledleftarm = "la3",
- mangledleftleg = "ll3",
- mangledrightarm = "ra3",
- mangledrightleg = "rl3",
- serioustrauma = "t2",
- nausea = "nau",
- pacified = "pac",
- paralysis = "PAR",
- paranoia = "para",
- parasite = "paras",
- peace = "pea",
- prone = "PR",
- recklessness = "reck",
- retribution = "ret",
- scytherus = "SCY",
- sensitivity = "sen",
- daeggerimpale = "Impale",
- shadowmadness = "sham",
- shivering = "shiv",
- shyness = "shy",
- slickness = "SLI",
- speared = "Impale",
- stupidity = "st",
- stuttering = "stut",
- entangled = "tangled",
- bound = "bound",
- transfixation = "transf",
- weariness = "Wea",
- webbed = "web",
- vertigo = "vert",
- voyria = "voy",
- heartseed = "hseed",
- temperedsanguine = "sang",
- temperedcholeric = "chol",
- temperedphlegmatic = "phleg",
- temperedmelancholic = "melan",
- torntendons = "tendons",
- wristfractures = "wrist",
- crackedribs = "ribs",
- skullfractures = "skull",
- burning = "burn",
- unweavingmind = "UNM",
- unweavingbody = "UNB",
- unweavingspirit = "UNS",
- mindravaged = "MIND RAVAGE",
- pressure = "PRESS",
- tension = "tens",
-}
-
-local aff_colors = {
-	bleeding = { "maroon", [500] = "red" },
-	burning = { "SlateGrey", "brown", "red" },
-	pressure = { "SlateGrey", "DeepSkyBlue", [4] = "cyan", [6] = "white" },
-	prone = "orchid",
-	mindravaged = "red:gray",
-}
-
--- The cure may be the prefix to an actual cure
--- E.g. "mending" matches "mendingarms" or "mendinglegs" but not "foomending"
-local cure_colors = {
-	kelp = "chartreuse",
-	goldenseal = "yellow",
-	ginseng = "dark_goldenrod",
-	lobelia = "moccasin",
-	elm = "sky_blue",
-	valerian = "royal_blue",
-	restoration = "brown",
-	mending = "brown",
-	health = { "medium_violet_red", [6] = "deep_pink" }, -- fractures
-	ginger = { "medium_purple", [6] = "purple" },
-}
-
--- Return the color to use for an value, given a color_option
--- Color_option is either a string "color", or a table with a list of colors to
--- use based on the aff_value
-local getColor = function( color_option, value )
-  local color = false
-	
-	if type(color_option) == "string" then
-		-- Aff color is a string, so use it
-		color = color_option
-		
-	elseif type(color_option) == "table" then
-		-- Pick a color based on value
-		local max = 0
-		local current_val = tonumber(value) or ( value and 1 ) or 0
-		
-		for i,v in pairs(color_option) do
-			if i &gt; max and current_val &gt;= i then
-				max = i
-				color = v
-			end
-		end
-	end
-	return color
-end
-
-local getAffLabel = function( aff, value )
-  local short = wsys.overrides.afftags.shortnames[aff] or aff_short[aff]
-	
-	if short and #short == 0 then
-		-- Short is "", don't display anythign
-		return false
-	end
-	
-	local color = getColor( wsys.overrides.afftags.colors[aff] or aff_colors[aff], value )
-	
-	if not color and wsys.tb.affc[aff] then
-		-- Pick a color based on cure-type
-		for _,aff_cure in ipairs(wsys.tb.affc[aff]) do
-			-- Check the overrides first
-			for cure,ccolor in pairs(wsys.overrides.afftags.cure_colors) do
-				if string.match( aff_cure, "^"..cure ) then
-					color = getColor( ccolor, value )
-					break
-				end
-			end
-			if color then break end -- Break out of the affc table loop if we found a match
-		
-			-- Check the default colors
-			for cure,ccolor in pairs(cure_colors) do
-				if string.match( aff_cure, "^"..cure ) then
-					color = getColor( ccolor, value )
-					break
-				end
-			end
-			if color then break end -- Break out of the affc table loop if we found a match
-		end
-	end
-	
-	if not color then
-		if short then
-			-- No special color
-			color = "SlateGrey"
-		else
-			-- No short means we don't know about it. Use a default color
-			color = "IndianRed"
-		end
-	end
-	
-	short = short or aff
-	
-	if tonumber(value) and value &gt; 1 then
-		-- Stackable aff, append (#)
-		short = short .."("..value..")"
-	end
-	
-  return "&lt;"..color.."&gt;"..short
-end
-
-function wsys.affTags( affs )
-  local s = {}
-  if wsys.bleeding and wsys.bleeding &gt; 50 then
-  	s[#s+1] = getAffLabel( "bleeding", wsys.bleeding )
-  end
-  for aff,value in pairs(affs) do
-		entry = getAffLabel(aff, value)
-		if entry then
-			s[#s+1] = entry
-		end
-	end
-  return #s &gt; 0 and ("&lt;IndianRed&gt;["..table.concat(s, " ").."&lt;IndianRed&gt;]") or ""
-end</script>
 					<eventHandlerList />
 				</Script>
 			</ScriptGroup>
@@ -46119,7 +45541,9 @@ function wsys.emptyshrug()
     killTimer(tostring(wsys.timer.shrugwait))
     wsys.timer.shrugwait = nil
     for k,v in pairs(wsys.tb.cures.shrugging) do
-      wsys.aff[v] = nil
+      if wsysf.affs[v] then
+        wsysf.core.debug.print(2, "Empty shrug should clear ".. v.."?")
+      end
       disableTrigger(string.title(v) .. " -")
     end
   end
